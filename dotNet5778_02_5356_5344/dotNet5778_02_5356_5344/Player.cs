@@ -17,5 +17,10 @@ namespace dotNet5778_02_5344_5356
                 pCards.Enqueue(cards[i]);
             }
         }
+        public override string ToString() { }
+        public bool lose()
+        {
+            return pCards.Any();
+        }
     }
 }
