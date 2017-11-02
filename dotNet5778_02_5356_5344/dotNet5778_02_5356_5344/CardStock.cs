@@ -8,10 +8,11 @@ namespace dotNet5778_02_5344_5356
 {
     class CardStock
     {
-        List<Card> Cards = new List<Card>();
+        private List<Card> Cards;
 
         public CardStock()
         {
+            this.Cards = new List<Card>();
             for (int i = 0; i < 13; i++)
                 Cards.Add(new Card() { number = i + 2, color = E_color.red });
 
@@ -28,7 +29,6 @@ namespace dotNet5778_02_5344_5356
             {
                 Cards[i] = Cards[j];    //s w a p
                 Cards[j] = iter;
-
                 j = r.Next(0, 26);
             }
         }
@@ -45,5 +45,16 @@ namespace dotNet5778_02_5344_5356
        
 
 
+    }
+    public void distribute(params Player[] players)
+    {
+        CardStock newDeck = new CardStock();
+        foreach (Player p in players)
+        {
+            for (int i = 0; i < newDeck; i++)
+            {
+                ;
+            }
+        }
     }
 }

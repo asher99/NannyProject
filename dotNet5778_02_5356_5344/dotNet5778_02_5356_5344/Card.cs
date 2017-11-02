@@ -68,7 +68,7 @@ namespace dotNet5778_02_5344_5356
 
         }
 
-        // constructor
+        // constructors
         public Card()
         {
             number = 2;
@@ -80,7 +80,7 @@ namespace dotNet5778_02_5344_5356
             color = myColor;
         }
 
-        public override string ToString()
+        public override string ToString() // to string
         {
             return "card: " + m_number + m_color + '\n';
         }
