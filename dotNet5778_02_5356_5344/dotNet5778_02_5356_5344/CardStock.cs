@@ -23,45 +23,71 @@ namespace dotNet5778_02_5344_5356
         {
             this.Cards.Add(a);
         }
-        public Card removeCard()
-        {           
-                return this.Cards.;     
+        public void removeCard(Card a)
+        {
+            Card removedCard = a;
+            Cards.Remove(a);
+
+            return;
         }
         public void Shuffle()
         {
             Random r = new Random();
 
-            Card iter = new Card();
+            Card temp = new Card();
             int j = r.Next(0, 26);
-            for (int i = 0; i < 26 ; iter = Cards[i], i++ )
+            for (int i = 0; i < 26; i++)
             {
+                temp = Cards[i];
                 Cards[i] = Cards[j];    //s w a p
-                Cards[j] = iter;
+                Cards[j] = temp;
                 j = r.Next(0, 26);
+
             }
+
+
         }
 
         public override string ToString()
         {
             string temp = null;
-            foreach(Card a in Cards)
+            foreach (Card a in Cards)
             {
                 temp += a.ToString();
             }
             return temp;
         }
-     public void distribute(params Player[] players)
-    {
-        CardStock newDeck = new CardStock();
-        newDeck.Shuffle();
-        
-        foreach (Player p in players)
-        {
-            p.addCard(newDeck.Cards[]); ////                
-        }
-    }  
 
+        public Card this[string index]
+        {
+            get
+            {
+                foreach (Card a in Cards)
+                {
+                    if (a.CardName == index)
+                        return a;
+                }
+                return null;
+            }
+        }
+
+        public void distribute(params Player[] players)
+        {
+            int stockIndex = 0;
+            while (stockIndex < 26)
+            {
+                foreach (Player p in players)
+                {
+                    if (stockIndex < 26)
+                    {
+                        p.addCard(Cards[stockIndex]);
+                    }
+                    stockIndex++;
+                }
+            }
+        }
 
     }
-    
+
 }
+

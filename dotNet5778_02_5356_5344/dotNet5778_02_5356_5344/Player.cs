@@ -9,22 +9,40 @@ namespace dotNet5778_02_5344_5356
     class Player
     {
         public string Name;
-        Queue<Card> pCards = new Queue<Card>();
-         public void addCard(params Card [] cards)
+        Queue<Card> pCards;
+        public void addCard(params Card[] cards)
         {
             for (int i = 0; i < cards.Length; i++)
             {
                 pCards.Enqueue(cards[i]);
             }
         }
-        public override string ToString() { }
+        public override string ToString()
+        {
+            string temp = Name + " have " + pCards.Count() + " cards.\nList of cards:\n";
+
+            foreach (Card c in pCards)
+            {
+                temp += c.ToString();
+            }
+            return temp;
+        }
+
+
         public bool lose()
         {
             return pCards.Any();
         }
-        public void extractTop()
+
+        public Card extractTop()
+        { 
+            return pCards.Dequeue();
+        }
+
+        public Player(string userName)
         {
-            pCards.Dequeue();
+            Name = userName;
+            pCards = new Queue<Card>();
         }
     }
 

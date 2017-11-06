@@ -8,7 +8,7 @@ namespace dotNet5778_02_5344_5356
 {
     enum E_color { red, black }
 
-    class Card
+    class Card : IComparable 
     {
         private E_color m_color;
         public E_color color
@@ -20,7 +20,7 @@ namespace dotNet5778_02_5344_5356
         }
 
         private int m_number;
-        public int number
+        public int number // private
         {
             get
             {
@@ -41,29 +41,26 @@ namespace dotNet5778_02_5344_5356
                 {
                     return Convert.ToString(m_number);
                 }
-                else
-                {
-                    switch (m_number)
+                string temp;               
+                switch (m_number)
                     {
-
                         case 11:
-                            return "Jack";
-                            break;
+                           temp= "Jack";
+                           break;
                         case 12:
-                            return "Queen";
+                        temp = "Queen";
                             break;
                         case 13:
-                            return "King";
+                        temp = "King";
                             break;
                         case 14:
-                            return "Ace";
+                        temp = "Ace";
+                            break;
+                        default:
+                        temp = "\0";
                             break;
                     }
-                }
-
-                // To make sure all code path return value
-                return "\0";
-
+                return temp;
             }
 
         }
@@ -74,7 +71,7 @@ namespace dotNet5778_02_5344_5356
             number = 2;
             color = E_color.red;
         }
-        public Card(int myNum,E_color myColor)
+        public Card(int myNum, E_color myColor)
         {
             number = myNum;
             color = myColor;
@@ -82,20 +79,22 @@ namespace dotNet5778_02_5344_5356
 
         public override string ToString() // to string
         {
-            return "card: " + m_number + m_color + '\n';
+            return "card: " + m_color +" "+ CardName + '\n';
+           /* return ("************" + '\n' + "|" +
+         " " + CardName + "        |" + '\n'
+            + "|          |" + '\n'
+             + "|  " + m_color + "  |" + '\n' +
+              "|          |" + '\n'
+                + "|        " + CardName + " " +
+           "|" + '\n' + "************" + '\n');*/
         }
 
-        public int CompareTo(Card card)
+        public int CompareTo(object obj)
         {
-            if(this.m_number == card.m_number)
-            {
-                return 0;
-            }
-            if (this.m_number > card.m_number)
-            {
-                return 1;
-            }
-            return -1;
+            return number.CompareTo(((Card) obj).number);
         }
+
+
+
     }
 }
