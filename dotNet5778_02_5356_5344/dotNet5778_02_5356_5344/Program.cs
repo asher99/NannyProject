@@ -11,25 +11,28 @@ namespace dotNet5778_02_5344_5356
     {
         static void Main(string[] args)
         {
-            Player[] players = new Player[5];
-            players[0] = new Player("David");
-            players[1] = new Player("Golieth");
-            players[2] = new Player("Devil");
-            players[3] = new Player("Jonathan");
-            players[4] = new Player("Joe");
-
-            CardStock deck = new CardStock();
-            deck.Shuffle();
-            deck.distribute(players);
- 
-            foreach (Player p in players)
+            Game warGame = new Game();
+            string choice;
+            do
             {
-                Console.WriteLine(p.ToString());
-            }
+                
+                while (!warGame.isFinished())
+                {
+                    warGame.turn();
+                }
+                Console.WriteLine(warGame.whoWin());
 
+                
+                Console.WriteLine("Do you want to play again?\nif yes Enter 1.");
+         
+                choice = Console.ReadLine();
+                
+                warGame.restart();
+            } while (choice == "1");
 
-
+            Console.WriteLine("Thanks for playing\n\tHave a nice day!\n");
             Console.ReadKey();
         }
+        
     }
 }

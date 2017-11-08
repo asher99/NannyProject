@@ -9,15 +9,24 @@ namespace dotNet5778_02_5344_5356
     class Player
     {
         public string Name;
-        Queue<Card> pCards;
-        public void addCard(params Card[] cards)
+
+        public Queue<Card> pCards;
+
+        public Player(string userName) // ctor
+        {
+            Name = userName;
+            pCards = new Queue<Card>();
+        }
+
+        public void addCard(params Card[] cards) // adds card to stack
         {
             for (int i = 0; i < cards.Length; i++)
             {
                 pCards.Enqueue(cards[i]);
             }
         }
-        public override string ToString()
+
+        public override string ToString() // prints a player and his cards
         {
             string temp = Name + " have " + pCards.Count() + " cards.\nList of cards:\n";
 
@@ -28,22 +37,19 @@ namespace dotNet5778_02_5344_5356
             return temp;
         }
 
-
-        public bool lose()
+        public bool lose() // check if the player run out of cards
         {
-            return pCards.Any();
+            return !pCards.Any();
         }
 
-        public Card extractTop()
-        { 
-            return pCards.Dequeue();
-        }
-
-        public Player(string userName)
+        public Card extractTop() // takes out the top card, print its value and returns it
         {
-            Name = userName;
-            pCards = new Queue<Card>();
+            Card removedCard = pCards.Dequeue();
+            Console.WriteLine(Name + ' ' + removedCard.ToString());
+            return removedCard;
         }
+
+       
     }
 
 }

@@ -11,6 +11,7 @@ namespace dotNet5778_02_5344_5356
     class Card : IComparable 
     {
         private E_color m_color;
+
         public E_color color
         {
             set
@@ -20,6 +21,7 @@ namespace dotNet5778_02_5344_5356
         }
 
         private int m_number;
+
         public int number // private
         {
             get
@@ -64,22 +66,22 @@ namespace dotNet5778_02_5344_5356
             }
 
         }
-
         // constructors
         public Card()
         {
             number = 2;
             color = E_color.red;
         }
-        public Card(int myNum, E_color myColor)
+
+        public Card(int myNum, E_color myColor) // ctor with args
         {
             number = myNum;
             color = myColor;
         }
 
-        public override string ToString() // to string
+        public override string ToString() // prints a card
         {
-            return "card: " + m_color +" "+ CardName + '\n';
+            return "card: " + m_color +" "+ CardName + '\t';
            /* return ("************" + '\n' + "|" +
          " " + CardName + "        |" + '\n'
             + "|          |" + '\n'
