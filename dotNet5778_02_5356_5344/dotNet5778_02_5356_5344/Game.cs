@@ -27,7 +27,9 @@ namespace dotNet5778_02_5344_5356
 
 
             deck.Shuffle();
-            deck.distribute(p1, p2);
+            deck.distribute(p1, p2);            
+            Console.WriteLine(p1.ToString());
+            Console.WriteLine(p2.ToString());
         }
 
         public string whoWin() // check witch player won and returns his name
@@ -46,7 +48,7 @@ namespace dotNet5778_02_5344_5356
             return (whoWin() != null);
         }
 
-        public void turn()
+        public void turn() // takes a card from each player and checks who takes
         {
             Console.WriteLine("new turn:");
 
@@ -67,7 +69,7 @@ namespace dotNet5778_02_5344_5356
 
                     playersCards.Add(p1.extractTop());
                     playersCards.Add(p2.extractTop());
-                    Console.WriteLine('\n');                    // the "extract-top" print the cards. a new line between each pair of cards.
+                    Console.WriteLine('\n');            // the "extract-top" print the cards. a new line between each pair of cards.
 
                 }
 

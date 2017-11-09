@@ -8,9 +8,11 @@ namespace dotNet5778_02_5344_5356
 {
     class Player
     {
-        public string Name;
+        private string name; // name of player
 
-        public Queue<Card> pCards;
+        public string Name { set; get; }
+
+        public Queue<Card> pCards; // queue that holds all of player cards
 
         public Player(string userName) // ctor
         {
@@ -48,8 +50,5 @@ namespace dotNet5778_02_5344_5356
             Console.WriteLine(Name + ' ' + removedCard.ToString());
             return removedCard;
         }
-
-       
     }
-
 }

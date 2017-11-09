@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace dotNet5778_02_5344_5356
 {
     class CardStock
     {
-        public List<Card> Cards;
+        private List<Card> Cards; 
 
         public CardStock() // ctor
         {
@@ -27,13 +28,11 @@ namespace dotNet5778_02_5344_5356
 
         public void removeCard(Card a) // removes card from stack
         {
-            Card removedCard = a;
             Cards.Remove(a);
-
             return;
         }
 
-        public void sort()
+        public void sort() // sorts the deck
         {
             this.Cards.Sort();
         }
@@ -52,8 +51,6 @@ namespace dotNet5778_02_5344_5356
                 j = r.Next(0, 26); // gets a new random index to swap
 
             }
-
-
         }
 
         public override string ToString() // prints the deck
@@ -93,6 +90,11 @@ namespace dotNet5778_02_5344_5356
                     stockIndex++;
                 }
             }
+        }
+
+        public IEnumerator GetEnumerator() // IEnumerator
+        {
+            return Cards.GetEnumerator();
         }
 
     }

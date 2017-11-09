@@ -28,6 +28,7 @@ namespace dotNet5778_02_5344_5356
             {
                 return m_number;
             }
+
             set
             {
                 if (value > 1 && value < 15)
@@ -43,7 +44,9 @@ namespace dotNet5778_02_5344_5356
                 {
                     return Convert.ToString(m_number);
                 }
-                string temp;               
+
+                string temp;
+                               
                 switch (m_number)
                     {
                         case 11:
@@ -66,7 +69,7 @@ namespace dotNet5778_02_5344_5356
             }
 
         }
-        // constructors
+                        // constructors
         public Card()
         {
             number = 2;
@@ -81,22 +84,12 @@ namespace dotNet5778_02_5344_5356
 
         public override string ToString() // prints a card
         {
-            return "card: " + m_color +" "+ CardName + '\t';
-           /* return ("************" + '\n' + "|" +
-         " " + CardName + "        |" + '\n'
-            + "|          |" + '\n'
-             + "|  " + m_color + "  |" + '\n' +
-              "|          |" + '\n'
-                + "|        " + CardName + " " +
-           "|" + '\n' + "************" + '\n');*/
+            return " " + m_color +" "+ CardName + '\n';           
         }
 
-        public int CompareTo(object obj)
+        public int CompareTo(object obj) // compares between cards 
         {
             return number.CompareTo(((Card) obj).number);
         }
-
-
-
     }
 }
