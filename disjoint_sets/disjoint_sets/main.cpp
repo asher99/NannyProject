@@ -1,12 +1,9 @@
-#include "disjoint.h"	// Asher Alexander 206195356
-#include <iostream>
-using namespace std;
-
-
+# include "DisjointSets.h"	// Asher Alexander 206195356
+# include "Volunteer.h"		// & ISrael Dreyfuss 4301288
 int main()
 {
 	DisjointSets ds;
-	Volunteer *v1;
+	Volunteer * v1;
 	int id1, id2;
 	char ch;
 	cout << "\nDISJOINT SETS\n";
@@ -51,7 +48,47 @@ int main()
 		}
 		cout << "enter your choice:\n";
 		cin >> ch;
-		system("pause");
-
+		
 	}
+	system("pause");
 }
+
+/*
+DISJOINT SETS
+Choose one of the following:
+n: New volunteer
+u: Union of two sets
+d: Del a volunteer
+p: Print all volunteers
+r: Print all representatives
+s: Print a specific set
+e: exit:
+n
+Enter volunteers id, name, address, phone number and city
+123 Avraham Yaffo 654321 Jerusalem
+enter your choice:
+n
+Enter volunteers id, name, address, phone number and city
+456 Yitzchak Aza 987654 TelAviv
+enter your choice:
+n
+Enter volunteers id, name, address, phone number and city
+789 Yaakov Elbaz 246873 Hayfa
+enter your choice:
+n
+Enter volunteers id, name, address, phone number and city
+147 Sara Shula 352341 Beer7
+enter your choice:
+p
+id = 147 name = Sara address = Shula phone = 352341 city = Beer7
+**********
+id = 789 name = Yaakov address = Elbaz phone = 246873 city = Hayfa
+**********
+id = 456 name = Yitzchak address = Aza phone = 987654 city = TelAviv
+**********
+id = 123 name = Avraham address = Yaffo phone = 654321 city = Jerusalem
+**********
+enter your choice:
+e
+Press any key to continue . . .
+*/

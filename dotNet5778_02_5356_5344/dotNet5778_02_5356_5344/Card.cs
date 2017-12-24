@@ -84,7 +84,7 @@ namespace dotNet5778_02_5344_5356
 
         public override string ToString() // prints a card
         {
-            return " " + m_color +" "+ CardName + '\n';           
+            return " " + m_color + " " + CardName + '\n';           
         }
 
         public int CompareTo(object obj) // compares between cards 

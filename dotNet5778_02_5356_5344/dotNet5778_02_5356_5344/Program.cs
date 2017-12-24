@@ -23,7 +23,7 @@ namespace dotNet5778_02_5344_5356
                 {
 
 
-                    if (jumpK != "0")
+                    if (jumpK != "0") // stops each turn to watch
                     {
                         Console.WriteLine("Enter 0 to finish...");
                         jumpK = Console.ReadLine();
@@ -33,16 +33,18 @@ namespace dotNet5778_02_5344_5356
 
                 }
 
-                Console.BackgroundColor = ConsoleColor.DarkGreen; // a bit of color
+                // Console.BackgroundColor = ConsoleColor.DarkGreen; // a bit of color
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine(warGame.whoWin()); // prints name of winner 
                 Console.ResetColor();
 
-                Console.WriteLine("Do you want to play again?\nif yes Enter 1.");
+                Console.WriteLine("Do you want to play again?\nIf yes Enter 1.");
 
                 choice = Console.ReadLine();
                 jumpK = "asher&zvei";
-                warGame.restart();// restarts for a new game
+                if (choice == "1")
+                    warGame.restart();// restarts for a new game
+
             } while (choice == "1");// if player entered 1 it will keep playing
 
             Console.WriteLine("Thanks for playing\n\tHave a nice day!\n");
@@ -52,130 +54,101 @@ namespace dotNet5778_02_5344_5356
     }
 }
 /*
-exp:
- enter first player name:
+enter first player name:
 asher
 enter second player name:
 zvei
 asher have 13 cards.
 List of cards:
- red Jack
+ red King
+ black 9
+ red 3
+ black 2
+ black 4
+ black 10
+ red 5
  red 6
  black 7
- red 9
- black 4
- black Queen
- red 5
- black 5
- black Ace
- red 2
- black Jack
+ red 4
  black 8
- red 10
+ black Ace
+ red 8
 
 zvei have 13 cards.
 List of cards:
- black 3
- red Queen
  red 7
- red 8
- black 2
- red 3
- black 10
- red King
- black King
- black 9
- red 4
+ red Jack
  red Ace
+ red Queen
+ red 10
+ red 2
  black 6
+ black Jack
+ black 5
+ black 3
+ black Queen
+ black King
+ red 9
 
 To absorve each move press ENTER
 in order to run til the end enter 0.
 Enter 0 to finish...
 0
 new turn:
-asher  red Jack
+asher  red King
 
-zvei  black 3
+zvei  red 7
 
-
-
+asher takes!
 asher have 14 cards
 zvei have 12 cards
 
 
 new turn:
-asher  red 6
+asher  black 9
 
-zvei  red Queen
+zvei  red Jack
 
-
-
+zvei takes!
 asher have 13 cards
 zvei have 13 cards
 
 
 new turn:
-asher  black 7
+asher  red 3
 
-zvei  red 7
+zvei  red Ace
+
+zvei takes!
+asher have 12 cards
+zvei have 14 cards
 
 
+new turn:
+asher  black 2
 
-asher  red 9
+zvei  red Queen
+
+zvei takes!
+asher have 11 cards
+zvei have 15 cards
+.........
+new turn:
+asher  black 8
 
 zvei  red 8
 
-
-
-asher  black 4
-
-zvei  black 2
-
-
-
-asher  black Queen
+asher  red 6
 
 zvei  red 3
 
+asher  red Ace
 
-
-asher have 17 cards
-zvei have 9 cards
-
-
-new turn:
-asher  red 5
-
-zvei  black 10
-
-
-
-asher have 16 cards
-zvei have 10 cards
-
-
-new turn:
-asher  black 5
-
-zvei  red King
-
-.......ext
-
-new turn:
-asher  black 9
-
-zvei  black 8
-
-
-
-asher have 26 cards
-zvei have 0 cards
-
+zvei  black 7
 
 zvei is out of cards...
 Congratulations!  asher is the winner
 Do you want to play again?
-if yes Enter 1.
+If yes Enter 1.
 
 */

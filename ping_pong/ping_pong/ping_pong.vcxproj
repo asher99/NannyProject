@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{1E742F9B-A3A0-4C6E-8418-79E3B3B51364}</ProjectGuid>
-    <RootNamespace>Disjoint_sets</RootNamespace>
+    <ProjectGuid>{E93665DD-A995-4902-90A3-075836C5C447}</ProjectGuid>
+    <RootNamespace>ping_pong</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -110,11 +110,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DisjointSets.h" />
-    <ClInclude Include="Volunteer.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

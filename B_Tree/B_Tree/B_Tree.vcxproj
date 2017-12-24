@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{1E742F9B-A3A0-4C6E-8418-79E3B3B51364}</ProjectGuid>
-    <RootNamespace>Disjoint_sets</RootNamespace>
+    <ProjectGuid>{9E67BD1B-77BD-48DF-A292-484BEB50D2F5}</ProjectGuid>
+    <RootNamespace>B_Tree</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -110,11 +110,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="DisjointSets.h" />
-    <ClInclude Include="Volunteer.h" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="BTree.h" />
+    <ClInclude Include="Volunteer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

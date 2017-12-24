@@ -56,7 +56,7 @@ namespace dotNet5778_02_5344_5356
 
             playersCards.Add(p1.extractTop());
             playersCards.Add(p2.extractTop());
-            Console.WriteLine('\n');                    // the "extract-top" print the cards. a new line between each pair of cards.
+            //Console.WriteLine('\n');                    // the "extract-top" print the cards. a new line between each pair of cards.
 
             int beq = playersCards[0].CompareTo(playersCards[1]);
             for (int i = 1; beq == 0; i++)
@@ -69,7 +69,7 @@ namespace dotNet5778_02_5344_5356
 
                     playersCards.Add(p1.extractTop());
                     playersCards.Add(p2.extractTop());
-                    Console.WriteLine('\n');            // the "extract-top" print the cards. a new line between each pair of cards.
+                   // Console.WriteLine('\n');            // the "extract-top" print the cards. a new line between each pair of cards.
 
                 }
 
@@ -77,10 +77,12 @@ namespace dotNet5778_02_5344_5356
             }
             if (beq > 0)
             {
+                Console.WriteLine("{0} takes!",p1.Name );
                 p1.addCard(playersCards.ToArray());
             }
             else
             {
+                Console.WriteLine("{0} takes!", p2.Name);
                 p2.addCard(playersCards.ToArray());
             }
 
@@ -105,6 +107,8 @@ namespace dotNet5778_02_5344_5356
             deck.sort();
             deck.Shuffle();
             deck.distribute(p1, p2);
+            Console.WriteLine(p1.ToString());
+            Console.WriteLine(p2.ToString());
 
         }
 

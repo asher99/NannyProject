@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="dotNetWPF_03_5356_5344.PrinterUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:dotNetWPF_03_5356_5344"
+             mc:Ignorable="d"
+           >
+    <Grid x:Name="Image">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="2" VerticalAlignment="Stretch" Width="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width=" 1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="inkLabel" Content="Ink:"/>
+            <Label x:Name="pageLabel" Content="Pages:" Grid.Row="1"/>
+            <ProgressBar Name="inkCountProgressBar"  Grid.Column="1" Value="23" MouseEnter="inkProgressBar_MouseEnter" />
+            <Slider x:Name="pageCountSlider" Grid.Column="1" Grid.Row="1" Value="200" Maximum="400"/>
+        </Grid>
+        <Image Grid.Row="0" Source="images/printer.jpg" Grid.RowSpan="1"/>
+        <Label x:Name="printerNameLabel" Content="printer Name" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Foreground="RoyalBlue" FontSize="16" MouseEnter="EnlargeLabel" MouseLeave="BackToSize"/>
+
+    </Grid>
+</UserControl>
