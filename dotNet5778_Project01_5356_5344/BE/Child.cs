@@ -24,7 +24,7 @@ namespace BE
 
         public override string ToString()
         {
-            return name + " - CHILD\n child id: " + id + "\n birth date:\t" + birthday.ToString() + "\n mother id: " + momsId + '\n';
+            return name + " - CHILD\n child id: " + id + "\n birth date:\t" + birthday.ToShortDateString() + "\n mother id: " + momsId + '\n';
         }
 
         public Child(string my_name, int my_id, int my_motherId, DateTime my_birthday)

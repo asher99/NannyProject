@@ -8,6 +8,9 @@ using DS;
 
 namespace DAL
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Dal_imp : Idal
     {
 
@@ -33,7 +36,7 @@ namespace DAL
         /// <param name="nanny"></param>
         public void deleteNanny(Nanny nanny)
         {
-            // ---do not delete if have existing contract
+            // ---do not delete if have existing contracts
             if (isNannyInList(nanny.id))
                 DataSource.listOfNannys.Remove(nanny);
             else
@@ -81,6 +84,10 @@ namespace DAL
                 DataSource.listOfMothers.Add(mother);
         }
 
+        /// <summary>
+        /// D
+        /// </summary>
+        /// <param name="mother"></param>
         public void deleteMother(Mother mother)
         {
             //--- delete from contracts 
@@ -242,7 +249,7 @@ namespace DAL
                     return temp.momsId;
                 }
             }
-            return -1;////
+            return -1;
         }
     }
 }

@@ -560,7 +560,7 @@ namespace BL
             {
                 // sort all groups
                 foreach (var group in temp)
-                    group.OrderBy(nanny => nanny.familyName);
+                    group.OrderBy(nanny => nanny.familyName + nanny.firstName);
 
                 // sort the groups
                 temp.OrderBy(group => group.ElementAt(0).familyName);

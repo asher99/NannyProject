@@ -14,7 +14,7 @@ namespace BE
 
         public string firstName { set; get; }
 
-        public int phoneNumber { set; get; }
+        public string phoneNumber { set; get; }
 
         public string address { set; get; }
 
@@ -33,7 +33,7 @@ namespace BE
             return familyName + ' ' + firstName + " - MOTHER\n" + address + "\n id:\t" + id +'\n';
         }
 
-        public Mother(string my_familyName, string my_firstName, string my_address, int my_id, int my_phone)
+        public Mother(string my_familyName, string my_firstName, string my_address, int my_id, string my_phone)
         {
             familyName = my_familyName;
             firstName = my_firstName;

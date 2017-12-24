@@ -18,7 +18,7 @@ namespace BE
 
         public DateTime birthday { set; get; }
 
-        public int phoneNumber { set; get; }
+        public string phoneNumber { set; get; }
 
         public string address { set; get; }
 
@@ -54,12 +54,12 @@ namespace BE
 
         public override string ToString()
         {
-            return familyName + ' ' + firstName + "- NANNY\n" + address + "\n id number:\t" + id + "\n birth date:\t:" + birthday.ToString() + "\n wage per hour:\t" + hourWage + "\n wage per month:" + monthlyWage + "\n phone number:\t" + phoneNumber
+            return familyName + ' ' + firstName + "- NANNY\n" + address + "\n id number:\t" + id + "\n birth date:\t:" + birthday.ToShortDateString() + "\n wage per hour:\t" + hourWage + "\n wage per month:" + monthlyWage + "\n phone number:\t" + phoneNumber
                 + "\n nanny can take care " + maxOfKids + " kids that are " + minAgeOfKid + " to " + maxAgeOfKid + " monthes old\n";
         }
 
 
-        public Nanny(string my_lastName, string my_firstName, string my_address, int my_id,DateTime my_birthday, int my_phone, bool my_doesWorkPerHour, int perHour, int perMonth, int maxKids, int my_minAge, int my_maxAge)
+        public Nanny(string my_lastName, string my_firstName, string my_address, int my_id,DateTime my_birthday, string my_phone, bool my_doesWorkPerHour, int perHour, int perMonth, int maxKids, int my_minAge, int my_maxAge)
         {
             familyName = my_lastName;
             firstName = my_firstName;
