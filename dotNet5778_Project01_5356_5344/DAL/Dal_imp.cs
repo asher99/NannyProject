@@ -76,6 +76,10 @@ namespace DAL
             return false;
         }
 
+        /// <summary>
+        /// adds a mother to list
+        /// </summary>
+        /// <param name="mother"></param>
         public void addMother(Mother mother)
         {
             if (isMotherInList(mother.id))
