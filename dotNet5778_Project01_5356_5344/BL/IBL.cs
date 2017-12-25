@@ -9,6 +9,10 @@ using DAL;
 
 namespace BL
 {
+    /// <summary>
+    /// a interface that is incharge of the logic side of the program.
+    /// includes grouping adding and removing and more methods.
+    /// </summary>
     interface IBL
     {
         void addNanny(Nanny nanny);
@@ -44,7 +48,7 @@ namespace BL
 
         Nanny GetNannyByID(int nannyId);
         Child getChildByID(int childId);
-//        int CalculateDistance(string a, string b);
+         int distanceBetweenAddresses(string source, string dest)
         IEnumerable<IGrouping<int, Nanny>> GroupOfNannysByAgeOfKid(IEnumerable<Nanny> collection, bool byMinAge, bool sorted);
         IEnumerable<IGrouping<int, Contract>> GroupOfContractsByDistance(IEnumerable<Contract> collection, bool sorted);
 

@@ -85,7 +85,8 @@ namespace DAL
         }
 
         /// <summary>
-        /// D
+        /// deletes mother from list
+        /// 
         /// </summary>
         /// <param name="mother"></param>
         public void deleteMother(Mother mother)
@@ -97,6 +98,10 @@ namespace DAL
                 throw new Exception("mother is not in list\n");
         }
 
+        /// <summary>
+        /// update mothers info in list
+        /// </summary>
+        /// <param name="mother"></param>
         public void updateMother(Mother mother)
         {
             // ---update contract
@@ -111,6 +116,11 @@ namespace DAL
             }
         }
 
+        /// <summary>
+        /// checks if mother is in list
+        /// </summary>
+        /// <param name="motherId"></param>
+        /// <returns></returns>
         public bool isMotherInList(int motherId)
         {
             foreach (Mother temp in DataSource.listOfMothers)
@@ -121,6 +131,10 @@ namespace DAL
             return false;
         }
 
+        /// <summary>
+        /// adds child to list
+        /// </summary>
+        /// <param name="child"></param>
         public void addChild(Child child)
         {
             if (isChildInList(child.id))
@@ -129,6 +143,10 @@ namespace DAL
                 DataSource.listOfChilds.Add(child);
         }
 
+        /// <summary>
+        /// removes child from list
+        /// </summary>
+        /// <param name="child"></param>
         public void deleteChild(Child child)
         {
             // --- delete contract 
@@ -138,6 +156,10 @@ namespace DAL
                 throw new Exception("child is not in list\n");
         }
 
+        /// <summary>
+        /// updates child info
+        /// </summary>
+        /// <param name="child"></param>
         public void updateChild(Child child)
         {
             // --- update contract
@@ -152,6 +174,11 @@ namespace DAL
             }
         }
 
+        /// <summary>
+        /// checks if child is on list
+        /// </summary>
+        /// <param name="childId"></param>
+        /// <returns></returns>
         public bool isChildInList(int childId)
         {
             foreach (Child temp in DataSource.listOfChilds)
@@ -162,6 +189,10 @@ namespace DAL
             return false;
         }
 
+        /// <summary>
+        /// adds a contract to list
+        /// </summary>
+        /// <param name="contract"></param>
         public void addContract(Contract contract)
         {
             if (isContractInList(contract))
@@ -170,6 +201,10 @@ namespace DAL
                 DataSource.listOfContracts.Add(contract);
         }
 
+        /// <summary>
+        /// removes a contract
+        /// </summary>
+        /// <param name="contract"></param>
         public void deleteContract(Contract contract)
         {
             if (isContractInList(contract))
@@ -177,6 +212,10 @@ namespace DAL
             else throw new Exception("contract is not in list\n");
         }
 
+        /// <summary>
+        /// updates contract info
+        /// </summary>
+        /// <param name="contract"></param>
         public void updateContract(Contract contract)
         {
             foreach (Contract temp in DataSource.listOfContracts)
@@ -190,6 +229,11 @@ namespace DAL
             }
         }
 
+        /// <summary>
+        /// checks if contract is on list
+        /// </summary>
+        /// <param name="contract"></param>
+        /// <returns></returns>
         public bool isContractInList(Contract contract)
         {
             foreach (Contract temp in DataSource.listOfContracts)
@@ -199,7 +243,7 @@ namespace DAL
             }
             return false;
         }
-
+        // gets for all of the lists in data source
         public IEnumerable<Nanny> getListOfNanny() { return DataSource.listOfNannys.AsEnumerable(); }
         public IEnumerable<Mother> getListOfMother() { return DataSource.listOfMothers.AsEnumerable(); }
         public IEnumerable<Child> getListOfChild() { return DataSource.listOfChilds.AsEnumerable(); } // not good implemention
@@ -240,6 +284,11 @@ namespace DAL
 
         }
 
+        /// <summary>
+        /// gets mothers id by using her childs id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public int getMotherId(int id)
         {
             foreach (Child temp in DataSource.listOfChilds)

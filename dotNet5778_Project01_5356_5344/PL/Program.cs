@@ -24,33 +24,33 @@ namespace PL
             Console.WriteLine("Here we will introduce the people that participate in this program:");
             System.Threading.Thread.Sleep(4000);
 
-            Nanny Sarit = new Nanny("Friedman", "Sarit", "Tal Institute - College of Technology", 758556411, new DateTime(1995, 7, 15), 508494561, true, 40, 1700, 12, 4, 24);
+            Nanny Sarit = new Nanny("Friedman", "Sarit", "Tal Institute - College of Technology", 758556411, new DateTime(1995, 7, 15), "508494561", true, 40, 1700, 12, 4, 24);
             Console.WriteLine(Sarit);
             System.Threading.Thread.Sleep(2500);
 
-            Nanny Chagit = new Nanny("Cohen", "Chagit", "jaffa street 31 Jerusalem", 647859321, new DateTime(1992, 11, 2), 504741121, true, 75, 1400, 6, 10, 36);
+            Nanny Chagit = new Nanny("Cohen", "Chagit", "jaffa street 31 Jerusalem", 647859321, new DateTime(1992, 11, 2), "504741121", true, 75, 1400, 6, 10, 36);
             Console.WriteLine(Chagit);
             System.Threading.Thread.Sleep(2500);
 
-            Nanny Avigail = new Nanny("Morad", "Avigail", "Haneviaim street 25 Jerusalem", 812535224, new DateTime(1996, 3, 28), 509822451, false, 0, 1660, 9, 4, 32);
+            Nanny Avigail = new Nanny("Morad", "Avigail", "Haneviaim street 25 Jerusalem", 812535224, new DateTime(1996, 3, 28), "509822451", false, 0, 1660, 9, 4, 32);
             Console.WriteLine(Avigail);
             System.Threading.Thread.Sleep(2500);
 
-            Nanny Chaya = new Nanny("Scholssberg", "Chaya", "Nikanor street 15, Jerualem", 316525442, new DateTime(2002, 10, 25), 528494531, true, 45, 1300, 12, 7, 32);
+            Nanny Chaya = new Nanny("Scholssberg", "Chaya", "Nikanor street 15, Jerualem", 316525442, new DateTime(2002, 10, 25), "528494531", true, 45, 1300, 12, 7, 32);
             Console.WriteLine(Chaya);
             System.Threading.Thread.Sleep(2500);
 
             Console.WriteLine("**********");
 
-            Mother Rivka = new Mother("Aflalo", "Rivka", "Lev Academic Center", 456223300, 502283470);
+            Mother Rivka = new Mother("Aflalo", "Rivka", "Lev Academic Center", 456223300, "502283470");
             Console.WriteLine(Rivka);
             System.Threading.Thread.Sleep(2500);
 
-            Mother Hadasa = new Mother("Hadasa", "Weiss", "King George 20 Jerusalem", 316522107, 523566464);
+            Mother Hadasa = new Mother("Hadasa", "Weiss", "King George 20 Jerusalem", 316522107, "523566464");
             Console.WriteLine(Hadasa);
             System.Threading.Thread.Sleep(2500);
 
-            Mother Yael = new Mother("Adler", "Yael", "Yermiyahu street 14 Jerusalem", 316522488, 523578461);
+            Mother Yael = new Mother("Adler", "Yael", "Yermiyahu street 14 Jerusalem", 316522488, "523578461");
             Console.WriteLine(Yael);
             System.Threading.Thread.Sleep(2500);
 

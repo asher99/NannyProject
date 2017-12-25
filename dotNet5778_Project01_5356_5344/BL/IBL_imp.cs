@@ -10,7 +10,9 @@ using GoogleMapsApi.Entities.Directions.Request;
 using GoogleMapsApi.Entities.Directions.Response;
 namespace BL
 {
-
+    /// <summary>
+    /// 
+    /// </summary>
     public class IBL_imp : IBL
     {
         Dal_imp myDal = new Dal_imp();
@@ -100,6 +102,11 @@ namespace BL
             myDal.deleteChild(child);
         }
 
+        /// <summary>
+        /// updates child information
+        /// using DAL method
+        /// </summary>
+        /// <param name="child"></param>
         public void updateChild(Child child)
         {
             myDal.updateChild(child);
@@ -182,31 +189,61 @@ namespace BL
             myDal.addContract(contract);  // goes to DAL method     
         }
 
+        /// <summary>
+        /// removes contract from list
+        /// using DAL method
+        /// </summary>
+        /// <param name="contract"></param>
         public void deleteContract(Contract contract)
         {
             myDal.deleteContract(contract);
         }
 
+        /// <summary>
+        /// updates the contract information
+        /// using DAL method
+        /// </summary>
+        /// <param name="contract"></param>
         public void updateContract(Contract contract)
         {
             myDal.updateContract(contract);
         }
 
+        /// <summary>
+        /// gets list of nannys
+        /// using DAL method
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Nanny> getListOfNanny()
         {
             return myDal.getListOfNanny();
         }
 
+        /// <summary>
+        /// gets list of mothers
+        /// using DAL method
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Mother> getListOfMother()
         {
             return myDal.getListOfMother();
         }
 
+        /// <summary>
+        /// gets list of children
+        /// using DAL method
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Child> getListOfChild()
         {
             return myDal.getListOfChild();
         }
 
+        /// <summary>
+        /// gets list off all singed contracts 
+        /// using DAL method
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Contract> getListOfContract()
         {
             return myDal.getListOfContract();
@@ -222,31 +259,67 @@ namespace BL
             return myDal.IdExist(id);
         }
 
+        /// <summary>
+        /// gives a new contract a serial number
+        /// using DAL method
+        /// </summary>
+        /// <param name="contract"></param>
+        /// <returns></returns>
         public bool initalizeContractNumber(Contract contract)
         {
             return myDal.initalizeContractNumber(contract);
         }
 
+        /// <summary>
+        /// checks if nanny is on list
+        /// using DAL method
+        /// </summary>
+        /// <param name="nanny"></param>
+        /// <returns></returns>
         public bool isNannyInList(int nanny)
         {
             return myDal.isNannyInList(nanny);
         }
 
+        /// <summary>
+        /// checks if mother is on list
+        /// using DAL method
+        /// </summary>
+        /// <param name="mother"></param>
+        /// <returns></returns>
         public bool isMotherInList(int mother)
         {
             return myDal.isMotherInList(mother);
         }
 
+        /// <summary>
+        /// checks if child is on list
+        /// using DAL method
+        /// </summary>
+        /// <param name="child"></param>
+        /// <returns></returns>
         public bool isChildInList(int child)
         {
             return myDal.isChildInList(child);
         }
 
+        /// <summary>
+        /// checks if a contract is on list 
+        /// using DAL method
+        /// </summary>
+        /// <param name="contract"></param>
+        /// <returns></returns>
         public bool isContractInList(Contract contract)
         {
             return myDal.isContractInList(contract);
         }
 
+        /// <summary>
+        ///  returns the object of child from list by searching is id
+        ///  using DAL method
+        /// </summary>
+        /// <param name="childId"></param>
+        /// <returns></returns>
         public Child getChildByID(int childId)
         {
             var temp = from item in myDal.getListOfChild()
@@ -256,6 +329,12 @@ namespace BL
             return temp.ElementAt(0);
         }
 
+        /// <summary>
+        ///  returns the object of nanny from list by searching is id
+        ///  using DAL method
+        /// </summary>
+        /// <param name="nannyId"></param>
+        /// <returns></returns>
         public Nanny GetNannyByID(int nannyId)
         {
             var temp = from item in myDal.getListOfNanny()
@@ -265,6 +344,12 @@ namespace BL
             return temp.ElementAt(0);
         }
 
+        /// <summary>
+        ///  returns the object of mother from list by searching her childs id
+        ///  using DAL method
+        /// </summary>
+        /// <param name="childId"></param>
+        /// <returns></returns>
         public Mother GetMotherByChildID(int childId)
         {
             int motherId = myDal.getMotherId(childId);
@@ -501,6 +586,10 @@ namespace BL
 
         }
 
+        /// <summary>
+        /// returns a list of all nannys that have a goverment vacation days
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Nanny> NannysWithGovVacation()
         {
             return from item in myDal.getListOfNanny() // tzvi check...
