@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace BE
 {
+    /// <summary>
+    /// represents a contract that a mother does with a nanny.
+    /// include hours of work and payments ext.
+    /// </summary>
     public class Contract
     {
         public int numberOfContract { set; get; }// maybe a special class?

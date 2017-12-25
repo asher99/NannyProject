@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace BE
 {
+    /// <summary>
+    /// Represents a day of work start and finish
+    /// int for hour and a int for minute
+    /// </summary>
     public class Day
     {
         public int start_hour { set; get; }

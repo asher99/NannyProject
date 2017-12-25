@@ -48,7 +48,7 @@ namespace BL
 
         Nanny GetNannyByID(int nannyId);
         Child getChildByID(int childId);
-         int distanceBetweenAddresses(string source, string dest)
+        int distanceBetweenAddresses(string source, string dest);
         IEnumerable<IGrouping<int, Nanny>> GroupOfNannysByAgeOfKid(IEnumerable<Nanny> collection, bool byMinAge, bool sorted);
         IEnumerable<IGrouping<int, Contract>> GroupOfContractsByDistance(IEnumerable<Contract> collection, bool sorted);
 

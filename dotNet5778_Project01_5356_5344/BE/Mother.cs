@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace BE
 {
+    /// <summary>
+    /// Represents a mother has personal information
+    /// and information about hours of need of nanny
+    /// </summary>
     public class Mother
     {
         public int id { set; get; }
@@ -23,7 +27,7 @@ namespace BE
         public bool[] daysOfNanny = new bool[6]; // 
         public Day[] hoursByNanny = new Day[6]; 
 
-
+        public bool wantsATrialMeeting { set; get; }
 
         public string comments { set; get; }
         // more options if needed

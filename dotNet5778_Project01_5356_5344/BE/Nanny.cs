@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace BE
 {
+    /// <summary>
+    /// Represents a nanny has personal and professinal information 
+    /// and includes address ext.
+    /// </summary>
     public class Nanny
     {
         // nannys Personal Information

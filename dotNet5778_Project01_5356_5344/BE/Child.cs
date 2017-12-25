@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace BE
 {
+    /// <summary>
+    /// Represents a child that is going to be taken care of by a nanny
+    /// only the child has information about his mother
+    /// </summary>
     public class Child
     {
         public int id { set; get; }
