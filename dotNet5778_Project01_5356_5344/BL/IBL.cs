@@ -33,7 +33,7 @@ namespace BL
 
         IEnumerable<Nanny> getListOfNanny();
         IEnumerable<Mother> getListOfMother();
-        IEnumerable<Child> getListOfChild(); // not good implemention
+        IEnumerable<Child> getListOfChild();
         IEnumerable<Contract> getListOfContract();
 
         // scan all ids in all lists
@@ -52,6 +52,9 @@ namespace BL
         IEnumerable<IGrouping<int, Nanny>> GroupOfNannysByAgeOfKid(IEnumerable<Nanny> collection, bool byMinAge, bool sorted);
         IEnumerable<IGrouping<int, Contract>> GroupOfContractsByDistance(IEnumerable<Contract> collection, bool sorted);
 
+
+        IEnumerable<Contract> ListOfContractsById(int id);
+        IEnumerable<Child> getListOfChildByMother(Mother mother);
 
 
     }

@@ -38,6 +38,13 @@ namespace BL
         /// <param name="nanny"></param>
         public void deleteNanny(Nanny nanny)
         {
+            // deletes all contracts associated with nanny
+            IEnumerable<Contract> nannyContracts = ListOfContractsById(nanny.id);
+            if (nannyContracts != null)
+            {
+                foreach (Contract c in nannyContracts)
+                    deleteContract(c);
+            }
             myDal.deleteNanny(nanny);
         }
 
@@ -68,6 +75,15 @@ namespace BL
         /// <param name="mother"></param>
         public void deleteMother(Mother mother)
         {
+            //deletes all children => all contracts => decreasing Nanny number of signed contracts
+            IEnumerable<Child> childrenOfMother = getListOfChildByMother(mother);
+            if (childrenOfMother != null)
+            {
+                foreach (Child c in childrenOfMother)
+                    deleteChild(c);
+
+            }
+
             myDal.deleteMother(mother);
         }
 
@@ -99,7 +115,16 @@ namespace BL
         /// <param name="child"></param>
         public void deleteChild(Child child)
         {
+            // delete all contracts that this child was involved with => decreasing Nanny number of signed contracts
+            IEnumerable<Contract> childContracts = ListOfContractsById(child.id);
+            if (childContracts != null)
+            {
+                foreach (Contract c in childContracts)
+                    deleteContract(c);
+            }
             myDal.deleteChild(child);
+
+
         }
 
         /// <summary>
@@ -122,7 +147,7 @@ namespace BL
 
             Child child = getChildByID(contract.childId);
 
-            if(!myDal.isChildInList(child.id))
+            if (!myDal.isChildInList(child.id))
             {
                 throw new Exception("cannot sign contract:\n child is not exist in DS!.\nthose are the contract detail:\n" +
       "***********************************************\n" + contract.ToString() + "***********************************************\n");
@@ -196,7 +221,16 @@ namespace BL
         /// <param name="contract"></param>
         public void deleteContract(Contract contract)
         {
+            //--- throw "notice to mother and nanny"
             myDal.deleteContract(contract);
+
+
+            // decrease number of signed contract of nanny
+            Nanny temp = GetNannyByID(contract.NannysId);
+            if (temp != null)
+            {
+                temp.numberOfSignedContracts--;
+            }
         }
 
         /// <summary>
@@ -516,7 +550,7 @@ namespace BL
         {
             List<Nanny> list = new List<Nanny>();
             int counter = 0;
-            
+
             foreach (Nanny nanny in myDal.getListOfNanny())
             {
                 bool flag = true;
@@ -540,7 +574,7 @@ namespace BL
                 return list;
             else
                 throw new Exception("no nanny was found");
-      }
+        }
 
         /// <summary>
         /// returns Nannys that stands in moms demands and in some range
@@ -565,11 +599,11 @@ namespace BL
         public IEnumerable<Child> ChildrenWithoutNanny()
         {
             List<Child> listNoNanny = new List<Child>();
-            
-            foreach(Child kid in myDal.getListOfChild())
+
+            foreach (Child kid in myDal.getListOfChild())
             {
                 bool flag = true;
-                foreach(Contract contract in myDal.getListOfContract())
+                foreach (Contract contract in myDal.getListOfContract())
                 {
                     if (contract.childId == kid.id)
                         flag = false;
@@ -687,6 +721,28 @@ namespace BL
 
         }
 
+        /// <summary>
+        /// return list of contracts that share an id number.
+        /// </summary>
+        /// <param name="my_id"></param>
+        /// <returns></returns>
+        public IEnumerable<Contract> ListOfContractsById(int my_id)
+        {
+            return from temp in myDal.getListOfContract()
+                   where (temp.NannysId == my_id || temp.childId == my_id)
+                   select temp;
+        }
 
+        /// <summary>
+        /// return list of children that have the same mother.
+        /// </summary>
+        /// <param name="mother"></param>
+        /// <returns></returns>
+        public IEnumerable<Child> getListOfChildByMother(Mother mother)
+        {
+            return from child in myDal.getListOfChild()
+                   where child.momsId == mother.id
+                   select child;
+        }
     }
 }
