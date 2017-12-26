@@ -7,6 +7,10 @@ using BE;
 using DS;
 namespace DAL
 {
+    /// <summary>
+    /// the interface of the DAL layer
+    /// points to all the methods that are defined in Dal_imp
+    /// </summary>
     public interface Idal
     {
         void addNanny(Nanny nanny);

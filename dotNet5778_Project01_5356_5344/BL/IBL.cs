@@ -10,8 +10,8 @@ using DAL;
 namespace BL
 {
     /// <summary>
-    /// a interface that is incharge of the logic side of the program.
-    /// includes grouping adding and removing and more methods.
+    /// the interface of the BL layer
+    /// points to all the methods that are defined in IBL_imp
     /// </summary>
     interface IBL
     {

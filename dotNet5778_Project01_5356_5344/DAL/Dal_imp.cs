@@ -9,7 +9,9 @@ using DS;
 namespace DAL
 {
     /// <summary>
-    /// 
+    /// implantation for all DAL methods
+    /// this layer is incharge of taking care of all the data process in this program
+    /// each function helps the process either go to upper levels or writes into the Data Source
     /// </summary>
     public class Dal_imp : Idal
     {
@@ -275,13 +277,13 @@ namespace DAL
         /// <returns></returns>
         public bool initalizeContractNumber(Contract contract)
         {
-           
+
             if (IdExist(contract.NannysId) && IdExist(getMotherId(contract.childId)))
             {
                 contract.numberOfContract = contractsSerialNumber + 3;
                 contractsSerialNumber++;
                 contract.isSingedContract = true;// now contract is signed
-                
+
                 return true;
             }
             else return false;

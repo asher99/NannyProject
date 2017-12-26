@@ -11,7 +11,9 @@ using GoogleMapsApi.Entities.Directions.Response;
 namespace BL
 {
     /// <summary>
-    /// 
+    /// implantation for all BL methods
+    /// this layer is incharge of taking care of all the logical process in this program
+    /// each function makes sure all is equit and then sends to bottom level - DAL
     /// </summary>
     public class IBL_imp : IBL
     {
