@@ -80,6 +80,7 @@ namespace BE
             ExpirationDate = StartDate.AddMonths(6);
 
             numberOfContract = -1;
+            isSingedContract = false;
         }
     }
 

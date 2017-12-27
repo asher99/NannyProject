@@ -51,13 +51,13 @@ namespace DAL
         /// <param name="nanny"></param>
         public void updateNanny(Nanny nanny)
         {
-            // ---update also all contracts
             foreach (Nanny temp in DataSource.listOfNannys)
             {
                 if (temp.id == nanny.id)
                 {
                     DataSource.listOfNannys.Remove(temp);
                     DataSource.listOfNannys.Add(nanny);
+                    // ---update also all contracts of nannys
                     return;
                 }
             }
@@ -84,10 +84,7 @@ namespace DAL
         /// <param name="mother"></param>
         public void addMother(Mother mother)
         {
-            if (isMotherInList(mother.id))
-                throw new Exception("mother already in list\n");
-            else
-                DataSource.listOfMothers.Add(mother);
+            DataSource.listOfMothers.Add(mother);
         }
 
         /// <summary>
@@ -97,11 +94,7 @@ namespace DAL
         /// <param name="mother"></param>
         public void deleteMother(Mother mother)
         {
-            //--- delete from contracts 
-            if (isMotherInList(mother.id))
-                DataSource.listOfMothers.Remove(mother);
-            else
-                throw new Exception("mother is not in list\n");
+            DataSource.listOfMothers.Remove(mother);
         }
 
         /// <summary>
@@ -143,10 +136,7 @@ namespace DAL
         /// <param name="child"></param>
         public void addChild(Child child)
         {
-            if (isChildInList(child.id))
-                throw new Exception("child already in list\n");
-            else
-                DataSource.listOfChilds.Add(child);
+            DataSource.listOfChilds.Add(child);
         }
 
         /// <summary>
@@ -155,11 +145,7 @@ namespace DAL
         /// <param name="child"></param>
         public void deleteChild(Child child)
         {
-            // --- delete contract 
-            if (isChildInList(child.id))
-                DataSource.listOfChilds.Remove(child);
-            else
-                throw new Exception("child is not in list\n");
+            DataSource.listOfChilds.Remove(child);
         }
 
         /// <summary>
@@ -201,9 +187,6 @@ namespace DAL
         /// <param name="contract"></param>
         public void addContract(Contract contract)
         {
-            if (isContractInList(contract))
-                throw new Exception("contract already in list\n");
-            else
                 DataSource.listOfContracts.Add(contract);
         }
 
@@ -213,9 +196,7 @@ namespace DAL
         /// <param name="contract"></param>
         public void deleteContract(Contract contract)
         {
-            if (isContractInList(contract))
                 DataSource.listOfContracts.Remove(contract);
-            else throw new Exception("contract is not in list\n");
         }
 
         /// <summary>

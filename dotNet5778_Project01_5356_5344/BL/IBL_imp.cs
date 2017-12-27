@@ -57,7 +57,10 @@ namespace BL
         /// <param name="nanny"></param>
         public void updateNanny(Nanny nanny)
         {
-            myDal.updateNanny(nanny);
+            if (isNannyInList(nanny.id))
+                myDal.updateNanny(nanny);
+            else
+                throw new Exception("the nanny is not in the system.\n");
         }
 
         /// <summary>
@@ -67,7 +70,11 @@ namespace BL
         /// <param name="mother"></param>
         public void addMother(Mother mother)
         {
-            myDal.addMother(mother);
+            // if trying to add a existing mother
+            if (isMotherInList(mother.id))
+                throw new Exception("you are trying to add a existing mother.\n");
+            else
+                myDal.addMother(mother);
         }
 
         /// <summary>
@@ -77,15 +84,17 @@ namespace BL
         /// <param name="mother"></param>
         public void deleteMother(Mother mother)
         {
+            // if the mother for delete is not in the system
+            if (!isMotherInList(mother.id))
+                throw new Exception("you are trying to delete a mother that dosent exist\n");
+
             //deletes all children => all contracts => decreasing Nanny number of signed contracts
             IEnumerable<Child> childrenOfMother = getListOfChildByMother(mother);
             if (childrenOfMother != null)
             {
                 foreach (Child c in childrenOfMother)
                     deleteChild(c);
-
             }
-
             myDal.deleteMother(mother);
         }
 
@@ -96,6 +105,8 @@ namespace BL
         /// <param name="mother"></param>
         public void updateMother(Mother mother)
         {
+            if (!isMotherInList(mother.id))
+                throw new Exception("the mother for update is not in the system.\n");
             myDal.updateMother(mother);
         }
 
@@ -106,8 +117,13 @@ namespace BL
         /// <param name="child"></param>
         public void addChild(Child child)
         {
-            //   if (DateTime.Now.CompareTo(child.birthday.AddMonths(3)) >= 0)
-            myDal.addChild(child);
+            if (isChildInList(child.id))
+                throw new Exception("child already in list\n");
+
+            if (DateTime.Now.CompareTo(child.birthday.AddMonths(3)) >= 0)
+                myDal.addChild(child);
+            else
+                throw new Exception("the child is to young to be send to nanny.\n");
         }
 
         /// <summary>
@@ -117,6 +133,9 @@ namespace BL
         /// <param name="child"></param>
         public void deleteChild(Child child)
         {
+            if (!isChildInList(child.id))
+                throw new Exception("child is not in the system\n");
+
             // delete all contracts that this child was involved with => decreasing Nanny number of signed contracts
             IEnumerable<Contract> childContracts = ListOfContractsById(child.id);
             if (childContracts != null)
@@ -136,6 +155,8 @@ namespace BL
         /// <param name="child"></param>
         public void updateChild(Child child)
         {
+            if (!isChildInList(child.id))
+                throw new Exception("the child is not in the system.\n");
             myDal.updateChild(child);
         }
 
@@ -145,7 +166,10 @@ namespace BL
         /// <param name="contract"></param>
         public void addContract(Contract contract)
         {
-            contract.isSingedContract = false;
+            if (isContractInList(contract))
+                throw new Exception("the contract is already in the system.\n");
+
+            // contract.isSingedContract = false;
 
             Child child = getChildByID(contract.childId);
 
@@ -223,9 +247,9 @@ namespace BL
         /// <param name="contract"></param>
         public void deleteContract(Contract contract)
         {
+            if (!isContractInList(contract))
+                throw new Exception("the contract is not in the system.\n");
             //--- throw "notice to mother and nanny"
-            myDal.deleteContract(contract);
-
 
             // decrease number of signed contract of nanny
             Nanny temp = GetNannyByID(contract.NannysId);
@@ -233,6 +257,7 @@ namespace BL
             {
                 temp.numberOfSignedContracts--;
             }
+            myDal.deleteContract(contract);
         }
 
         /// <summary>
@@ -242,6 +267,9 @@ namespace BL
         /// <param name="contract"></param>
         public void updateContract(Contract contract)
         {
+            if (isContractInList(contract))
+                throw new Exception("the contract is already in the system.\n");
+
             myDal.updateContract(contract);
         }
 
