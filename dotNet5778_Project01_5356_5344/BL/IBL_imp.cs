@@ -41,13 +41,6 @@ namespace BL
         /// <param name="nanny"></param>
         public void deleteNanny(Nanny nanny)
         {
-            // deletes all contracts associated with nanny
-            IEnumerable<Contract> nannyContracts = ListOfContractsById(nanny.id);
-            if (nannyContracts != null)
-            {
-                foreach (Contract c in nannyContracts)
-                    deleteContract(c);
-            }
             myDal.deleteNanny(nanny);
         }
 
@@ -78,15 +71,6 @@ namespace BL
         /// <param name="mother"></param>
         public void deleteMother(Mother mother)
         {
-
-
-            //deletes all children => all contracts => decreasing Nanny number of signed contracts
-            IEnumerable<Child> childrenOfMother = getListOfChildByMother(mother);
-            if (childrenOfMother != null)
-            {
-                foreach (Child c in childrenOfMother)
-                    deleteChild(c);
-            }
             myDal.deleteMother(mother);
         }
 
@@ -120,17 +104,7 @@ namespace BL
         /// <param name="child"></param>
         public void deleteChild(Child child)
         {
-
-            // delete all contracts that this child was involved with => decreasing Nanny number of signed contracts
-            IEnumerable<Contract> childContracts = ListOfContractsById(child.id);
-            if (childContracts != null)
-            {
-                foreach (Contract c in childContracts)
-                    deleteContract(c);
-            }
             myDal.deleteChild(child);
-
-
         }
 
         /// <summary>
@@ -736,9 +710,7 @@ namespace BL
         /// <returns></returns>
         public IEnumerable<Contract> ListOfContractsById(int my_id)
         {
-            return from temp in myDal.getListOfContract()
-                   where (temp.NannysId == my_id || temp.childId == my_id)
-                   select temp;
+            return myDal.ListOfContractsById(my_id);
         }
 
         /// <summary>
@@ -748,9 +720,7 @@ namespace BL
         /// <returns></returns>
         public IEnumerable<Child> getListOfChildByMother(Mother mother)
         {
-            return from child in myDal.getListOfChild()
-                   where child.momsId == mother.id
-                   select child;
+            return myDal.getListOfChildByMother(mother);
         }
     }
 }

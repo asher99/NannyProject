@@ -25,11 +25,9 @@ namespace DAL
         {
             if (isNannyInList(nanny.id))
                 throw new Exception("nanny already in list\n");
-            else
-            {
-                DataSource.listOfNannys.Add(nanny);
-                return;
-            }
+            DataSource.listOfNannys.Add(nanny);
+            return;
+
         }
 
         /// <summary>
@@ -38,11 +36,18 @@ namespace DAL
         /// <param name="nanny"></param>
         public void deleteNanny(Nanny nanny)
         {
-            // ---do not delete if have existing contracts
-            if (isNannyInList(nanny.id))
-                DataSource.listOfNannys.Remove(nanny);
-            else
+            if (!isNannyInList(nanny.id))
                 throw new Exception("nanny is not in list\n");
+
+            // deletes all contracts associated with nanny
+            IEnumerable<Contract> nannyContracts = ListOfContractsById(nanny.id);
+            if (nannyContracts != null)
+            {
+                foreach (Contract c in nannyContracts)
+                    deleteContract(c);
+            }
+
+            DataSource.listOfNannys.Remove(nanny);
         }
 
         /// <summary>
@@ -59,7 +64,7 @@ namespace DAL
                 {
                     DataSource.listOfNannys.Remove(temp);
                     DataSource.listOfNannys.Add(nanny);
-                    // ---update also all contracts of nanny's
+                    // ---update also all contracts of nanny's ???
                     return;
                 }
             }
@@ -103,6 +108,15 @@ namespace DAL
             // if the mother for delete is not in the system
             if (!isMotherInList(mother.id))
                 throw new Exception("you are trying to delete a mother that does not exist\n");
+
+            //deletes all children => all contracts => decreasing Nanny number of signed contracts
+            IEnumerable<Child> childrenOfMother = getListOfChildByMother(mother);
+            if (childrenOfMother != null)
+            {
+                foreach (Child c in childrenOfMother)
+                    deleteChild(c);
+            }
+
             DataSource.listOfMothers.Remove(mother);
         }
 
@@ -115,7 +129,7 @@ namespace DAL
             if (!isMotherInList(mother.id))
                 throw new Exception("the mother for update is not in the system.\n");
 
-            // ---update contract
+            // ---update contract ???
             foreach (Mother temp in DataSource.listOfMothers)
             {
                 if (temp.id == mother.id)
@@ -148,8 +162,12 @@ namespace DAL
         /// <param name="child"></param>
         public void addChild(Child child)
         {
-            if (isChildInList(child.id))
+            if (isChildInList(child.id)) 
                 throw new Exception("child already in list\n");
+
+            if(!isMotherInList(getMotherId(child.id))) // if the child does not have a mother
+                throw new Exception("this child does not have a mother in the system.\n");
+
             DataSource.listOfChilds.Add(child);
         }
 
@@ -161,6 +179,15 @@ namespace DAL
         {
             if (!isChildInList(child.id))
                 throw new Exception("child is not in the system\n");
+
+            // delete all contracts that this child was involved with => decreasing Nanny number of signed contracts
+            IEnumerable<Contract> childContracts = ListOfContractsById(child.id);
+            if (childContracts != null)
+            {
+                foreach (Contract c in childContracts)
+                    deleteContract(c);
+            }
+
             DataSource.listOfChilds.Remove(child);
         }
 
@@ -254,10 +281,11 @@ namespace DAL
             }
             return false;
         }
+
         // gets for all of the lists in data source
         public IEnumerable<Nanny> getListOfNanny() { return DataSource.listOfNannys.AsEnumerable(); }
         public IEnumerable<Mother> getListOfMother() { return DataSource.listOfMothers.AsEnumerable(); }
-        public IEnumerable<Child> getListOfChild() { return DataSource.listOfChilds.AsEnumerable(); } // not good implementation
+        public IEnumerable<Child> getListOfChild() { return DataSource.listOfChilds.AsEnumerable(); }
         public IEnumerable<Contract> getListOfContract() { return DataSource.listOfContracts.AsEnumerable(); }
 
         /// <summary>
@@ -310,6 +338,21 @@ namespace DAL
                 }
             }
             return -1;
+        }
+
+        public IEnumerable<Contract> ListOfContractsById(int my_id)
+        {
+
+            return from temp in getListOfContract()
+                   where (temp.NannysId == my_id || temp.childId == my_id)
+                   select temp;
+        }
+
+        public IEnumerable<Child> getListOfChildByMother(Mother mother)
+        {
+            return from child in getListOfChild()
+                   where child.momsId == mother.id
+                   select child;
         }
     }
 }
