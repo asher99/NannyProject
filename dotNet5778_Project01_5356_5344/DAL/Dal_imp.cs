@@ -51,6 +51,8 @@ namespace DAL
         /// <param name="nanny"></param>
         public void updateNanny(Nanny nanny)
         {
+            if (!isNannyInList(nanny.id))
+                throw new Exception("the nanny is not in the system.\n");
             foreach (Nanny temp in DataSource.listOfNannys)
             {
                 if (temp.id == nanny.id)
@@ -84,7 +86,11 @@ namespace DAL
         /// <param name="mother"></param>
         public void addMother(Mother mother)
         {
-            DataSource.listOfMothers.Add(mother);
+            // if trying to add a existing mother
+            if (isMotherInList(mother.id))
+                throw new Exception("you are trying to add a existing mother.\n");
+            else
+                DataSource.listOfMothers.Add(mother);
         }
 
         /// <summary>
@@ -94,6 +100,9 @@ namespace DAL
         /// <param name="mother"></param>
         public void deleteMother(Mother mother)
         {
+            // if the mother for delete is not in the system
+            if (!isMotherInList(mother.id))
+                throw new Exception("you are trying to delete a mother that does not exist\n");
             DataSource.listOfMothers.Remove(mother);
         }
 
@@ -103,6 +112,9 @@ namespace DAL
         /// <param name="mother"></param>
         public void updateMother(Mother mother)
         {
+            if (!isMotherInList(mother.id))
+                throw new Exception("the mother for update is not in the system.\n");
+
             // ---update contract
             foreach (Mother temp in DataSource.listOfMothers)
             {
@@ -136,6 +148,8 @@ namespace DAL
         /// <param name="child"></param>
         public void addChild(Child child)
         {
+            if (isChildInList(child.id))
+                throw new Exception("child already in list\n");
             DataSource.listOfChilds.Add(child);
         }
 
@@ -145,6 +159,8 @@ namespace DAL
         /// <param name="child"></param>
         public void deleteChild(Child child)
         {
+            if (!isChildInList(child.id))
+                throw new Exception("child is not in the system\n");
             DataSource.listOfChilds.Remove(child);
         }
 
@@ -154,6 +170,8 @@ namespace DAL
         /// <param name="child"></param>
         public void updateChild(Child child)
         {
+            if (!isChildInList(child.id))
+                throw new Exception("the child is not in the system.\n");
             // --- update contract
             foreach (Child temp in DataSource.listOfChilds)
             {
@@ -187,7 +205,9 @@ namespace DAL
         /// <param name="contract"></param>
         public void addContract(Contract contract)
         {
-                DataSource.listOfContracts.Add(contract);
+            if (isContractInList(contract))
+                throw new Exception("the contract is already in the system.\n");
+            DataSource.listOfContracts.Add(contract);
         }
 
         /// <summary>
@@ -196,7 +216,9 @@ namespace DAL
         /// <param name="contract"></param>
         public void deleteContract(Contract contract)
         {
-                DataSource.listOfContracts.Remove(contract);
+            if (!isContractInList(contract))
+                throw new Exception("the contract is not in the system.\n");
+            DataSource.listOfContracts.Remove(contract);
         }
 
         /// <summary>
@@ -205,6 +227,8 @@ namespace DAL
         /// <param name="contract"></param>
         public void updateContract(Contract contract)
         {
+            if (!isContractInList(contract))
+                throw new Exception("the contract is not in the system.\n");
             foreach (Contract temp in DataSource.listOfContracts)
             {
                 if (temp.numberOfContract == contract.numberOfContract)
