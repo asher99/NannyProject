@@ -506,7 +506,7 @@ namespace BL
 
             DirectionsResponse drivingDirections = GoogleMaps.Directions.Query(drivingDirectionRequest);
             if (drivingDirections.Routes == null)
-                throw new Exception("<cannot find address in Google Maps>");
+                throw new Exception("cannot find address in Google Maps");
 
             Route route = drivingDirections.Routes.First();
             Leg leg = route.Legs.First();
@@ -681,7 +681,7 @@ namespace BL
         IEnumerable<Contract> GetAllContracts(Func<Contract, bool> predicate = null)
         {
             //  return from item in myDal.getListOfContract()
-            //       where predicate == true // what to do???
+              //     where predicate == true // what to do???
             //     select item;
 
             return null;
