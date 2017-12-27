@@ -31,7 +31,7 @@ namespace DAL
 
         IEnumerable<Nanny> getListOfNanny();
         IEnumerable<Mother> getListOfMother();
-        IEnumerable<Child> getListOfChild(); // not good implemention
+        IEnumerable<Child> getListOfChild(); // not good implementation
         IEnumerable<Contract> getListOfContract();
 
         // scan all ids in all lists

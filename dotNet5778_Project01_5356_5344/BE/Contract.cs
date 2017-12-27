@@ -50,13 +50,13 @@ namespace BE
 
         /// <summary>
         /// Contract object constructor. receive id of both nanny and child and boolean variable to determine if the contract is monthly or per hour.
-        /// if it's per month : the salary enterd is monthly salary, if not: the salary is salary per hour.
-        /// start date is immediatly and expiration date is in more six months.
+        /// if it's per month : the salary entered is monthly salary, if not: the salary is salary per hour.
+        /// start date is immediately and expiration date is in more six months.
         /// </summary>
         /// <param name="my_nannyId"></param>
         /// <param name="my_childId"></param>
         /// <param name="my_isMonthContract"></param>
-        /// <param name="salary">based pn the boolean field, this salary can be per month or per hour.</param>
+        /// <param name="salary">based on the boolean field, this salary can be per month or per hour.</param>
         public Contract(Nanny my_nanny, Child my_child, bool my_isMonthContract)
         {
             NannysId = my_nanny.id;

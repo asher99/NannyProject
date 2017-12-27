@@ -10,7 +10,7 @@ namespace DAL
 {
     /// <summary>
     /// implantation for all DAL methods
-    /// this layer is incharge of taking care of all the data process in this program
+    /// this layer is in charge of taking care of all the data process in this program
     /// each function helps the process either go to upper levels or writes into the Data Source
     /// </summary>
     public class Dal_imp : Idal
@@ -57,14 +57,14 @@ namespace DAL
                 {
                     DataSource.listOfNannys.Remove(temp);
                     DataSource.listOfNannys.Add(nanny);
-                    // ---update also all contracts of nannys
+                    // ---update also all contracts of nanny's
                     return;
                 }
             }
         }
 
         /// <summary>
-        /// checks if nannys id is in the DS
+        /// checks if nanny's id is in the DS
         /// </summary>
         /// <param name="nannyId"></param>
         /// <returns></returns>
@@ -233,7 +233,7 @@ namespace DAL
         // gets for all of the lists in data source
         public IEnumerable<Nanny> getListOfNanny() { return DataSource.listOfNannys.AsEnumerable(); }
         public IEnumerable<Mother> getListOfMother() { return DataSource.listOfMothers.AsEnumerable(); }
-        public IEnumerable<Child> getListOfChild() { return DataSource.listOfChilds.AsEnumerable(); } // not good implemention
+        public IEnumerable<Child> getListOfChild() { return DataSource.listOfChilds.AsEnumerable(); } // not good implementation
         public IEnumerable<Contract> getListOfContract() { return DataSource.listOfContracts.AsEnumerable(); }
 
         /// <summary>
@@ -272,7 +272,7 @@ namespace DAL
         }
 
         /// <summary>
-        /// gets mothers id by using her childs id
+        /// gets mothers id by using her childes id
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>

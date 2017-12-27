@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace BE
 {
     /// <summary>
-    /// Represents a nanny has personal and professinal information 
+    /// Represents a nanny has personal and professional information 
     /// and includes address ext.
     /// </summary>
     public class Nanny
     {
-        // nannys Personal Information
+        // nanny's Personal Information
 
         public int id { set; get; }
 
@@ -39,13 +39,13 @@ namespace BE
 
         public int maxAgeOfKid { set; get; }
 
-        public bool doesWorkPerHour { set; get; } // if the nanny alowes care for few hours
+        public bool doesWorkPerHour { set; get; } // if the nanny allowed to care for few hours
 
         public int hourWage { set; get; }
 
         public int monthlyWage { set; get; }
 
-        public bool[] daysOfWork { set; get; } // could be 30??  = new bool[7]
+        public bool[] daysOfWork { set; get; } 
 
         public Day[] hoursOfWork { set; get; } // each day hour of start and hour of finish
 
@@ -59,7 +59,7 @@ namespace BE
         public override string ToString()
         {
             return familyName + ' ' + firstName + "- NANNY\n" + address + "\n id number:\t" + id + "\n birth date:\t:" + birthday.ToShortDateString() + "\n wage per hour:\t" + hourWage + "\n wage per month:" + monthlyWage + "\n phone number:\t" + phoneNumber
-                + "\n nanny can take care " + maxOfKids + " kids that are " + minAgeOfKid + " to " + maxAgeOfKid + " monthes old\n";
+                + "\n nanny can take care " + maxOfKids + " kids that are " + minAgeOfKid + " to " + maxAgeOfKid + " months old\n";
         }
 
 

@@ -12,7 +12,7 @@ namespace BL
 {
     /// <summary>
     /// implantation for all BL methods
-    /// this layer is incharge of taking care of all the logical process in this program
+    /// this layer is in charge of taking care of all the logical process in this program
     /// each function makes sure all is equit and then sends to bottom level - DAL
     /// </summary>
     public class IBL_imp : IBL
@@ -20,7 +20,7 @@ namespace BL
         Dal_imp myDal = new Dal_imp();
 
         /// <summary>
-        /// adds a nanny to arcive of nannys
+        /// adds a nanny to archive of nanny's
         /// </summary>
         /// <param name="nanny"></param>
         public void addNanny(Nanny nanny)
@@ -64,7 +64,7 @@ namespace BL
         }
 
         /// <summary>
-        /// adds a mother to the arcive
+        /// adds a mother to the archive
         /// using DAL method
         /// </summary>
         /// <param name="mother"></param>
@@ -78,7 +78,7 @@ namespace BL
         }
 
         /// <summary>
-        /// removes a mother from arcive
+        /// removes a mother from archive
         /// using DAL method
         /// </summary>
         /// <param name="mother"></param>
@@ -86,7 +86,7 @@ namespace BL
         {
             // if the mother for delete is not in the system
             if (!isMotherInList(mother.id))
-                throw new Exception("you are trying to delete a mother that dosent exist\n");
+                throw new Exception("you are trying to delete a mother that does not exist\n");
 
             //deletes all children => all contracts => decreasing Nanny number of signed contracts
             IEnumerable<Child> childrenOfMother = getListOfChildByMother(mother);
@@ -111,7 +111,7 @@ namespace BL
         }
 
         /// <summary>
-        /// adds a new child to arcive
+        /// adds a new child to archive
         /// using DAL method
         /// </summary>
         /// <param name="child"></param>
@@ -182,7 +182,7 @@ namespace BL
             // checks that age of child is over 3 months
             if (DateTime.Now.CompareTo(child.birthday.AddMonths(3)) <= 0)
             {
-                throw new Exception("cannot sign contract:\nage of child is less then three monthes.\nthose are the contract detail:\n" +
+                throw new Exception("cannot sign contract:\nage of child is less then three months.\nthose are the contract detail:\n" +
                     "***********************************************\n" + contract.ToString() + "***********************************************\n");
             }
 
@@ -274,7 +274,7 @@ namespace BL
         }
 
         /// <summary>
-        /// gets list of nannys
+        /// gets list of nanny's
         /// using DAL method
         /// </summary>
         /// <returns></returns>
@@ -409,7 +409,7 @@ namespace BL
         }
 
         /// <summary>
-        ///  returns the object of mother from list by searching her childs id
+        ///  returns the object of mother from list by searching her childes id
         ///  using DAL method
         /// </summary>
         /// <param name="childId"></param>
@@ -471,7 +471,7 @@ namespace BL
         }
 
         /// <summary>
-        /// returns number of brthers that are cared by the same nanny
+        /// returns number of brothers that are cared by the same nanny
         /// </summary>
         /// <param name="nanny"></param>
         /// <param name="momsId"></param>
@@ -510,11 +510,11 @@ namespace BL
 
             Route route = drivingDirections.Routes.First();
             Leg leg = route.Legs.First();
-            return leg.Distance.Value;   // need a implementaion
+            return leg.Distance.Value;   // need a implementation
         }
 
         /// <summary>
-        /// returns collection of Nannys that stands in moms hour demands. age is irrelevent and distance is ignored.
+        /// returns collection of Nanny's that stands in moms hour demands. age is irrelevant and distance is ignored.
         /// </summary>
         /// <param name="mother"></param>
         /// <returns></returns>
@@ -572,7 +572,7 @@ namespace BL
         }
 
         /// <summary>
-        /// in case there is no completely suitable Nanny, this methods returns the 5 most Suitable Nannys.
+        /// in case there is no completely suitable Nanny, this methods returns the 5 most Suitable Nanny's.
         /// </summary>
         /// <param name="mother"></param>
         /// <returns></returns>
@@ -607,7 +607,7 @@ namespace BL
         }
 
         /// <summary>
-        /// returns Nannys that stands in moms demands and in some range
+        /// returns Nanny's that stands in moms demands and in some range
         /// </summary>
         /// <param name="mother"></param>
         /// <param name="distance">In Kilometers</param>
@@ -651,12 +651,12 @@ namespace BL
         }
 
         /// <summary>
-        /// returns a list of all nannys that have a goverment vacation days
+        /// returns a list of all nanny's that have a government vacation days
         /// </summary>
         /// <returns></returns>
         public IEnumerable<Nanny> NannysWithGovVacation()
         {
-            return from item in myDal.getListOfNanny() // tzvi check...
+            return from item in myDal.getListOfNanny() 
                    where item.hasGovVacationDays == true
                    select item;
         }
@@ -689,9 +689,9 @@ namespace BL
 
 
         /// <summary>
-        /// return a collection of groups based on a Nanny collection. every group hold Nannys and had a uniqe age of kid: minimum or maximum.
+        /// return a collection of groups based on a Nanny collection. every group hold Nanny's and had a unique age of kid: minimum or maximum.
         /// </summary>
-        /// <param name="collection">collection of Nannys</param>
+        /// <param name="collection">collection of Nanny's</param>
         /// <param name="byMinAge">boolean variable, indicate if the returned groups are different in minimum age of kid. if false: it is by max age of kid. </param>
         /// <param name="sorted">boolean variable, indicate if the returned groups are sorted</param>
         /// <returns></returns>
@@ -726,7 +726,7 @@ namespace BL
         /// return a collection of groups based on a Contract collection. every group hold contracts and had different distance level.
         /// </summary>
         /// <param name="collection">collection of Contracts</param>
-        /// <param name="sorted">boolean variable, indicate if the returned groups are sorte</param>
+        /// <param name="sorted">boolean variable, indicate if the returned groups are sorted</param>
         /// <returns></returns>
         public IEnumerable<IGrouping<int, Contract>> GroupOfContractsByDistance(IEnumerable<Contract> collection, bool sorted)
         {

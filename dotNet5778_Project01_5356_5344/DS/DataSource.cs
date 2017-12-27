@@ -11,7 +11,7 @@ namespace DS
     /// all the data in the program is stored here
     /// only the DAL level can extract or store data in this level
     /// includes 4 types of lists 
-    /// for this program example we stored few object for long tirm use
+    /// for this program example we stored few object for long term use
     /// </summary>
     public class DataSource
     {
@@ -20,7 +20,7 @@ namespace DS
         public static List<Child> listOfChilds = new List<Child>();
         public static List<Contract> listOfContracts = new List<Contract>();
 
-        // stored object for long tirm use of this project
+        // stored object for long term use of this project
 
     }
 }
