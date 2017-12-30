@@ -624,7 +624,7 @@ namespace BL
                    where predicate(contract)
                    select contract;
         }
-
+       
         /// <summary>
         /// gets all contracts that fit a specific condition
         /// </summary>
