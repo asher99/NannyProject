@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Image Grid.Row="0" Source="images/logo1.PNG" Grid.RowSpan="1"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="262*"/>
+            <RowDefinition Height="57*"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" Source="images/logo1.jpg" Grid.RowSpan="2"/>
+        <Button x:Name="button" Content="Hello" HorizontalAlignment="Left" Height="40" Margin="33,189,0,0" VerticalAlignment="Top" Width="140"/>
+        <Button x:Name="button1" Content="World" HorizontalAlignment="Left" Height="40" Margin="33,244,0,0" VerticalAlignment="Top" Width="140" Grid.RowSpan="2"/>
     </Grid>
 </Window>
