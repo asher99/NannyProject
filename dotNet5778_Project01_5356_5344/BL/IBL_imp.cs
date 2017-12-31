@@ -635,9 +635,9 @@ namespace BL
         {
 
             if (predicate == null) return getListOfContract().AsEnumerable();
-            //return getListOfContract().Where(predicate);
+           // return getListOfContract().Where(predicate);
              return from item in myDal.getListOfContract()
-                 where predicate.Equals(true)  // what to do???
+                 where predicate(item)
                  select item;
 
             //return null;

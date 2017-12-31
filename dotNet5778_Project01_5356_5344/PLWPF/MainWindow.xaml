@@ -12,7 +12,7 @@
             <RowDefinition Height="57*"/>
         </Grid.RowDefinitions>
         <Image Grid.Row="0" Source="images/logo1.jpg" Grid.RowSpan="2"/>
-        <Button x:Name="button" Content="Hello" HorizontalAlignment="Left" Height="40" Margin="33,189,0,0" VerticalAlignment="Top" Width="140"/>
-        <Button x:Name="button1" Content="World" HorizontalAlignment="Left" Height="40" Margin="33,244,0,0" VerticalAlignment="Top" Width="140" Grid.RowSpan="2"/>
+        <Button x:Name="button" Content="Mother" HorizontalAlignment="Left" Height="40" Margin="33,189,0,0" VerticalAlignment="Top" Width="140" Click="goToMotherPage"/>
+        <Button x:Name="button1" Content="Nanny" HorizontalAlignment="Left" Height="40" Margin="33,244,0,0" VerticalAlignment="Top" Width="140" Grid.RowSpan="2" Click="goToNannyPage"/>
     </Grid>
 </Window>

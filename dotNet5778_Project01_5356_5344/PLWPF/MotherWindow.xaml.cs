@@ -10,33 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BE;
-using BL;
 
 namespace PLWPF
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MotherWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MotherWindow : Window
     {
-        public MainWindow()
+        public MotherWindow()
         {
             InitializeComponent();
-
-        }
-
-        private void goToMotherPage(object sender, RoutedEventArgs e)
-        {
-            Window motherPage = new MotherWindow();
-            motherPage.Show();
-        }
-
-        private void goToNannyPage(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
