@@ -36,7 +36,8 @@ namespace PLWPF
 
         private void goToNannyPage(object sender, RoutedEventArgs e)
         {
-
+            Window nannyPage = new NannyWindow();
+           nannyPage.Show();
         }
     }
 }

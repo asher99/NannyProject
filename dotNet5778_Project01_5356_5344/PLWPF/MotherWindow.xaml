@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MotherWindow" Height="300" Width="300">
     <Grid>
-        
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="50" Margin="30,17,0,0" VerticalAlignment="Top" Width="217"/>
+        <Button x:Name="button_Copy" Content="Button" HorizontalAlignment="Left" Height="50" Margin="36,141,0,0" VerticalAlignment="Top" Width="217"/>
+        <Button x:Name="button_Copy1" Content="Button" HorizontalAlignment="Left" Height="50" Margin="34,81,0,0" VerticalAlignment="Top" Width="217"/>
+
     </Grid>
 </Window>
