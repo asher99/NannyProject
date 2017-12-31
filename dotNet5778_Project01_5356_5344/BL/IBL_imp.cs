@@ -618,13 +618,14 @@ namespace BL
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns></returns>
-        IEnumerable<Contract> GetAllContractsNumbers(Func<Contract, bool> predicate = null)
+        IEnumerable<int> GetAllContractsNumbers(Func<Contract, bool> predicate = null)
         {
+            if (predicate == null) return null;
             return from contract in myDal.getListOfContract()
                    where predicate(contract)
-                   select contract;
+                   select contract.numberOfContract;
         }
-       
+
         /// <summary>
         /// gets all contracts that fit a specific condition
         /// </summary>
@@ -632,11 +633,14 @@ namespace BL
         /// <returns></returns>
         IEnumerable<Contract> GetAllContracts(Func<Contract, bool> predicate = null)
         {
-            //  return from item in myDal.getListOfContract()
-            //     where predicate == true // what to do???
-            //     select item;
 
-            return null;
+            if (predicate == null) return getListOfContract().AsEnumerable();
+            //return getListOfContract().Where(predicate);
+             return from item in myDal.getListOfContract()
+                 where predicate.Equals(true)  // what to do???
+                 select item;
+
+            //return null;
         }
 
 
