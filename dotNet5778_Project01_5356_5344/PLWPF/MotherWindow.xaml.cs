@@ -11,7 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using BL;
+using BE;
 namespace PLWPF
 {
     /// <summary>
@@ -22,6 +23,18 @@ namespace PLWPF
         public MotherWindow()
         {
             InitializeComponent();
+        }
+
+        private void newMother_Click(object sender, RoutedEventArgs e)
+        {
+            Window newMother = new newMotherWindow();
+            newMother.ShowDialog();
+        }
+
+        private void MotherUserEnter(object sender, RoutedEventArgs e)
+        {
+            Window userEntry = new MotherUserEntry();
+            userEntry.ShowDialog();
         }
     }
 }

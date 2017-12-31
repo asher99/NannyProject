@@ -7,9 +7,13 @@
         mc:Ignorable="d"
         Title="MotherWindow" Height="300" Width="300">
     <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="50" Margin="30,17,0,0" VerticalAlignment="Top" Width="217"/>
-        <Button x:Name="button_Copy" Content="Button" HorizontalAlignment="Left" Height="50" Margin="36,141,0,0" VerticalAlignment="Top" Width="217"/>
-        <Button x:Name="button_Copy1" Content="Button" HorizontalAlignment="Left" Height="50" Margin="34,81,0,0" VerticalAlignment="Top" Width="217"/>
+        <StackPanel HorizontalAlignment="Left" Height="184" Margin="-1,85,0,0" VerticalAlignment="Top" Width="292">
+            <Button x:Name="newMother" Content="New Mother" Height="46" Margin="1,0,0,0" Width="291" Click="newMother_Click" />
+            <Button x:Name="existingMother" Content="Mother Entry"  Height="46" Margin="1,0,0,0" Width="291" Click="MotherUserEnter"/>
+            <Button x:Name="button_Copy1" Content="hackonamatta"  Height="46" Margin="1,0,0,0" Width="291" />
+            <Button x:Name="button_Copy2" Content="back"  Height="46" Margin="1,0,0,0" Width="291"/>
+        </StackPanel>
+
 
     </Grid>
 </Window>
