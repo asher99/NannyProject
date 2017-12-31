@@ -85,6 +85,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="nanny_sign_up.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="newMotherWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -99,6 +103,9 @@
     </Compile>
     <Compile Include="NannyWindow.xaml.cs">
       <DependentUpon>NannyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="nanny_sign_up.xaml.cs">
+      <DependentUpon>nanny_sign_up.xaml</DependentUpon>
     </Compile>
     <Compile Include="newMotherWindow.xaml.cs">
       <DependentUpon>newMotherWindow.xaml</DependentUpon>

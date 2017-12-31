@@ -15,25 +15,13 @@ using System.Windows.Shapes;
 namespace PLWPF
 {
     /// <summary>
-    /// Interaction logic for NannyWindow.xaml
+    /// Interaction logic for nanny_sign_up.xaml
     /// </summary>
-    public partial class NannyWindow : Window
+    public partial class nanny_sign_up : Window
     {
-        public NannyWindow()
+        public nanny_sign_up()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-            Window newNanny = new nanny_sign_up();
-            newNanny.Show();
         }
     }
 }
