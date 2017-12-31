@@ -8,10 +8,10 @@
         Title="MotherWindow" Height="300" Width="300">
     <Grid>
         <StackPanel HorizontalAlignment="Left" Height="184" Margin="-1,85,0,0" VerticalAlignment="Top" Width="292">
-            <Button x:Name="newMother" Content="New Mother" Height="46" Margin="1,0,0,0" Width="291" Click="newMother_Click" />
-            <Button x:Name="existingMother" Content="Mother Entry"  Height="46" Margin="1,0,0,0" Width="291" Click="MotherUserEnter"/>
-            <Button x:Name="button_Copy1" Content="hackonamatta"  Height="46" Margin="1,0,0,0" Width="291" />
-            <Button x:Name="button_Copy2" Content="back"  Height="46" Margin="1,0,0,0" Width="291"/>
+            <Button x:Name="newMother" Content="New Mother" Height="46" Margin="1,0,0,0" Width="291" FontStyle="Oblique" FontSize="20" Style="MyTextStyle" Click="newMother_Click" />
+            <Button x:Name="existingMother" Content="Mother Entry"  Height="46" Margin="1,0,0,0" Width="291" FontStyle="Oblique" FontSize="20" Click="MotherUserEnter"/>
+            <Button x:Name="button_Copy1" Content="hackonamatta"  Height="46" Margin="1,0,0,0" Width="291" FontStyle="Oblique" FontSize="20" />
+            <Button x:Name="button_Copy2" Content="back"  Height="46" Margin="1,0,0,0" Width="291" FontStyle="Oblique" FontSize="20"/>
         </StackPanel>
 
 

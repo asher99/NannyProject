@@ -15,20 +15,13 @@ using System.Windows.Shapes;
 namespace PLWPF
 {
     /// <summary>
-    /// Interaction logic for MotherUserEntry.xaml
+    /// Interaction logic for MoterInfoWindow.xaml
     /// </summary>
-    public partial class MotherUserEntry : Window
+    public partial class MoterInfoWindow : Window
     {
-        public MotherUserEntry()
+        public MoterInfoWindow()
         {
             InitializeComponent();
-        }
-        private void MotherEnter_Click(object sender, RoutedEventArgs e)
-        {
-            // if mother in list
-
-            Window motherInfo = new MoterInfoWindow();
-            motherInfo.ShowDialog();
         }
     }
 }
