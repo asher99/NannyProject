@@ -7,6 +7,22 @@
         mc:Ignorable="d"
         Title="NannyWindow" Height="300" Width="300">
     <Grid>
-        
+        <Grid HorizontalAlignment="Left" Height="270" VerticalAlignment="Top" Width="300" Background="LightGreen">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="60*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="Welcome" FontSize="24" HorizontalAlignment="Left" Height="66" TextWrapping="Wrap" Text="Welcome to Love and Care Nanny System!" VerticalAlignment="Top" Width="297" FontStyle="Italic"/>
+            <TextBlock x:Name="chooseAction" FontSize="14" HorizontalAlignment="Left" Height="22" Grid.Row="1" Grid.RowSpan="2" TextWrapping="Wrap" Text="please choose an action:" VerticalAlignment="Top" Width="297"/>
+            <StackPanel HorizontalAlignment="Left" Height="184"  VerticalAlignment="Top" Width="295" Grid.Row="2">
+                <Button Content="sign in to our system!" HorizontalAlignment="Left" Height="40" Width="295" Background="White" BorderBrush="Green" BorderThickness="3" FontStyle="Italic"/>
+                <Button Content="log in to your zone!" HorizontalAlignment="Left" Height="40" Width="295" Background="White" BorderBrush="Green" BorderThickness="3" FontStyle="Italic"/>
+                <Button Content="back" HorizontalAlignment="Left" Height="40" Width="295" Background="White" BorderBrush="Green" BorderThickness="3" FontStyle="Italic"/>
+                <Image HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="295" Source="images/happy-kids-clipart-transparent.png"/>
+            </StackPanel>
+        </Grid>
+
+
     </Grid>
 </Window>
