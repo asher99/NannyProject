@@ -8,11 +8,11 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="262*"/>
-            <RowDefinition Height="57*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Image Grid.Row="0" Source="images/logo1.jpg" Grid.RowSpan="2"/>
         <Button x:Name="button" Content="Mother" HorizontalAlignment="Left" Height="40" Margin="33,189,0,0" VerticalAlignment="Top" Width="140" Click="goToMotherPage"/>
-        <Button x:Name="button1" Content="Nanny" HorizontalAlignment="Left" Height="40" Margin="33,244,0,0" VerticalAlignment="Top" Width="140" Grid.RowSpan="2" Click="goToNannyPage"/>
+        <Button x:Name="button1" Content="Nanny" HorizontalAlignment="Left" Height="40" Margin="33,244,0,0" VerticalAlignment="Top" Width="140" Grid.RowSpan="2" Click="goToNannyPage" BorderBrush="GreenYellow" />
     </Grid>
 </Window>
