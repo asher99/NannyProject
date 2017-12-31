@@ -1,8 +1,14 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:PLWPF.languages">
-    
-    <Style x:Key="MyTextStyle" TargetType="Button">
+                    xmlns:local="clr-namespace:PLWPF.languages"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib">
+
+    <Style x:Key="MyButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="PaleGreen"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+    </Style>
+    <Style x:Key="MytextStyle" TargetType="TextBox">
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="FontFamily" Value="Comic Sans MS"/>
         <Setter Property="FontSize" Value="14"/>
