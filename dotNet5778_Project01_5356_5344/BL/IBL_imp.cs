@@ -17,7 +17,9 @@ namespace BL
     /// </summary>
     public class IBL_imp : IBL
     {
-        Dal_imp myDal = new Dal_imp();
+        Dal_imp myDal;
+
+        public IBL_imp() { }
 
         /// <summary>
         /// adds a nanny to archive of nanny's
@@ -637,10 +639,10 @@ namespace BL
         {
 
             if (predicate == null) return getListOfContract().AsEnumerable();
-           // return getListOfContract().Where(predicate);
-             return from item in myDal.getListOfContract()
-                 where predicate(item)
-                 select item;
+            // return getListOfContract().Where(predicate);
+            return from item in myDal.getListOfContract()
+                   where predicate(item)
+                   select item;
 
             //return null;
         }

@@ -13,7 +13,7 @@ namespace BL
     /// the interface of the BL layer
     /// points to all the methods that are defined in IBL_imp
     /// </summary>
-    interface IBL
+   public interface IBL
     {
         void addNanny(Nanny nanny);
         void deleteNanny(Nanny nanny);

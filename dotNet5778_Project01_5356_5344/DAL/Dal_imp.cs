@@ -15,8 +15,6 @@ namespace DAL
     /// </summary>
     public class Dal_imp : Idal
     {
-
-
         /// <summary>
         /// checks if nanny exists in DS and then adds to DS
         /// </summary>
