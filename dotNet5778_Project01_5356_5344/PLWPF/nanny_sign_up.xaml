@@ -21,7 +21,7 @@
 
             <StackPanel x:Name="personalDetails"  HorizontalAlignment="Left" Height="210"  Grid.Row="2" VerticalAlignment="Top" Width="494" Orientation="Horizontal">
 
-                <StackPanel x:Name="labels" Orientation="Vertical" Width="240">
+                <StackPanel x:Name="labels" Orientation="Vertical" Width="240" >
                     <Label x:Name="firstName" Content="first name:" FontSize="14" Width="80" HorizontalAlignment="Center" Height="30"/>
                     <Label x:Name="lastName" Content="last name:" FontSize="14" Width="80" HorizontalAlignment="Center" Height="30"/>
                     <Label Content="Enter your birthday:" HorizontalAlignment="Center" Height="30" FontSize="14"/>
@@ -34,7 +34,7 @@
                 <StackPanel x:Name="input" Orientation="Vertical"  Width="240">
                     <TextBox x:Name="firstNameInput" Height="30"/>
                     <TextBox x:Name="lastNameInput" Height="30"/>
-                    <DatePicker Height="30"/>
+                    <DatePicker x:Name="nanny_birthday" Height="30"/>
                     <TextBox x:Name="nanny_id" Height="30"/>
                     <TextBox x:Name="nanny_phone" Height="30"/>
                     <TextBox x:Name="nanny_address" Height="30"/>
@@ -52,9 +52,9 @@
                     <Label Content="Enter max number of kids you want to take care:" HorizontalAlignment="Center" Height="30" FontSize="10"/>
                     <Label Content="minimum age of kid (in months) :" HorizontalAlignment="Center" Height="30" FontSize="14"/>
                     <Label Content="maximum age of kid (in month) :" HorizontalAlignment="Center" Height="30" FontSize="14"/>
-                    <CheckBox x:Name="govVacations" Content="Do you entitled to government vacations?" />
+                    <CheckBox x:Name="govVacations" Content="Do you entitled to government vacations?"/>
                     <Label Content="enter recommendations, comments etc. :" HorizontalAlignment="Center" Height="30" FontSize="12"/>
-                    <TextBox x:Name="recommendations" Height="100" Width="200" />
+                    <TextBox x:Name="recommendations" Height="100" Width="200" Text="Enter Text..." FontStyle="Oblique"/>
                 </StackPanel>
 
                 <StackPanel Width="20">
@@ -65,52 +65,52 @@
                 </StackPanel>
 
                 <StackPanel x:Name="MoneyAndHours" Width="240" Background="Honeydew">
-                    <Label Content="check the days you wish to work," Height="25"/>
-                    <Label Content="and fill the corresponding hours:" Height="26" />
+                    <Label Content="check the days you wish to work, and fill" Height="25"/>
+                    <Label Content="the corresponding hours (houer : minutes) :" Height="26" />
 
                     <StackPanel Orientation="Horizontal">
                         <CheckBox x:Name="sunday" Content="Sun." VerticalAlignment="Center"/>
                         <Label Content="start:" VerticalAlignment="Top"/>
-                        <TextBox x:Name="sunday_start" Width="47" />
+                        <TextBox x:Name="sunday_start" Width="47" Text="08:00"/>
                         <Label Content="finish:" VerticalAlignment="Top"/>
-                        <TextBox x:Name="sunday_finish" Width="47" />
+                        <TextBox x:Name="sunday_finish" Width="47"  Text="16:00"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <CheckBox x:Name="monday" Content="mon" VerticalAlignment="Center"/>
                         <Label Content="start:" VerticalAlignment="Top"/>
-                        <TextBox x:Name="monday_start" Width="47" />
+                        <TextBox x:Name="monday_start" Width="47"  Text="08:00"/>
                         <Label Content="finish:" VerticalAlignment="Top"/>
-                        <TextBox x:Name="monday_finish" Width="47" />
+                        <TextBox x:Name="monday_finish" Width="47"  Text="16:00"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <CheckBox x:Name="tuesday" Content="Tue." VerticalAlignment="Center"/>
                         <Label Content="start:" VerticalAlignment="Top"/>
-                        <TextBox x:Name="tuesday_start" Width="47" />
+                        <TextBox x:Name="tuesday_start" Width="47"  Text="08:00"/>
                         <Label Content="finish:" VerticalAlignment="Top"/>
-                        <TextBox x:Name="tuesday_finish" Width="47" />
+                        <TextBox x:Name="tuesday_finish" Width="47"  Text="16:00"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <CheckBox x:Name="wendsday" Content="wen" VerticalAlignment="Center"/>
                         <Label Content="start:" VerticalAlignment="Top"/>
-                        <TextBox x:Name="wendsday_start" Width="47" />
+                        <TextBox x:Name="wendsday_start" Width="47"  Text="08:00"/>
                         <Label Content="finish:" VerticalAlignment="Top"/>
-                        <TextBox x:Name="wendsday_finish" Width="47" />
+                        <TextBox x:Name="wendsday_finish" Width="47"  Text="16:00"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <CheckBox x:Name="thrusday" Content="Thu." VerticalAlignment="Center"/>
                         <Label Content="start:" VerticalAlignment="Top"/>
-                        <TextBox x:Name="thrusday_start" Width="47" />
+                        <TextBox x:Name="thrusday_start" Width="47"  Text="08:00"/>
                         <Label Content="finish:" VerticalAlignment="Top"/>
-                        <TextBox x:Name="thrusday_finish" Width="47" />
+                        <TextBox x:Name="thrusday_finish" Width="47"  Text="16:00"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <CheckBox x:Name="friday" Content="Frid." VerticalAlignment="Center"/>
                         <Label Content="start:" VerticalAlignment="Top"/>
-                        <TextBox x:Name="friday_start" Width="47" />
+                        <TextBox x:Name="friday_start" Width="47"  Text="08:00"/>
                         <Label Content="finish:" VerticalAlignment="Top"/>
-                        <TextBox x:Name="friday_finish" Width="47" />
+                        <TextBox x:Name="friday_finish" Width="47"  Text="16:00"/>
                     </StackPanel>
-                    <RadioButton Content="work per hour"/>
+                    <RadioButton Content="work per hour" IsChecked="true"/>
                     <RadioButton Content="work per month"/>
 
                     <StackPanel Orientation="Horizontal">
@@ -125,7 +125,7 @@
                 <Image Source="images/happy-kids-clipart-transparent.png" Height="60" Width="245"/>
                 <Button x:Name="close" Content="back" Height="40" Width="50" Click="close_Click"/>
                 <Label Width="80"/>
-                <Button x:Name="continue" Content="Continue!" Height="40" Width="80" HorizontalAlignment="Right"/> 
+                <Button x:Name="continue" Content="Continue!" Height="40" Width="80" HorizontalAlignment="Right" Click="continue_Click"/> 
             </StackPanel>
 
 

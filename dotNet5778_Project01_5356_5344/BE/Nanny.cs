@@ -80,5 +80,7 @@ namespace BE
          
         }
 
+        public Nanny() { }
+
     }
 }
