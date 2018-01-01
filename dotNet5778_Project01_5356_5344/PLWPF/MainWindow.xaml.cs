@@ -22,12 +22,10 @@ namespace PLWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-       // IBL_imp MyBL = new IBL_imp();
 
         public MainWindow()
         {
             InitializeComponent();
-
         }
 
         private void goToMotherPage(object sender, RoutedEventArgs e)

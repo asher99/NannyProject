@@ -20,25 +20,42 @@ namespace PLWPF
     /// <summary>
     /// Interaction logic for MotherUserEntry.xaml
     /// </summary>
-    public partial class MotherUserEntry : Window 
+    public partial class MotherUserEntry : Window
     {
-        
+
+        IBL myBL= factory_BL.Get_bl;
+   
 
         public MotherUserEntry()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-
+        
         private void MotherEnter_Click(object sender, RoutedEventArgs e)
         {
-            // if mother in list
-            int id = Convert.ToInt32(idTextBox.DataContext);
-          //  if (!MyBL.isMotherInList(id))
-          //    MessageBox.Show("This Mother is not in the system.")  ;
-
-            Window motherInfo = new MoterInfoWindow();
-            Close();
-            motherInfo.ShowDialog();
+            try
+            {
+                
+                // if mother in list
+                int id = Convert.ToInt32(idTextBox.DataContext);
+                if (!myBL.isMotherInList(id))
+                 throw new Exception("This Mother is not in the system.");
+                Window motherInfo = new MoterInfoWindow();
+                Close();
+                motherInfo.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
     }
 }
