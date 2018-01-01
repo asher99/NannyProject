@@ -15,7 +15,7 @@
             <Button x:Name="newMother" Content="New Mother" Height="46" Margin="1,0,0,0" Width="291" FontStyle="Oblique" Style= "{StaticResource MyButtonStyle}" FontSize="20"  Click="newMother_Click" />
             <Button x:Name="existingMother" Content="Mother Entry"  Height="46" Margin="1,0,0,0" Width="291" FontStyle="Oblique" Style="{DynamicResource MyButtonStyle}" FontSize="20" Click="MotherUserEnter"/>
             <Button x:Name="button_Copy1" Content="hackonamatta"  Height="46" Margin="1,0,0,0" Width="291" FontStyle="Oblique" FontSize="20" Style="{DynamicResource MyButtonStyle}"/>
-            <Button x:Name="button_Copy2" Content="back"  Height="46" Margin="1,0,0,0" Width="291" FontStyle="Oblique" FontSize="20" Style="{DynamicResource MyButtonStyle}" Click="backToMainMenu"/>
+            <Button x:Name="button_Copy2" Content="back"  Height="46" Margin="1,0,0,0" Width="291" FontStyle="Oblique"  Style="{DynamicResource MyButtonStyle}" Click="backToMainMenu"/>
         </StackPanel>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Background="BlanchedAlmond" Height="82" TextWrapping="Wrap" Text="Welcome to Love and Care we can help you find a Nanny!" VerticalAlignment="Center" Width="292" FontSize="20"
                    FontStyle="Italic" FontWeight="Medium"/>

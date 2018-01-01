@@ -22,6 +22,8 @@ namespace PLWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+       // IBL_imp MyBL = new IBL_imp();
+
         public MainWindow()
         {
             InitializeComponent();
