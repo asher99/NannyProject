@@ -12,7 +12,7 @@ namespace BE
     /// </summary>
     public class Enums
     {
-        enum Days { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday }
+        public enum Days { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday }
 
     }
 }

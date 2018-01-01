@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BE;
+
 
 namespace PLWPF
 {
@@ -51,7 +53,35 @@ namespace PLWPF
             nanny.hasGovVacationDays = govVacations.IsChecked.Value;
             nanny.Recommendations = recommendations.Text;
 
+            // work details
+            nanny.daysOfWork[0] = sunday.IsChecked.Value;
+            nanny.daysOfWork[1] = monday.IsChecked.Value;
+            nanny.daysOfWork[2] = tuesday.IsChecked.Value;
+            nanny.daysOfWork[3] = wendsday.IsChecked.Value;
+            nanny.daysOfWork[4] = thrusday.IsChecked.Value;
+            nanny.daysOfWork[5] = friday.IsChecked.Value;
+
+            nanny.hoursOfWork[0] = new Day(sunday_start.Text, sunday_finish.Text);
+            nanny.hoursOfWork[0] = new Day(monday_start.Text, monday_finish.Text);
+            nanny.hoursOfWork[0] = new Day(tuesday_start.Text, tuesday_finish.Text);
+            nanny.hoursOfWork[0] = new Day(wendsday_start.Text, wendsday_finish.Text);
+            nanny.hoursOfWork[0] = new Day(thrusday_start.Text, thrusday_finish.Text);
+            nanny.hoursOfWork[0] = new Day(friday_start.Text, friday_finish.Text);
+
+            nanny.doesWorkPerHour = workPerHour.IsChecked.Value;
+            nanny.monthlyWage = int.Parse(nanny_salary_month.Text);
+            if (workPerHour.IsChecked.Value)
+                nanny.hourWage = int.Parse(nanny_salary_hour.Text);
+            else nanny.hourWage = 0;
+
+            nanny.numberOfSignedContracts = 0;
+
+
+
+
         }
+
+
 
     }
 }

@@ -36,6 +36,30 @@ namespace BE
             finish_minute = finMinu;
         }
 
+        /// <summary>
+        /// construct a Day object with Two strings represent start time and finish time.
+        /// The strings come in this form: 00:00.
+        /// </summary>
+        /// <param name="str_start"></param>
+        /// <param name="str_finish"></param>
+        public Day(string str_start, string str_finish)
+        {
+
+            // handle when the user enter a time before 10:00 AM
+            if (str_start[1] == ':')
+                str_start = "0" + str_start;
+
+            if (str_finish[1] == ':')
+                str_finish = "0" + str_finish;
+
+            // fill fields
+            start_hour = int.Parse(str_start.Substring(0, 1));
+            start_minute = int.Parse(str_start.Substring(3));
+
+            finish_hour = int.Parse(str_finish.Substring(0, 1));
+            finish_minute = int.Parse(str_finish.Substring(3));
+        }
+
         public Day() { }
 
     }

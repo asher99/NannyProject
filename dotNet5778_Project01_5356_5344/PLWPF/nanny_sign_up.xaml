@@ -76,8 +76,8 @@
                         <TextBox x:Name="sunday_finish" Width="47"  Text="16:00"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <CheckBox x:Name="monday" Content="mon" VerticalAlignment="Center"/>
-                        <Label Content="start:" VerticalAlignment="Top"/>
+                        <CheckBox x:Name="monday" Content="Mon" VerticalAlignment="Center"/>
+                        <Label Content="start" VerticalAlignment="Top"/>
                         <TextBox x:Name="monday_start" Width="47"  Text="08:00"/>
                         <Label Content="finish:" VerticalAlignment="Top"/>
                         <TextBox x:Name="monday_finish" Width="47"  Text="16:00"/>
@@ -110,12 +110,17 @@
                         <Label Content="finish:" VerticalAlignment="Top"/>
                         <TextBox x:Name="friday_finish" Width="47"  Text="16:00"/>
                     </StackPanel>
-                    <RadioButton Content="work per hour" IsChecked="true"/>
-                    <RadioButton Content="work per month"/>
 
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Enter salary in NIS:"/>
-                        <TextBox x:Name="nanny_salary" Width="100"/>
+                        <Label Content="Enter month wage in NIS:"/>
+                        <TextBox x:Name="nanny_salary_month" Width="71"/>
+                    </StackPanel>
+
+                    <CheckBox x:Name="workPerHour" Content="enable option to work per hour?" FontSize="12"/>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Enter hour wage in NIS:   "/>
+                        <TextBox x:Name="nanny_salary_hour" Width="71" IsEnabled="{Binding ElementName=workPerHour, Path=IsChecked}"/>
                     </StackPanel>
 
                 </StackPanel>
@@ -125,7 +130,7 @@
                 <Image Source="images/happy-kids-clipart-transparent.png" Height="60" Width="245"/>
                 <Button x:Name="close" Content="back" Height="40" Width="50" Click="close_Click"/>
                 <Label Width="80"/>
-                <Button x:Name="continue" Content="Continue!" Height="40" Width="80" HorizontalAlignment="Right" Click="continue_Click"/> 
+                <Button x:Name="continue" Content="Continue!" Height="40" Width="80" HorizontalAlignment="Right" Click="continue_Click"/>
             </StackPanel>
 
 
