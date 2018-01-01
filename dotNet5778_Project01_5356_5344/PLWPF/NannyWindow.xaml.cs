@@ -33,7 +33,7 @@ namespace PLWPF
         {
             this.Close();
             Window newNanny = new nanny_sign_up();
-            newNanny.Show();
+            newNanny.ShowDialog();
         }
     }
 }

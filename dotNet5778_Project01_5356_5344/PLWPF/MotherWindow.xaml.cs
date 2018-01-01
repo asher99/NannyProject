@@ -28,13 +28,19 @@ namespace PLWPF
         private void newMother_Click(object sender, RoutedEventArgs e)
         {
             Window newMother = new newMotherWindow();
+            Close();
             newMother.ShowDialog();
         }
 
         private void MotherUserEnter(object sender, RoutedEventArgs e)
         {
             Window userEntry = new MotherUserEntry();
+            Close();
             userEntry.ShowDialog();
+        }
+        private void backToMainMenu(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

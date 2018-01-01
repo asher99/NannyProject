@@ -178,6 +178,8 @@ namespace BL
                     "***********************************************\n" + contract.ToString() + "***********************************************\n");
             }
 
+            // ---check if child has contract in conflict
+
             nanny.numberOfSignedContracts++; // adds to nanny count of contracts
 
             // calculates nanny salary

@@ -48,11 +48,11 @@
             <StackPanel x:Name="professionalDetails" Grid.Row="4" Orientation="Horizontal" Background="AliceBlue">
                 
                 <StackPanel x:Name="kidAdjustment" Width="240" Background="BlanchedAlmond">
-                    <Label Content="Enter your Exprience (in years) :" HorizontalAlignment="Center" Height="30" FontSize="14"/>
+                    <Label Content="Enter your Experience (in years) :" HorizontalAlignment="Center" Height="30" FontSize="14"/>
                     <Label Content="Enter max number of kids you want to take care:" HorizontalAlignment="Center" Height="30" FontSize="10"/>
                     <Label Content="minimum age of kid (in months) :" HorizontalAlignment="Center" Height="30" FontSize="14"/>
                     <Label Content="maximum age of kid (in month) :" HorizontalAlignment="Center" Height="30" FontSize="14"/>
-                    <CheckBox x:Name="govVacations" Content="Do you entitled to goverment vacations?" />
+                    <CheckBox x:Name="govVacations" Content="Do you entitled to government vacations?" />
                     <Label Content="enter recommendations, comments etc. :" HorizontalAlignment="Center" Height="30" FontSize="12"/>
                     <TextBox x:Name="recommendations" Height="100" Width="200" />
                 </StackPanel>

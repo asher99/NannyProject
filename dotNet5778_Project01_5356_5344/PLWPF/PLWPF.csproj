@@ -147,8 +147,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="images\" />
+    <Resource Include="images\logo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\happy-kids-clipart-transparent.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

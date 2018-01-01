@@ -7,12 +7,26 @@
         mc:Ignorable="d"
         Title="MotherWindow" Height="300" Width="300">
     <Grid>
-        <StackPanel HorizontalAlignment="Left" Height="184" Margin="-1,85,0,0" VerticalAlignment="Top" Width="292">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85*"/>
+            <RowDefinition Height="184*"/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Left" Height="184" Margin="-1,0,0,0" VerticalAlignment="Top" Width="292" Grid.Row="1">
             <Button x:Name="newMother" Content="New Mother" Height="46" Margin="1,0,0,0" Width="291" FontStyle="Oblique" Style= "{StaticResource MyButtonStyle}" FontSize="20"  Click="newMother_Click" />
-            <Button x:Name="existingMother" Content="Mother Entry"  Height="46" Margin="1,0,0,0" Width="291" FontStyle="Oblique" FontSize="20" Click="MotherUserEnter"/>
-            <Button x:Name="button_Copy1" Content="hackonamatta"  Height="46" Margin="1,0,0,0" Width="291" FontStyle="Oblique" FontSize="20" />
-            <Button x:Name="button_Copy2" Content="back"  Height="46" Margin="1,0,0,0" Width="291" FontStyle="Oblique" FontSize="20"/>
+            <Button x:Name="existingMother" Content="Mother Entry"  Height="46" Margin="1,0,0,0" Width="291" FontStyle="Oblique" Style="{DynamicResource MyButtonStyle}" FontSize="20" Click="MotherUserEnter"/>
+            <Button x:Name="button_Copy1" Content="hackonamatta"  Height="46" Margin="1,0,0,0" Width="291" FontStyle="Oblique" FontSize="20" Style="{DynamicResource MyButtonStyle}"/>
+            <Button x:Name="button_Copy2" Content="back"  Height="46" Margin="1,0,0,0" Width="291" FontStyle="Oblique" FontSize="20" Style="{DynamicResource MyButtonStyle}" Click="backToMainMenu"/>
         </StackPanel>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Background="BlanchedAlmond" Height="82" TextWrapping="Wrap" Text="Welcome to Love and Care we can help you find a Nanny!" VerticalAlignment="Center" Width="292" FontSize="20"
+                   FontStyle="Italic" FontWeight="Medium"/>
+        <Run.Foreground>
+            <LinearGradientBrush>
+                <GradientStop Color="Green" Offset="0.0" />
+                <GradientStop Color="Purple" Offset="0.25" />
+                <GradientStop Color="SteelBlue" Offset="0.5" />
+                <GradientStop Color="Blue" Offset="0.75" />
+            </LinearGradientBrush>
+        </Run.Foreground>
 
 
     </Grid>

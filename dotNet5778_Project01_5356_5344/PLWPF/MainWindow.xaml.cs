@@ -31,13 +31,13 @@ namespace PLWPF
         private void goToMotherPage(object sender, RoutedEventArgs e)
         {
             Window motherPage = new MotherWindow();
-            motherPage.Show();
+            motherPage.ShowDialog();
         }
 
         private void goToNannyPage(object sender, RoutedEventArgs e)
         {
             Window nannyPage = new NannyWindow();
-           nannyPage.Show();
+            nannyPage.ShowDialog();
         }
     }
 }
