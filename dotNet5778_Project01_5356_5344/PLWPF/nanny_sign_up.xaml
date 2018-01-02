@@ -18,8 +18,11 @@
             </Grid.RowDefinitions>
             <TextBlock HorizontalAlignment="Left" Height="59" TextWrapping="Wrap" Text="Welcome to Love and Care! hundreds of kids are waiting for you!" VerticalAlignment="Top" Width="500" FontSize="22"/>
 
+            <Label Grid.Row="1" Content="     Personal Details:" FontSize="16" FontWeight="Bold" VerticalAlignment="Bottom"/>
 
-            <StackPanel x:Name="personalDetails"  HorizontalAlignment="Left" Height="210"  Grid.Row="2" VerticalAlignment="Top" Width="494" Orientation="Horizontal">
+            <Label Grid.Row="3" Content="     Professional Details:                 Work Details:" FontSize="16" FontWeight="Bold" VerticalAlignment="Bottom"/>
+            
+            <StackPanel x:Name="personalDetails" HorizontalAlignment="Left" Height="210"  Grid.Row="2" VerticalAlignment="Top" Width="494" Orientation="Horizontal">
 
                 <StackPanel x:Name="labels" Orientation="Vertical" Width="240" >
                     <Label x:Name="firstName" Content="first name:" FontSize="14" Width="80" HorizontalAlignment="Center" Height="30"/>
@@ -46,7 +49,7 @@
             </StackPanel>
 
             <StackPanel x:Name="professionalDetails" Grid.Row="4" Orientation="Horizontal" Background="AliceBlue">
-                
+
                 <StackPanel x:Name="kidAdjustment" Width="240" Background="BlanchedAlmond">
                     <Label Content="Enter your Experience (in years) :" HorizontalAlignment="Center" Height="30" FontSize="14"/>
                     <Label Content="Enter max number of kids you want to take care:" HorizontalAlignment="Center" Height="30" FontSize="10"/>
@@ -58,10 +61,10 @@
                 </StackPanel>
 
                 <StackPanel Width="20">
-                    <TextBox x:Name="nanny_seniority" Width="20" Height="30" VerticalAlignment="Center"/>
-                    <TextBox x:Name="nanny_maxOfKids" Width="20" Height="30" VerticalAlignment="Center"/>
-                    <TextBox x:Name="nanny_minAge" Width="20" Height="30" VerticalAlignment="Center"/>
-                    <TextBox x:Name="nanny_maxAge" Width="20" Height="30" VerticalAlignment="Center"/>
+                    <TextBox x:Name="nanny_seniority" Width="12" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="nanny_maxOfKids" Width="12" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="nanny_minAge" Width="12" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                    <TextBox x:Name="nanny_maxAge" Width="12" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                 </StackPanel>
 
                 <StackPanel x:Name="MoneyAndHours" Width="240" Background="Honeydew">
@@ -135,6 +138,7 @@
 
 
         </Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="215" Margin="8,90,0,0" VerticalAlignment="Top" Width="480" CornerRadius="20"/>
 
 
     </Grid>
