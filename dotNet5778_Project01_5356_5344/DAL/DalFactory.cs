@@ -13,7 +13,7 @@ namespace DAL
             return new Dal_imp();
         }
     }*/
-    public class DalFactory
+    /*public class DalFactory
     {
         private static Idal dal;
         private DalFactory() { }//
@@ -32,5 +32,14 @@ namespace DAL
                 return dal;
             }
         }
+    }*/
+    public class DalFactory
+    {
+        private static Idal dal_instance;
+
+        private DalFactory() { }
+        static DalFactory() { dal_instance = new Dal_imp(); } // called once at program startup
+
+        public static Idal DALInstance { get { return dal_instance; } }
     }
 }

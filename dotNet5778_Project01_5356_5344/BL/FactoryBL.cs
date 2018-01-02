@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    public class factory_BL
+    /*public class factory_BL
     {
         private static IBL bl;
         protected factory_BL() { }//
@@ -25,6 +25,16 @@ namespace BL
                 return bl;
             }
         }
+    }*/
+    
+    public class FactoryBL
+    {
+        private static IBL bl_instance;
+
+        private FactoryBL() { }
+        static FactoryBL() { bl_instance = new IBL_imp(); } // called once at program startup
+
+        public static IBL IBLInstance { get { return bl_instance; } }
     }
 }
 /*
