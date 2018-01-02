@@ -8,6 +8,8 @@ using DAL;
 using GoogleMapsApi;
 using GoogleMapsApi.Entities.Directions.Request;
 using GoogleMapsApi.Entities.Directions.Response;
+
+using System.Runtime.InteropServices;
 namespace BL
 {
     /// <summary>
@@ -17,9 +19,10 @@ namespace BL
     /// </summary>
     public class IBL_imp : IBL
     {
-        Dal_imp myDal;
+        public Idal myDal=DalFactory.DALInstance;
 
-        public IBL_imp() { }
+
+
 
         /// <summary>
         /// adds a nanny to archive of nanny's

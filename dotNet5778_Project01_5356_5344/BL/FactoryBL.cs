@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    public class factory_BL
+    /*public class factory_BL
     {
         private static IBL bl;
-        private factory_BL() { }//
-        static factory_BL()//
+        protected factory_BL() { }//
+         static factory_BL()//
         {
             bl = new IBL_imp();
         }
@@ -25,6 +25,16 @@ namespace BL
                 return bl;
             }
         }
+    }*/
+    
+    public class FactoryBL
+    {
+        private static IBL bl_instance;
+
+        private FactoryBL() { }
+        static FactoryBL() { bl_instance = new IBL_imp(); } // called once at program startup
+
+        public static IBL IBLInstance { get { return bl_instance; } }
     }
 }
 /*
