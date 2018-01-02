@@ -19,10 +19,7 @@ namespace BL
     /// </summary>
     public class IBL_imp : IBL
     {
-        public Idal myDal=DalFactory.DALInstance;
-
-
-
+        public Idal myDal = DalFactory.Get_DAL;
 
         /// <summary>
         /// adds a nanny to archive of nanny's

@@ -23,15 +23,13 @@ namespace PLWPF
     public partial class MotherUserEntry : Window
     {
 
-        static IBL myBL;
+        static IBL myBL= BL_Factory.Get_BL;
 
         public MotherUserEntry()
         {
             try
             {
                 InitializeComponent();
-                myBL = FactoryBL.IBLInstance;
-
             }
             catch (Exception ex)
             {
