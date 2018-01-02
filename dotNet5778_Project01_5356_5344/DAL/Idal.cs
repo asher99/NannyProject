@@ -43,7 +43,9 @@ namespace DAL
         bool isMotherInList(int mother);
         bool isChildInList(int child);
         bool isContractInList(Contract contract);
+        int getMotherId(int id);
         IEnumerable<Contract> ListOfContractsById(int my_id);
         IEnumerable<Child> getListOfChildByMother(Mother mother);
+
     }
 }

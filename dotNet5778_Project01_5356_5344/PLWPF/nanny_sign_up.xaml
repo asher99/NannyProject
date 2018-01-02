@@ -66,7 +66,7 @@
 
                 <StackPanel x:Name="MoneyAndHours" Width="240" Background="Honeydew">
                     <Label Content="check the days you wish to work, and fill" Height="25"/>
-                    <Label Content="the corresponding hours (houer : minutes) :" Height="26" />
+                    <Label Content="the corresponding hours (hour : minutes) :" Height="26" />
 
                     <StackPanel Orientation="Horizontal">
                         <CheckBox x:Name="sunday" Content="Sun." VerticalAlignment="Center"/>

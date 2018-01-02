@@ -23,7 +23,7 @@ namespace PLWPF
     public partial class MotherUserEntry : Window
     {
 
-        IBL myBL= factory_BL.Get_bl;
+        public IBL myBL= factory_BL.Get_bl;
    
 
         public MotherUserEntry()

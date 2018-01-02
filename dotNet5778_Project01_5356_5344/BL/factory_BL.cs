@@ -9,8 +9,8 @@ namespace BL
     public class factory_BL
     {
         private static IBL bl;
-        private factory_BL() { }//
-        static factory_BL()//
+        protected factory_BL() { }//
+         static factory_BL()//
         {
             bl = new IBL_imp();
         }
