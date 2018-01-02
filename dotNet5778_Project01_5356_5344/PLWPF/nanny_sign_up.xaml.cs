@@ -81,7 +81,10 @@ namespace PLWPF
 
         }
 
-
-
+        private void recommendations_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (this.recommendations.Text == "Enter Text...")
+                this.recommendations.Text = "";
+        }
     }
 }
