@@ -52,12 +52,22 @@ namespace BE
             if (str_finish[1] == ':')
                 str_finish = "0" + str_finish;
 
+            // handle illegal input
+            if (str_start[2] != ':' || str_finish[2] != ':')
+                throw new Exception("at least one of your working time is illegal");
+
+
             // fill fields
-            start_hour = int.Parse(str_start.Substring(0, 1));
+            start_hour = int.Parse(str_start.Substring(0, 2));
             start_minute = int.Parse(str_start.Substring(3));
 
-            finish_hour = int.Parse(str_finish.Substring(0, 1));
+            finish_hour = int.Parse(str_finish.Substring(0, 2));
             finish_minute = int.Parse(str_finish.Substring(3));
+
+            // handle illegal input
+            if (start_hour >= finish_hour)
+                throw new Exception("at least one of your working time is illegal");
+
         }
 
         public Day() { }

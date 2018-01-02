@@ -19,12 +19,16 @@
                 <RowDefinition Height="35"/>
                 <RowDefinition Height="200"/>
                 <RowDefinition Height="35"/>
-                <RowDefinition Height="275"/>
-                <RowDefinition Height="60"/>
+                <RowDefinition Height="285"/>
+                <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
-            <TextBlock HorizontalAlignment="Left" Height="59" TextWrapping="Wrap" Text="Welcome to Love and Care! hundreds of kids are waiting for you!" VerticalAlignment="Top" Width="500" FontSize="22"/>
 
-            <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1" CornerRadius="15" Margin="5,32.2,0,31.6" Grid.RowSpan="3"/>
+            <StackPanel Grid.Row="0" Background="GreenYellow" Opacity="0.75"/>
+            <TextBlock HorizontalAlignment="Left" Height="59" TextWrapping="Wrap" Text="Welcome to Love and Care! hundreds of kids are waiting for you!" VerticalAlignment="Top" Width="555" FontSize="22" Foreground="Black" FontStyle="Italic" FontWeight="Bold"/>
+
+            <Border Grid.Row="3" BorderBrush="Black" BorderThickness="1" Margin="6,32.4,274,1.6" Grid.RowSpan="2" CornerRadius="15" Background="LawnGreen" Opacity="0.25"/>
+            <Border Grid.Row="3" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="272,32.4,-2,1.6" Grid.RowSpan="2" CornerRadius="15" Background="LawnGreen" Opacity="0.25"/>
+            <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1" CornerRadius="15" Margin="5,32.2,0,31.6" Grid.RowSpan="3" Background="GreenYellow" Opacity="0.25"/>
 
             <Label Grid.Row="1" Content="     Personal Details:" FontSize="16" FontWeight="Bold" VerticalAlignment="Bottom"/>
 
@@ -33,8 +37,8 @@
             <StackPanel x:Name="personalDetails" HorizontalAlignment="Left" Height="210"  Grid.Row="2" VerticalAlignment="Top" Width="530" Orientation="Horizontal">
 
                 <StackPanel x:Name="labels" Orientation="Vertical" Width="300" >
-                    <Label x:Name="firstName" Content="first name:" FontSize="14" Width="80" HorizontalAlignment="Center" Height="30"/>
-                    <Label x:Name="lastName" Content="last name:" FontSize="14" Width="80" HorizontalAlignment="Center" Height="30"/>
+                    <Label x:Name="firstName" Content="first name: (only one name)" FontSize="14"  HorizontalAlignment="Center" Height="30"/>
+                    <Label x:Name="lastName" Content="last name: (only one name)" FontSize="14"  HorizontalAlignment="Center" Height="30"/>
                     <Label Content="Enter your birthday:" HorizontalAlignment="Center" Height="30" FontSize="14"/>
                     <Label Content="Enter your id number:" HorizontalAlignment="Center" Height="30" FontSize="14"/>
                     <Label Content="Enter your phone number" HorizontalAlignment="Center" Height="30" FontSize="14"/>
@@ -107,9 +111,9 @@
                     <StackPanel Orientation="Horizontal">
                         <CheckBox x:Name="wendsday" Content="wen" VerticalAlignment="Center"/>
                         <Label Content="start:" VerticalAlignment="Top"/>
-                        <TextBox x:Name="wendsday_start" Width="47"  Text="08:00"/>
+                        <TextBox x:Name="wednesday_start" Width="47"  Text="08:00"/>
                         <Label Content="finish:" VerticalAlignment="Top"/>
-                        <TextBox x:Name="wendsday_finish" Width="47"  Text="16:00"/>
+                        <TextBox x:Name="wednesday_finish" Width="47"  Text="16:00"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <CheckBox x:Name="thrusday" Content="Thu." VerticalAlignment="Center"/>
@@ -131,10 +135,13 @@
                         <TextBox x:Name="nanny_salary_month" Width="71"/>
                     </StackPanel>
 
-                    <CheckBox x:Name="workPerHour" Content="enable option to work per hour?" FontSize="12"/>
-
+                    <StackPanel Orientation="Horizontal" Background="GreenYellow" Opacity="0.8">
+                        <CheckBox x:Name="workPerHour" Background="Yellow" VerticalAlignment="Center"/>
+                        <Label Content="enable option to work per hour?" FontSize="12" FontWeight="Bold"/>
+                    </StackPanel>
+                    
                     <StackPanel Orientation="Horizontal">
-                        <Label Content="Enter hour wage in NIS:   "/>
+                        <Label Content="Enter hour wage in NIS:   " Foreground="Black" FontWeight="Bold" Background="GreenYellow" Opacity="0.8"/>
                         <TextBox x:Name="nanny_salary_hour" Width="71" IsEnabled="{Binding ElementName=workPerHour, Path=IsChecked}"/>
                     </StackPanel>
 
@@ -142,15 +149,13 @@
             </StackPanel>
 
             <StackPanel x:Name="end" Orientation="Horizontal" Grid.Row="5" VerticalAlignment="Top"  >
-                <Image Source="images/happy-kids-clipart-transparent.png" Height="60" Width="245"/>
+                <Label Width="300"/>
                 <Button x:Name="close" Content="back" Height="40" Width="50" Click="close_Click"/>
                 <Label Width="80"/>
                 <Button x:Name="continue" Content="Continue!" Height="40" Width="80" HorizontalAlignment="Right" Click="continue_Click"/>
             </StackPanel>
 
-            <Border Grid.Row="3" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="6,32.4,274,1.6" Grid.RowSpan="2" CornerRadius="15"/>
-            <Border Grid.Row="3" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="272,32.4,-2,1.6" Grid.RowSpan="2" CornerRadius="15"/>
-        </Grid>
+                    </Grid>
 
         <Grid.Background>
             <ImageBrush ImageSource="images/background1.png" Stretch="Fill"/>

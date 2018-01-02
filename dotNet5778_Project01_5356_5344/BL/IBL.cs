@@ -56,6 +56,8 @@ namespace BL
         IEnumerable<Contract> ListOfContractsById(int id);
         IEnumerable<Child> getListOfChildByMother(Mother mother);
 
+        void findAddress(string source);
+
 
     }
 }

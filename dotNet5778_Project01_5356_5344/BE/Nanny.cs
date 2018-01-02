@@ -80,7 +80,7 @@ namespace BE
          
         }
 
-        public Nanny() { }
+        public Nanny() { numberOfSignedContracts = 0; }
 
     }
 }

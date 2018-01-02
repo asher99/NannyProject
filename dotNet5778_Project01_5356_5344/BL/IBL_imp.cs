@@ -446,6 +446,15 @@ namespace BL
         }
 
         /// <summary>
+        /// check if it can find a specific address in google maps, by trying to find routes from "Lev Academic Center" to it.
+        /// </summary>
+        /// <param name="source"></param>
+        public void findAddress(string source)
+        {
+            distanceBetweenAddresses(source, "Lev Academic Center");
+        }
+
+        /// <summary>
         /// use Google Api to get distance between two address stored in strings
         /// </summary>
         /// <param name="a"></param>

@@ -43,7 +43,7 @@ namespace PLWPF
             {
                 
                 // if mother in list
-                int id = Convert.ToInt32(idTextBox.DataContext);
+                int id = Convert.ToInt32(idTextBox.Text);
                 if (!myBL.isMotherInList(id))
                  throw new Exception("This Mother is not in the system.");
                 Window motherInfo = new MoterInfoWindow();

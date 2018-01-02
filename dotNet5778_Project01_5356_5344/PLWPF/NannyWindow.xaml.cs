@@ -19,6 +19,8 @@ namespace PLWPF
     /// </summary>
     public partial class NannyWindow : Window
     {
+
+
         public NannyWindow()
         {
             InitializeComponent();
