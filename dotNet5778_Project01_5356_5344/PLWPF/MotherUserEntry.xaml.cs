@@ -23,7 +23,7 @@ namespace PLWPF
     public partial class MotherUserEntry : Window
     {
 
-        static IBL myBL= BL_Factory.Get_BL;
+        static IBL myBL = BL_Factory.Get_BL;
 
         public MotherUserEntry()
         {
@@ -36,16 +36,19 @@ namespace PLWPF
                 MessageBox.Show(ex.Message);
             }
         }
-        
+
         private void MotherEnter_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                
+
                 // if mother in list
                 int id = Convert.ToInt32(idTextBox.Text);
-                    if (!myBL.isMotherInList(id))
-                 throw new Exception("This Mother is not in the system.");
+                string name = nameTextBox.Text;
+
+                if (!myBL.isMotherInList(id))
+                    throw new Exception("This Mother is not in the system.");
+
                 Window motherInfo = new MoterInfoWindow();
                 Close();
                 motherInfo.ShowDialog();
@@ -54,7 +57,7 @@ namespace PLWPF
             {
                 MessageBox.Show(ex.Message);
             }
-           
+
         }
     }
 }

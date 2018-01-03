@@ -51,7 +51,7 @@ namespace PLWPF
                 checkDetailsNanny(nanny);
                 readDetailsNanny(nanny);
 
-
+                
                 try
                 {
                     myBL.addNanny(nanny);
@@ -201,7 +201,7 @@ namespace PLWPF
             if (!nanny_floor.Text.All(Char.IsDigit))
                 throw new Exception("Floor number input is illegal!");
 
-            // check th address in google maps, if it can't recognize it, an exception will occur!
+            // check th address in Google maps, if it can't recognize it, an exception will occur!
             //myBL.findAddress(nanny_address.Text); -->this option is disabled because it take to much time to run.
 
         }
