@@ -31,8 +31,7 @@ namespace BL
             if (DateTime.Now.CompareTo(nanny.birthday.AddYears(18)) >= 0)
                 myDal.addNanny(nanny);
             else
-                throw new Exception("exception while sending to data source:\ncannot add this nanny.she is not 18 years old! those are nanny detail:\n" +
-                    "***********************************************\n" + nanny.ToString() + "\n***********************************************\n");
+                throw new Exception("Joining the system is prohibited under the age of 18");
 
         }
 
@@ -96,7 +95,7 @@ namespace BL
             if (DateTime.Now.CompareTo(child.birthday.AddMonths(3)) >= 0)
                 myDal.addChild(child);
             else
-                throw new Exception("the child is to young to be send to nanny.\n");
+                throw new Exception("Your child is to young to be send to this nanny.\n");
         }
 
         /// <summary>

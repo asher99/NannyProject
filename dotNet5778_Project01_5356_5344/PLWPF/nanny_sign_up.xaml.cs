@@ -26,7 +26,7 @@ namespace PLWPF
     {
         static IBL myBL = BL_Factory.Get_BL;
 
-        
+
 
         public nanny_sign_up()
         {
@@ -51,15 +51,7 @@ namespace PLWPF
                 checkDetailsNanny(nanny);
                 readDetailsNanny(nanny);
 
-
-                try
-                {
-                    myBL.addNanny(nanny);
-                }
-                catch (Exception error_str)
-                {
-                    MessageBox.Show(error_str.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+                myBL.addNanny(nanny);
 
                 MessageBox.Show("Your Detail now stored in our system! you can enter your personal zone any time to change them!", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();
@@ -70,7 +62,7 @@ namespace PLWPF
                 MessageBox.Show(error_str.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            
+
 
 
         }
@@ -163,7 +155,7 @@ namespace PLWPF
 
             // illegal inputs! working time unput checked in the Day class constructor.
 
-            if(!firstNameInput.Text.All(char.IsLetter))
+            if (!firstNameInput.Text.All(char.IsLetter))
                 throw new Exception("First name input is illegal!");
 
             if (!lastNameInput.Text.All(char.IsLetter))
