@@ -95,7 +95,7 @@ namespace BL
             if (DateTime.Now.CompareTo(child.birthday.AddMonths(3)) >= 0)
                 myDal.addChild(child);
             else
-                throw new Exception("Your child is to young to be send to this nanny.\n");
+                throw new Exception("Your child is to young to be send to a nanny.\n");
         }
 
         /// <summary>
