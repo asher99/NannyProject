@@ -26,7 +26,6 @@
                  Width="auto" Click="goToMotherPage" BorderBrush="GreenYellow" Style="{DynamicResource MyButtonStyle}" Grid.Column="1" Grid.Row="1"/>
         <Button x:Name="button1" Content="Nanny"  Height="auto" Margin="2,5,0,0"                 
               Width="auto" Click="goToNannyPage" BorderBrush="GreenYellow" Style="{DynamicResource MyButtonStyle}" Grid.Column="1" Grid.Row="2" />
-        <Button x:Name="AdminEntry" Content="Admin" Grid.Column="3" Style="{DynamicResource MyButtonStyle}"   Height="auto" Margin="0,0,34,0" Grid.Row="2"  Width="auto" Grid.ColumnSpan="2" Click="admin_login"/>
-        <PasswordBox x:Name="passwordBox" Grid.Column="3" HorizontalAlignment="Left" Height="38" Margin="2.431,4,0,0" VerticalAlignment="Top" Width="124" IsVisibleChanged="" Grid.Row="1"/>
-    </Grid>
+        <Button x:Name="AdminEntry" Content="Admin" Grid.Column="3" Style="{DynamicResource MyButtonStyle}"   Height="auto" Margin="0,0,34,0" Grid.Row="2"  Width="auto" Grid.ColumnSpan="2"  Click="admin_login"/>
+         </Grid>
 </Window>

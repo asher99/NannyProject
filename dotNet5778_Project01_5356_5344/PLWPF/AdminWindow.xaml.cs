@@ -11,17 +11,26 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BL;
+using BE;
 
 namespace PLWPF
 {
+
     /// <summary>
     /// Interaction logic for loginAdminWindow.xaml
     /// </summary>
     public partial class loginAdminWindow : Window
     {
+        static IBL myBL = BL_Factory.Get_BL;
+
         public loginAdminWindow()
         {
             InitializeComponent();
+        }
+        private void displayList(object sender, RoutedEventArgs e)
+        {           
+            myBL.getListOfNanny();
         }
     }
 }
