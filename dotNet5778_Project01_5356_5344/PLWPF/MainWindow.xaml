@@ -15,14 +15,18 @@
             <RowDefinition Height="28*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="6*"/>
-            <ColumnDefinition Width="28*"/>
-            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="31*"/>
+            <ColumnDefinition Width="146*"/>
+            <ColumnDefinition Width="203*"/>
+            <ColumnDefinition Width="128*"/>
+            <ColumnDefinition Width="35*"/>
         </Grid.ColumnDefinitions>
-        <Image Stretch="Fill" Source="images/logo1.jpg" Grid.ColumnSpan="3" Grid.RowSpan="4" />
+        <Image Stretch="Fill" Source="images/logo1.jpg" Grid.ColumnSpan="5" Grid.RowSpan="4" />
         <Button x:Name="button" Content="Mother"  Height="auto" Margin="2,0,0,0" 
                  Width="auto" Click="goToMotherPage" BorderBrush="GreenYellow" Style="{DynamicResource MyButtonStyle}" Grid.Column="1" Grid.Row="1"/>
         <Button x:Name="button1" Content="Nanny"  Height="auto" Margin="2,5,0,0"                 
               Width="auto" Click="goToNannyPage" BorderBrush="GreenYellow" Style="{DynamicResource MyButtonStyle}" Grid.Column="1" Grid.Row="2" />
+        <Button x:Name="AdminEntry" Content="Admin" Grid.Column="3" Style="{DynamicResource MyButtonStyle}"   Height="auto" Margin="0,0,34,0" Grid.Row="2"  Width="auto" Grid.ColumnSpan="2" Click="admin_login"/>
+        <PasswordBox x:Name="passwordBox" Grid.Column="3" HorizontalAlignment="Left" Height="38" Margin="2.431,4,0,0" VerticalAlignment="Top" Width="124" IsVisibleChanged="" Grid.Row="1"/>
     </Grid>
 </Window>
