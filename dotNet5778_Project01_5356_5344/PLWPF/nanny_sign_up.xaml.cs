@@ -119,7 +119,7 @@ namespace PLWPF
                 throw new Exception("There is no start time on Wednesday");
 
             if (thrusday_start.Text == "")
-                throw new Exception("There is no start time on Thrusday");
+                throw new Exception("There is no start time on Thursday");
 
             if (friday_start.Text == "")
                 throw new Exception("There is no start time on Friday");
@@ -138,7 +138,7 @@ namespace PLWPF
                 throw new Exception("There is no finish time on Wednesday");
 
             if (thrusday_finish.Text == "")
-                throw new Exception("There is no finish time on Thrusday");
+                throw new Exception("There is no finish time on Thursday");
 
             if (friday_finish.Text == "")
                 throw new Exception("There is no finish time on Friday");
@@ -153,7 +153,7 @@ namespace PLWPF
 
 
 
-            // illegal inputs! working time unput checked in the Day class constructor.
+            // illegal inputs! working time input checked in the Day class constructor.
 
             if (!firstNameInput.Text.All(char.IsLetter))
                 throw new Exception("First name input is illegal!");
@@ -175,7 +175,7 @@ namespace PLWPF
                 throw new Exception("Kid Minimum age input is illegal!");
 
             if (!nanny_maxOfKids.Text.All(Char.IsDigit))
-                throw new Exception("Maximun number of kids input is illegal!");
+                throw new Exception("Maximum number of kids input is illegal!");
 
             if (!nanny_id.Text.All(Char.IsDigit))
                 throw new Exception("ID number input is illegal!");
@@ -199,7 +199,7 @@ namespace PLWPF
         }
 
         /// <summary>
-        /// reading the data from the window and assighn it to the Nanny object
+        /// reading the data from the window and assign it to the Nanny object
         /// </summary>
         /// <param name="nanny"></param>
         private void readDetailsNanny(Nanny nanny)
