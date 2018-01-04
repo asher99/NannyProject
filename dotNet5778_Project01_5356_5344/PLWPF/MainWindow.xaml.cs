@@ -38,5 +38,10 @@ namespace PLWPF
             Window nannyPage = new NannyWindow();
            nannyPage.ShowDialog();
         }
+        private void admin_login(object sender, RoutedEventArgs e)
+        {  
+            Window login = new loginAdminWindow();
+            login.ShowDialog();
+        }
     }
 }

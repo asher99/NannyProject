@@ -1,0 +1,20 @@
+﻿<Window x:Class="PLWPF.loginAdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="loginAdminWindow" Height="500" Width="700">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Height="100" Margin="8,25,0,295" Width="100">
+            <RadioButton x:Name="Nannylist" Content="Nanny list" FontSize="14" FontWeight="Bold" />
+            <RadioButton x:Name="Motherlist" Content="Mother list" FontSize="14" FontWeight="Bold" />
+            <RadioButton x:Name="Childlist" Content="Child list" FontSize="14" FontWeight="Bold"/>
+            <RadioButton x:Name="Contractlist" Content="Contract list" FontSize="14" FontWeight="Bold"/>
+        </StackPanel>
+        <Label x:Name="label" Content="Choose list for display:" FontWeight="Bold" HorizontalAlignment="Left" Height="26" Margin="0,24,0,0" VerticalAlignment="Top" Width="141"/>
+
+    </Grid>
+</Window>

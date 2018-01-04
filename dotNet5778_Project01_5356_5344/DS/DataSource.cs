@@ -21,5 +21,8 @@ namespace DS
         public static List<Contract> listOfContracts = new List<Contract>();
 
         // stored object for long term use of this project
+        
+
     }
+
 }
