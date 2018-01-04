@@ -45,5 +45,6 @@ namespace BE
             id = my_id;
             phoneNumber = my_phone;
         }
+        public Mother() { }
     }
 }
