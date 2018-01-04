@@ -79,7 +79,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MoterInfoWindow.xaml">
+    <Page Include="MotherInterface.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -117,8 +117,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MoterInfoWindow.xaml.cs">
-      <DependentUpon>MoterInfoWindow.xaml</DependentUpon>
+    <Compile Include="MotherInterface.xaml.cs">
+      <DependentUpon>MotherInterface.xaml</DependentUpon>
     </Compile>
     <Compile Include="MotherUserEntry.xaml.cs">
       <DependentUpon>MotherUserEntry.xaml</DependentUpon>
