@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BL;
+using BE;
 
 namespace PLWPF
 {
@@ -35,14 +36,16 @@ namespace PLWPF
                 // if Nanny in list
                 int id = Convert.ToInt32(idTextBox.Text);
                 if (!myBL.isNannyInList(id))
-                    throw new Exception("This Mother is not in the system.");
-                Window nannyInfo = new MoterInfoWindow();
+                    throw new Exception("You are not in the system.");
+                Nanny thisNanny = myBL.nannyById(id);
+                Window nannyInfo = new NannyInterface(thisNanny);
                 Close();
                 nannyInfo.ShowDialog();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Close();
             }
         }
     }

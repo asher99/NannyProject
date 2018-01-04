@@ -71,6 +71,20 @@ namespace DAL
         }
 
         /// <summary>
+        /// return a Nanny object from DS based on Nanny ID.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public Nanny nannyById(int id)
+        {
+            var list = from Nanny temp in getListOfNanny()
+                   where temp.id == id
+                   select temp;
+
+            return list.ElementAt(0);
+        }
+
+        /// <summary>
         /// checks if nanny's id is in the DS
         /// </summary>
         /// <param name="nannyId"></param>

@@ -67,6 +67,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BoolConverter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -83,6 +84,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="NannyInterface.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NannyWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +97,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="nanny_sign_up.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="nanny_update_details.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,6 +119,9 @@
     <Compile Include="MotherWindow.xaml.cs">
       <DependentUpon>MotherWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NannyInterface.xaml.cs">
+      <DependentUpon>NannyInterface.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NannyWindow.xaml.cs">
       <DependentUpon>NannyWindow.xaml</DependentUpon>
     </Compile>
@@ -118,6 +130,9 @@
     </Compile>
     <Compile Include="nanny_sign_up.xaml.cs">
       <DependentUpon>nanny_sign_up.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="nanny_update_details.xaml.cs">
+      <DependentUpon>nanny_update_details.xaml</DependentUpon>
     </Compile>
     <Compile Include="newMotherWindow.xaml.cs">
       <DependentUpon>newMotherWindow.xaml</DependentUpon>

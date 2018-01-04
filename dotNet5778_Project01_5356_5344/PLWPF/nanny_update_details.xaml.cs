@@ -11,27 +11,23 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using BE;
 using BL;
-
+using BE;
 
 namespace PLWPF
 {
-
-
     /// <summary>
-    /// Interaction logic for nanny_sign_up.xaml
+    /// Interaction logic for nanny_update_details.xaml
     /// </summary>
-    public partial class nanny_sign_up : Window
+    public partial class nanny_update_details : Window
     {
 
         BE.Nanny nanny;
         BL.IBL myBL;
 
-        public nanny_sign_up()
+        public nanny_update_details(Nanny thisNanny)
         {
             InitializeComponent();
-
             this.MaxHeight = 700;
             this.MaxWidth = 555;
 
@@ -40,19 +36,15 @@ namespace PLWPF
 
             myBL = BL_Factory.Get_BL;
             nanny = new BE.Nanny();
-            this.NannyDetailsGrid.DataContext = nanny;
+            this.NannyDetailsGrid.DataContext = thisNanny;
+
+            firstNameInput.IsEnabled = false;
+            lastNameInput.IsEnabled = false;
+            nanny_id.IsEnabled = false;
+            nanny_birthday.IsEnabled = false;
+            nanny_seniority.IsEnabled = false;
         }
 
-        private void close_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        /// <summary>
-        /// Clicking on Continue Button rising this event. here all the details been checked, and the hours are installed.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void continue_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -63,10 +55,11 @@ namespace PLWPF
                 // enter the working hours.
                 ReadHoursOfWork();
 
-                // adding nanny to DS
-                myBL.addNanny(nanny);
 
-                MessageBox.Show("Your Detail now stored in our system! you can enter your personal zone any time to change them!", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
+                // adding nanny to DS
+                myBL.updateNanny((Nanny)this.NannyDetailsGrid.DataContext);
+
+                MessageBox.Show("Your information has been updated!", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();
 
             }
@@ -75,6 +68,7 @@ namespace PLWPF
                 MessageBox.Show(error_str.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
 
         /// <summary>
         /// check if the details from the window are legal
@@ -177,7 +171,7 @@ namespace PLWPF
                 throw new Exception("ID number input is illegal!");
 
             if (!nanny_phone.Text.All(Char.IsDigit))
-                throw new Exception("Phone Number input is illegal!");
+                throw new Exception("ID number input is illegal!");
 
             if (!nanny_maxAge.Text.All(Char.IsDigit))
                 throw new Exception("Kid Maximum age input is illegal!");
@@ -210,58 +204,6 @@ namespace PLWPF
         }
 
         /// <summary>
-        /// reading the data from the window and assign it to the Nanny object
-        /// </summary>
-        /// <param name="nanny"></param>
-        /*private void readDetailsNanny(Nanny nanny)
-        {
-            //personal details
-            nanny.firstName = firstNameInput.Text;
-            nanny.familyName = lastNameInput.Text;
-            nanny.id = int.Parse(nanny_id.Text);
-            nanny.address = nanny_address.Text;
-            nanny.phoneNumber = nanny_phone.Text;
-            nanny.birthday = nanny_birthday.SelectedDate.Value;
-            nanny.floorNumber = int.Parse(nanny_floor.Text);
-            nanny.hasElevator = elevator.IsChecked.Value;
-
-            // professional details:
-            nanny.seniority = int.Parse(nanny_seniority.Text);
-            nanny.maxOfKids = int.Parse(nanny_maxOfKids.Text);
-            nanny.maxAgeOfKid = int.Parse(nanny_maxAge.Text);
-            nanny.minAgeOfKid = int.Parse(nanny_minAge.Text);
-            nanny.hasGovVacationDays = govVacations.IsChecked.Value;
-            nanny.Recommendations = recommendations.Text;
-
-            // work details
-            nanny.daysOfWork = new bool[6];
-            nanny.daysOfWork[0] = sunday.IsChecked.Value;
-            nanny.daysOfWork[1] = monday.IsChecked.Value;
-            nanny.daysOfWork[2] = tuesday.IsChecked.Value;
-            nanny.daysOfWork[3] = wendsday.IsChecked.Value;
-            nanny.daysOfWork[4] = thrusday.IsChecked.Value;
-            nanny.daysOfWork[5] = friday.IsChecked.Value;
-
-            nanny.hoursOfWork = new Day[6];
-
-            nanny.hoursOfWork[0] = new Day(sunday_start.Text, sunday_finish.Text);
-            nanny.hoursOfWork[1] = new Day(monday_start.Text, monday_finish.Text);
-            nanny.hoursOfWork[2] = new Day(tuesday_start.Text, tuesday_finish.Text);
-            nanny.hoursOfWork[3] = new Day(wednesday_start.Text, wednesday_finish.Text);
-            nanny.hoursOfWork[4] = new Day(thrusday_start.Text, thrusday_finish.Text);
-            nanny.hoursOfWork[5] = new Day(friday_start.Text, friday_finish.Text);
-
-
-            nanny.doesWorkPerHour = workPerHour.IsChecked.Value;
-            nanny.monthlyWage = int.Parse(nanny_salary_month.Text);
-            if (workPerHour.IsChecked.Value)
-                nanny.hourWage = int.Parse(nanny_salary_hour.Text);
-            else nanny.hourWage = 0;
-        }*/
-
-
-
-        /// <summary>
         /// reading the working hours from the window and assign it to the Nanny object
         /// </summary>
         /// <param name="nanny"></param>
@@ -273,6 +215,11 @@ namespace PLWPF
             nanny.hoursOfWork[3] = new Day(wednesday_start.Text, wednesday_finish.Text);
             nanny.hoursOfWork[4] = new Day(thrusday_start.Text, thrusday_finish.Text);
             nanny.hoursOfWork[5] = new Day(friday_start.Text, friday_finish.Text);
+        }
+
+        private void close_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

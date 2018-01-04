@@ -80,7 +80,7 @@ namespace BE
          
         }
 
-        public Nanny() { numberOfSignedContracts = 0; }
+        public Nanny() { numberOfSignedContracts = 0; daysOfWork = new bool[6]; hoursOfWork = new Day[6]; }
 
     }
 }

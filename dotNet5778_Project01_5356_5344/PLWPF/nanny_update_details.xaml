@@ -1,16 +1,13 @@
-﻿<Window x:Class="PLWPF.nanny_sign_up"
+﻿<Window x:Class="PLWPF.nanny_update_details"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
-        xmlns:BE="clr-namespace:BE;assembly=BE"
+                xmlns:BE="clr-namespace:BE;assembly=BE"
         mc:Ignorable="d"
-        Title="nanny_sign_up" Height="700" Width="555">
-
-
-
-
+        Title="nanny_update_details" Height="700" Width="555">
+    
     <Grid x:Name="NannyDetailsGrid" d:DataContext="{d:DesignInstance BE:Child }" HorizontalAlignment="Left" Height="670"  VerticalAlignment="Top" Width="540">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -163,5 +160,5 @@
         <Grid.Background>
             <ImageBrush ImageSource="images/background1.png" Stretch="Fill"/>
         </Grid.Background>
-        </Grid>
+    </Grid>
 </Window>
