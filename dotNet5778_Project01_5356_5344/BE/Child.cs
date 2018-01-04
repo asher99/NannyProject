@@ -31,13 +31,18 @@ namespace BE
             return name + " - CHILD\n child id: " + id + "\n birth date:\t" + birthday.ToShortDateString() + "\n mother id: " + momsId + '\n';
         }
 
-        public Child(string my_name, int my_id, int my_motherId, DateTime my_birthday)
+        public Child(string my_name, int my_id, int my_motherId, DateTime my_birthday,bool my_specialNeeds,string my_specialNeedsString)
         {
             name = my_name;
             id = my_id;
             momsId = my_motherId;
             birthday = my_birthday;
+            hasSpecialNeeds = my_specialNeeds;
+            specialNeeds = my_specialNeedsString;
+
         }
+
+        public Child() { }
 
     }
 }
