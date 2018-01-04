@@ -27,10 +27,34 @@ namespace PLWPF
         public loginAdminWindow()
         {
             InitializeComponent();
+            var myList = myBL.getListOfNanny();
+           // var myList = displayList();
+            dataGrid.ItemsSource = myList;
         }
-        private void displayList(object sender, RoutedEventArgs e)
-        {           
-            myBL.getListOfNanny();
+        
+        private IEnumerable<Nanny> displayList()
+        {
+            if (Nannylist.IsChecked == true)
+            {
+                return myBL.getListOfNanny();
+            }
+/*
+            if (Motherlist.IsChecked == true)
+            {
+                return myBL.getListOfMother();
+            }
+
+            if (Childlist.IsChecked == true)
+            {
+                return myBL.getListOfChild();
+            }
+
+            if (Contractlist.IsChecked == true)
+            {
+                return myBL.getListOfContract();
+            }
+  */
+            return null; 
         }
     }
 }
