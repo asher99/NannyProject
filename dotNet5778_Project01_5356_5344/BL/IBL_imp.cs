@@ -358,6 +358,15 @@ namespace BL
             return temp.ElementAt(0);
         }
 
+        public Mother getMotherByID(int motherId)
+        {
+            var temp = from item in myDal.getListOfMother()
+                       where item.id == motherId
+                       select item;
+
+            return temp.ElementAt(0);
+        }
+
         /// <summary>
         ///  returns the object of nanny from list by searching is id
         ///  using DAL method

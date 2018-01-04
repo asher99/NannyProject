@@ -49,7 +49,8 @@ namespace PLWPF
                 if (!myBL.isMotherInList(id))
                     throw new Exception("This Mother is not in the system.");
 
-                Window motherInfo = new MoterInfoWindow();
+                Mother thisMother = myBL.getMotherByID(id);
+                Window motherInfo = new MoterInterface(thisMother);
                 Close();
                 motherInfo.ShowDialog();
             }
