@@ -24,21 +24,25 @@ namespace PLWPF
     {
         static IBL myBL = BL_Factory.Get_BL;
 
+        /// <summary>
+        /// build asmin window. set the default on nanny list
+        /// </summary>
         public loginAdminWindow()
         {
             InitializeComponent();
             var myList = myBL.getListOfNanny();
            // var myList = displayList();
             dataGrid.ItemsSource = myList;
+            Nannylist.IsChecked = true;
         }
         
-        private IEnumerable<Nanny> displayList()
+        /*private IEnumerable<object> displayList()
         {
             if (Nannylist.IsChecked == true)
             {
                 return myBL.getListOfNanny();
             }
-/*
+
             if (Motherlist.IsChecked == true)
             {
                 return myBL.getListOfMother();
@@ -53,8 +57,34 @@ namespace PLWPF
             {
                 return myBL.getListOfContract();
             }
-  */
+ 
             return null; 
+        }*/
+
+
+       /// <summary>
+       /// multiple events for the right list to show.
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
+        private void Nannylist_Checked(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = myBL.getListOfNanny();
+        }
+
+        private void Motherlist_Checked(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = myBL.getListOfMother();
+        }
+
+        private void Childlist_Checked(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = myBL.getListOfChild();
+        }
+
+        private void Contractlist_Checked(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = myBL.getListOfContract();
         }
     }
 }

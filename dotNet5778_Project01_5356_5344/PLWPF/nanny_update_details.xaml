@@ -18,9 +18,7 @@
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
-        <Grid.Resources>
-            <local:BoolConverter x:Key="boolConverter"/>
-        </Grid.Resources>
+
 
 
         <StackPanel Grid.Row="0" Background="GreenYellow" Opacity="0.75"/>
@@ -88,42 +86,42 @@
                 <Label Content="the corresponding hours:" Height="26" />
 
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox x:Name="sunday" Content="Sun." VerticalAlignment="Center" IsChecked="{Binding Path=daysOfWork[0], Converter={StaticResource boolConverter}, Mode=TwoWay}"/>
+                    <CheckBox x:Name="sunday" Content="Sun." VerticalAlignment="Center" IsChecked="{Binding Path=daysOfWork[0], Mode=TwoWay}"/>
                     <Label Content="start:" VerticalAlignment="Top"/>
                     <TextBox x:Name="sunday_start" Width="47" Text="08:00"/>
                     <Label Content="finish:" VerticalAlignment="Top"/>
                     <TextBox x:Name="sunday_finish" Width="47"  Text="16:00"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox x:Name="monday" Content="Mon" VerticalAlignment="Center" IsChecked="{Binding Path=daysOfWork[1], Converter={StaticResource boolConverter},Mode=TwoWay}"/>
+                    <CheckBox x:Name="monday" Content="Mon" VerticalAlignment="Center" IsChecked="{Binding Path=daysOfWork[1],Mode=TwoWay}"/>
                     <Label Content="start" VerticalAlignment="Top"/>
                     <TextBox x:Name="monday_start" Width="47"  Text="08:00"/>
                     <Label Content="finish:" VerticalAlignment="Top"/>
                     <TextBox x:Name="monday_finish" Width="47"  Text="16:00"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox x:Name="tuesday" Content="Tue." VerticalAlignment="Center" IsChecked="{Binding Path=daysOfWork[2], Converter={StaticResource boolConverter}, Mode=TwoWay}"/>
+                    <CheckBox x:Name="tuesday" Content="Tue." VerticalAlignment="Center" IsChecked="{Binding Path=daysOfWork[2], Mode=TwoWay}"/>
                     <Label Content="start:" VerticalAlignment="Top"/>
                     <TextBox x:Name="tuesday_start" Width="47"  Text="08:00"/>
                     <Label Content="finish:" VerticalAlignment="Top"/>
                     <TextBox x:Name="tuesday_finish" Width="47"  Text="16:00"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox x:Name="wendsday" Content="wen" VerticalAlignment="Center" IsChecked="{Binding Path=daysOfWork[3],Converter={StaticResource boolConverter}, Mode=TwoWay}"/>
+                    <CheckBox x:Name="wendsday" Content="wen" VerticalAlignment="Center" IsChecked="{Binding Path=daysOfWork[3], Mode=TwoWay}"/>
                     <Label Content="start:" VerticalAlignment="Top"/>
                     <TextBox x:Name="wednesday_start" Width="47"  Text="08:00"/>
                     <Label Content="finish:" VerticalAlignment="Top"/>
                     <TextBox x:Name="wednesday_finish" Width="47"  Text="16:00"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox x:Name="thrusday" Content="Thu." VerticalAlignment="Center" IsChecked="{Binding Path=daysOfWork[4],Converter={StaticResource boolConverter}, Mode=TwoWay}"/>
+                    <CheckBox x:Name="thrusday" Content="Thu." VerticalAlignment="Center" IsChecked="{Binding Path=daysOfWork[4], Mode=TwoWay}"/>
                     <Label Content="start:" VerticalAlignment="Top"/>
                     <TextBox x:Name="thrusday_start" Width="47"  Text="08:00"/>
                     <Label Content="finish:" VerticalAlignment="Top"/>
                     <TextBox x:Name="thrusday_finish" Width="47"  Text="16:00"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox x:Name="friday" Content="Frid." VerticalAlignment="Center" IsChecked="{Binding Path=daysOfWork[5],Converter={StaticResource boolConverter}, Mode=TwoWay}"/>
+                    <CheckBox x:Name="friday" Content="Frid." VerticalAlignment="Center" IsChecked="{Binding Path=daysOfWork[5], Mode=TwoWay}"/>
                     <Label Content="start:" VerticalAlignment="Top"/>
                     <TextBox x:Name="friday_start" Width="47"  Text="08:00"/>
                     <Label Content="finish:" VerticalAlignment="Top"/>

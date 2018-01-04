@@ -53,10 +53,10 @@ namespace PLWPF
         private void nannyLeave()
         {
             // giving last chance
-            MessageBoxResult whatNow = MessageBox.Show("Are You Sure you want to leave?","",MessageBoxButton.OKCancel);
+            MessageBoxResult whatNow = MessageBox.Show("Are You Sure you want to delete your user?","",MessageBoxButton.OKCancel);
             switch(whatNow)
             {
-                case MessageBoxResult.Cancel: Close();  return;
+                case MessageBoxResult.Cancel: return;
             }
 
             if (thisNanny.numberOfSignedContracts != 0)
@@ -71,8 +71,10 @@ namespace PLWPF
         // show detils, some of the details can't be changed
         private void showDetails()
         {
-            Window detailsWindow = new nanny_update_details(thisNanny);
-            detailsWindow.ShowDialog();
+            Window nannyDetails = new nanny_update_details(thisNanny);
+            this.Close();
+            nannyDetails.ShowDialog();
+          
         }
     }
 }

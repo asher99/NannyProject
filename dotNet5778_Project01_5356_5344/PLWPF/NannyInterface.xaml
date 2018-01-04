@@ -12,12 +12,13 @@
         </Grid.Background>
 
 
+
+        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="20"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
@@ -26,10 +27,12 @@
         <ComboBox x:Name="Options" Grid.Row="2" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="200" SelectionChanged="ComboBox_SelectionChanged">
             <ComboBoxItem Content="Update Your Details"/>
             <ComboBoxItem Content="View Contracts"/>
-            <ComboBoxItem Content="Leave system" Foreground="Gray"/>
+            <ComboBoxItem Content="Delete User" Foreground="Gray"/>
         </ComboBox>
         <Button x:Name="exit" Content="Exit" Grid.Row="4" Width="200" Click="exit_Click"/>
-
-
     </Grid>
+
+    
+
 </Window>
+

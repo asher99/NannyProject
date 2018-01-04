@@ -18,6 +18,10 @@ namespace BE
         public int finish_hour { set; get; }
         public int finish_minute { set; get; }
 
+        public string string_start { set; get; }
+        public string string_finish { set; get; }
+
+
         public float workTime()
         {
             float total = 0;
@@ -56,6 +60,10 @@ namespace BE
             if (str_start[2] != ':' || str_finish[2] != ':')
                 throw new Exception("at least one of your working time is illegal");
 
+            if (str_start.Length > 5 || str_finish.Length > 5)
+                throw new Exception("at least one of your working time is illegal");
+
+
 
             // fill fields
             start_hour = int.Parse(str_start.Substring(0, 2));
@@ -64,10 +72,12 @@ namespace BE
             finish_hour = int.Parse(str_finish.Substring(0, 2));
             finish_minute = int.Parse(str_finish.Substring(3));
 
+            string_start = str_start;
+            string_finish = str_finish;
+
             // handle illegal input
             if (start_hour >= finish_hour)
                 throw new Exception("at least one of your working time is illegal");
-
         }
 
         public Day() { }
