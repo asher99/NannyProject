@@ -35,7 +35,7 @@ namespace PLWPF
             this.MinWidth = 555;
 
             myBL = BL_Factory.Get_BL;
-            nanny = new BE.Nanny();
+            nanny = thisNanny;
             this.NannyDetailsGrid.DataContext = thisNanny;
 
             firstNameInput.IsEnabled = false;
@@ -43,6 +43,7 @@ namespace PLWPF
             nanny_id.IsEnabled = false;
             nanny_birthday.IsEnabled = false;
             nanny_seniority.IsEnabled = false;
+            InsertHoursOfWork();
         }
 
         private void continue_Click(object sender, RoutedEventArgs e)
@@ -216,6 +217,21 @@ namespace PLWPF
             nanny.hoursOfWork[4] = new Day(thrusday_start.Text, thrusday_finish.Text);
             nanny.hoursOfWork[5] = new Day(friday_start.Text, friday_finish.Text);
         }
+
+        /// <summary>
+        /// insert the working hours from the object and assign it to the window
+        /// </summary>
+        /// <param name="nanny"></param>
+        private void InsertHoursOfWork()
+        {
+            sunday_start.Text = nanny.hoursOfWork[0].string_start; sunday_finish.Text = nanny.hoursOfWork[0].string_finish;
+            monday_start.Text = nanny.hoursOfWork[1].string_start; monday_finish.Text = nanny.hoursOfWork[1].string_finish;
+            tuesday_start.Text = nanny.hoursOfWork[2].string_start; tuesday_finish.Text = nanny.hoursOfWork[2].string_finish;
+            wednesday_start.Text = nanny.hoursOfWork[3].string_start; wednesday_finish.Text = nanny.hoursOfWork[3].string_finish;
+            thrusday_start.Text = nanny.hoursOfWork[4].string_start; thrusday_finish.Text = nanny.hoursOfWork[4].string_finish;
+            friday_start.Text = nanny.hoursOfWork[5].string_start; friday_finish.Text = nanny.hoursOfWork[5].string_finish;
+        }
+
 
         private void close_Click(object sender, RoutedEventArgs e)
         {

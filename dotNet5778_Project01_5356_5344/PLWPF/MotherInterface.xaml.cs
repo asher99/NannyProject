@@ -30,5 +30,9 @@ namespace PLWPF
             thisMother = mother;
         }
 
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }
