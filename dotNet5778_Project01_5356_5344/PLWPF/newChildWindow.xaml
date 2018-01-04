@@ -1,0 +1,47 @@
+﻿<Window x:Class="PLWPF.newChildWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:BE="clr-namespace:BE;assembly=BE"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="newChildWindow" Height="350" Width="555">
+    <Grid x:Name="ChildDetailsGrid" d:DataContext="{d:DesignInstance BE:Child }">
+
+        <StackPanel x:Name="personalDetails" HorizontalAlignment="Left" Height="210"  Grid.Row="2" VerticalAlignment="Top" Width="530" Orientation="Horizontal">
+
+            <StackPanel x:Name="labels" Orientation="Vertical" Width="300" >
+                <Label x:Name="firstName" Content="first name: (only one name)" FontSize="14"  HorizontalAlignment="Center" Height="30"/>
+                <Label x:Name="lastName" Content="last name: (only one name)" FontSize="14"  HorizontalAlignment="Center" Height="30"/>
+                <Label Content="Enter your id number:" HorizontalAlignment="Center" Height="30" FontSize="14"/>
+                <Label Content="Enter your birthday:" HorizontalAlignment="Center" Height="30" FontSize="14"/>
+                <CheckBox x:Name="specialNeeds" Content="Do the Child have special needs?" Height="30" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Bottom" IsChecked="{ Binding Path=hasSpecialNeeds, Mode=TwoWay}"/>
+
+            </StackPanel>
+
+            <StackPanel x:Name="input" Orientation="Vertical"  Width="230">
+                <TextBox x:Name="firstNameInput" Height="30" Text="{Binding Path=firstName, Mode=TwoWay}"/>
+                <TextBox x:Name="lastNameInput" Height="30" Text="{Binding Path=familyName, Mode=TwoWay}"/>
+                <TextBox x:Name="child_id" Height="30" Text="{Binding Path=id, Mode=TwoWay}"/>
+                <TextBox x:Name="mother_phone" Height="30" Text="{Binding Path=phoneNumber, Mode=TwoWay}"/>
+                <TextBox x:Name="ChildsSpecialNeeds" Height="100" Width="200" Text="{Binding Path=specialNeeds, Mode=TwoWay}" FontStyle="Oblique" />
+
+                <DatePicker x:Name="Childsbirthday" Height="30" SelectedDate="{Binding Path=birthday, Mode=TwoWay}" />
+            </StackPanel>
+        </StackPanel>
+        
+        <StackPanel x:Name="end" Orientation="Horizontal"  VerticalAlignment="Bottom"  >
+            <Label Width="300"/>
+            <Button x:Name="close" Content="back" Height="40" Width="50" Click="close_Click"/>
+            <Label Width="80"/>
+            <Button x:Name="save" Content="Save!" Height="40" Width="80" HorizontalAlignment="Right" Click="save_Click"/>
+        </StackPanel>
+
+
+
+        <Grid.Background>
+            <ImageBrush ImageSource="images/background1.png" Stretch="Fill"/>
+        </Grid.Background>
+    </Grid>
+</Window>

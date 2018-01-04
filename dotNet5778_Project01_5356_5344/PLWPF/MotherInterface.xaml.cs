@@ -34,5 +34,30 @@ namespace PLWPF
         {
             Close();
         }
+
+        private void Options_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (Options.SelectedIndex)
+            {
+                case 0: // update
+                    break;
+                case 1: // view contracts
+                    break;
+                case 2:
+                    addChildToMother();
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+            }
+
+        }
+
+        private void addChildToMother()
+        {
+            Window NewChildWindow = new newChildWindow();
+            NewChildWindow.ShowDialog();
+        }
     }
 }

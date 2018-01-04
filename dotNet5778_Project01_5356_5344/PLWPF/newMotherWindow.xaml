@@ -39,7 +39,7 @@
                 <Label Content="Enter your phone number" HorizontalAlignment="Center" Height="30" FontSize="14"/>
                 <Label Content="Enter your address:" HorizontalAlignment="Center" Height="30" FontSize="14"/>
                 <Label Content="Enter your search radius in meters:" HorizontalAlignment="Center" Height="30" FontSize="14"/>
-                <CheckBox x:Name="TrialMetting" Content="Do you wish for a trial meeting?" Height="30" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Bottom" IsChecked="{ Binding Path=hasElevator, Mode=TwoWay}"/>
+                <CheckBox x:Name="TrialMetting" Content="Do you wish for a trial meeting?" Height="30" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Bottom" IsChecked="{ Binding Path=wantATrialMeeting, Mode=TwoWay}"/>
 
             </StackPanel>
 
