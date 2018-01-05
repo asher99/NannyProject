@@ -78,8 +78,8 @@ namespace DAL
         public Nanny nannyById(int id)
         {
             var list = from Nanny temp in getListOfNanny()
-                   where temp.id == id
-                   select temp;
+                       where temp.id == id
+                       select temp;
 
             return list.ElementAt(0);
         }
@@ -176,7 +176,7 @@ namespace DAL
         /// <param name="child"></param>
         public void addChild(Child child)
         {
-            if (isChildInList(child.id)) 
+            if (isChildInList(child.id))
                 throw new Exception("child already in list\n");
 
             DataSource.listOfChilds.Add(child);
@@ -351,6 +351,11 @@ namespace DAL
             return -1;
         }
 
+        /// <summary>
+        /// returns a list of all the contract that a id is involved
+        /// </summary>
+        /// <param name="my_id"></param>
+        /// <returns></returns>
         public IEnumerable<Contract> ListOfContractsById(int my_id)
         {
 
@@ -359,11 +364,34 @@ namespace DAL
                    select temp;
         }
 
+        /// <summary>
+        /// return a list of all of a mothers children
+        /// </summary>
+        /// <param name="mother"></param>
+        /// <returns></returns>
         public IEnumerable<Child> getListOfChildByMother(Mother mother)
         {
             return from child in getListOfChild()
                    where child.momsId == mother.id
                    select child;
+        }
+
+        /// <summary>
+        /// returns a list of all the children in the group of a nanny
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IEnumerable<Child> getListOfChildrenOfNanny(int id)
+        {
+            IEnumerable<Child> item= null;
+           foreach(Contract contract in ListOfContractsById(id))
+            {
+                item = from child in getListOfChild()
+                where contract.childId == child.id
+                select child;
+            }
+
+            return item;
         }
     }
 }

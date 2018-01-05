@@ -5,34 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="NannyInterface" Height="250" Width="300">
+        Title="NannyInterface" Height="250" Width="650">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="images/background1.png"/>
         </Grid.Background>
-
-
-
-        
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="400"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-
         <Label Content="Welcome Back!" Grid.Row="0" Background="YellowGreen" Opacity="0.8" FontStyle="Italic" FontWeight="Bold" FontSize="30" Margin="0"/>
         <Label Content="What Would you like to do?" Grid.Row="1" VerticalAlignment="Bottom" FontWeight="Bold"/>
         <ComboBox x:Name="Options" Grid.Row="2" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="200" SelectionChanged="ComboBox_SelectionChanged">
             <ComboBoxItem Content="Update Your Details"/>
+            <ComboBoxItem Content="View your Group"/>
             <ComboBoxItem Content="View Contracts"/>
             <ComboBoxItem Content="Delete User" Foreground="Gray"/>
         </ComboBox>
+        <DataGrid x:Name="dataGrid" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Width="350"/>
+        <DockPanel Grid.Column="1" Grid.Row="0" Background="YellowGreen" Opacity="0.8"/>
         <Button x:Name="exit" Content="Exit" Grid.Row="4" Width="200" Click="exit_Click"/>
     </Grid>
-
-    
-
 </Window>
 

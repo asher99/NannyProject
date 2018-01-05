@@ -770,5 +770,15 @@ namespace BL
         {
             return myDal.getListOfChildByMother(mother);
         }
+
+        /// <summary>
+        /// returns a list of all the children in the group of a nanny
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public IEnumerable<Child> getListOfChildrenOfNanny(int id)
+        {
+            return myDal.getListOfChildrenOfNanny(id);
+        }
     }
 }

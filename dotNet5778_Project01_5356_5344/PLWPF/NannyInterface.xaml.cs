@@ -43,9 +43,10 @@ namespace PLWPF
         {
             switch(Options.SelectedIndex)
             {
-                case 0: showDetails(); break;
-                case 1: break;
-                case 2: nannyLeave(); break;
+                case 0: showDetails(); break; // update details
+                case 1: dataGrid.ItemsSource = myBL.getListOfChildrenOfNanny(thisNanny.id); break;                 // view group
+                case 2: dataGrid.ItemsSource = myBL.ListOfContractsById(thisNanny.id); break;                  // view contracts
+                case 3: nannyLeave(); break;  // delete user
             }
         }
 
@@ -68,7 +69,7 @@ namespace PLWPF
             Close();
         }
 
-        // show detils, some of the details can't be changed
+        // show details, some of the details can't be changed
         private void showDetails()
         {
             Window nannyDetails = new nanny_update_details(thisNanny);

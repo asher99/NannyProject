@@ -13,7 +13,7 @@ namespace BL
     /// the interface of the BL layer
     /// points to all the methods that are defined in IBL_imp
     /// </summary>
-   public interface IBL
+    public interface IBL
     {
         void addNanny(Nanny nanny);
         void deleteNanny(Nanny nanny);
@@ -58,7 +58,7 @@ namespace BL
         IEnumerable<Contract> ListOfContractsById(int id);
         IEnumerable<Child> getListOfChildByMother(Mother mother);
         IEnumerable<Nanny> potentialNannys(Mother mother);
-
+        IEnumerable<Child> getListOfChildrenOfNanny(int id);
         void findAddress(string source);
 
 

@@ -47,6 +47,7 @@ namespace DAL
         int getMotherId(int id);
         IEnumerable<Contract> ListOfContractsById(int my_id);
         IEnumerable<Child> getListOfChildByMother(Mother mother);
+        IEnumerable<Child> getListOfChildrenOfNanny(int id);
 
     }
 }
