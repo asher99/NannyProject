@@ -20,11 +20,19 @@ namespace PLWPF
     /// </summary>
     public partial class MotherWindow : Window
     {
+        /// <summary>
+        /// window constructor
+        /// </summary>
         public MotherWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Event: when clicking on the button - go to the asked window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void newMother_Click(object sender, RoutedEventArgs e)
         {
             Window newMother = new newMotherWindow();
@@ -32,12 +40,23 @@ namespace PLWPF
             newMother.ShowDialog();
         }
 
+        /// <summary>
+        /// Event: when clicking on the button - go to the asked window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MotherUserEnter(object sender, RoutedEventArgs e)
         {
             Window userEntry = new MotherUserEntry();
             Close();
             userEntry.ShowDialog();
         }
+
+        /// <summary>
+        /// Event: when clicking on the button - go to the asked window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void backToMainMenu(object sender, RoutedEventArgs e)
         {
             this.Close();

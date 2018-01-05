@@ -28,6 +28,9 @@ namespace PLWPF
         BE.Nanny nanny;
         BL.IBL myBL;
 
+        /// <summary>
+        /// window constructor. set the Data context (Binding) to Nanny object
+        /// </summary>
         public nanny_sign_up()
         {
             InitializeComponent();
@@ -43,6 +46,11 @@ namespace PLWPF
             this.NannyDetailsGrid.DataContext = nanny;
         }
 
+        /// <summary>
+        /// Event: when clicking on the button - go to the asked window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

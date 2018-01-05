@@ -25,7 +25,7 @@ namespace PLWPF
         static IBL myBL = BL_Factory.Get_BL;
 
         /// <summary>
-        /// build asmin window. set the default on nanny list
+        /// build admin window. set the default on nanny list
         /// </summary>
         public loginAdminWindow()
         {

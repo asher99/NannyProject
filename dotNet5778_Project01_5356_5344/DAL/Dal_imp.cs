@@ -179,9 +179,6 @@ namespace DAL
             if (isChildInList(child.id)) 
                 throw new Exception("child already in list\n");
 
-            if(!isMotherInList(getMotherId(child.id))) // if the child does not have a mother
-                throw new Exception("this child does not have a mother in the system.\n");
-
             DataSource.listOfChilds.Add(child);
         }
 

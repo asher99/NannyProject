@@ -23,11 +23,19 @@ namespace PLWPF
     {
         static IBL myBL = BL_Factory.Get_BL;
 
+        /// <summary>
+        /// window constructor
+        /// </summary>
         public Nanny_Sign_in()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Event: when clicking on the button - enter to user interface.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MotherEnter_Click(object sender, RoutedEventArgs e)
         {
             try

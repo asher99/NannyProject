@@ -25,6 +25,9 @@ namespace PLWPF
 
         static IBL myBL = BL_Factory.Get_BL;
 
+        /// <summary>
+        /// window constructor
+        /// </summary>
         public MotherUserEntry()
         {
             try
@@ -37,6 +40,11 @@ namespace PLWPF
             }
         }
 
+        /// <summary>
+        /// receive data from window and enter to user interface
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MotherEnter_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -47,7 +55,7 @@ namespace PLWPF
                 string name = nameTextBox.Text;
 
                 if (!myBL.isMotherInList(id))
-                    throw new Exception("This Mother is not in the system.");
+                    throw new Exception("You are not in the system.");
 
                 Mother thisMother = myBL.getMotherByID(id);
                 Window motherInfo = new MoterInterface(thisMother);

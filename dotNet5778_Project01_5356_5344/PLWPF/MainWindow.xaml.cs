@@ -24,6 +24,9 @@ namespace PLWPF
     {
         static IBL myBL = BL_Factory.Get_BL;
 
+        /// <summary>
+        /// window constructor. including example objects definition.
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();
@@ -35,17 +38,33 @@ namespace PLWPF
             myBL.addMother(Hadasa);
         }
 
+        /// <summary>
+        /// Event: when clicking on the button - go to the asked window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void goToMotherPage(object sender, RoutedEventArgs e)
         {
             Window motherPage = new MotherWindow();
             motherPage.ShowDialog();
         }
 
+        /// <summary>
+        /// Event: when clicking on the button - go to the asked window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void goToNannyPage(object sender, RoutedEventArgs e)
         {
             Window nannyPage = new NannyWindow();
            nannyPage.ShowDialog();
         }
+
+        /// <summary>
+        /// Event: when clicking on the button - go to the asked window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void admin_login(object sender, RoutedEventArgs e)
         {  
             Window login = new loginAdminWindow();

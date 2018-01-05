@@ -20,17 +20,29 @@ namespace PLWPF
     public partial class NannyWindow : Window
     {
 
-
+        /// <summary>
+        /// window constructor
+        /// </summary>
         public NannyWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Event: when clicking on the button - go to the asked window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Event: when clicking on the button - go to the asked window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -38,6 +50,11 @@ namespace PLWPF
             newNanny.ShowDialog();
         }
 
+        /// <summary>
+        /// Event: when clicking on the button - go to the asked window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             this.Close();

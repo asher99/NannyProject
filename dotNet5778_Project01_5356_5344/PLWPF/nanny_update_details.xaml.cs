@@ -25,6 +25,10 @@ namespace PLWPF
         BE.Nanny nanny;
         BL.IBL myBL;
 
+        /// <summary>
+        /// window constructor. read data from object to data context. disable priority fields.
+        /// </summary>
+        /// <param name="thisNanny"></param>
         public nanny_update_details(Nanny thisNanny)
         {
             InitializeComponent();
@@ -46,6 +50,11 @@ namespace PLWPF
             InsertHoursOfWork();
         }
 
+        /// <summary>
+        /// Event: when clicking on the button - update details.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void continue_Click(object sender, RoutedEventArgs e)
         {
             try

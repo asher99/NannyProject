@@ -25,20 +25,78 @@ namespace PLWPF
 
         Child child = new Child();
 
-        public newChildWindow()
+        /// <summary>
+        /// window constructor. set data context to Child object. determine child's mother id.
+        /// </summary>
+        /// <param name="motherId"></param>
+        public newChildWindow(int motherId)
         {
             InitializeComponent();
             ChildDetailsGrid.DataContext = child;
+            child.momsId = motherId;
         }
 
+        /// <summary>
+        /// Event: when clicking on the button - go to the asked window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void close_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
+        /// <summary>
+        /// Event: when clicking on the button - save child details.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void save_Click(object sender, RoutedEventArgs e)
         {
-            
+            try
+            {
+                // check the details
+                checkDetailsChild();
+
+                // adding nanny to DS
+                myBL.addChild(child);
+
+                MessageBox.Show("Child details were added" , "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close();
+
+            }
+            catch (Exception error_str)
+            {
+                MessageBox.Show(error_str.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        /// <summary>
+        /// check if the fields in the window are legal
+        /// </summary>
+        private void checkDetailsChild()
+        {
+            if (firstNameInput.Text == "")
+                throw new Exception("Name is Missing!");
+
+            if (child_id.Text == "")
+                throw new Exception("ID number is Missing!");
+
+            if (Childsbirthday.Text == "")
+                throw new Exception("Birthday is Missing!");
+
+            if(specialNeeds.IsChecked.Value)
+                if(ChildsSpecialNeeds.Text =="")
+                    throw new Exception("No special needs were enterd");
+
+            if (!child_id.Text.All(Char.IsDigit))
+                throw new Exception("ID number input is illegal!");
+
+            if (!firstNameInput.Text.All(Char.IsLetter))
+                throw new Exception("ID number input is illegal!");
+
+
+
         }
     }
 }

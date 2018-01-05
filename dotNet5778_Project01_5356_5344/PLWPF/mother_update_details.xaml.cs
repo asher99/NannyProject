@@ -17,17 +17,14 @@ using BE;
 namespace PLWPF
 {
     /// <summary>
-    /// Interaction logic for newMotherWindow.xaml
+    /// Interaction logic for mother_update_details.xaml
     /// </summary>
-    public partial class newMotherWindow : Window
+    public partial class mother_update_details : Window
     {
-       Mother mother;
-       IBL myBL;
-      
-        /// <summary>
-        /// window constructor. set data context to Mother object.
-        /// </summary>
-        public newMotherWindow()
+        Mother mother;
+        IBL myBL;
+
+        public mother_update_details(Mother thisMother)
         {
             InitializeComponent();
             this.MaxHeight = 700;
@@ -37,18 +34,23 @@ namespace PLWPF
             this.MinWidth = 555;
 
             myBL = BL_Factory.Get_BL;
-            mother = new Mother();
-            this.MotherDetailsGrid.DataContext = mother;
+            mother = thisMother;
+            this.MotherDetailsGrid.DataContext = thisMother;
+
+            firstNameInput.IsEnabled = false;
+            lastNameInput.IsEnabled = false;
+            mother_id.IsEnabled = false;
+            InsertHoursOfWork();
         }
 
+
         /// <summary>
-        /// Event: when clicking the button - add Mother details to DS
+        /// Event: when click - update details!
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void continue_Click(object sender, RoutedEventArgs e)
         {
-
             try
             {
                 // check the details
@@ -58,7 +60,7 @@ namespace PLWPF
                 ReadHoursByNanny();
 
                 // adding nanny to DS
-                myBL.addMother(mother);
+                myBL.updateMother((Mother)this.MotherDetailsGrid.DataContext);
 
                 MessageBox.Show("Your Detail now stored in our system! you can enter your personal zone any time to change them!", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();
@@ -71,13 +73,17 @@ namespace PLWPF
         }
 
         /// <summary>
-        /// Event: when click - exit
+        /// reading the working hours from the window and assign it to the Nanny object
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void close_Click(object sender, RoutedEventArgs e)
+        /// <param name="nanny"></param>
+        private void ReadHoursByNanny()
         {
-            Close();
+            mother.hoursByNanny[0] = new Day(sunday_start.Text, sunday_finish.Text);
+            mother.hoursByNanny[1] = new Day(monday_start.Text, monday_finish.Text);
+            mother.hoursByNanny[2] = new Day(tuesday_start.Text, tuesday_finish.Text);
+            mother.hoursByNanny[3] = new Day(wednesday_start.Text, wednesday_finish.Text);
+            mother.hoursByNanny[4] = new Day(thrusday_start.Text, thrusday_finish.Text);
+            mother.hoursByNanny[5] = new Day(friday_start.Text, friday_finish.Text);
         }
 
         /// <summary>
@@ -173,17 +179,29 @@ namespace PLWPF
         }
 
         /// <summary>
-        /// reading the working hours from the window and assign it to the Nanny object
+        /// insert the working hours from the object and assign it to the window
         /// </summary>
         /// <param name="nanny"></param>
-        private void ReadHoursByNanny()
+        private void InsertHoursOfWork()
         {
-            mother.hoursByNanny[0] = new Day(sunday_start.Text, sunday_finish.Text);
-            mother.hoursByNanny[1] = new Day(monday_start.Text, monday_finish.Text);
-            mother.hoursByNanny[2] = new Day(tuesday_start.Text, tuesday_finish.Text);
-            mother.hoursByNanny[3] = new Day(wednesday_start.Text, wednesday_finish.Text);
-            mother.hoursByNanny[4] = new Day(thrusday_start.Text, thrusday_finish.Text);
-            mother.hoursByNanny[5] = new Day(friday_start.Text, friday_finish.Text);
+            sunday_start.Text = mother.hoursByNanny[0].string_start; sunday_finish.Text = mother.hoursByNanny[0].string_finish;
+            monday_start.Text = mother.hoursByNanny[1].string_start; monday_finish.Text = mother.hoursByNanny[1].string_finish;
+            tuesday_start.Text = mother.hoursByNanny[2].string_start; tuesday_finish.Text = mother.hoursByNanny[2].string_finish;
+            wednesday_start.Text = mother.hoursByNanny[3].string_start; wednesday_finish.Text = mother.hoursByNanny[3].string_finish;
+            thrusday_start.Text = mother.hoursByNanny[4].string_start; thrusday_finish.Text = mother.hoursByNanny[4].string_finish;
+            friday_start.Text = mother.hoursByNanny[5].string_start; friday_finish.Text = mother.hoursByNanny[5].string_finish;
         }
+
+        /// <summary>
+        /// close window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void close_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+
     }
 }

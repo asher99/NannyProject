@@ -59,6 +59,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="mother_update_details.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="newChildWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -75,6 +79,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="mother_update_details.xaml.cs">
+      <DependentUpon>mother_update_details.xaml</DependentUpon>
+    </Compile>
     <Compile Include="newChildWindow.xaml.cs">
       <DependentUpon>newChildWindow.xaml</DependentUpon>
     </Compile>

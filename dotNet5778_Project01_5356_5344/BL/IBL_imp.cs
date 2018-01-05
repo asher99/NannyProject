@@ -27,6 +27,11 @@ namespace BL
         /// <param name="nanny"></param>
         public void addNanny(Nanny nanny)
         {
+            // if this id number is already used
+            if (IdExist(nanny.id))
+                throw new Exception("Sorry, but this ID number is already in the system.");
+
+
             // if nanny is not over the age of 18 she cannot work
             if (DateTime.Now.CompareTo(nanny.birthday.AddYears(18)) >= 0)
                 myDal.addNanny(nanny);
@@ -72,6 +77,10 @@ namespace BL
         /// <param name="mother"></param>
         public void addMother(Mother mother)
         {
+            // if this id number is already used
+            if (IdExist(mother.id))
+                throw new Exception("Sorry, but this ID number is already in the system.");
+
             myDal.addMother(mother);
         }
 
@@ -102,6 +111,10 @@ namespace BL
         /// <param name="child"></param>
         public void addChild(Child child)
         {
+            // if this id number is already used
+            if (IdExist(child.id))
+                throw new Exception("Sorry, but this ID number is already in the system.");
+
             if (DateTime.Now.CompareTo(child.birthday.AddMonths(3)) >= 0)
                 myDal.addChild(child);
             else

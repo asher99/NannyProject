@@ -5,11 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="MoterInterface" Height="250" Width="300">
+        Title="MoterInterface" Height="250" Width="650">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="images/background1.png"/>
         </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="400"/>
+        </Grid.ColumnDefinitions>
+
 
 
         <Grid.RowDefinitions>
@@ -30,7 +36,9 @@
             <ComboBoxItem Content="View Children Data"/>
             <ComboBoxItem Content="Delete User" Foreground="Gray"/>
         </ComboBox>
-
+        
+        <DataGrid x:Name="dataGrid" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Width="350"/>
+        <DockPanel Grid.Column="1" Grid.Row="0" Background="YellowGreen" Opacity="0.8"/>
         <Button x:Name="exit" Content="Exit" Grid.Row="4" Width="200" Click="exit_Click"/>
     </Grid>
 </Window>

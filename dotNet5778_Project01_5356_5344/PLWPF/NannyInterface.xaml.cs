@@ -72,7 +72,6 @@ namespace PLWPF
         private void showDetails()
         {
             Window nannyDetails = new nanny_update_details(thisNanny);
-            this.Close();
             nannyDetails.ShowDialog();
           
         }

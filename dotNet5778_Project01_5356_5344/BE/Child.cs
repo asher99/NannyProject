@@ -42,7 +42,7 @@ namespace BE
 
         }
 
-        public Child() { }
+        public Child() { birthday = DateTime.Now; }
 
     }
 }
