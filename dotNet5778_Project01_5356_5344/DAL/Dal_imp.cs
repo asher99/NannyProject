@@ -195,7 +195,7 @@ namespace DAL
             IEnumerable<Contract> childContracts = ListOfContractsById(child.id);
             if (childContracts != null)
             {
-                foreach (Contract c in childContracts)
+                foreach (Contract c in childContracts.ToList())
                     deleteContract(c);
             }
 

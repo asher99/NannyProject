@@ -64,7 +64,9 @@ namespace PLWPF
                     break;
                 case 3: dataGrid.ItemsSource = myBL.getListOfChildByMother(thisMother);
                     break;
-                case 4:
+                case 4: dataGrid.ItemsSource = myBL.potentialNannys(thisMother);
+                    break;
+                case 5: deleteUser();
                     break;
             }
 
@@ -86,6 +88,33 @@ namespace PLWPF
         {
             Window NewChildWindow = new newChildWindow(thisMother.id);
             NewChildWindow.ShowDialog();
+        }
+
+        /// <summary>
+        ///  delete Mother fr
+        /// </summary>
+        private void deleteUser()
+        {
+            // giving last chance
+            MessageBoxResult whatNow = MessageBox.Show("Are You Sure you want to delete your user?", "", MessageBoxButton.OKCancel);
+            switch (whatNow)
+            {
+                case MessageBoxResult.Cancel: return;
+            }
+
+            // delete children - all contracts are deleted in the "deleteChild(Child)" methos.
+            dataGrid.ItemsSource = null;
+            foreach (Child son in myBL.getListOfChildByMother(thisMother).ToList())
+            {
+                myBL.deleteChild(son);
+            }
+
+            // delete mother
+            myBL.deleteMother(thisMother);
+
+
+            MessageBox.Show("GoodBye", "", MessageBoxButton.OK);
+            Close();
         }
     }
 }

@@ -236,7 +236,7 @@ namespace PLWPF
             myBL.addChild(Dan);
             #endregion
 
-            #region Dan
+            #region Miri
             Child Miri = new Child();
             Miri.name = "Miri";
             Miri.id = 7;

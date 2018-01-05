@@ -531,7 +531,7 @@ namespace BL
                     }
 
                     // compare the start hour
-                    if (mother.hoursByNanny[i].start_hour == nanny.hoursOfWork[i].start_minute)
+                    if (mother.hoursByNanny[i].start_hour == nanny.hoursOfWork[i].start_hour)
                     {
                         if (mother.hoursByNanny[i].start_minute < nanny.hoursOfWork[i].start_minute)
                             flag = false;

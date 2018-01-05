@@ -34,6 +34,7 @@
             <ComboBoxItem Content="View Contracts"/>
             <ComboBoxItem Content="Add Child"/>
             <ComboBoxItem Content="View Children Data"/>
+            <ComboBoxItem Content="View Potential Nannys"/>
             <ComboBoxItem Content="Delete User" Foreground="Gray"/>
         </ComboBox>
         
