@@ -7,7 +7,7 @@
                 xmlns:BE="clr-namespace:BE;assembly=BE"
         mc:Ignorable="d"
         Title="nanny_update_details" Height="700" Width="555">
-    
+
     <Grid x:Name="NannyDetailsGrid" d:DataContext="{d:DesignInstance BE:Child }" HorizontalAlignment="Left" Height="670"  VerticalAlignment="Top" Width="540">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -82,7 +82,7 @@
             <StackPanel Width="25"/>
 
             <StackPanel x:Name="MoneyAndHours" Width="240" >
-                <Label Content="check the days you wish to work, and fil" Height="25" FontStretch="Normal"/>
+                <Label Content="check the days you wish to work, and fill" Height="25" FontStretch="Normal"/>
                 <Label Content="the corresponding hours:" Height="26" />
 
                 <StackPanel Orientation="Horizontal">

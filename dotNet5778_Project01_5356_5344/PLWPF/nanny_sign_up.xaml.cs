@@ -77,6 +77,7 @@ namespace PLWPF
                 MessageBox.Show("Your Detail now stored in our system! you can enter your personal zone any time to change them!", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();
 
+
             }
             catch (Exception error_str)
             {

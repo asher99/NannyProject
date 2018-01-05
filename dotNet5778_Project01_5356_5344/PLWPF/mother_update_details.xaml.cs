@@ -24,6 +24,10 @@ namespace PLWPF
         Mother mother;
         IBL myBL;
 
+        /// <summary>
+        /// window constructor. read data from object to data context. disable priority fields.
+        /// </summary>
+        /// <param name="thisNanny"></param>
         public mother_update_details(Mother thisMother)
         {
             InitializeComponent();
@@ -62,7 +66,7 @@ namespace PLWPF
                 // adding nanny to DS
                 myBL.updateMother((Mother)this.MotherDetailsGrid.DataContext);
 
-                MessageBox.Show("Your Detail now stored in our system! you can enter your personal zone any time to change them!", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Your information has been updated!", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();
 
             }

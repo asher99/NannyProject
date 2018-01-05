@@ -15,7 +15,7 @@
             <RadioButton x:Name="Contractlist" Content="Contract list" FontSize="14" FontWeight="Bold" Checked="Contractlist_Checked"/>
         </StackPanel>
         <Label x:Name="label" Content="Choose list for display:" FontWeight="Bold" HorizontalAlignment="Left" Height="26" Margin="0,24,0,0" VerticalAlignment="Top" Width="141"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="175" Margin="152,20,0,0" VerticalAlignment="Top" Width="507"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="175" Margin="152,20,0,0" VerticalAlignment="Top" Width="507" SelectionMode="Single" SelectionUnit="FullRow"/>
 
     </Grid>
 </Window>

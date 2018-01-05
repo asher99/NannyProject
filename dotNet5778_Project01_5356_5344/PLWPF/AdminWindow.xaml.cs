@@ -86,5 +86,10 @@ namespace PLWPF
         {
             dataGrid.ItemsSource = myBL.getListOfContract();
         }
+
+        private void dataGrid_SelectionChanged(object sender, DataGridRowEventArgs e)
+        {
+            MessageBox.Show("gfdg");
+        }
     }
 }
