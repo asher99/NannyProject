@@ -67,7 +67,7 @@ namespace PLWPF
         }
 
         /// <summary>
-        /// define an axemple object for the progrram
+        /// define an example object for the program
         /// </summary>
         private void exampleObject()
         {
@@ -161,7 +161,7 @@ namespace PLWPF
             Dana.phoneNumber = "0502245665";
             Dana.address = "Ha-Zikaron Street, Jerusalem";
             Dana.addressRadius = "2000";
-            Dana.comments = "looking for someone that work untill late";
+            Dana.comments = "looking for someone that work till late";
             Dana.wantsATrialMeeting = true;
             Dana.daysOfNanny = new bool[6];
             Dana.daysOfNanny[0] = true;
