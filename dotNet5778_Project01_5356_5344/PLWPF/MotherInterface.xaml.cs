@@ -74,6 +74,10 @@ namespace PLWPF
 
         }
 
+
+        /// <summary>
+        /// show all potential naany
+        /// </summary>
         private void show_potentialNannys()
         {
             dataGrid.ItemsSource = myBL.potentialNannys(thisMother);
@@ -81,13 +85,21 @@ namespace PLWPF
             signContract.Opacity = 1;
         }
 
-
+        /// <summary>
+        /// Event: when double click on a nanny row - open the sign contract window.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Nanny option = dataGrid.CurrentItem as Nanny;
-            if (option == null)
-                MessageBox.Show("No");
-            else MessageBox.Show("Yes");
+            if (Options.SelectedIndex == 4)
+            {
+                Nanny option = dataGrid.CurrentItem as Nanny;
+                if (option == null)
+                    MessageBox.Show("No");
+                else MessageBox.Show("Yes");
+            }
+            else return;
         }
 
         /// <summary>

@@ -87,5 +87,28 @@ namespace PLWPF
             dataGrid.ItemsSource = myBL.getListOfContract();
         }
 
+
+        /// <summary>
+        /// Event: double click the grid when show nanny or mother list open the update details window of those object
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (Nannylist.IsChecked.Value)
+            {
+                var details = dataGrid.CurrentItem as Nanny;
+                Window update_details = new nanny_update_details(details);
+                update_details.ShowDialog();
+            }
+
+            if (Motherlist.IsChecked.Value)
+            {
+                var details = dataGrid.CurrentItem as Mother;
+                Window update_details = new mother_update_details(details);
+                update_details.ShowDialog();
+            }
+            else return;
+        }
     }
 }

@@ -521,7 +521,7 @@ namespace BL
             foreach (Nanny nanny in myDal.getListOfNanny())
             {
                 bool flag = true;
-                for (int i = 0; i < 6 && flag; i++)
+                for (int i = 0; i < 6 && flag && mother.daysOfNanny[i]; i++)
                 {
                     // compare the day
                     if (mother.daysOfNanny[i] && !nanny.daysOfWork[i])
