@@ -96,8 +96,12 @@ namespace PLWPF
             {
                 Nanny option = dataGrid.CurrentItem as Nanny;
                 if (option == null)
-                    MessageBox.Show("No");
-                else MessageBox.Show("Yes");
+                    MessageBox.Show("No Nanny was selected!");
+                else
+                {
+                    Window signContract = new SignContractWindow(thisMother, option);
+                    signContract.ShowDialog();
+                }
             }
             else return;
         }
