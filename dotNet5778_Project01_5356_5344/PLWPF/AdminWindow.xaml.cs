@@ -31,11 +31,11 @@ namespace PLWPF
         {
             InitializeComponent();
             var myList = myBL.getListOfNanny();
-           // var myList = displayList();
+            // var myList = displayList();
             dataGrid.ItemsSource = myList;
             Nannylist.IsChecked = true;
         }
-        
+
         /*private IEnumerable<object> displayList()
         {
             if (Nannylist.IsChecked == true)
@@ -62,11 +62,11 @@ namespace PLWPF
         }*/
 
 
-       /// <summary>
-       /// multiple events for the right list to show.
-       /// </summary>
-       /// <param name="sender"></param>
-       /// <param name="e"></param>
+        /// <summary>
+        /// multiple events for the right list to show.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Nannylist_Checked(object sender, RoutedEventArgs e)
         {
             dataGrid.ItemsSource = myBL.getListOfNanny();
@@ -87,9 +87,5 @@ namespace PLWPF
             dataGrid.ItemsSource = myBL.getListOfContract();
         }
 
-        private void dataGrid_SelectionChanged(object sender, DataGridRowEventArgs e)
-        {
-            MessageBox.Show("gfdg");
-        }
     }
 }

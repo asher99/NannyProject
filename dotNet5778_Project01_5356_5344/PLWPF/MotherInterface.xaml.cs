@@ -62,9 +62,11 @@ namespace PLWPF
                 case 2:
                     addChildToMother();
                     break;
-                case 3: dataGrid.ItemsSource = myBL.getListOfChildByMother(thisMother);
+                case 3:
+                    signContract.Opacity = 0;
+                    dataGrid.ItemsSource = myBL.getListOfChildByMother(thisMother);
                     break;
-                case 4: dataGrid.ItemsSource = myBL.potentialNannys(thisMother);
+                case 4: show_potentialNannys();
                     break;
                 case 5: deleteUser();
                     break;
@@ -72,11 +74,28 @@ namespace PLWPF
 
         }
 
+        private void show_potentialNannys()
+        {
+            dataGrid.ItemsSource = myBL.potentialNannys(thisMother);
+
+            signContract.Opacity = 1;
+        }
+
+
+        private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Nanny option = dataGrid.CurrentItem as Nanny;
+            if (option == null)
+                MessageBox.Show("No");
+            else MessageBox.Show("Yes");
+        }
+
         /// <summary>
         /// A window with mother details opend and make it possible to make change.
         /// </summary>
         private void updateDetails()
         {
+            signContract.Opacity = 0;
             Window update = new mother_update_details(thisMother);
             update.ShowDialog();
         }
@@ -86,6 +105,7 @@ namespace PLWPF
         /// </summary>
         private void addChildToMother()
         {
+            signContract.Opacity = 0;
             Window NewChildWindow = new newChildWindow(thisMother.id);
             NewChildWindow.ShowDialog();
         }
@@ -95,6 +115,7 @@ namespace PLWPF
         /// </summary>
         private void deleteUser()
         {
+            signContract.Opacity = 0;
             // giving last chance
             MessageBoxResult whatNow = MessageBox.Show("Are You Sure you want to delete your user?", "", MessageBoxButton.OKCancel);
             switch (whatNow)
@@ -116,5 +137,6 @@ namespace PLWPF
             MessageBox.Show("GoodBye", "", MessageBoxButton.OK);
             Close();
         }
+
     }
 }
