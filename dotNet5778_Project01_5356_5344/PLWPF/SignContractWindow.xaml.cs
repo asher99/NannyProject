@@ -56,5 +56,10 @@ namespace PLWPF
                 thisContract.moneyPerHour = myBL.calculateSalary(thisContract, thisNanny);
             }
         }
+
+        private void Sign_Click(object sender, RoutedEventArgs e)
+        {
+            myBL.addContract(thisContract);
+        }
     }
 }

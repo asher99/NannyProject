@@ -35,10 +35,10 @@
         <CheckBox x:Name="Terms_accepted" Content="I agree to the terms" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="131" Checked="Terms_accepted_Checked" Grid.Row="2" Margin="23,0,0,0" />
         <CheckBox x:Name="byHour" Content="by hour" HorizontalAlignment="Left" Height="20" Margin="154,1,0,0" VerticalAlignment="Top" Width="131" Grid.Row="2"/>
 
-        <StackPanel x:Name="Buttons" Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center" Margin="102,199.8,101.6,0.8" Grid.RowSpan="2">
+        <StackPanel x:Name="Buttons" Orientation="Horizontal" Grid.Row="4"  HorizontalAlignment="Center">
             <Button x:Name="exit" Content="Cancel" Width="70"/>
             <TabPanel Width="100"/>
-            <Button x:Name="Sign" Content="SIGN CONTRACT!" Background="black" Foreground="White" FontWeight="ExtraBold" Width="120" IsEnabled="{Binding ElementName=checkBox , Path=IsChecked}"/>
+            <Button x:Name="Sign" Content="SIGN CONTRACT!" Background="black" Foreground="White" FontWeight="ExtraBold" Width="120" IsEnabled="{Binding ElementName=checkBox , Path=IsChecked}" Click="Sign_Click"/>
         </StackPanel>
 
         <Grid.Background>

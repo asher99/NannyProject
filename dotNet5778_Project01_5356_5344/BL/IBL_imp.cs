@@ -557,10 +557,10 @@ namespace BL
 
                 }
 
-                if (distanceBetweenAddresses(mother.address, nanny.address) > mother.addressRadius)
+                /*if (distanceBetweenAddresses(mother.address, nanny.address) > mother.addressRadius)
                 {
                     flag = false;
-                }
+                }*/
 
                 if (flag)
                     list.Add(nanny);
