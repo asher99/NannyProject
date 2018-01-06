@@ -17,7 +17,7 @@ namespace PLWPF
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             bool checkBoxValue = (bool)value;
-            return checkBoxValue;
+            return (bool)parameter;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

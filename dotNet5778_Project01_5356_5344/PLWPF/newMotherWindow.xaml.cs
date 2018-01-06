@@ -21,9 +21,9 @@ namespace PLWPF
     /// </summary>
     public partial class newMotherWindow : Window
     {
-       Mother mother;
-       IBL myBL;
-      
+        Mother mother;
+        IBL myBL;
+
         /// <summary>
         /// window constructor. set data context to Mother object.
         /// </summary>
@@ -56,6 +56,7 @@ namespace PLWPF
 
                 // enter the working hours.
                 ReadHoursByNanny();
+                ReadDaysCheckboxs();
 
                 // adding nanny to DS
                 myBL.addMother(mother);
@@ -185,6 +186,17 @@ namespace PLWPF
             mother.hoursByNanny[3] = new Day(wednesday_start.Text, wednesday_finish.Text);
             mother.hoursByNanny[4] = new Day(thrusday_start.Text, thrusday_finish.Text);
             mother.hoursByNanny[5] = new Day(friday_start.Text, friday_finish.Text);
+        }
+
+        // since converter does not work
+        private void ReadDaysCheckboxs()
+        {
+            mother.daysOfNanny[0] = sunday.IsChecked.Value;
+            mother.daysOfNanny[1] = monday.IsChecked.Value;
+            mother.daysOfNanny[2] = tuesday.IsChecked.Value;
+            mother.daysOfNanny[3] = wednesday.IsChecked.Value;
+            mother.daysOfNanny[4] = thrusday.IsChecked.Value;
+            mother.daysOfNanny[5] = friday.IsChecked.Value;
         }
     }
 }
