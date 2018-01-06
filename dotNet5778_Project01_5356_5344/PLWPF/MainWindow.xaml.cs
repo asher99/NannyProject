@@ -248,6 +248,11 @@ namespace PLWPF
             myBL.addChild(Miri);
             #endregion
 
+            // Contract objects:
+            #region contracts
+            Contract A = new Contract(Rachel, Yosi, true);
+            myBL.addContract(A);
+            #endregion
         }
     }
 }
