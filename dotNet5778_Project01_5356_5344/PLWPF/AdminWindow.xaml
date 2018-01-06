@@ -8,7 +8,12 @@
         Title="loginAdminWindow" Height="500" Width="700">
 
     <Grid>
-        <StackPanel x:Name="chooseList" HorizontalAlignment="Left" Height="100" Margin="8,25,0,295" Width="100"  >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="121*"/>
+            <RowDefinition Height="21*"/>
+            <RowDefinition Height="15*"/>
+        </Grid.RowDefinitions>
+        <StackPanel x:Name="chooseList" HorizontalAlignment="Left" Height="100" Margin="8,50,0,212.7" Width="100"  >
             <RadioButton x:Name="Nannylist" Content="Nanny list" FontSize="14" FontWeight="Bold" Checked="Nannylist_Checked" />
             <RadioButton x:Name="Motherlist" Content="Mother list" FontSize="14" FontWeight="Bold" Checked="Motherlist_Checked" />
             <RadioButton x:Name="Childlist" Content="Child list" FontSize="14" FontWeight="Bold" Checked="Childlist_Checked"/>
@@ -17,5 +22,12 @@
         <Label x:Name="label" Content="Choose list for display:" FontWeight="Bold" HorizontalAlignment="Left" Height="26" Margin="0,24,0,0" VerticalAlignment="Top" Width="141"/>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="175" Margin="152,20,0,0" VerticalAlignment="Top" Width="507" SelectionMode="Single" SelectionUnit="Cell" MouseDoubleClick="dataGrid_MouseDoubleClick"/>
 
+        <StackPanel Grid.Row="1" Name="Buttons" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="Delete" Content="Delete Object" Click="Delete_Click"/>
+            <TabPanel Width="20"/>
+            <Button x:Name="Add" Content="Add Object" Click="Add_Click"/>
+            <TabPanel Width="20"/>
+            <Button x:Name="Interface" Content="go to interface" Click="Interface_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

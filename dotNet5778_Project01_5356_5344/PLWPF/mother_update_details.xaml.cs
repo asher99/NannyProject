@@ -39,7 +39,10 @@ namespace PLWPF
 
             myBL = BL_Factory.Get_BL;
             mother = thisMother;
-            this.MotherDetailsGrid.DataContext = thisMother;
+
+            this.MotherDetailsGrid.DataContext = mother;
+            WriteDaysCheckboxs();
+
 
             firstNameInput.IsEnabled = false;
             lastNameInput.IsEnabled = false;
@@ -62,9 +65,10 @@ namespace PLWPF
 
                 // enter the working hours.
                 ReadHoursByNanny();
+                ReadDaysCheckboxs();
 
                 // adding nanny to DS
-                myBL.updateMother((Mother)this.MotherDetailsGrid.DataContext);
+                myBL.updateMother(mother);
 
                 MessageBox.Show("Your information has been updated!", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();
@@ -206,6 +210,26 @@ namespace PLWPF
             Close();
         }
 
+        // since converter does not work
+        private void ReadDaysCheckboxs()
+        {
+            mother.daysOfNanny[0] = sunday.IsChecked.Value;
+            mother.daysOfNanny[1] = monday.IsChecked.Value;
+            mother.daysOfNanny[2] = tuesday.IsChecked.Value;
+            mother.daysOfNanny[3] = wednesday.IsChecked.Value;
+            mother.daysOfNanny[4] = thrusday.IsChecked.Value;
+            mother.daysOfNanny[5] = friday.IsChecked.Value;
+        }
 
+        private void WriteDaysCheckboxs()
+        {
+            sunday.IsChecked = mother.daysOfNanny[0];
+            monday.IsChecked = mother.daysOfNanny[1];
+            tuesday.IsChecked=mother.daysOfNanny[2];
+            wednesday.IsChecked = mother.daysOfNanny[3];
+            thrusday.IsChecked = mother.daysOfNanny[4];
+            friday.IsChecked = mother.daysOfNanny[5]; 
+        }
     }
+
 }
