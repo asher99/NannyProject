@@ -21,9 +21,12 @@ namespace PLWPF
     /// </summary>
     public partial class SignContractWindow : Window
     {
+        static IBL myBL = BL_Factory.Get_BL;
+
         public SignContractWindow(Mother mother, Nanny nanny)
         {
             InitializeComponent();
+            dataGrid.ItemsSource = myBL.getListOfChildByMother(mother);
         }
     }
 }

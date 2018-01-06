@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="SignContractWindow" Height="300" Width="300">
+        Title="SignContractWindow" Height="300" Width="500">
     <Grid>
-        
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="106" Margin="28,34,0,0" VerticalAlignment="Top" Width="308"/>
+
     </Grid>
 </Window>

@@ -383,15 +383,29 @@ namespace DAL
         /// <returns></returns>
         public IEnumerable<Child> getListOfChildrenOfNanny(int id)
         {
-            IEnumerable<Child> item= null;
-           foreach(Contract contract in ListOfContractsById(id))
+            IEnumerable<Child> item = null;
+            foreach (Contract contract in ListOfContractsById(id))
             {
                 item = from child in getListOfChild()
-                where contract.childId == child.id
-                select child;
+                       where contract.childId == child.id
+                       select child;
             }
 
             return item;
+        }
+
+        public List<Child> checkAgeOfKids(List<Child> list, Nanny nanny)
+        {
+            List<Child> children = null;
+            int age = 0;
+            foreach (Child child in list)
+            {
+                age = child.ageInMonths();
+                if (nanny.maxAgeOfKid > age && nanny.minAgeOfKid <= age)
+                    children.Add(child);
+            }
+            
+            return children;
         }
     }
 }
