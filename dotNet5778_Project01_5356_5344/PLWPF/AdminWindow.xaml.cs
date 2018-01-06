@@ -98,6 +98,11 @@ namespace PLWPF
             if (Nannylist.IsChecked.Value)
             {
                 var details = dataGrid.CurrentItem as Nanny;
+                if(details.id == 0)
+                {
+                    MessageBox.Show("No object was selected");
+                    return;
+                }
                 Window update_details = new nanny_update_details(details);
                 update_details.ShowDialog();
             }
@@ -105,10 +110,119 @@ namespace PLWPF
             if (Motherlist.IsChecked.Value)
             {
                 var details = dataGrid.CurrentItem as Mother;
+                if (details.id == 0)
+                {
+                    MessageBox.Show("No object was selected");
+                    return;
+                }
                 Window update_details = new mother_update_details(details);
                 update_details.ShowDialog();
             }
             else return;
         }
+
+        /*
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            if(Nannylist.IsChecked.Value)
+            {
+                Window add = new nanny_sign_up();
+                add.ShowDialog();
+            }
+
+            if (Motherlist.IsChecked.Value)
+            {
+                Window add = new newMotherWindow();
+                add.ShowDialog();
+            }
+
+            if (Childlist.IsChecked.Value)
+            {
+                MessageBox.Show("adding child must be through mother. select mother and click \"go to interface\"", "", MessageBoxButton.OK);
+            }
+
+            if (Contractlist.IsChecked.Value)
+            {
+                MessageBox.Show("adding contract must be through mother. select mother and click \"go to interface\"", "", MessageBoxButton.OK);
+            }
+        }
+
+        private void Interface_Click(object sender, RoutedEventArgs e)
+        {
+            if (Nannylist.IsChecked.Value)
+            {
+                var someObject = dataGrid.CurrentItem as Nanny;
+                if (someObject.id == 0)
+                    throw new Exception("INVALID ROW SELECTION");
+                Window interf = new NannyInterface(someObject);
+                interf.ShowDialog();
+            }
+
+            if (Motherlist.IsChecked.Value)
+            {
+                var someObject = dataGrid.CurrentItem as Mother;
+                if (someObject.id == 0)
+                    throw new Exception("INVALID ROW SELECTION");
+                Window interf = new MoterInterface(someObject);
+                interf.ShowDialog();
+            }
+
+            if (Childlist.IsChecked.Value)
+            {
+                MessageBox.Show("there are interfaces only for Mother and Nanny", "", MessageBoxButton.OK);
+            }
+
+            if (Contractlist.IsChecked.Value)
+            {
+                MessageBox.Show("there are interfaces only for Mother and Nanny", "", MessageBoxButton.OK);
+            }
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (Nannylist.IsChecked.Value)
+                {
+                    var someObject = dataGrid.CurrentItem as Nanny;
+                    if (someObject.id == 0)
+                        throw new Exception("INVALID ROW SELECTION");
+
+                    myBL.deleteNanny(someObject);
+
+                }
+
+                if (Motherlist.IsChecked.Value)
+                {
+                    var someObject = dataGrid.CurrentItem as Mother;
+                    if (someObject.id == 0)
+                        throw new Exception("INVALID ROW SELECTION");
+
+                    myBL.deleteMother(someObject);
+
+                }
+
+                if (Childlist.IsChecked.Value)
+                {
+                    var someObject = dataGrid.CurrentItem as Child;
+                    if (someObject.id == 0)
+                        throw new Exception("INVALID ROW SELECTION");
+                    myBL.deleteChild(someObject);
+                }
+
+                if (Contractlist.IsChecked.Value)
+                {
+                    var someObject = dataGrid.CurrentItem as Contract;
+                    if (someObject.childId == 0)
+                        throw new Exception("INVALID ROW SELECTION");
+
+                    myBL.deleteContract(someObject);
+                }
+            }
+            catch(Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }*/
     }
 }
