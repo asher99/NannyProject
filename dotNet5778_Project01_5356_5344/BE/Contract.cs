@@ -18,13 +18,11 @@ namespace BE
 
         public int childId { set; get; }
 
-        public bool hadFirstMeeting { set; get; }
-
         public bool isSingedContract { set; get; }
 
-        public float moneyPerHour { set; get; }
+        public double moneyPerHour { set; get; }
 
-        public float monthSalary { set; get; }
+        public double monthSalary { set; get; }
 
         public bool isMonthContract { set; get; }
 
@@ -76,6 +74,18 @@ namespace BE
             }
 
             // initialize start date and expiration date.
+            StartDate = DateTime.Now;
+            ExpirationDate = StartDate.AddMonths(6);
+
+            numberOfContract = -1;
+            isSingedContract = false;
+        }
+
+        public Contract(int someNanny_id)
+        {
+            numberOfContract = 0;
+            NannysId = someNanny_id;
+
             StartDate = DateTime.Now;
             ExpirationDate = StartDate.AddMonths(6);
 

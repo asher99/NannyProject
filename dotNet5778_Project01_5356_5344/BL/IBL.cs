@@ -62,6 +62,8 @@ namespace BL
         void findAddress(string source);
         IEnumerable<Child> checkAgeOfKids(IEnumerable<Child> list, Nanny nanny);
 
+        double calculateSalary(Contract contract, Nanny nanny);
+
 
     }
 }

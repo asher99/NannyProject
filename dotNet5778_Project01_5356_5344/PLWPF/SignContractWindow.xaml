@@ -3,24 +3,48 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:BE="clr-namespace:BE;assembly=BE"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="SignContractWindow" Height="300" Width="500">
+        Title="SignContractWindow" Height="520" Width="500">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="229*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="29*"/>
-            <ColumnDefinition Width="12*"/>
-        </Grid.ColumnDefinitions>
-        <Label Content="Sign Contract!" Grid.Row="0"  Grid.Column="0" Background="YellowGreen" Opacity="0.8" FontStyle="Italic" FontWeight="Bold" FontSize="30" Grid.RowSpan="2" VerticalAlignment="Top" />
 
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="106" Margin="24,15,0,0" VerticalAlignment="Top" Width="308" Grid.Row="1"/>
-        <CheckBox x:Name="checkBox" Content="I agree to the terms" HorizontalAlignment="Left" Height="20" Margin="24,129.047,0,0" VerticalAlignment="Top" Width="131" Grid.Row="1"/>
+        <StackPanel x:Name="details" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" Width="500">
+            <TabPanel Width="30"/>
+            <Label x:Name="childIDNUmber_label" Content="Enter Child ID:" Width="100"/>
+            <TextBox x:Name="childIDNUmber" Width="100" Margin="0,0,0,-0.8" />
+        </StackPanel>
+
+        <StackPanel x:Name="Finance" Grid.Row="2" Background="Green" Opacity="1" Orientation="Vertical" Margin="0,20.083,-0.4,0.2" Grid.RowSpan="2">
+            <TextBlock x:Name="schedule" Text="here" Foreground="Black" Width="400" FontWeight="Medium" TextWrapping="Wrap"/>
+            <TabPanel Height="10"/>
+            <TextBlock x:Name="Salary" Text="here" Foreground="Black" Width="400" FontWeight="Medium" TextWrapping="Wrap"/>
+            <TabPanel Height="10"/>
+            <TextBlock x:Name="Special" Text="here" Foreground="Black" Width="400" FontWeight="Medium" TextWrapping="Wrap"/>
+        </StackPanel>
+
+        <Label Content="Sign Contract!" Grid.Row="0"  Grid.Column="0" Background="YellowGreen" Opacity="0.8" FontStyle="Italic" FontWeight="Bold" FontSize="30" Margin="0,0,-0.4,8.8" />
+        <CheckBox x:Name="Terms_accepted" Content="I agree to the terms" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="131" Checked="Terms_accepted_Checked" Grid.Row="2" Margin="23,0,0,0" />
+        <CheckBox x:Name="byHour" Content="by hour" HorizontalAlignment="Left" Height="20" Margin="154,1,0,0" VerticalAlignment="Top" Width="131" Grid.Row="2"/>
+
+        <StackPanel x:Name="Buttons" Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center" Margin="102,199.8,101.6,0.8" Grid.RowSpan="2">
+            <Button x:Name="exit" Content="Cancel" Width="70"/>
+            <TabPanel Width="100"/>
+            <Button x:Name="Sign" Content="SIGN CONTRACT!" Background="black" Foreground="White" FontWeight="ExtraBold" Width="120" IsEnabled="{Binding ElementName=checkBox , Path=IsChecked}"/>
+        </StackPanel>
+
         <Grid.Background>
             <ImageBrush ImageSource="images/background1.png"/>
         </Grid.Background>
+
+
     </Grid>
 </Window>
