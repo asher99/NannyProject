@@ -20,6 +20,25 @@ namespace BE
 
         public DateTime birthday { set; get; }
 
+        // calculates a child age in months using his birthday 
+        public int ageInMonths()
+        {
+            int age = 0;
+
+            age += (birthday.Year - DateTime.Today.Year) * 12;
+            if (age == 0)
+                age += DateTime.Today.Month - birthday.Month;
+            else
+            {
+                if (DateTime.Today.Month > birthday.Month)
+                    age += DateTime.Today.Month - birthday.Month;
+                else
+                    age += 12 - birthday.Month + DateTime.Today.Month;
+            }
+
+            return age;
+        }
+
         public bool hasSpecialNeeds { set; get; }
 
         public string specialNeeds { set; get; }
@@ -31,7 +50,7 @@ namespace BE
             return name + " - CHILD\n child id: " + id + "\n birth date:\t" + birthday.ToShortDateString() + "\n mother id: " + momsId + '\n';
         }
 
-        public Child(string my_name, int my_id, int my_motherId, DateTime my_birthday,bool my_specialNeeds,string my_specialNeedsString)
+        public Child(string my_name, int my_id, int my_motherId, DateTime my_birthday, bool my_specialNeeds, string my_specialNeedsString)
         {
             name = my_name;
             id = my_id;
