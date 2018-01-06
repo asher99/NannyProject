@@ -160,7 +160,7 @@ namespace PLWPF
             Dana.id = 3;
             Dana.phoneNumber = "0502245665";
             Dana.address = "Ha-Zikaron Street, Jerusalem";
-            Dana.addressRadius = "2000";
+            Dana.addressRadius = 2000;
             Dana.comments = "looking for someone that work till late";
             Dana.wantsATrialMeeting = true;
             Dana.daysOfNanny = new bool[6];
@@ -189,7 +189,7 @@ namespace PLWPF
             Talia.id = 4;
             Talia.phoneNumber = "0542231365";
             Talia.address = "Ha-Khida Street, Jerusalem";
-            Talia.addressRadius = "4000";
+            Talia.addressRadius = 4000;
             Talia.comments = "i need some one for daily caring";
             Talia.wantsATrialMeeting = true;
             Talia.daysOfNanny = new bool[6];
