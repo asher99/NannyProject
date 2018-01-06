@@ -23,11 +23,11 @@
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="175" Margin="152,20,0,0" VerticalAlignment="Top" Width="507" SelectionMode="Single" SelectionUnit="Cell" MouseDoubleClick="dataGrid_MouseDoubleClick"/>
 
         <StackPanel Grid.Row="1" Name="Buttons" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="Delete" Content="Delete Object" Click="Delete_Click"/>
+            <Button x:Name="Delete" Content="Delete Object" />
             <TabPanel Width="20"/>
-            <Button x:Name="Add" Content="Add Object" Click="Add_Click"/>
+            <Button x:Name="Add" Content="Add Object" />
             <TabPanel Width="20"/>
-            <Button x:Name="Interface" Content="go to interface" Click="Interface_Click"/>
+            <Button x:Name="Interface" Content="go to interface" />
         </StackPanel>
     </Grid>
 </Window>
