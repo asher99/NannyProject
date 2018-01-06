@@ -26,7 +26,7 @@ namespace PLWPF
         public SignContractWindow(Mother mother, Nanny nanny)
         {
             InitializeComponent();
-            dataGrid.ItemsSource = myBL.getListOfChildByMother(mother);
+            dataGrid.ItemsSource = myBL.checkAgeOfKids(myBL.getListOfChildByMother(mother), nanny);
         }
     }
 }

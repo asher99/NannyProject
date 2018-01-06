@@ -7,7 +7,20 @@
         mc:Ignorable="d"
         Title="SignContractWindow" Height="300" Width="500">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="106" Margin="28,34,0,0" VerticalAlignment="Top" Width="308"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="229*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="12*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Sign Contract!" Grid.Row="0"  Grid.Column="0" Background="YellowGreen" Opacity="0.8" FontStyle="Italic" FontWeight="Bold" FontSize="30" Grid.RowSpan="2" VerticalAlignment="Top" />
 
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="106" Margin="24,15,0,0" VerticalAlignment="Top" Width="308" Grid.Row="1"/>
+        <CheckBox x:Name="checkBox" Content="I agree to the terms" HorizontalAlignment="Left" Height="20" Margin="24,129.047,0,0" VerticalAlignment="Top" Width="131" Grid.Row="1"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="images/background1.png"/>
+        </Grid.Background>
     </Grid>
 </Window>
