@@ -20,23 +20,12 @@ namespace BE
 
         public DateTime birthday { set; get; }
 
-        // calculates a child age in months using his birthday 
+        // calculates the child age in months using his birthday 
         public int ageInMonths()
         {
-            int age = 0;
-
-            age += (birthday.Year - DateTime.Today.Year) * 12;
-            if (age == 0)
-                age += DateTime.Today.Month - birthday.Month;
-            else
-            {
-                if (DateTime.Today.Month > birthday.Month)
-                    age += DateTime.Today.Month - birthday.Month;
-                else
-                    age += 12 - birthday.Month + DateTime.Today.Month;
-            }
-
-            return age;
+            int age = birthday.Year * 12 + birthday.Month;
+            int today = DateTime.Today.Year * 12 + DateTime.Today.Month;
+            return today-age;
         }
 
         public bool hasSpecialNeeds { set; get; }

@@ -394,18 +394,13 @@ namespace DAL
             return item;
         }
 
-        public List<Child> checkAgeOfKids(List<Child> list, Nanny nanny)
+        public IEnumerable<Child> checkAgeOfKids(IEnumerable<Child> list, Nanny nanny)
         {
-            List<Child> children = null;
-            int age = 0;
-            foreach (Child child in list)
-            {
-                age = child.ageInMonths();
-                if (nanny.maxAgeOfKid > age && nanny.minAgeOfKid <= age)
-                    children.Add(child);
-            }
-            
-            return children;
+
+            return from child in list
+                   let age = child.ageInMonths()
+                   where nanny.maxAgeOfKid > age && nanny.minAgeOfKid <= age
+                   select child;
         }
     }
 }
