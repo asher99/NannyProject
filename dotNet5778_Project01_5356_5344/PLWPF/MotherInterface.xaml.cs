@@ -33,6 +33,7 @@ namespace PLWPF
             InitializeComponent();
             thisMother = mother;
             dataGrid.ItemsSource = null;
+            dataGrid.IsEnabled = true;
         }
 
         /// <summary>
@@ -63,12 +64,14 @@ namespace PLWPF
                     addChildToMother();
                     break;
                 case 3:
-                    signContract.Opacity = 0;
+                    Header.Opacity = 0;
                     dataGrid.ItemsSource = myBL.getListOfChildByMother(thisMother);
                     break;
                 case 4: show_potentialNannys();
                     break;
-                case 5: deleteUser();
+                case 5: deleteChild();
+                    break;
+                case 6: deleteUser();
                     break;
             }
 
@@ -82,7 +85,8 @@ namespace PLWPF
         {
             dataGrid.ItemsSource = myBL.potentialNannys(thisMother);
 
-            signContract.Opacity = 1;
+            Header.Opacity = 1;
+            Header.Text = "To Sign Contract, Double Click the nanny row:";
         }
 
         /// <summary>
@@ -95,7 +99,7 @@ namespace PLWPF
             if (Options.SelectedIndex == 4)
             {
                 Nanny option = dataGrid.CurrentItem as Nanny;
-                if (option == null)
+                if (option == null || option.firstName == null)
                     MessageBox.Show("No Nanny was selected!");
                 else
                 {
@@ -103,7 +107,26 @@ namespace PLWPF
                     signContract.ShowDialog();
                 }
             }
-            else return;
+            else if(Options.SelectedIndex == 5)
+            {
+                Child option = dataGrid.CurrentItem as Child;
+                if (option == null)
+                    MessageBox.Show("No Child was selected!");
+                else
+                {
+                    // giving last chance
+                    MessageBoxResult whatNow = MessageBox.Show("Are You Sure you want to delete child data?", "", MessageBoxButton.OKCancel);
+                    switch (whatNow)
+                    {
+                        case MessageBoxResult.Cancel: return;
+                    }
+
+                    myBL.deleteChild(option);
+                    MessageBox.Show("Child information was deleted", "Delete", MessageBoxButton.OK);
+                    dataGrid.ItemsSource = myBL.getListOfChildByMother(thisMother).ToList();
+
+                }
+            }
         }
 
         /// <summary>
@@ -111,7 +134,7 @@ namespace PLWPF
         /// </summary>
         private void updateDetails()
         {
-            signContract.Opacity = 0;
+            Header.Opacity = 0;
             Window update = new mother_update_details(thisMother);
             update.ShowDialog();
         }
@@ -121,17 +144,17 @@ namespace PLWPF
         /// </summary>
         private void addChildToMother()
         {
-            signContract.Opacity = 0;
+            Header.Opacity = 0;
             Window NewChildWindow = new newChildWindow(thisMother.id);
             NewChildWindow.ShowDialog();
         }
 
         /// <summary>
-        ///  delete Mother fr
+        ///  delete Mother
         /// </summary>
         private void deleteUser()
         {
-            signContract.Opacity = 0;
+            Header.Opacity = 0;
             // giving last chance
             MessageBoxResult whatNow = MessageBox.Show("Are You Sure you want to delete your user?", "", MessageBoxButton.OKCancel);
             switch (whatNow)
@@ -154,5 +177,12 @@ namespace PLWPF
             Close();
         }
 
+
+        private void deleteChild()
+        {
+            Header.Opacity = 1;
+            Header.Text = "To Delete Child, Double Click the child row:";
+            dataGrid.ItemsSource = myBL.getListOfChildByMother(thisMother).ToList();
+        }
     }
 }

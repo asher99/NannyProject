@@ -39,14 +39,15 @@
             <ComboBoxItem Content="Add Child"/>
             <ComboBoxItem Content="View Children Data"/>
             <ComboBoxItem Content="View Potential Nannys"/>
+            <ComboBoxItem Content="Delete child informatiom"/>
             <ComboBoxItem Content="Delete User" Foreground="Gray"/>
         </ComboBox>
 
-        <DataGrid x:Name="dataGrid" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Width="350" SelectionMode="Single" MouseDoubleClick="dataGrid_MouseDoubleClick">
+        <DataGrid x:Name="dataGrid" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Width="350" SelectionMode="Single" SelectionUnit="Cell" MouseDoubleClick="dataGrid_MouseDoubleClick">
            
         </DataGrid>
         <DockPanel Grid.Column="1" Grid.Row="0" Background="YellowGreen" Opacity="0.8">
-            <TextBlock x:Name="signContract" Text="To Sign Contract, Double Click the nanny row:" Width="300" Height="20" VerticalAlignment="Bottom" Foreground="Yellow" FontWeight="Heavy" IsEnabled="False" Opacity="0"/>
+            <TextBlock x:Name="Header"  Width="300" Height="20" VerticalAlignment="Bottom" Foreground="Yellow" FontWeight="Heavy" IsEnabled="False" Opacity="0"/>
         </DockPanel>
         <Button x:Name="exit" Content="Exit" Grid.Row="4" Width="200" Click="exit_Click"/>
     </Grid>
