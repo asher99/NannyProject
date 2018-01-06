@@ -477,7 +477,7 @@ namespace BL
         }
 
         /// <summary>
-        /// check if it can find a specific address in google maps, by trying to find routes from "Lev Academic Center" to it.
+        /// check if it can find a specific address in Google maps, by trying to find routes from "Lev Academic Center" to it.
         /// </summary>
         /// <param name="source"></param>
         public void findAddress(string source)
@@ -493,6 +493,7 @@ namespace BL
         /// <returns></returns>
         public int distanceBetweenAddresses(string source, string dest)
         {
+
             var drivingDirectionRequest = new DirectionsRequest
             {
                 TravelMode = TravelMode.Walking,
@@ -510,7 +511,7 @@ namespace BL
         }
 
         /// <summary>
-        /// returns collection of Nanny's that stands in moms hour demands. age is irrelevant and distance is ignored.
+        /// returns collection of Nanny's that stands in moms hour demands. age is irrelevant.
         /// </summary>
         /// <param name="mother"></param>
         /// <returns></returns>
@@ -554,6 +555,11 @@ namespace BL
                             flag = false;
                     }
 
+                }
+
+                if (distanceBetweenAddresses(mother.address, nanny.address) > mother.addressRadius)
+                {
+                    flag = false;
                 }
 
                 if (flag)
@@ -783,7 +789,7 @@ namespace BL
 
         public IEnumerable<Child> checkAgeOfKids(IEnumerable<Child> list, Nanny nanny)
         {
-            return myDal.checkAgeOfKids(list,nanny);
+            return myDal.checkAgeOfKids(list, nanny);
         }
     }
 }

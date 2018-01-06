@@ -22,7 +22,7 @@ namespace BE
 
         public string address { set; get; }
 
-        public string addressRadius { set; get; }   // not clear
+        public int addressRadius { set; get; }   // in meters
 
         public bool[] daysOfNanny = new bool[6]; // 
         public Day[] hoursByNanny = new Day[6]; 
