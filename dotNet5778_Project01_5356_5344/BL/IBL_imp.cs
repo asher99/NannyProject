@@ -781,9 +781,9 @@ namespace BL
             return myDal.getListOfChildrenOfNanny(id);
         }
 
-        public IEnumerable<Child> checkAgeOfKids(List<Child> list, Nanny nanny)
+        public List<Child> checkAgeOfKids(List<Child> list, Nanny nanny)
         {
-            return myDal.checkAgeOfKids(List < Child > list, Nanny nanny);
+            return myDal.checkAgeOfKids(list,nanny);
         }
     }
 }

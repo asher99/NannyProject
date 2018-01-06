@@ -60,7 +60,7 @@ namespace BL
         IEnumerable<Nanny> potentialNannys(Mother mother);
         IEnumerable<Child> getListOfChildrenOfNanny(int id);
         void findAddress(string source);
-        IEnumerable<Child> checkAgeOfKids(List<Child> list, Nanny nanny);
+        List<Child> checkAgeOfKids(List<Child> list, Nanny nanny);
 
 
     }
