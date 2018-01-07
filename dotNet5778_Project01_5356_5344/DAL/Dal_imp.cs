@@ -43,8 +43,9 @@ namespace DAL
             IEnumerable<Contract> nannyContracts = ListOfContractsById(nanny.id);
             if (nannyContracts != null)
             {
-                foreach (Contract c in nannyContracts)
-                    deleteContract(c);
+                
+                foreach (Contract c in nannyContracts.ToList())
+                        deleteContract(c);
             }
 
             DataSource.listOfNannys.Remove(nanny);
@@ -419,7 +420,7 @@ namespace DAL
             List<Contract> contracts = new List<Contract>();
             foreach (Child kid in getListOfChildByMother(thisMother))
             {
-                if(ListOfContractsById(kid.id).Any())
+                if (ListOfContractsById(kid.id).Any())
                     contracts.Add(ListOfContractsById(kid.id).ElementAt(0));
             }
 
