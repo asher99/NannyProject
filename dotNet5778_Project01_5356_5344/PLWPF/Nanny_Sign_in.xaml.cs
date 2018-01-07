@@ -43,9 +43,14 @@ namespace PLWPF
 
                 // if Nanny in list
                 int id = Convert.ToInt32(idTextBox.Text);
+                string name = nameTextBox.Text;
                 if (!myBL.isNannyInList(id))
                     throw new Exception("You are not in the system.");
+
                 Nanny thisNanny = myBL.nannyById(id);
+
+                if (thisNanny.firstName != name)
+                    throw new Exception("You are not in the system.");
                 Window nannyInfo = new NannyInterface(thisNanny);
                 Close();
                 nannyInfo.ShowDialog();
@@ -53,7 +58,7 @@ namespace PLWPF
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                Close();
+               // Close();
             }
         }
     }

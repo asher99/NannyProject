@@ -523,8 +523,7 @@ namespace BL
             int distance = 0;
             foreach (Nanny nanny in myDal.getListOfNanny())
             {
-                Thread myThred = new Thread(() => { distance = distanceBetweenAddresses(mother.address, nanny.address); });
-                myThred.Start();
+                
 
                 bool flag = true;
                 for (int i = 0; i < 6 && flag && mother.daysOfNanny[i]; i++)
@@ -562,6 +561,8 @@ namespace BL
 
                 }
 
+                Thread myThred = new Thread(() => { distance = distanceBetweenAddresses(mother.address, nanny.address); });
+                myThred.Start();
                 listOfThreds.Add(myThred);
 
                 if (distance > mother.addressRadius)
@@ -571,6 +572,7 @@ namespace BL
 
                 if (flag)
                     list.Add(nanny);
+
                 foreach (Thread t in listOfThreds)
                 {
                     t.Join();

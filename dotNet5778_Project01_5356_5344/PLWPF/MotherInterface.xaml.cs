@@ -79,7 +79,7 @@ namespace PLWPF
 
 
         /// <summary>
-        /// show all potential naany
+        /// show all potential nanny
         /// </summary>
         private void show_potentialNannys()
         {
@@ -130,7 +130,7 @@ namespace PLWPF
         }
 
         /// <summary>
-        /// A window with mother details opend and make it possible to make change.
+        /// A window with mother details opened and make it possible to make change.
         /// </summary>
         private void updateDetails()
         {
@@ -162,7 +162,7 @@ namespace PLWPF
                 case MessageBoxResult.Cancel: return;
             }
 
-            // delete children - all contracts are deleted in the "deleteChild(Child)" methos.
+            // delete children - all contracts are deleted in the "deleteChild(Child)" method.
             dataGrid.ItemsSource = null;
             foreach (Child son in myBL.getListOfChildByMother(thisMother).ToList())
             {

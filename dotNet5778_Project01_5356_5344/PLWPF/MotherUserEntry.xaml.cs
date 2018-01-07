@@ -58,6 +58,8 @@ namespace PLWPF
                     throw new Exception("You are not in the system.");
 
                 Mother thisMother = myBL.getMotherByID(id);
+               if (thisMother.firstName != name)
+                    throw new Exception("You are not in the system.");
                 Window motherInfo = new MoterInterface(thisMother);
                 Close();
                 motherInfo.ShowDialog();
