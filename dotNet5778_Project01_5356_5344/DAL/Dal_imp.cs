@@ -394,6 +394,12 @@ namespace DAL
             return item;
         }
 
+        /// <summary>
+        /// select from a list of children only the children that suitable for a nanny.
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="nanny"></param>
+        /// <returns></returns>
         public IEnumerable<Child> checkAgeOfKids(IEnumerable<Child> list, Nanny nanny)
         {
 
@@ -401,6 +407,24 @@ namespace DAL
                    let age = child.ageInMonths()
                    where nanny.maxAgeOfKid > age && nanny.minAgeOfKid <= age
                    select child;
+        }
+
+        /// <summary>
+        /// Return list of contracts by mother
+        /// </summary>
+        /// <param name="thisMother"></param>
+        /// <returns></returns>
+        public IEnumerable<Contract> getListOfContractByMother(Mother thisMother)
+        {
+            List<Contract> contracts = new List<Contract>();
+            foreach (Child kid in getListOfChildByMother(thisMother))
+            {
+                if(ListOfContractsById(kid.id).Any())
+                    contracts.Add(ListOfContractsById(kid.id).ElementAt(0));
+            }
+
+            return contracts.AsEnumerable();
+
         }
     }
 }

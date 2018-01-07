@@ -129,6 +129,8 @@ namespace BL
         /// <param name="child"></param>
         public void deleteChild(Child child)
         {
+            Contract child_contract = ListOfContractsById(child.id).ElementAt(0);
+            deleteContract(child_contract);
             myDal.deleteChild(child);
         }
 
@@ -803,6 +805,11 @@ namespace BL
         public IEnumerable<Child> checkAgeOfKids(IEnumerable<Child> list, Nanny nanny)
         {
             return myDal.checkAgeOfKids(list, nanny);
+        }
+
+        public IEnumerable<Contract> getListOfContractByMother(Mother thisMother)
+        {
+            return myDal.getListOfContractByMother(thisMother);
         }
     }
 }

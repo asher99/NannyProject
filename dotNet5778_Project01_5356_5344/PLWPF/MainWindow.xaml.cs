@@ -250,7 +250,7 @@ namespace PLWPF
 
             // Contract objects:
             #region contracts
-            Contract A = new Contract(Rachel, Yosi, true);
+            Contract A = new Contract(Sarit, Yosi, true);
             myBL.addContract(A);
             #endregion
         }

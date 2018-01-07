@@ -64,9 +64,12 @@ namespace PLWPF
             {
                 MessageBox.Show("You still had signed contracts! \nIf you want to leave, you have to enter \"View Contracts\" and cancel the active contracts");
             }
-            else myBL.deleteNanny(thisNanny);
-            MessageBox.Show("GoodBye", "", MessageBoxButton.OK);
-            Close();
+            else
+            {
+                myBL.deleteNanny(thisNanny);
+                MessageBox.Show("GoodBye", "", MessageBoxButton.OK);
+                Close();
+            }
         }
 
         // show details, some of the details can't be changed

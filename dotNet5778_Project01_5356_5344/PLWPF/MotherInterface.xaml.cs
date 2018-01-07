@@ -55,23 +55,27 @@ namespace PLWPF
         {
             switch (Options.SelectedIndex)
             {
-                case 0: updateDetails();
+                case 0: //update details
+                    updateDetails();
                     break;
-                case 1:
-                    //dataGrid.ItemsSource = myBL.getListOfContractByMother(thisMother); //not implement yet
+                case 1: //view contracts
+                    dataGrid.ItemsSource = myBL.getListOfContractByMother(thisMother).ToList(); //not implement yet
                     break;
-                case 2:
+                case 2: // add child
                     addChildToMother();
                     break;
-                case 3:
+                case 3: // view children (also update children data)
                     Header.Opacity = 0;
-                    dataGrid.ItemsSource = myBL.getListOfChildByMother(thisMother);
+                    dataGrid.ItemsSource = myBL.getListOfChildByMother(thisMother).ToList();
                     break;
-                case 4: show_potentialNannys();
+                case 4: // show potential nanny
+                    show_potentialNannys();
                     break;
-                case 5: deleteChild();
+                case 5: // delete child
+                    deleteChild();
                     break;
-                case 6: deleteUser();
+                case 6: // delete mother
+                    deleteUser();
                     break;
             }
 
