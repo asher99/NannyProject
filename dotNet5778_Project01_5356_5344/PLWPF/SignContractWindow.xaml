@@ -28,7 +28,7 @@
             <Label x:Name="childIDNUmber_label" Content="Enter Child ID:" Width="100"/>
             <TextBox x:Name="childIDNUmber" Width="100" Margin="0,0,0,-0.8" />
             <TabPanel Width="20"/>
-           <!-- <DatePicker x:Name="datePicker" Text="Contract expiration" Width="100" Height="30" SelectedDate="{Binding Path=ExpirationDate, Mode=TwoWay}"/>-->
+           <DatePicker x:Name="datePicker" Text="Contract expiration" Width="100" Height="30" />
 
         </StackPanel>
 

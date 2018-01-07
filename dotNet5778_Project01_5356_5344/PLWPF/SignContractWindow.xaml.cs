@@ -86,6 +86,7 @@ namespace PLWPF
                     thisContract.moneyPerHour = myBL.calculateSalary(thisContract, thisNanny);
                 }
 
+                thisContract.ExpirationDate = datePicker.SelectedDate.Value;
 
                 // add data to text block
                 Schedule.Text = Schedule_ToString();
