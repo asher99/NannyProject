@@ -41,7 +41,7 @@ namespace PLWPF
         // Event: the user select option from the combo box!
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            switch(Options.SelectedIndex)
+            switch (Options.SelectedIndex)
             {
                 case 0: showDetails(); break; // update details
                 case 1: dataGrid.ItemsSource = myBL.getListOfChildrenOfNanny(thisNanny.id); break;                 // view group
@@ -54,22 +54,27 @@ namespace PLWPF
         private void nannyLeave()
         {
             // giving last chance
-            MessageBoxResult whatNow = MessageBox.Show("Are You Sure you want to delete your user?","",MessageBoxButton.OKCancel);
-            switch(whatNow)
+            MessageBoxResult whatNow = MessageBox.Show("Are You Sure you want to delete your user?", "", MessageBoxButton.OKCancel);
+            switch (whatNow)
             {
                 case MessageBoxResult.Cancel: return;
             }
 
             if (thisNanny.numberOfSignedContracts != 0)
             {
-                MessageBox.Show("You still had signed contracts! \nIf you want to leave, you have to enter \"View Contracts\" and cancel the active contracts");
+               MessageBoxResult whatNow2 = MessageBox.Show("You still have signed contracts! \nIf you leave, you will be charged 30% canceling fee ",
+                    "warning", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+
+                switch (whatNow2)
+                {
+                    case MessageBoxResult.Cancel: return;
+                }
             }
-            else
-            {
-                myBL.deleteNanny(thisNanny);
-                MessageBox.Show("GoodBye", "", MessageBoxButton.OK);
-                Close();
-            }
+
+            myBL.deleteNanny(thisNanny);
+            MessageBox.Show("GoodBye", "", MessageBoxButton.OK);
+            Close();
+
         }
 
         // show details, some of the details can't be changed
@@ -77,6 +82,7 @@ namespace PLWPF
         {
             Window nannyDetails = new nanny_update_details(thisNanny);
             nannyDetails.ShowDialog();
+
         }
     }
 }
