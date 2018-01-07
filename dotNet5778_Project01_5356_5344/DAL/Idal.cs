@@ -49,6 +49,6 @@ namespace DAL
         IEnumerable<Child> getListOfChildByMother(Mother mother);
         IEnumerable<Child> getListOfChildrenOfNanny(int id);
         IEnumerable<Child> checkAgeOfKids(IEnumerable<Child> list, Nanny nanny) ;
-
+        IEnumerable<Contract> getListOfContractByMother(Mother thisMother);
     }
 }

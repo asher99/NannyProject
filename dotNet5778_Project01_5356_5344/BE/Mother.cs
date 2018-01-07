@@ -24,10 +24,10 @@ namespace BE
 
         public int addressRadius { set; get; }   // in meters
 
-        public bool[] daysOfNanny = new bool[6]; // 
-        public Day[] hoursByNanny = new Day[6]; 
+        public bool[] daysOfNanny { set; get; } // 
+        public Day[] hoursByNanny { set; get; }
 
-        public bool wantsATrialMeeting { set; get; }
+    public bool wantsATrialMeeting { set; get; }
 
         public string comments { set; get; }
         // more options if needed

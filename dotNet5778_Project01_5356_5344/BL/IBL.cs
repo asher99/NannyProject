@@ -66,6 +66,8 @@ namespace BL
         int brothersByNanny(Nanny nanny, int momsId);
         IEnumerable<Child> ChildrenWithoutNanny();
 
+        IEnumerable<Contract> getListOfContractByMother(Mother thisMother);
+
 
     }
 }
