@@ -129,8 +129,12 @@ namespace BL
         /// <param name="child"></param>
         public void deleteChild(Child child)
         {
-            Contract child_contract = ListOfContractsById(child.id).ElementAt(0);
-            deleteContract(child_contract);
+            if (ListOfContractsById(child.id).Any())
+            {
+                Contract child_contract = ListOfContractsById(child.id).ElementAt(0);
+                deleteContract(child_contract);
+            }
+
             myDal.deleteChild(child);
         }
 
@@ -521,11 +525,11 @@ namespace BL
         public IEnumerable<Nanny> potentialNannys(Mother mother)
         {
             List<Nanny> list = new List<Nanny>();
-            List<Thread> listOfThreds = new List<Thread>(); 
+            List<Thread> listOfThreds = new List<Thread>();
             int distance = 0;
             foreach (Nanny nanny in myDal.getListOfNanny())
             {
-                
+
 
                 bool flag = true;
                 for (int i = 0; i < 6 && flag && mother.daysOfNanny[i]; i++)

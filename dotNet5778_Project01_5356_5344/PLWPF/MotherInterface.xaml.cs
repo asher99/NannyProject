@@ -160,12 +160,12 @@ namespace PLWPF
         {
             Header.Opacity = 0;
             // giving last chance
-            MessageBoxResult whatNow = MessageBox.Show("Are You Sure you want to delete your user?", "", MessageBoxButton.OKCancel);
+            MessageBoxResult whatNow = MessageBox.Show("Are You Sure you want to delete your user?\n Deleting your User will also Delete your children!", "", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
             switch (whatNow)
             {
                 case MessageBoxResult.Cancel: return;
             }
-
+           
             // delete children - all contracts are deleted in the "deleteChild(Child)" method.
             dataGrid.ItemsSource = null;
             foreach (Child son in myBL.getListOfChildByMother(thisMother).ToList())
