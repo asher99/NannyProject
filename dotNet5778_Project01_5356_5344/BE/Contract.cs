@@ -12,7 +12,7 @@ namespace BE
     /// </summary>
     public class Contract
     {
-        public int numberOfContract { set; get; }// maybe a special class?
+        public int numberOfContract { set; get; }
 
         public int NannysId { set; get; }
 
