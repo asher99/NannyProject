@@ -58,7 +58,7 @@ namespace PLWPF
                 case 0: updateDetails();
                     break;
                 case 1:
-                    //dataGrid.ItemsSource = myBL.getListOfContractByMother(thisMother); not implement yet
+                    //dataGrid.ItemsSource = myBL.getListOfContractByMother(thisMother); //not implement yet
                     break;
                 case 2:
                     addChildToMother();

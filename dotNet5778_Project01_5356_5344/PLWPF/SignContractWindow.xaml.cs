@@ -57,7 +57,7 @@ namespace PLWPF
 
 
         /// <summary>
-        /// Event: when accepting terms - the Contract object got their values, and financel details show in window
+        /// Event: when accepting terms - the Contract object got their values, and financial details show in window
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

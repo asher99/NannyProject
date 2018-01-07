@@ -46,7 +46,7 @@ namespace PLWPF
                 case 0: showDetails(); break; // update details
                 case 1: dataGrid.ItemsSource = myBL.getListOfChildrenOfNanny(thisNanny.id); break;                 // view group
                 case 2: dataGrid.ItemsSource = myBL.ListOfContractsById(thisNanny.id); break;                  // view contracts
-                case 4: nannyLeave(); break;  // delete user
+                case 3: nannyLeave(); break;  // delete user
             }
         }
 

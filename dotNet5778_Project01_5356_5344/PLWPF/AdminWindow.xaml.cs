@@ -36,32 +36,7 @@ namespace PLWPF
             Nannylist.IsChecked = true;
         }
 
-        /*private IEnumerable<object> displayList()
-        {
-            if (Nannylist.IsChecked == true)
-            {
-                return myBL.getListOfNanny();
-            }
-
-            if (Motherlist.IsChecked == true)
-            {
-                return myBL.getListOfMother();
-            }
-
-            if (Childlist.IsChecked == true)
-            {
-                return myBL.getListOfChild();
-            }
-
-            if (Contractlist.IsChecked == true)
-            {
-                return myBL.getListOfContract();
-            }
- 
-            return null; 
-        }*/
-
-
+        
         /// <summary>
         /// multiple events for the right list to show.
         /// </summary>
