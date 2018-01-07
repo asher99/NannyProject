@@ -6,40 +6,47 @@
         xmlns:BE="clr-namespace:BE;assembly=BE"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="SignContractWindow" Height="520" Width="500">
+        Title="SignContractWindow" Height="580" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="150"/>
+            <RowDefinition Height="200"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        <StackPanel x:Name="details" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" Width="500">
+        <StackPanel x:Name="ChildrenGrid" Orientation="Vertical" Grid.Row="1">
+            <TextBlock Text="Here are the children that was found suitable for this nanny: " TextWrapping="Wrap" FontWeight="Bold" Width="400" Background="LightGray"/>
+            <DataGrid x:Name="dataGrid" Width="450"/>
+        </StackPanel>
+
+        <StackPanel x:Name="details" Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right" Width="500" VerticalAlignment="Center">
             <TabPanel Width="30"/>
             <Label x:Name="childIDNUmber_label" Content="Enter Child ID:" Width="100"/>
             <TextBox x:Name="childIDNUmber" Width="100" Margin="0,0,0,-0.8" />
         </StackPanel>
 
-        <StackPanel x:Name="Finance" Grid.Row="2" Background="Green" Opacity="1" Orientation="Vertical" Margin="0,20.083,-0.4,0.2" Grid.RowSpan="2">
-            <TextBlock x:Name="schedule" Text="here" Foreground="Black" Width="400" FontWeight="Medium" TextWrapping="Wrap"/>
+        <StackPanel x:Name="Finance" Grid.Row="4" Orientation="Vertical">
+            <TextBlock x:Name="Schedule" Text="schedule will appear after accepting terms." Foreground="Black" Width="400" FontWeight="Medium" TextWrapping="Wrap"/>
             <TabPanel Height="10"/>
-            <TextBlock x:Name="Salary" Text="here" Foreground="Black" Width="400" FontWeight="Medium" TextWrapping="Wrap"/>
+            <TextBlock x:Name="Billing" Text="Financial billing will appear after accepting terms." Foreground="Black" Width="400" FontWeight="Medium" TextWrapping="Wrap"/>
             <TabPanel Height="10"/>
-            <TextBlock x:Name="Special" Text="here" Foreground="Black" Width="400" FontWeight="Medium" TextWrapping="Wrap"/>
+            <TextBlock x:Name="Additional" Text="Additional details will appear after accepting terms." Foreground="Black" Width="400" FontWeight="Medium" TextWrapping="Wrap"/>
         </StackPanel>
 
         <Label Content="Sign Contract!" Grid.Row="0"  Grid.Column="0" Background="YellowGreen" Opacity="0.8" FontStyle="Italic" FontWeight="Bold" FontSize="30" Margin="0,0,-0.4,8.8" />
-        <CheckBox x:Name="Terms_accepted" Content="I agree to the terms" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="131" Checked="Terms_accepted_Checked" Grid.Row="2" Margin="23,0,0,0" />
-        <CheckBox x:Name="byHour" Content="by hour" HorizontalAlignment="Left" Height="20" Margin="154,1,0,0" VerticalAlignment="Top" Width="131" Grid.Row="2"/>
+        <CheckBox x:Name="Terms_accepted" Content="I agree to the terms" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="131" Checked="Terms_accepted_Checked" Grid.Row="3" Margin="23,0,0,0" />
+        <CheckBox x:Name="byHour" Content="by hour" HorizontalAlignment="Left" Height="20" Margin="154,1,0,0" VerticalAlignment="Top" Width="131" Grid.Row="3"/>
 
-        <StackPanel x:Name="Buttons" Orientation="Horizontal" Grid.Row="4"  HorizontalAlignment="Center">
-            <Button x:Name="exit" Content="Cancel" Width="70"/>
+        <StackPanel x:Name="Buttons" Orientation="Horizontal" Grid.Row="5"  HorizontalAlignment="Center">
+            <Button x:Name="exit" Content="Cancel" Width="70" Click="exit_Click"/>
             <TabPanel Width="100"/>
-            <Button x:Name="Sign" Content="SIGN CONTRACT!" Background="black" Foreground="White" FontWeight="ExtraBold" Width="120" IsEnabled="{Binding ElementName=checkBox , Path=IsChecked}" Click="Sign_Click"/>
+            <Button x:Name="Sign" Content="SIGN CONTRACT!" Background="black" Foreground="White" FontWeight="ExtraBold" Width="120" IsEnabled="{Binding ElementName=Terms_accepted , Path=IsChecked}" Click="Sign_Click"/>
         </StackPanel>
+
 
         <Grid.Background>
             <ImageBrush ImageSource="images/background1.png"/>

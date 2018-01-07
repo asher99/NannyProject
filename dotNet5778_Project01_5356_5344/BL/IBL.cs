@@ -63,6 +63,8 @@ namespace BL
         IEnumerable<Child> checkAgeOfKids(IEnumerable<Child> list, Nanny nanny);
 
         double calculateSalary(Contract contract, Nanny nanny);
+        int brothersByNanny(Nanny nanny, int momsId);
+        IEnumerable<Child> ChildrenWithoutNanny();
 
 
     }
