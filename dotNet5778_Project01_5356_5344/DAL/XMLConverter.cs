@@ -236,6 +236,5 @@ namespace DAL
             return contract;
         }
 
-
     }
 }

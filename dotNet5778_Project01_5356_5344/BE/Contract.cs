@@ -93,7 +93,6 @@ namespace BE
             numberOfContract = -1;
             isSingedContract = false;
         }
-
         public Contract() { }
     }
 
