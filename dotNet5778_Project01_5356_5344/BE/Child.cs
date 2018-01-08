@@ -14,19 +14,11 @@ namespace BE
     {
         public int id { set; get; }
 
-        public int momsId { set; get; }
-
         public string name { set; get; }
 
-        public DateTime birthday { set; get; }
+        public int momsId { set; get; }
 
-        // calculates the child age in months using his birthday 
-        public int ageInMonths()
-        {
-            int age = birthday.Year * 12 + birthday.Month;
-            int today = DateTime.Today.Year * 12 + DateTime.Today.Month;
-            return today-age;
-        }
+        public DateTime birthday { set; get; }
 
         public bool hasSpecialNeeds { set; get; }
 
@@ -37,6 +29,14 @@ namespace BE
         public override string ToString()
         {
             return name + " - CHILD\n child id: " + id + "\n birth date:\t" + birthday.ToShortDateString() + "\n mother id: " + momsId + '\n';
+        }
+
+        // calculates the child age in months using his birthday 
+        public int ageInMonths()
+        {
+            int age = birthday.Year * 12 + birthday.Month;
+            int today = DateTime.Today.Year * 12 + DateTime.Today.Month;
+            return today - age;
         }
 
         public Child(string my_name, int my_id, int my_motherId, DateTime my_birthday, bool my_specialNeeds, string my_specialNeedsString)
