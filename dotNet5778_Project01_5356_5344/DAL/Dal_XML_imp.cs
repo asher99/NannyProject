@@ -5,23 +5,38 @@ using System.Text;
 using System.Threading.Tasks;
 using BE;
 using System.Xml.Linq;
+using DS;
+
 namespace DAL
 {
     class Dal_XML_imp //: Idal
     {
         void addNanny(Nanny nanny)
         {
-            throw new NotImplementedException();
+            DS.DataSourceXml.Nannys.Add(nanny.toXML());
+            DS.DataSourceXml.SaveNannys();
+            
         }
 
         void deleteNanny(Nanny nanny)
         {
-            throw new NotImplementedException();
+            XElement nannyElement =(from n in DS.DataSourceXml.Nannys.Elements()
+                              where Convert.ToInt32(n.Element("id").Value) == nanny.id
+                              select n).FirstOrDefault();
+            nannyElement.Remove();
+
+           DataSourceXml.SaveNannys();
         }
 
         void updateNanny(Nanny nanny)
         {
-            throw new NotImplementedException();
+            XElement nannyElement = (from n in DS.DataSourceXml.Nannys.Elements()
+                                     where Convert.ToInt32(n.Element("id").Value) == nanny.id
+                                     select n).FirstOrDefault();
+
+            // here i update...
+
+            DataSourceXml.SaveNannys();
         }
 
         Nanny nannyById(int id)

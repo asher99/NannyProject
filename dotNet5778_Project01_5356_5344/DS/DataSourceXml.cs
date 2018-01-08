@@ -92,12 +92,12 @@ namespace DS
 
         public static void SaveChildren()
         {
-            contractRoot.Save(childPath);
+           childRoot.Save(childPath);
         }
 
         public static void SaveNannys()
         {
-            contractRoot.Save(nannyPath);
+            nannyRoot.Save(nannyPath);
         }
 
         public static XElement Nannys
@@ -157,4 +157,5 @@ namespace DS
         }
     }
 }
-}
+
+
