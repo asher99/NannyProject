@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 using BE;
 using System.Xml.Linq;
 using DS;
+using static DS.DataSource;
 
 namespace DAL
 {
-    class Dal_XML_imp //: Idal
+    internal class Dal_XML_imp //: Idal
     {
         void addNanny(Nanny nanny)
         {
-            DS.DataSourceXml.Nannys.Add(nanny.toXML());
-            DS.DataSourceXml.SaveNannys();
+           DataSourceXml.Nannys.Add(nanny.toXML());
+           DataSourceXml.SaveNannys();
             
         }
 
         void deleteNanny(Nanny nanny)
         {
-            XElement nannyElement =(from n in DS.DataSourceXml.Nannys.Elements()
+            XElement nannyElement =(from n in DataSourceXml.Nannys.Elements()
                               where Convert.ToInt32(n.Element("id").Value) == nanny.id
                               select n).FirstOrDefault();
             nannyElement.Remove();
@@ -34,7 +35,7 @@ namespace DAL
                                      where Convert.ToInt32(n.Element("id").Value) == nanny.id
                                      select n).FirstOrDefault();
 
-            // here i update...
+            // here we update...
 
             DataSourceXml.SaveNannys();
         }
@@ -46,7 +47,15 @@ namespace DAL
 
         void addMother(Mother mother)
         {
-            throw new NotImplementedException();
+            var temp = (from m in DataSourceXml.Mothers.Elements()
+                        where Convert.ToInt32(m.Element("id").Value) == mother.id
+                        select m).FirstOrDefault();
+            if (temp != null)
+            {
+                DataSourceXml.Mothers.Add(mother.toXML());
+                DataSourceXml.SaveMothers();
+            }
+
         }
 
         void deleteMother(Mother mother)
