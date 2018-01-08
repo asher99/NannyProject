@@ -147,8 +147,8 @@ namespace DAL
                     doesWorkPerHour = Boolean.Parse(NannyXml.Element("doesWorkPerHour").Value),
                     hourWage = Int32.Parse(NannyXml.Element(" hourWage").Value),
                     monthlyWage = Int32.Parse(NannyXml.Element("monthlyWage").Value),
-                    daysOfWork = null,
-                    hoursOfWork = null,
+                   // daysOfWork = null,
+                    //hoursOfWork = null,
                     hasGovVacationDays = Boolean.Parse(NannyXml.Element("hasGovVacationDays").Value),
                     Recommendations = NannyXml.Element("Recommendations").Value,
                     numberOfSignedContracts = Int32.Parse(NannyXml.Element("numberOfSignedContracts ").Value),
@@ -190,6 +190,50 @@ namespace DAL
 
             }
             return mother;
+        }
+
+        public static Child toChild(this XElement childXml)
+        {
+            Child child = null;
+
+            if(childXml != null)
+            {
+                child = new Child
+                {
+                    id = Int32.Parse(childXml.Element("id").Value),
+                    name = childXml.Element("name").Value,
+                    momsId = Int32.Parse(childXml.Element("momsId").Value),
+                    birthday = DateTime.Parse(childXml.Element("birthday").Value),
+                    hasSpecialNeeds = Boolean.Parse(childXml.Element("hasSpecialNeeds").Value),
+                    specialNeeds = childXml.Element("specialNeeds").Value,
+                };
+            }
+
+            return child;
+        }
+
+        public static Contract toContract(this XElement contractXml)
+        {
+            Contract contract = null;
+
+            if(contractXml != null)
+            {
+                contract = new Contract
+                {
+                    numberOfContract = Int32.Parse(contractXml.Element("numberOfContract").Value),
+                    NannysId = Int32.Parse(contractXml.Element("NannysId").Value),
+                    childId = Int32.Parse(contractXml.Element("childId").Value),
+                    isSingedContract = Boolean.Parse(contractXml.Element("isSingedContract").Value),
+                    moneyPerHour = double.Parse(contractXml.Element("moneyPerHour").Value),
+                    monthSalary = double.Parse(contractXml.Element("monthSalary").Value),
+                    isMonthContract = Boolean.Parse(contractXml.Element("isMonthContract").Value),
+                    StartDate = DateTime.Parse(contractXml.Element("StartDate").Value),
+                    ExpirationDate = DateTime.Parse(contractXml.Element("ExpirationDate").Value),
+
+                };
+            }
+
+            return contract;
         }
 
 

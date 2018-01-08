@@ -7,7 +7,7 @@ using BE;
 using System.Xml.Linq;
 namespace DAL
 {
-    class Dal_XML_imp : Idal
+    class Dal_XML_imp //: Idal
     {
         void addNanny(Nanny nanny)
         {
