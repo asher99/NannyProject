@@ -17,7 +17,7 @@ namespace DAL
             var temp = (from n in DataSourceXml.Nannys.Elements()
                         where Convert.ToInt32(n.Element("id").Value) == nanny.id
                         select n).FirstOrDefault();
-            if (temp != null)
+            if (temp == null)
             {
                 DataSourceXml.Nannys.Add(nanny.toXML());
                 DataSourceXml.SaveNannys();
@@ -48,14 +48,16 @@ namespace DAL
                                      where Convert.ToInt32(n.Element("id").Value) == nanny.id
                                      select n).FirstOrDefault();
 
-            // here we update...
+            if (nannyElement != null)
+            {
+               nannyElement.Remove();
+                DataSourceXml.Nannys.Add(nanny.toXML());
+                DataSourceXml.SaveNannys();
+            }
+            else
+                throw new Exception("you are trying to add a existing mother.\n");
 
             DataSourceXml.SaveNannys();
-        }
-
-        Nanny nannyById(int id)
-        {
-            throw new NotImplementedException();
         }
 
         void addMother(Mother mother)
@@ -63,11 +65,13 @@ namespace DAL
             var temp = (from m in DataSourceXml.Mothers.Elements()
                         where Convert.ToInt32(m.Element("id").Value) == mother.id
                         select m).FirstOrDefault();
-            if (temp != null)
+            if (temp == null)
             {
                 DataSourceXml.Mothers.Add(mother.toXML());
                 DataSourceXml.SaveMothers();
             }
+            else
+                throw new Exception("you are trying to add a existing mother.\n");
 
         }
 
@@ -76,9 +80,13 @@ namespace DAL
             XElement motherElement = (from n in DataSourceXml.Mothers.Elements()
                                       where Convert.ToInt32(n.Element("id").Value) == mother.id
                                       select n).FirstOrDefault();
-            motherElement.Remove();
-
-            DataSourceXml.SaveMothers();
+            if (motherElement != null)
+            {
+                motherElement.Remove();
+                DataSourceXml.SaveMothers();
+            }
+            else
+                throw new Exception("you are trying to delete a mother that does not exist\n");
         }
 
         void updateMother(Mother mother)
@@ -133,7 +141,13 @@ namespace DAL
 
         IEnumerable<Mother> getListOfMother()
         {
-            throw new NotImplementedException();
+            XElement root = DataSourceXml.Mothers;
+            List<Mother> result = new List<Mother>();
+            foreach (var m in root.Elements("Mothers"))
+            {
+                result.Add(m.toMother());
+            }
+            return result.AsEnumerable();
         }
 
         IEnumerable<Child> getListOfChild()

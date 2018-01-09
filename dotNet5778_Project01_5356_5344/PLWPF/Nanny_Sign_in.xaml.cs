@@ -47,7 +47,7 @@ namespace PLWPF
                 if (!myBL.isNannyInList(id))
                     throw new Exception("You are not in the system.");
 
-                Nanny thisNanny = myBL.nannyById(id);
+                Nanny thisNanny = myBL.GetNannyByID(id);
 
                 if (thisNanny.firstName != name)
                     throw new Exception("You are not in the system.");

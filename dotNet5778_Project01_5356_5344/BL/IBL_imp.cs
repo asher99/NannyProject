@@ -62,16 +62,6 @@ namespace BL
         }
 
         /// <summary>
-        /// return a Nanny object from DS based on Nanny ID. No need to check if nanny in DS, we call this method after a nanny loged in so she exist.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public Nanny nannyById(int id)
-        {
-            return myDal.nannyById(id);
-        }
-
-        /// <summary>
         /// adds a mother to the archive
         /// using DAL method
         /// </summary>

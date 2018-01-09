@@ -17,8 +17,7 @@ namespace BL
     {
         void addNanny(Nanny nanny);
         void deleteNanny(Nanny nanny);
-        void updateNanny(Nanny nanny);
-        Nanny nannyById(int id);
+        void updateNanny(Nanny nanny);        
 
         void addMother(Mother mother);
         void deleteMother(Mother mother);
