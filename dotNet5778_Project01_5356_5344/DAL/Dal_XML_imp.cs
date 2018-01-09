@@ -14,19 +14,32 @@ namespace DAL
     {
         void addNanny(Nanny nanny)
         {
-           DataSourceXml.Nannys.Add(nanny.toXML());
-           DataSourceXml.SaveNannys();
-            
+            var temp = (from n in DataSourceXml.Nannys.Elements()
+                        where Convert.ToInt32(n.Element("id").Value) == nanny.id
+                        select n).FirstOrDefault();
+            if (temp != null)
+            {
+                DataSourceXml.Nannys.Add(nanny.toXML());
+                DataSourceXml.SaveNannys();
+            }
+            else
+                throw new Exception("nanny already in list\n");
+
         }
 
         void deleteNanny(Nanny nanny)
         {
-            XElement nannyElement =(from n in DataSourceXml.Nannys.Elements()
-                              where Convert.ToInt32(n.Element("id").Value) == nanny.id
-                              select n).FirstOrDefault();
-            nannyElement.Remove();
+            XElement nannyElement = (from n in DataSourceXml.Nannys.Elements()
+                                     where Convert.ToInt32(n.Element("id").Value) == nanny.id
+                                     select n).FirstOrDefault();
+            if (nannyElement != null)
+            {
+                nannyElement.Remove();
+                DataSourceXml.SaveNannys();
+            }
+            else
+                throw new Exception("nanny is not in list\n");
 
-           DataSourceXml.SaveNannys();
         }
 
         void updateNanny(Nanny nanny)
@@ -60,7 +73,12 @@ namespace DAL
 
         void deleteMother(Mother mother)
         {
-            throw new NotImplementedException();
+            XElement motherElement = (from n in DataSourceXml.Mothers.Elements()
+                                      where Convert.ToInt32(n.Element("id").Value) == mother.id
+                                      select n).FirstOrDefault();
+            motherElement.Remove();
+
+            DataSourceXml.SaveMothers();
         }
 
         void updateMother(Mother mother)
@@ -75,7 +93,12 @@ namespace DAL
 
         void deleteChild(Child child)
         {
-            throw new NotImplementedException();
+            XElement childElement = (from n in DataSourceXml.Children.Elements()
+                                     where Convert.ToInt32(n.Element("id").Value) == child.id
+                                     select n).FirstOrDefault();
+            childElement.Remove();
+
+            DataSourceXml.SaveChildren();
         }
 
         void updateChild(Child child)
@@ -90,7 +113,12 @@ namespace DAL
 
         void deleteContract(Contract contract)
         {
-            throw new NotImplementedException();
+            XElement contractElement = (from n in DataSourceXml.Contracts.Elements()
+                                        where Convert.ToInt32(n.Element("numberOfContract").Value) == contract.numberOfContract
+                                        select n).FirstOrDefault();
+            contractElement.Remove();
+
+            DataSourceXml.SaveContracts();
         }
 
         void updateContract(Contract contract)

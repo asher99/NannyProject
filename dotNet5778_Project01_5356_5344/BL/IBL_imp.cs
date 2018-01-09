@@ -514,7 +514,7 @@ namespace BL
 
             Route route = drivingDirections.Routes.First();
             Leg leg = route.Legs.First();
-            return leg.Distance.Value;   // need a implementation
+            return leg.Distance.Value;   
         }
 
         /// <summary>
@@ -529,7 +529,9 @@ namespace BL
             int distance = 0;
             foreach (Nanny nanny in myDal.getListOfNanny())
             {
-
+                Thread myThred = new Thread(() => { distance = distanceBetweenAddresses(mother.address, nanny.address); });
+                myThred.Start();
+                listOfThreds.Add(myThred);
 
                 bool flag = true;
                 for (int i = 0; i < 6 && flag && mother.daysOfNanny[i]; i++)
@@ -567,9 +569,7 @@ namespace BL
 
                 }
 
-                Thread myThred = new Thread(() => { distance = distanceBetweenAddresses(mother.address, nanny.address); });
-                myThred.Start();
-                listOfThreds.Add(myThred);
+                
 
                 if (distance > mother.addressRadius)
                 {
