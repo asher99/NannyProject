@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -62,7 +62,7 @@ namespace PLWPF
         /// <param name="e"></param>
         private void admin_login(object sender, RoutedEventArgs e)
         {  
-            Window login = new loginAdminWindow();
+            Window login = new PasswordLogin();
             login.ShowDialog();
         }
 

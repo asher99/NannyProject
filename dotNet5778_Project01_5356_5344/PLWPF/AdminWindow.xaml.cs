@@ -18,16 +18,16 @@ namespace PLWPF
 {
 
     /// <summary>
-    /// Interaction logic for loginAdminWindow.xaml
+    /// Interaction logic for AdminWindow.xaml
     /// </summary>
-    public partial class loginAdminWindow : Window
+    public partial class AdminWindow : Window
     {
         static IBL myBL = BL_Factory.Get_BL;
 
         /// <summary>
         /// build admin window. set the default on nanny list
         /// </summary>
-        public loginAdminWindow()
+        public AdminWindow()
         {
             InitializeComponent();
             var myList = myBL.getListOfNanny();
