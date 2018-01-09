@@ -133,7 +133,19 @@ namespace DAL
 
         void updateChild(Child child)
         {
-            throw new NotImplementedException();
+            XElement childElement = (from c in DataSourceXml.Children.Elements()
+                                     where Convert.ToInt32(c.Element("id").Value) == child.id
+                                     select c).FirstOrDefault();
+
+            if (childElement != null)
+            {
+                childElement.Remove();
+                DataSourceXml.Children.Add(child.toXML());
+                DataSourceXml.SaveChildren();
+            }
+            else
+                throw new Exception("the child is not in the system.\n");
+
         }
 
         void addContract(Contract contract)
@@ -146,9 +158,14 @@ namespace DAL
             XElement contractElement = (from n in DataSourceXml.Contracts.Elements()
                                         where Convert.ToInt32(n.Element("numberOfContract").Value) == contract.numberOfContract
                                         select n).FirstOrDefault();
-            contractElement.Remove();
-
-            DataSourceXml.SaveContracts();
+            if (contractElement != null)
+            {
+                contractElement.Remove();
+                DataSourceXml.Contracts.Add(contract.toXML());
+              DataSourceXml.SaveContracts();
+            }
+            else
+                throw new Exception("the contract is not in the system.\n");
         }
 
         void updateContract(Contract contract)
