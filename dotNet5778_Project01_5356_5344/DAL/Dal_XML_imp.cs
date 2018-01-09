@@ -50,14 +50,12 @@ namespace DAL
 
             if (nannyElement != null)
             {
-               nannyElement.Remove();
+                nannyElement.Remove();
                 DataSourceXml.Nannys.Add(nanny.toXML());
                 DataSourceXml.SaveNannys();
             }
             else
-                throw new Exception("you are trying to add a existing mother.\n");
-
-            DataSourceXml.SaveNannys();
+                throw new Exception("the nanny is not in the system.\n");
         }
 
         void addMother(Mother mother)
@@ -72,7 +70,6 @@ namespace DAL
             }
             else
                 throw new Exception("you are trying to add a existing mother.\n");
-
         }
 
         void deleteMother(Mother mother)
@@ -91,12 +88,32 @@ namespace DAL
 
         void updateMother(Mother mother)
         {
-            throw new NotImplementedException();
+            XElement motherElement = (from m in DataSourceXml.Mothers.Elements()
+                                      where Convert.ToInt32(m.Element("id").Value) == mother.id
+                                      select m).FirstOrDefault();
+
+            if (motherElement != null)
+            {
+                motherElement.Remove();
+                DataSourceXml.Mothers.Add(mother.toXML());
+                DataSourceXml.SaveMothers();
+            }
+            else
+                throw new Exception("the mother is not in the system.\n");
         }
 
         void addChild(Child child)
         {
-            throw new NotImplementedException();
+            var temp = (from c in DataSourceXml.Children.Elements()
+                        where Convert.ToInt32(c.Element("id").Value) == child.id
+                        select c).FirstOrDefault();
+            if (temp == null)
+            {
+                DataSourceXml.Children.Add(child.toXML());
+                DataSourceXml.SaveChildren();
+            }
+            else
+                throw new Exception("you are trying to add a existing child.\n");
         }
 
         void deleteChild(Child child)
@@ -104,9 +121,14 @@ namespace DAL
             XElement childElement = (from n in DataSourceXml.Children.Elements()
                                      where Convert.ToInt32(n.Element("id").Value) == child.id
                                      select n).FirstOrDefault();
-            childElement.Remove();
-
-            DataSourceXml.SaveChildren();
+            if (childElement != null)
+            {
+                childElement.Remove();
+                DataSourceXml.Children.Add(child.toXML());
+                DataSourceXml.SaveChildren();
+            }
+            else
+                throw new Exception("child is not in the system\n");
         }
 
         void updateChild(Child child)
