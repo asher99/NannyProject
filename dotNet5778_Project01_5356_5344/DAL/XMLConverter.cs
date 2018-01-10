@@ -124,6 +124,23 @@ namespace DAL
                 new XElement("finish_minute", day.finish_minute));
         }
 
+        public static Day toDay(this XElement dayXml)
+        {
+            Day day = null;
+            if (dayXml != null)
+            {
+                day = new Day
+                {
+                    start_hour = Int32.Parse(dayXml.Element("start_our").Value),
+                    start_minute = Int32.Parse(dayXml.Element("start_minute").Value),
+                    finish_hour = Int32.Parse(dayXml.Element("finish_hour").Value),
+                    finish_minute = Int32.Parse(dayXml.Element("finish_minute").Value)
+                };
+            }
+
+            return day;
+        }
+
         public static Nanny toNanny(this XElement NannyXml)
         {
             Nanny nanny = null;
@@ -147,8 +164,12 @@ namespace DAL
                     doesWorkPerHour = Boolean.Parse(NannyXml.Element("doesWorkPerHour").Value),
                     hourWage = Int32.Parse(NannyXml.Element(" hourWage").Value),
                     monthlyWage = Int32.Parse(NannyXml.Element("monthlyWage").Value),
-                   // daysOfWork = null,
-                    //hoursOfWork = null,
+
+                    daysOfWork = (from e in NannyXml.Element("daysOfWork").Elements("Days")
+                                  select Boolean.Parse(e.Value)).ToArray(),
+                    hoursOfWork = (from d in NannyXml.Element("hoursByNanny").Elements("Day")
+                                   select d.toDay()).ToArray(),
+
                     hasGovVacationDays = Boolean.Parse(NannyXml.Element("hasGovVacationDays").Value),
                     Recommendations = NannyXml.Element("Recommendations").Value,
                     numberOfSignedContracts = Int32.Parse(NannyXml.Element("numberOfSignedContracts ").Value),
@@ -175,17 +196,11 @@ namespace DAL
                     addressRadius = Int32.Parse(motherXml.Element("addressRadius").Value),
                     wantsATrialMeeting = Boolean.Parse(motherXml.Element("wantsATrialMeeting").Value),
                     comments = motherXml.Element("comments").Value,
+
                     daysOfNanny = (from e in motherXml.Element("daysOfNannyArray").Elements("Days")
                                    select Boolean.Parse(e.Value)).ToArray(),
-                    /* hoursByNanny = (from d in motherXml.Element("hoursByNanny").Elements("Day")
-                                     select new Day
-                                     {
-                                         start_hour = Int32.Parse(motherXml.Element("start_our").Value),
-                                         start_minute = Int32.Parse(motherXml.Element("start_minute").Value),
-                                         finish_hour = Int32.Parse(motherXml.Element("finish_hour").Value),
-                                         finish_minute = Int32.Parse(d.Element("finish_minute").Value),
-                                     }).ToList()
-                                     */
+                    hoursByNanny = (from d in motherXml.Element("hoursByNanny").Elements("Day")
+                                    select d.toDay()).ToArray(),
                 };
 
             }
@@ -196,7 +211,7 @@ namespace DAL
         {
             Child child = null;
 
-            if(childXml != null)
+            if (childXml != null)
             {
                 child = new Child
                 {
@@ -216,7 +231,7 @@ namespace DAL
         {
             Contract contract = null;
 
-            if(contractXml != null)
+            if (contractXml != null)
             {
                 contract = new Contract
                 {
