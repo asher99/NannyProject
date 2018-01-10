@@ -54,10 +54,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataSourceXML\ChildrenXML.xml" />
-    <Content Include="DataSourceXML\ContractsXML.xml" />
-    <Content Include="DataSourceXML\MothersXML.xml" />
-    <Content Include="DataSourceXML\NannysXML.xml" />
+    <Content Include="dataSourceXML\ChildrenXML.xml" />
+    <Content Include="dataSourceXML\ContractsXML.xml" />
+    <Content Include="dataSourceXML\MothersXML.xml" />
+    <Content Include="dataSourceXML\NannysXML.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{1b1ea8fc-0e76-442e-bec3-e2a29654b586}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

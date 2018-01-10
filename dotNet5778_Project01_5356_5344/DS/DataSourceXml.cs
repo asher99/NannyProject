@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.IO;
-
+using DAL;
 namespace DS
 {
     public static class DataSourceXml
     {
         private static string solutionDirectory = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).FullName).FullName).FullName;
 
-        private static string filePath = System.IO.Path.Combine(solutionDirectory, "DS", "DataSourceXML");
+        private static string filePath = System.IO.Path.Combine(solutionDirectory, "DS", "dataSourceXML");
 
         private static XElement motherRoot = null;
         static string motherPath = Path.Combine(filePath, "MothersXML.xml");

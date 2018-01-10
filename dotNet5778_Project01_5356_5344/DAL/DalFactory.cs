@@ -11,7 +11,9 @@ namespace DAL
         private static Idal dal;
 
         private DalFactory() { }
-        static DalFactory() { dal = new Dal_imp(); } 
+
+        static DalFactory() { dal = new Dal_imp(); }
+        //static DalFactory() { dal = new Dal_XML_imp(); }
 
         public static Idal Get_DAL { get { return dal; } }
     }

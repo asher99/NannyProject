@@ -10,13 +10,13 @@ using static DS.DataSource;
 
 namespace DAL
 {
-    internal class Dal_XML_imp //: Idal
+    internal class Dal_XML_imp : Idal
     {
         /// <summary>
         /// checks if nanny exists in DS and then adds to DS
         /// </summary>
         /// <param name="nanny"></param>
-        void addNanny(Nanny nanny)
+        public void addNanny(Nanny nanny)
         {
             var temp = (from n in DataSourceXml.Nannys.Elements()
                         where Convert.ToInt32(n.Element("id").Value) == nanny.id
@@ -35,7 +35,7 @@ namespace DAL
         /// removes a nanny from DS
         /// </summary>
         /// <param name="nanny"></param>
-        void deleteNanny(Nanny nanny)
+        public void deleteNanny(Nanny nanny)
         {
             XElement nannyElement = (from n in DataSourceXml.Nannys.Elements()
                                      where Convert.ToInt32(n.Element("id").Value) == nanny.id
@@ -54,7 +54,7 @@ namespace DAL
         /// gets a nanny from UI and updates the information in the DS
         /// </summary>
         /// <param name="nanny"></param>
-        void updateNanny(Nanny nanny)
+        public void updateNanny(Nanny nanny)
         {
             XElement nannyElement = (from n in DS.DataSourceXml.Nannys.Elements()
                                      where Convert.ToInt32(n.Element("id").Value) == nanny.id
@@ -74,7 +74,7 @@ namespace DAL
         /// adds a mother to list
         /// </summary>
         /// <param name="mother"></param>
-        void addMother(Mother mother)
+        public void addMother(Mother mother)
         {
             var temp = (from m in DataSourceXml.Mothers.Elements()
                         where Convert.ToInt32(m.Element("id").Value) == mother.id
@@ -93,7 +93,7 @@ namespace DAL
         /// 
         /// </summary>
         /// <param name="mother"></param>
-        void deleteMother(Mother mother)
+        public void deleteMother(Mother mother)
         {
             XElement motherElement = (from n in DataSourceXml.Mothers.Elements()
                                       where Convert.ToInt32(n.Element("id").Value) == mother.id
@@ -111,7 +111,7 @@ namespace DAL
         /// update mothers info in list
         /// </summary>
         /// <param name="mother"></param>
-        void updateMother(Mother mother)
+        public void updateMother(Mother mother)
         {
             XElement motherElement = (from m in DataSourceXml.Mothers.Elements()
                                       where Convert.ToInt32(m.Element("id").Value) == mother.id
@@ -131,7 +131,7 @@ namespace DAL
         /// adds child to list
         /// </summary>
         /// <param name="child"></param>
-        void addChild(Child child)
+        public void addChild(Child child)
         {
             var temp = (from c in DataSourceXml.Children.Elements()
                         where Convert.ToInt32(c.Element("id").Value) == child.id
@@ -149,7 +149,7 @@ namespace DAL
         /// removes child from list
         /// </summary>
         /// <param name="child"></param>
-        void deleteChild(Child child)
+        public void deleteChild(Child child)
         {
             XElement childElement = (from n in DataSourceXml.Children.Elements()
                                      where Convert.ToInt32(n.Element("id").Value) == child.id
@@ -169,7 +169,7 @@ namespace DAL
         /// updates child info
         /// </summary>
         /// <param name="child"></param>
-        void updateChild(Child child)
+        public void updateChild(Child child)
         {
             XElement childElement = (from c in DataSourceXml.Children.Elements()
                                      where Convert.ToInt32(c.Element("id").Value) == child.id
@@ -191,7 +191,7 @@ namespace DAL
         /// adds a contract to list
         /// </summary>
         /// <param name="contract"></param>
-        void addContract(Contract contract)
+        public void addContract(Contract contract)
         {
             var temp = (from c in DataSourceXml.Contracts.Elements()
                         where Convert.ToInt32(c.Element("numberOfContract").Value) == contract.numberOfContract
@@ -210,7 +210,7 @@ namespace DAL
         /// removes a contract
         /// </summary>
         /// <param name="contract"></param>
-        void deleteContract(Contract contract)
+        public void deleteContract(Contract contract)
         {
             XElement contractElement = (from n in DataSourceXml.Contracts.Elements()
                                         where Convert.ToInt32(n.Element("numberOfContract").Value) == contract.numberOfContract
@@ -229,7 +229,7 @@ namespace DAL
         /// updates contract info
         /// </summary>
         /// <param name="contract"></param>
-        void updateContract(Contract contract)
+        public void updateContract(Contract contract)
         {
             var temp = (from c in DataSourceXml.Contracts.Elements()
                         where Convert.ToInt32(c.Element("numberOfContract").Value) == contract.numberOfContract
@@ -246,7 +246,7 @@ namespace DAL
         }
 
         // gets for all of the data in data source
-        IEnumerable<Nanny> getListOfNanny()
+        public IEnumerable<Nanny> getListOfNanny()
         {
             XElement root = DataSourceXml.Nannys;
             List<Nanny> result = new List<Nanny>();
@@ -257,7 +257,7 @@ namespace DAL
             return result.AsEnumerable();
         }
 
-        IEnumerable<Mother> getListOfMother()
+        public IEnumerable<Mother> getListOfMother()
         {
             XElement root = DataSourceXml.Mothers;
             List<Mother> result = new List<Mother>();
@@ -268,7 +268,7 @@ namespace DAL
             return result.AsEnumerable();
         }
 
-        IEnumerable<Child> getListOfChild()
+        public IEnumerable<Child> getListOfChild()
         {
             XElement root = DataSourceXml.Children;
             List<Child> result = new List<Child>();
@@ -279,7 +279,7 @@ namespace DAL
             return result.AsEnumerable();
         }
 
-        IEnumerable<Contract> getListOfContract()
+        public IEnumerable<Contract> getListOfContract()
         {
             XElement root = DataSourceXml.Contracts;
             List<Contract> result = new List<Contract>();
@@ -291,7 +291,7 @@ namespace DAL
         }
 
         // scan all ids in all lists
-        bool IdExist(int id)
+        public bool IdExist(int id)
         {
             return (isChildInList(id) || isMotherInList(id) || isNannyInList(id));
         }
@@ -306,7 +306,7 @@ namespace DAL
         /// </summary>
         /// <param name="contract"></param>
         /// <returns></returns>
-        bool initalizeContractNumber(Contract contract)
+        public bool initalizeContractNumber(Contract contract)
         {
             if (IdExist(contract.NannysId) && IdExist(getMotherId(contract.childId)))
             {
@@ -325,7 +325,7 @@ namespace DAL
         /// </summary>
         /// <param name="nannyId"></param>
         /// <returns>bool</returns>
-        bool isNannyInList(int id)
+        public bool isNannyInList(int id)
         {
             return (from n in DataSourceXml.Nannys.Elements()
                     where Convert.ToInt32(n.Element("id").Value) == id
@@ -337,7 +337,7 @@ namespace DAL
         /// </summary>
         /// <param name="motherId"></param>
         /// <returns></returns>
-        bool isMotherInList(int id)
+        public bool isMotherInList(int id)
         {
             return (from m in DataSourceXml.Mothers.Elements()
                     where Convert.ToInt32(m.Element("id").Value) == id
@@ -349,7 +349,7 @@ namespace DAL
         /// </summary>
         /// <param name="childId"></param>
         /// <returns></returns>
-        bool isChildInList(int id)
+        public bool isChildInList(int id)
         {
             return (from c in DataSourceXml.Children.Elements()
                     where Convert.ToInt32(c.Element("id").Value) == id
@@ -361,7 +361,7 @@ namespace DAL
         /// </summary>
         /// <param name="contract"></param>
         /// <returns></returns>
-        bool isContractInList(Contract contract)
+        public bool isContractInList(Contract contract)
         {
             return (from c in DataSourceXml.Contracts.Elements()
                     where Convert.ToInt32(c.Element("numberOfContract").Value) == contract.numberOfContract
@@ -374,7 +374,7 @@ namespace DAL
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        int getMotherId(int id)
+        public int getMotherId(int id)
         {
             XElement root = DataSourceXml.Children;
 
@@ -392,7 +392,7 @@ namespace DAL
         /// </summary>
         /// <param name="my_id"></param>
         /// <returns></returns>
-        IEnumerable<Contract> ListOfContractsById(int my_id)
+        public IEnumerable<Contract> ListOfContractsById(int my_id)
         {
             XElement root = DataSourceXml.Contracts;
             List<Contract> result = new List<Contract>();
@@ -410,7 +410,7 @@ namespace DAL
         /// </summary>
         /// <param name="mother"></param>
         /// <returns></returns>
-        IEnumerable<Child> getListOfChildByMother(Mother mother)
+        public IEnumerable<Child> getListOfChildByMother(Mother mother)
         {
             XElement root = DataSourceXml.Children;
             List<Child> result = new List<Child>();
@@ -428,7 +428,7 @@ namespace DAL
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        IEnumerable<Child> getListOfChildrenOfNanny(int id)
+        public IEnumerable<Child> getListOfChildrenOfNanny(int id)
         {
             IEnumerable<Child> item = null;
             foreach (var contract in ListOfContractsById(id))
@@ -447,7 +447,7 @@ namespace DAL
         /// <param name="list"></param>
         /// <param name="nanny"></param>
         /// <returns></returns>
-        IEnumerable<Child> checkAgeOfKids(IEnumerable<Child> list, Nanny nanny)
+        public IEnumerable<Child> checkAgeOfKids(IEnumerable<Child> list, Nanny nanny)
         {
             return from child in list
                    let age = child.ageInMonths()
@@ -460,7 +460,7 @@ namespace DAL
         /// </summary>
         /// <param name="thisMother"></param>
         /// <returns></returns>
-        IEnumerable<Contract> getListOfContractByMother(Mother thisMother)
+        public IEnumerable<Contract> getListOfContractByMother(Mother thisMother)
         {
             List<Contract> contracts = new List<Contract>();
             foreach (Child kid in getListOfChildByMother(thisMother))
