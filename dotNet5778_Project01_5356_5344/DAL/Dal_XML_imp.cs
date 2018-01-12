@@ -90,7 +90,6 @@ namespace DAL
 
         /// <summary>
         /// deletes mother from list
-        /// 
         /// </summary>
         /// <param name="mother"></param>
         public void deleteMother(Mother mother)
@@ -250,7 +249,7 @@ namespace DAL
         {
             XElement root = DataSourceXml.Nannys;
             List<Nanny> result = new List<Nanny>();
-            foreach (var n in root.Elements("Nannys"))
+            foreach (var n in root.Elements("Nanny"))
             {
                 result.Add(n.toNanny());
             }
@@ -261,7 +260,7 @@ namespace DAL
         {
             XElement root = DataSourceXml.Mothers;
             List<Mother> result = new List<Mother>();
-            foreach (var m in root.Elements("Mothers"))
+            foreach (var m in root.Elements("Mother"))
             {
                 result.Add(m.toMother());
             }
@@ -272,7 +271,7 @@ namespace DAL
         {
             XElement root = DataSourceXml.Children;
             List<Child> result = new List<Child>();
-            foreach (var c in root.Elements("Children"))
+            foreach (var c in root.Elements("Child"))
             {
                 result.Add(c.toChild());
             }
@@ -283,7 +282,7 @@ namespace DAL
         {
             XElement root = DataSourceXml.Contracts;
             List<Contract> result = new List<Contract>();
-            foreach (var c in root.Elements("Contracts"))
+            foreach (var c in root.Elements("Contract"))
             {
                 result.Add(c.toContract());
             }
@@ -378,7 +377,7 @@ namespace DAL
         {
             XElement root = DataSourceXml.Children;
 
-            foreach (var c in root.Elements("Children"))
+            foreach (var c in root.Elements("Child"))
             {
                 if (Convert.ToInt32(c.Element("id").Value) == id)
                     return Convert.ToInt32(c.Element("momsId").Value);
@@ -396,7 +395,7 @@ namespace DAL
         {
             XElement root = DataSourceXml.Contracts;
             List<Contract> result = new List<Contract>();
-            foreach (var c in root.Elements("Contracts"))
+            foreach (var c in root.Elements("Contract"))
             {
                 if (Convert.ToInt32(c.Element("NannysId").Value) == my_id || Convert.ToInt32(c.Element("childId").Value) == my_id)
                     result.Add(c.toContract());
@@ -414,7 +413,7 @@ namespace DAL
         {
             XElement root = DataSourceXml.Children;
             List<Child> result = new List<Child>();
-            foreach (var c in root.Elements("Children"))
+            foreach (var c in root.Elements("Child"))
             {
                 if (Convert.ToInt32(c.Element("momsId").Value) == mother.id)
                     result.Add(c.toChild());

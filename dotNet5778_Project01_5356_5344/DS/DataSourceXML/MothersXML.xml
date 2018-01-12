@@ -1,4 +1,59 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Mothers>
-  
+  <Mother>
+    <id>1</id>
+    <familyName>aa</familyName>
+    <firstName>aa</firstName>
+    <phoneNumber>12212121</phoneNumber>
+    <address>aaaa</address>
+    <addressRadius>0</addressRadius>
+    <wantsATrialMeeting>false</wantsATrialMeeting>
+    <comments />
+    <daysOfNanny>
+      <Days>False</Days>
+      <Days>False</Days>
+      <Days>False</Days>
+      <Days>False</Days>
+      <Days>False</Days>
+      <Days>False</Days>
+    </daysOfNanny>
+    <hoursByNanny>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>12</finish_hour>
+        <finish_minute>0</finish_minute>
+      </Day>
+    </hoursByNanny>
+  </Mother>
 </Mothers>

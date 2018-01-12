@@ -80,7 +80,7 @@ namespace BE
                 throw new Exception("at least one of your working time is illegal");
         }
 
-        public Day() { }
-
+        public Day() {  }
+       
     }
 }
