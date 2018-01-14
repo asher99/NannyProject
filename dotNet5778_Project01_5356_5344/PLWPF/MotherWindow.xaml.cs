@@ -25,6 +25,10 @@ namespace PLWPF
         /// </summary>
         public MotherWindow()
         {
+            MinHeight = 250;
+            MinWidth = 300;
+            MaxHeight = 250;
+            MaxWidth = 300;
             InitializeComponent();
         }
 

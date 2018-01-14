@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Admin Window" Height="500" Width="700">
 
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="121*"/>
@@ -25,10 +26,10 @@
         <StackPanel Grid.Row="1" Name="Buttons" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button x:Name="Delete" Content="Delete Object" IsEnabled="False"/>
             <TabPanel Width="20"/>
-            <Button x:Name="Add" Content="Add Object" IsEnabled="False" />
+            <Button x:Name="Add" Content="Add Object" IsEnabled="True" Click="Add_Click" />
             <TabPanel Width="20"/>
             <Button x:Name="Interface" Content="go to interface" IsEnabled="False" />
         </StackPanel>
-        
+
     </Grid>
 </Window>
