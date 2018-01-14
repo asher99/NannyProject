@@ -16,4 +16,12 @@
     <hasSpecialNeeds>true</hasSpecialNeeds>
     <specialNeeds>he is very special</specialNeeds>
   </Child>
+  <Child>
+    <id>123456</id>
+    <name>moshe</name>
+    <momsId>1232</momsId>
+    <birthday>2017-01-14T00:00:00</birthday>
+    <hasSpecialNeeds>false</hasSpecialNeeds>
+    <specialNeeds />
+  </Child>
 </Children>

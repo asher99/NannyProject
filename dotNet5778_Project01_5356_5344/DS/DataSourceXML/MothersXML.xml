@@ -2,8 +2,8 @@
 <Mothers>
   <Mother>
     <id>1</id>
-    <familyName>aa</familyName>
-    <firstName>aa</firstName>
+    <familyName>cohen</familyName>
+    <firstName>chava</firstName>
     <phoneNumber>121122112</phoneNumber>
     <address>tel aviv</address>
     <addressRadius>0</addressRadius>
@@ -11,9 +11,77 @@
     <comments />
     <daysOfNanny>
       <Days>True</Days>
+      <Days>True</Days>
       <Days>False</Days>
       <Days>False</Days>
       <Days>False</Days>
+      <Days>False</Days>
+    </daysOfNanny>
+    <hoursByNanny>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>12</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>12:00</string_finish>
+      </Day>
+    </hoursByNanny>
+  </Mother>
+  <Mother>
+    <id>1232</id>
+    <familyName>shemesh</familyName>
+    <firstName>dvora</firstName>
+    <phoneNumber>0525574272</phoneNumber>
+    <address>havaad haleumi</address>
+    <addressRadius>10000</addressRadius>
+    <wantsATrialMeeting>false</wantsATrialMeeting>
+    <comments />
+    <daysOfNanny>
+      <Days>True</Days>
+      <Days>True</Days>
+      <Days>True</Days>
+      <Days>True</Days>
       <Days>False</Days>
       <Days>False</Days>
     </daysOfNanny>
