@@ -30,11 +30,12 @@ namespace PLWPF
         public AdminWindow()
         {
             InitializeComponent();
-            var myList = myBL.getListOfNanny();
+            var myList = myBL.GroupOfNannysByAgeOfKid(myBL.getListOfNanny(), true, false);
             // var myList = displayList();
-            dataGrid.ItemsSource = myList;
             Nannylist.IsChecked = true;
         }
+        
+        
 
         
         /// <summary>
@@ -45,21 +46,25 @@ namespace PLWPF
         private void Nannylist_Checked(object sender, RoutedEventArgs e)
         {
             dataGrid.ItemsSource = myBL.getListOfNanny();
+            Add.IsEnabled = true;
         }
 
         private void Motherlist_Checked(object sender, RoutedEventArgs e)
         {
             dataGrid.ItemsSource = myBL.getListOfMother();
+            Add.IsEnabled = true;
         }
 
         private void Childlist_Checked(object sender, RoutedEventArgs e)
         {
             dataGrid.ItemsSource = myBL.getListOfChild();
+            Add.IsEnabled = false;
         }
 
         private void Contractlist_Checked(object sender, RoutedEventArgs e)
         {
             dataGrid.ItemsSource = myBL.getListOfContract();
+            Add.IsEnabled = false;
         }
 
 
@@ -96,7 +101,7 @@ namespace PLWPF
             else return;
         }
 
-        /*
+        
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             if(Nannylist.IsChecked.Value)
@@ -121,7 +126,7 @@ namespace PLWPF
                 MessageBox.Show("adding contract must be through mother. select mother and click \"go to interface\"", "", MessageBoxButton.OK);
             }
         }
-
+        /*
         private void Interface_Click(object sender, RoutedEventArgs e)
         {
             if (Nannylist.IsChecked.Value)
