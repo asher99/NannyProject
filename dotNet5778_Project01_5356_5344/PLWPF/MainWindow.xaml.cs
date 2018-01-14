@@ -30,7 +30,7 @@ namespace PLWPF
         public MainWindow()
         {
             InitializeComponent();
-            exampleObject();
+           // exampleObject();
         }
 
         /// <summary>

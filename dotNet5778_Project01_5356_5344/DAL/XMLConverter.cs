@@ -123,7 +123,9 @@ namespace DAL
                 new XElement("start_hour", day.start_hour),
                 new XElement("start_minute", day.start_minute),
                 new XElement("finish_hour", day.finish_hour),
-                new XElement("finish_minute", day.finish_minute));
+                new XElement("finish_minute", day.finish_minute),
+           new XElement("string_start", day.string_start),
+                                   new XElement("string_finish", day.string_finish));
         }
 
         public static Day toDay(this XElement dayXml)
@@ -133,12 +135,14 @@ namespace DAL
             {
                 return day;
             }
-           day = new Day    
-           {
-                start_hour = Int32.Parse(dayXml.Element("start_our").Value),
+            day = new Day
+            {
+                start_hour = Int32.Parse(dayXml.Element("start_hour").Value),
                 start_minute = Int32.Parse(dayXml.Element("start_minute").Value),
                 finish_hour = Int32.Parse(dayXml.Element("finish_hour").Value),
-                finish_minute = Int32.Parse(dayXml.Element("finish_minute").Value)
+                finish_minute = Int32.Parse(dayXml.Element("finish_minute").Value),
+                 string_start = dayXml.Element("string_start").Value,
+                string_finish = dayXml.Element("string_finish").Value
             };
 
 
@@ -168,12 +172,12 @@ namespace DAL
                 minAgeOfKid = Int32.Parse(NannyXml.Element("minAgeOfKid").Value),
                 maxAgeOfKid = Int32.Parse(NannyXml.Element("maxAgeOfKid").Value),
                 doesWorkPerHour = Boolean.Parse(NannyXml.Element("doesWorkPerHour").Value),
-                hourWage = Int32.Parse(NannyXml.Element(" hourWage").Value),
+                hourWage = Int32.Parse(NannyXml.Element("hourWage").Value),
                 monthlyWage = Int32.Parse(NannyXml.Element("monthlyWage").Value),
 
                 daysOfWork = (from e in NannyXml.Element("daysOfWork").Elements("Days")
                               select Boolean.Parse(e.Value)).ToArray(),
-                hoursOfWork = (from d in NannyXml.Element("hoursByNanny").Elements("Day")
+                hoursOfWork = (from d in NannyXml.Element("hoursOfWork").Elements("Day")
                                select d.toDay()).ToArray(),
 
                 hasGovVacationDays = Boolean.Parse(NannyXml.Element("hasGovVacationDays").Value),

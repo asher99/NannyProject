@@ -4,13 +4,13 @@
     <id>1</id>
     <familyName>aa</familyName>
     <firstName>aa</firstName>
-    <phoneNumber>12212121</phoneNumber>
-    <address>aaaa</address>
+    <phoneNumber>121122112</phoneNumber>
+    <address>aaaaa</address>
     <addressRadius>0</addressRadius>
     <wantsATrialMeeting>false</wantsATrialMeeting>
     <comments />
     <daysOfNanny>
-      <Days>False</Days>
+      <Days>True</Days>
       <Days>False</Days>
       <Days>False</Days>
       <Days>False</Days>
@@ -23,36 +23,48 @@
         <start_minute>0</start_minute>
         <finish_hour>16</finish_hour>
         <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
       </Day>
       <Day>
         <start_hour>8</start_hour>
         <start_minute>0</start_minute>
         <finish_hour>16</finish_hour>
         <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
       </Day>
       <Day>
         <start_hour>8</start_hour>
         <start_minute>0</start_minute>
         <finish_hour>16</finish_hour>
         <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
       </Day>
       <Day>
         <start_hour>8</start_hour>
         <start_minute>0</start_minute>
         <finish_hour>16</finish_hour>
         <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
       </Day>
       <Day>
         <start_hour>8</start_hour>
         <start_minute>0</start_minute>
         <finish_hour>16</finish_hour>
         <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
       </Day>
       <Day>
         <start_hour>8</start_hour>
         <start_minute>0</start_minute>
         <finish_hour>12</finish_hour>
         <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>12:00</string_finish>
       </Day>
     </hoursByNanny>
   </Mother>
