@@ -33,7 +33,7 @@
         </StackPanel>
 
         <StackPanel x:Name="Finance" Grid.Row="4" Orientation="Vertical">
-            <TextBlock x:Name="Schedule" Text="schedule will appear after accepting terms." Foreground="Black" Width="400" FontWeight="Medium" TextWrapping="Wrap"/>
+            <TextBlock x:Name="Schedule" Text="Schedule will appear after accepting terms." Foreground="Black" Width="400" FontWeight="Medium" TextWrapping="Wrap"/>
             <TabPanel Height="10"/>
             <TextBlock x:Name="Billing" Text="Financial billing will appear after accepting terms." Foreground="Black" Width="400" FontWeight="Medium" TextWrapping="Wrap"/>
             <TabPanel Height="10"/>
@@ -42,7 +42,7 @@
 
         <Label Content="Sign Contract!" Grid.Row="0"  Grid.Column="0" Background="YellowGreen" Opacity="0.8" FontStyle="Italic" FontWeight="Bold" FontSize="30" Margin="0,0,-0.4,8.8" />
         <CheckBox x:Name="Terms_accepted" Content="I agree to the terms" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="131" Checked="Terms_accepted_Checked" Grid.Row="3" Margin="23,0,0,0" />
-        <CheckBox x:Name="byHour" Content="by hour" HorizontalAlignment="Left" Height="20" Margin="154,1,0,0" VerticalAlignment="Top" Width="131" Grid.Row="3"/>
+        <CheckBox x:Name="byHour" Content="By hour" HorizontalAlignment="Left" Height="20" Margin="154,1,0,0" VerticalAlignment="Top" Width="131" Grid.Row="3"/>
 
         <StackPanel x:Name="Buttons" Orientation="Horizontal" Grid.Row="5"  HorizontalAlignment="Center">
             <Button x:Name="exit" Content="Cancel" Width="70" Click="exit_Click"/>
