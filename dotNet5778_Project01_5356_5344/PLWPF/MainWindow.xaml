@@ -21,7 +21,7 @@
             <ColumnDefinition Width="128*"/>
             <ColumnDefinition Width="35*"/>
         </Grid.ColumnDefinitions>
-        <Image Stretch="Fill" Source="images/logo1.jpg" Grid.ColumnSpan="5" Grid.RowSpan="4" />
+        <Image Stretch="Fill" Source="images/logo1.jpg" Grid.ColumnSpan="5" Grid.RowSpan="4"  />
         <Button x:Name="button" Content="Mother"  Height="auto" Margin="2,0,0,0" 
                  Width="auto" Click="goToMotherPage" BorderBrush="GreenYellow" Style="{DynamicResource MyButtonStyle}" Grid.Column="1" Grid.Row="1"/>
         <Button x:Name="button1" Content="Nanny"  Height="auto" Margin="2,5,0,0"                 

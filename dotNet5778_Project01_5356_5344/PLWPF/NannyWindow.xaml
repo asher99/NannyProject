@@ -25,9 +25,9 @@
             <TextBlock x:Name="Welcome" FontSize="24" HorizontalAlignment="Left" Height="66" TextWrapping="Wrap" Text="Welcome to Love and Care Nanny System!" VerticalAlignment="Top" Width="297" FontStyle="Italic" Background="YellowGreen" Opacity="0.8" FontWeight="Bold"/>
             <TextBlock x:Name="chooseAction" FontSize="14" HorizontalAlignment="Left" Height="22" Grid.Row="2" Grid.RowSpan="2" TextWrapping="Wrap" Text="please choose an action:" VerticalAlignment="Top" Width="297"/>
             <StackPanel HorizontalAlignment="Left" Height="120"  VerticalAlignment="Top" Width="295" Grid.Row="3">
-                <Button Content="sign up to our system!" HorizontalAlignment="Center" Height="35" Width="200"  Click="Button_Click_1"/>
-                <Button Content="log in to your zone!" HorizontalAlignment="Center" Height="35" Width="200"  Click="Button_Click_2"/>
-                <Button Content="back" HorizontalAlignment="Center" Height="35" Width="200" Click="Button_Click"/>
+                <Button Content="Sign up" HorizontalAlignment="Center" Height="35" Width="200" Style= "{DynamicResource MyButtonStyle2}"  Click="Button_Click_1"/>
+                <Button Content="Log in" HorizontalAlignment="Center" Height="35" Width="200" Style= "{DynamicResource MyButtonStyle2}" Click="Button_Click_2"/>
+                <Button Content="back" HorizontalAlignment="Center" Height="35" Width="200" Style= "{DynamicResource MyButtonStyle2}" Click="Button_Click"/>
             </StackPanel>
         </Grid>
 

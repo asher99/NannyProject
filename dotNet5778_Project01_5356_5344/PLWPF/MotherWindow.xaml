@@ -22,9 +22,9 @@
         <TextBlock x:Name="chooseAction" FontSize="14" HorizontalAlignment="Left" Height="22" Grid.Row="2" Grid.RowSpan="2" TextWrapping="Wrap" Text="please choose an action:" VerticalAlignment="Top" Width="297" Foreground="Black"/>
 
         <StackPanel HorizontalAlignment="Left" Height="184"  VerticalAlignment="Top" Width="292" Grid.Row="3">
-            <Button x:Name="newMother" Content="New Mother" HorizontalAlignment="Center" Height="35" Width="200"  Click="newMother_Click" />
-            <Button x:Name="existingMother" Content="Mother Entry"  HorizontalAlignment="Center" Height="35" Width="200" Click="MotherUserEnter"/>
-            <Button x:Name="button_Copy2" Content="back" HorizontalAlignment="Center" Height="35" Width="200" Click="backToMainMenu"/>
+            <Button x:Name="newMother" Content="New Mother" HorizontalAlignment="Center" Height="35" Width="200" Style= "{DynamicResource MyButtonStyle2}" Click="newMother_Click" />
+            <Button x:Name="existingMother" Content="Mother Entry"  HorizontalAlignment="Center" Height="35" Width="200" Style= "{DynamicResource MyButtonStyle2}"  Click="MotherUserEnter"/>
+            <Button x:Name="button_Copy2" Content="back" HorizontalAlignment="Center" Height="35" Width="200"  Style= "{DynamicResource MyButtonStyle2}" Click="backToMainMenu"/>
         </StackPanel>
         <TextBlock x:Name="Welcome" FontSize="24" HorizontalAlignment="Left" Height="66" TextWrapping="Wrap" Text="Welcome to Love and Care System!" Foreground="Black" VerticalAlignment="Top" Width="297" FontStyle="Italic" Background="YellowGreen" Opacity="0.8" FontWeight="Bold"/>
         <Run.Foreground>

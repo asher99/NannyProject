@@ -125,7 +125,7 @@ namespace DAL
                 new XElement("finish_hour", day.finish_hour),
                 new XElement("finish_minute", day.finish_minute),
            new XElement("string_start", day.string_start),
-                                   new XElement("string_finish", day.string_finish));
+            new XElement("string_finish", day.string_finish));
         }
 
         public static Day toDay(this XElement dayXml)

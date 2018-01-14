@@ -1,27 +1,105 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Nannys>
   <Nanny>
-    <id>12</id>
-    <familyName>sa</familyName>
-    <firstName>sa</firstName>
-    <birthday>1997-01-14T00:00:00</birthday>
-    <phoneNumber>14424343</phoneNumber>
-    <address>fdfdfdf</address>
-    <hasElevator>false</hasElevator>
-    <floorNumber>0</floorNumber>
+    <id>111</id>
+    <familyName>morad</familyName>
+    <firstName>avigail</firstName>
+    <birthday>1995-07-18T00:00:00</birthday>
+    <phoneNumber>0508494561</phoneNumber>
+    <address>jerusalem</address>
+    <hasElevator>true</hasElevator>
+    <floorNumber>6</floorNumber>
     <seniority>0</seniority>
-    <maxOfKids>0</maxOfKids>
-    <minAgeOfKid>0</minAgeOfKid>
-    <maxAgeOfKid>0</maxAgeOfKid>
-    <doesWorkPerHour>false</doesWorkPerHour>
-    <hourWage>0</hourWage>
-    <monthlyWage>0</monthlyWage>
+    <maxOfKids>6</maxOfKids>
+    <minAgeOfKid>12</minAgeOfKid>
+    <maxAgeOfKid>36</maxAgeOfKid>
+    <doesWorkPerHour>true</doesWorkPerHour>
+    <hourWage>45</hourWage>
+    <monthlyWage>1000</monthlyWage>
     <daysOfWork>
+      <Days>True</Days>
       <Days>True</Days>
       <Days>False</Days>
       <Days>False</Days>
-      <Days>False</Days>
-      <Days>False</Days>
+      <Days>True</Days>
+      <Days>True</Days>
+    </daysOfWork>
+    <hoursOfWork>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>13</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>13:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>12</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>12:00</string_finish>
+      </Day>
+    </hoursOfWork>
+    <hasGovVacationDays>false</hasGovVacationDays>
+    <Recommendations />
+    <numberOfSignedContracts>0</numberOfSignedContracts>
+  </Nanny>
+  <Nanny>
+    <id>14</id>
+    <familyName>aloka</familyName>
+    <firstName>ester</firstName>
+    <birthday>1993-01-14T00:00:00</birthday>
+    <phoneNumber>123456789</phoneNumber>
+    <address>byte 7</address>
+    <hasElevator>true</hasElevator>
+    <floorNumber>1</floorNumber>
+    <seniority>2</seniority>
+    <maxOfKids>7</maxOfKids>
+    <minAgeOfKid>8</minAgeOfKid>
+    <maxAgeOfKid>32</maxAgeOfKid>
+    <doesWorkPerHour>true</doesWorkPerHour>
+    <hourWage>50</hourWage>
+    <monthlyWage>2000</monthlyWage>
+    <daysOfWork>
+      <Days>True</Days>
+      <Days>True</Days>
+      <Days>True</Days>
+      <Days>True</Days>
+      <Days>True</Days>
       <Days>False</Days>
     </daysOfWork>
     <hoursOfWork>
@@ -74,7 +152,7 @@
         <string_finish>12:00</string_finish>
       </Day>
     </hoursOfWork>
-    <hasGovVacationDays>false</hasGovVacationDays>
+    <hasGovVacationDays>true</hasGovVacationDays>
     <Recommendations />
     <numberOfSignedContracts>0</numberOfSignedContracts>
   </Nanny>
