@@ -30,7 +30,7 @@ namespace PLWPF
         public MainWindow()
         {
             InitializeComponent();
-            //exampleObject();
+           // exampleObject();
         }
 
         /// <summary>
@@ -254,5 +254,6 @@ namespace PLWPF
             myBL.addContract(A);
             #endregion
         }
+        
     }
 }

@@ -32,7 +32,7 @@ namespace BE
             return total;
         }
 
-        public Day(int stHour, int stMinu, int finHour, int finMinu)
+        public Day(int stHour = 0, int stMinu =0, int finHour=0, int finMinu=0)
         {
             start_hour = stHour;
             start_minute = stMinu;
@@ -80,7 +80,7 @@ namespace BE
                 throw new Exception("at least one of your working time is illegal");
         }
 
-        public Day() { }
+       // public Day(){ }
 
     }
 }

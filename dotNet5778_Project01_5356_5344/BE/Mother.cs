@@ -46,5 +46,6 @@ namespace BE
             phoneNumber = my_phone;
         }
         public Mother() { daysOfNanny = new bool[6]; hoursByNanny = new Day[6]; }
+        
     }
 }
