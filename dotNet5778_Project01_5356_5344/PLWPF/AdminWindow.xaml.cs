@@ -47,24 +47,28 @@ namespace PLWPF
         {
             dataGrid.ItemsSource = myBL.getListOfNanny();
             Add.IsEnabled = true;
+         //   Interface.IsEnabled = true;
         }
 
         private void Motherlist_Checked(object sender, RoutedEventArgs e)
         {
             dataGrid.ItemsSource = myBL.getListOfMother();
             Add.IsEnabled = true;
+         //   Interface.IsEnabled = true;
         }
 
         private void Childlist_Checked(object sender, RoutedEventArgs e)
         {
             dataGrid.ItemsSource = myBL.getListOfChild();
             Add.IsEnabled = false;
+        //    Interface.IsEnabled = false;
         }
 
         private void Contractlist_Checked(object sender, RoutedEventArgs e)
         {
             dataGrid.ItemsSource = myBL.getListOfContract();
             Add.IsEnabled = false;
+        //    Interface.IsEnabled = false;
         }
 
 
@@ -126,83 +130,94 @@ namespace PLWPF
                 MessageBox.Show("adding contract must be through mother. select mother and click \"go to interface\"", "", MessageBoxButton.OK);
             }
         }
-        /*
+
         private void Interface_Click(object sender, RoutedEventArgs e)
         {
-            if (Nannylist.IsChecked.Value)
+           /* if (Nannylist.IsChecked.Value)
             {
-                var someObject = dataGrid.CurrentItem as Nanny;
-                if (someObject.id == 0)
-                    throw new Exception("INVALID ROW SELECTION");
-                Window interf = new NannyInterface(someObject);
-                interf.ShowDialog();
-            }
+                Nanny nanny = (Nanny)dataGrid.SelectedItem;
 
-            if (Motherlist.IsChecked.Value)
-            {
-                var someObject = dataGrid.CurrentItem as Mother;
-                if (someObject.id == 0)
-                    throw new Exception("INVALID ROW SELECTION");
-                Window interf = new MoterInterface(someObject);
-                interf.ShowDialog();
-            }
-
-            if (Childlist.IsChecked.Value)
-            {
-                MessageBox.Show("there are interfaces only for Mother and Nanny", "", MessageBoxButton.OK);
-            }
-
-            if (Contractlist.IsChecked.Value)
-            {
-                MessageBox.Show("there are interfaces only for Mother and Nanny", "", MessageBoxButton.OK);
-            }
+            }*/
         }
 
-        private void Delete_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                if (Nannylist.IsChecked.Value)
-                {
-                    var someObject = dataGrid.CurrentItem as Nanny;
-                    if (someObject.id == 0)
-                        throw new Exception("INVALID ROW SELECTION");
 
-                    myBL.deleteNanny(someObject);
+        /*
+private void Interface_Click(object sender, RoutedEventArgs e)
+{
+   if (Nannylist.IsChecked.Value)
+   {
+       var someObject = dataGrid.CurrentItem as Nanny;
+       if (someObject.id == 0)
+           throw new Exception("INVALID ROW SELECTION");
+       Window interf = new NannyInterface(someObject);
+       interf.ShowDialog();
+   }
 
-                }
+   if (Motherlist.IsChecked.Value)
+   {
+       var someObject = dataGrid.CurrentItem as Mother;
+       if (someObject.id == 0)
+           throw new Exception("INVALID ROW SELECTION");
+       Window interf = new MoterInterface(someObject);
+       interf.ShowDialog();
+   }
 
-                if (Motherlist.IsChecked.Value)
-                {
-                    var someObject = dataGrid.CurrentItem as Mother;
-                    if (someObject.id == 0)
-                        throw new Exception("INVALID ROW SELECTION");
+   if (Childlist.IsChecked.Value)
+   {
+       MessageBox.Show("there are interfaces only for Mother and Nanny", "", MessageBoxButton.OK);
+   }
 
-                    myBL.deleteMother(someObject);
+   if (Contractlist.IsChecked.Value)
+   {
+       MessageBox.Show("there are interfaces only for Mother and Nanny", "", MessageBoxButton.OK);
+   }
+}
 
-                }
+private void Delete_Click(object sender, RoutedEventArgs e)
+{
+   try
+   {
+       if (Nannylist.IsChecked.Value)
+       {
+           var someObject = dataGrid.CurrentItem as Nanny;
+           if (someObject.id == 0)
+               throw new Exception("INVALID ROW SELECTION");
 
-                if (Childlist.IsChecked.Value)
-                {
-                    var someObject = dataGrid.CurrentItem as Child;
-                    if (someObject.id == 0)
-                        throw new Exception("INVALID ROW SELECTION");
-                    myBL.deleteChild(someObject);
-                }
+           myBL.deleteNanny(someObject);
 
-                if (Contractlist.IsChecked.Value)
-                {
-                    var someObject = dataGrid.CurrentItem as Contract;
-                    if (someObject.childId == 0)
-                        throw new Exception("INVALID ROW SELECTION");
+       }
 
-                    myBL.deleteContract(someObject);
-                }
-            }
-            catch(Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
-        }*/
+       if (Motherlist.IsChecked.Value)
+       {
+           var someObject = dataGrid.CurrentItem as Mother;
+           if (someObject.id == 0)
+               throw new Exception("INVALID ROW SELECTION");
+
+           myBL.deleteMother(someObject);
+
+       }
+
+       if (Childlist.IsChecked.Value)
+       {
+           var someObject = dataGrid.CurrentItem as Child;
+           if (someObject.id == 0)
+               throw new Exception("INVALID ROW SELECTION");
+           myBL.deleteChild(someObject);
+       }
+
+       if (Contractlist.IsChecked.Value)
+       {
+           var someObject = dataGrid.CurrentItem as Contract;
+           if (someObject.childId == 0)
+               throw new Exception("INVALID ROW SELECTION");
+
+           myBL.deleteContract(someObject);
+       }
+   }
+   catch(Exception err)
+   {
+       MessageBox.Show(err.Message);
+   }
+}*/
     }
 }
