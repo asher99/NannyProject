@@ -156,7 +156,6 @@ namespace DAL
             if (childElement != null)
             {
                 childElement.Remove();
-                DataSourceXml.Children.Add(child.toXML());
                 DataSourceXml.SaveChildren();
             }
             else

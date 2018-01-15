@@ -50,13 +50,21 @@ namespace BL
         }
 
         /// <summary>
-        /// removes a nanny from the list.
+        /// removes a nanny from the list, and all contracts associated with nanny.
         /// using DAL method
         /// </summary>
         /// <param name="nanny"></param>
         public void deleteNanny(Nanny nanny)
         {
+            IEnumerable<Contract> nannyContracts = ListOfContractsById(nanny.id);
+            if (nannyContracts != null)
+            {
+                foreach (Contract c in nannyContracts.ToList())
+                    deleteContract(c);
+            }
+
             myDal.deleteNanny(nanny);
+
         }
 
         /// <summary>
@@ -90,6 +98,14 @@ namespace BL
         /// <param name="mother"></param>
         public void deleteMother(Mother mother)
         {
+            //deletes all children => all contracts => decreasing Nanny number of signed contracts
+            IEnumerable<Child> childrenOfMother = getListOfChildByMother(mother);
+            if (childrenOfMother != null)
+            {
+                foreach (Child c in childrenOfMother)
+                    deleteChild(c);
+            }
+
             myDal.deleteMother(mother);
         }
 
