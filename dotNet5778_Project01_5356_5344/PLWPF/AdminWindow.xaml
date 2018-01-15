@@ -30,6 +30,5 @@
             <TabPanel Width="20"/>
             <Button x:Name="Interface" Content="go to interface" IsEnabled="False" />
         </StackPanel>
-
     </Grid>
 </Window>

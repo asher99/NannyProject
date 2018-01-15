@@ -1,27 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Children>
-  <Child>
-    <id>3424455</id>
-    <name>sruli</name>
-    <momsId>1</momsId>
-    <birthday>1997-01-14T00:00:00</birthday>
-    <hasSpecialNeeds>true</hasSpecialNeeds>
-    <specialNeeds>he is very special</specialNeeds>
-  </Child>
-  <Child>
-    <id>12</id>
-    <name>zvei</name>
-    <momsId>1</momsId>
-    <birthday>2017-01-14T00:00:00</birthday>
-    <hasSpecialNeeds>true</hasSpecialNeeds>
-    <specialNeeds>he is very special</specialNeeds>
-  </Child>
-  <Child>
-    <id>123456</id>
-    <name>moshe</name>
-    <momsId>1232</momsId>
-    <birthday>2017-01-14T00:00:00</birthday>
-    <hasSpecialNeeds>false</hasSpecialNeeds>
-    <specialNeeds />
-  </Child>
+  
 </Children>
