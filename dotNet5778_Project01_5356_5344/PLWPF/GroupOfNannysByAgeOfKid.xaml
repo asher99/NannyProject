@@ -6,48 +6,43 @@
              xmlns:local="clr-namespace:PLWPF"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid><!--
-        <Grid Background="Black">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200*"/>
-                <ColumnDefinition Width="79*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="49*"/>
-            </Grid.RowDefinitions>
 
+    <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="79*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="49*"/>
+        </Grid.RowDefinitions>
 
+        <ListView  x:Name="listView" Grid.Row="1" Grid.ColumnSpan="2" >
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
 
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="2" BorderBrush="Blue" Margin="5">
+                        <StackPanel>
+                            <TextBlock Text="{Binding Path=Key}" FontSize="16" Foreground="Red" TextAlignment="Center" />
+                            <ListView ItemsSource="{Binding}" MouseDoubleClick="ListView_MouseDoubleClick">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <local:nannyGroup>
 
-            <ListView  x:Name="listView" Grid.Row="1" Grid.ColumnSpan="2" >
-                <ListView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapPanel />
-                    </ItemsPanelTemplate>
-                </ListView.ItemsPanel>
-
-
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Border BorderThickness="2" BorderBrush="Blue" Margin="5">
-                            <StackPanel>
-                                <TextBlock Text="{Binding Path=Key}" FontSize="16" Foreground="Red" TextAlignment="Center" />
-                                <ListView ItemsSource="{Binding}" MouseDoubleClick="ListView_MouseDoubleClick">
-                                    <ListView.ItemTemplate>
-                                        <DataTemplate>
-                                         <local:nannygrouptemplate>
-
-                                            </local:nannygrouptemplate>
-                                        </DataTemplate>
-                                    </ListView.ItemTemplate>
-                                </ListView>
-                            </StackPanel>
-                        </Border>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Label x:Name="label" Content="Groups of Nanny's by minimal childrens age" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FFFBF7F7" Grid.Row="0" FontSize="21.333" Grid.ColumnSpan="2" />
--->
-        </Grid>
+                                        </local:nannyGroup>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label x:Name="label" Content="Groups of Nanny's by age of children " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FFFBF7F7" Grid.Row="0" FontSize="21.333" Grid.ColumnSpan="2" />
+    </Grid>
 </UserControl> 

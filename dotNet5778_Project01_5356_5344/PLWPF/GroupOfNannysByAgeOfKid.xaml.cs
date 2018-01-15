@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BE;
+using BL;
 
 namespace PLWPF
 {
@@ -19,10 +21,38 @@ namespace PLWPF
     /// Interaction logic for GroupOfNannysByAgeOfKid.xaml
     /// </summary>
     public partial class GroupOfNannysByAgeOfKid : UserControl
-    {
+    {       
+        static IBL myBL = BL_Factory.Get_BL;
+
+        private IEnumerable source;
+        public IEnumerable Source
+        {
+            get { return source; }
+            set
+            {
+                source = value;
+                this.listView.ItemsSource = source;
+            }
+        }
+
         public GroupOfNannysByAgeOfKid()
         {
             InitializeComponent();
+        }
+
+        private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+          
+            try
+            {
+                UpdateWindow a;
+                int id;
+                id = ((Nanny)((ListView)(sender)).SelectedItem).id;
+                Nanny nanny = myBL.GetNannyByID(id)
+                a = new UpdateWindow(1, nanny, false);
+                a.Show();
+            }
+            catch {}
         }
     }
 }

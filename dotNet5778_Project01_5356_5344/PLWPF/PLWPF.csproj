@@ -62,6 +62,9 @@
     <Compile Include="GroupOfNannysByAgeOfKid.xaml.cs">
       <DependentUpon>GroupOfNannysByAgeOfKid.xaml</DependentUpon>
     </Compile>
+    <Compile Include="nannyGroup.xaml.cs">
+      <DependentUpon>nannyGroup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PasswordLogin.xaml.cs">
       <DependentUpon>PasswordLogin.xaml</DependentUpon>
     </Compile>
@@ -73,6 +76,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="mother_update_details.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="nannyGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
