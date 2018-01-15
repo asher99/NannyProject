@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -85,6 +86,65 @@ namespace PLWPF
             }
         }
 
+
+        /*   private void newAdrressTextChanged(object sender, TextChangedEventArgs arg)
+            {
+                ListBox suggesteAddress = adressAutoComplete;
+                TextBox searchString = nanny_address;
+                List<String> list = new List<String>();
+                string str = searchString.Text;
+
+                //if (t != null && t.IsAlive)
+                //    t.Abort();
+                Thread process = new System.Threading.Thread(() =>
+                {
+                    try
+                    {
+                        list = myBL.GetPlaceAutoComplete(str);
+                    }
+                    catch (Exception e)
+                    {
+                        throw e;
+                    }
+                });
+                process.Start();
+                process.Join();
+
+                if (list.Count() > 0)
+                {
+                    adressAutoComplete.ItemsSource = list;
+                    adressAutoComplete.Visibility = Visibility.Visible;
+                }
+
+                else
+                {
+                    adressAutoComplete.Visibility = Visibility.Collapsed;
+                    adressAutoComplete.ItemsSource = null;
+                }
+            }
+
+            private void SelectionChanged(object sender, SelectionChangedEventArgs e)
+            {
+                SelectionChangedhelp(adressAutoComplete, nanny_address, new TextChangedEventHandler(newAdrressTextChanged));
+            }
+
+            private void SelectionChangedhelp(ListBox adressAutoComplete, TextBox    nanny_address, TextChangedEventHandler e)
+            {
+                if (adressAutoComplete.ItemsSource != null)
+                {
+                    adressAutoComplete.Visibility = Visibility.Collapsed;
+                    nanny_address.TextChanged -= e;
+
+                    if (adressAutoComplete.SelectedIndex != -1)
+                    {
+                        nanny_address.Text = adressAutoComplete.SelectedItem.ToString();
+                    }
+                    nanny_address.TextChanged += e;
+                    nanny_address.Focus();
+
+                }
+            }
+            */
         /// <summary>
         /// check if the details from the window are legal
         /// </summary>
@@ -213,8 +273,10 @@ namespace PLWPF
             if (!nanny_floor.Text.All(Char.IsDigit))
                 throw new Exception("Floor number input is illegal!");
 
-            // check th address in Google maps, if it can't recognize it, an exception will occur!
-            //myBL.findAddress(nanny_address.Text); -->this option is disabled because it take to much time to run.
+            // check the address in Google maps, if it can't recognize it, an exception will occur!
+            if (!myBL.findAddress(nanny_address.Text))
+                throw new Exception("Cannot find address in Google maps.\nPlease check your Internet connection,\n"
+                    + "or visit \"www.google.co.il/maps\" and check how Google recognize your address");
 
         }
 

@@ -9,8 +9,16 @@ using DAL;
 using GoogleMapsApi;
 using GoogleMapsApi.Entities.Directions.Request;
 using GoogleMapsApi.Entities.Directions.Response;
-
+using GoogleMapsApi.Entities.Common;
+using GoogleMapsApi.Entities.Elevation.Request;
+using GoogleMapsApi.Entities.Geocoding.Request;
+using GoogleMapsApi.Entities.Geocoding.Response;
+using GoogleMapsApi.StaticMaps;
+using GoogleMapsApi.StaticMaps.Entities;
+using System.Runtime;
 using System.Runtime.InteropServices;
+using GoogleMapsApi.Entities.PlaceAutocomplete.Request;
+//using System.Runtime.InteropServices;
 namespace BL
 {
     /// <summary>
@@ -477,10 +485,31 @@ namespace BL
         /// check if it can find a specific address in Google maps, by trying to find routes from "Lev Academic Center" to it.
         /// </summary>
         /// <param name="source"></param>
-        public void findAddress(string source)
+        public bool findAddress(string source)
         {
-            distanceBetweenAddresses(source, "Lev Academic Center");
+            int a = 0;
+             Thread MyThread = new Thread(() => {  a = distanceBetweenAddresses(source, "Lev Academic Center"); });
+             MyThread.Start();
+             MyThread.Join();
+            return a >= 0;
+
+            //return distanceBetweenAddresses(source, "Lev Academic Center") >= 0;
+           
+
         }
+        /*
+                public class InternetAvailability
+                {
+                    [DllImport("wininet.dll")]
+                    private extern static bool InternetGetConnectedState(out int description, int reservedValue);
+
+                    public static bool IsInternetAvailable()
+                    {
+                        int description;
+                        return InternetGetConnectedState(out description, 0);
+                    }
+                }
+                */
 
         /// <summary>
         /// use Google Api to get distance between two address stored in strings
@@ -491,6 +520,10 @@ namespace BL
         public int distanceBetweenAddresses(string source, string dest)
         {
 
+            /* if (!InternetAvailability.IsInternetAvailable())
+             {
+                 throw new Exception("No INTERNET connection");
+             }*/
             var drivingDirectionRequest = new DirectionsRequest
             {
                 TravelMode = TravelMode.Walking,
@@ -499,12 +532,43 @@ namespace BL
             };
 
             DirectionsResponse drivingDirections = GoogleMaps.Directions.Query(drivingDirectionRequest);
-            if (drivingDirections.Routes == null)
-                throw new Exception("cannot find address in Google Maps");
+
+
+            if (drivingDirections.Routes.ElementAtOrDefault(0) == null)
+                return -1;
+
 
             Route route = drivingDirections.Routes.First();
             Leg leg = route.Legs.First();
             return leg.Distance.Value;
+
+
+        }
+
+        /// <summary>
+        /// completes a address name in a search box from Google
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public List<string> GetPlaceAutoComplete(string str)
+        {
+            try
+            {
+                List<string> result = new List<string>();
+                PlaceAutocompleteRequest request = new PlaceAutocompleteRequest();
+                request.ApiKey = "AIzaSyA9DLA9vL6ARd0UGd5sZnwI0-Jocz9MBXQ";
+                request.Input = str;
+                var response = GoogleMaps.PlaceAutocomplete.Query(request);
+                foreach (var item in response.Results)
+                {
+                    result.Add(item.Description);
+                }
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            };
         }
 
         /// <summary>

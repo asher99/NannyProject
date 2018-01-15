@@ -59,12 +59,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="GroupOfNannysByAgeOfKid.xaml.cs">
+      <DependentUpon>GroupOfNannysByAgeOfKid.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PasswordLogin.xaml.cs">
       <DependentUpon>PasswordLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="SignContractWindow.xaml.cs">
       <DependentUpon>SignContractWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="GroupOfNannysByAgeOfKid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="mother_update_details.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

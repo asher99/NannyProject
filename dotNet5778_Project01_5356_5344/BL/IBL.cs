@@ -17,7 +17,7 @@ namespace BL
     {
         void addNanny(Nanny nanny);
         void deleteNanny(Nanny nanny);
-        void updateNanny(Nanny nanny);        
+        void updateNanny(Nanny nanny);
 
         void addMother(Mother mother);
         void deleteMother(Mother mother);
@@ -50,6 +50,7 @@ namespace BL
         Child getChildByID(int childId);
         Mother getMotherByID(int motherId);
         int distanceBetweenAddresses(string source, string dest);
+        List<string> GetPlaceAutoComplete(string str);
         IEnumerable<IGrouping<int, Nanny>> GroupOfNannysByAgeOfKid(IEnumerable<Nanny> collection, bool byMinAge, bool sorted);
         IEnumerable<IGrouping<int, Contract>> GroupOfContractsByDistance(IEnumerable<Contract> collection, bool sorted);
 
@@ -58,7 +59,7 @@ namespace BL
         IEnumerable<Child> getListOfChildByMother(Mother mother);
         IEnumerable<Nanny> potentialNannys(Mother mother);
         IEnumerable<Child> getListOfChildrenOfNanny(int id);
-        void findAddress(string source);
+        bool findAddress(string source);
         IEnumerable<Child> checkAgeOfKids(IEnumerable<Child> list, Nanny nanny);
 
         double calculateSalary(Contract contract, Nanny nanny);

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Admin Window" Height="500" Width="700">
 
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="121*"/>
@@ -30,6 +30,5 @@
             <TabPanel Width="20"/>
             <Button x:Name="Interface" Content="go to interface" IsEnabled="False" Click="Interface_Click"/>
         </StackPanel>
-
-    </Grid>
+ </Grid>
 </Window>
