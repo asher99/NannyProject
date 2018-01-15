@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,14 +43,12 @@ namespace PLWPF
 
         private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-          
             try
-            {
-                UpdateWindow a;
+            {           
                 int id;
                 id = ((Nanny)((ListView)(sender)).SelectedItem).id;
                 Nanny nanny = myBL.GetNannyByID(id)
-                a = new UpdateWindow(1, nanny, false);
+                UpdateWindow a = new UpdateWindow(1, nanny, false);
                 a.Show();
             }
             catch {}
