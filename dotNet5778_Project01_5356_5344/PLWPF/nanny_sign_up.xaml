@@ -52,7 +52,7 @@
                 <DatePicker x:Name="nanny_birthday" Height="30" SelectedDate="{Binding Path=birthday, Mode=TwoWay}" />
                 <TextBox x:Name="nanny_id" Height="30" Text="{Binding Path=id, Mode=TwoWay}"/>
                 <TextBox x:Name="nanny_phone" Height="30" Text="{Binding Path=phoneNumber, Mode=TwoWay}"/>
-                <TextBox x:Name="nanny_address" Height="30" Text="{Binding Path=address, Mode=TwoWay}" /><!--="newAdrressTextChanged"--> 
+                <TextBox x:Name="nanny_address" Height="30" Text="{Binding Path=address, Mode=TwoWay}"/>
                <!-- <ListBox x:Name="adressAutoComplete" Visibility="Collapsed" HorizontalAlignment="Left" 
                          VerticalAlignment="Bottom" SelectionChanged="SelectionChanged" 
                          OpacityMask="White" Width="100" Height="100" Panel.ZIndex="5"/>-->

@@ -485,23 +485,31 @@ namespace BL
         /// check if it can find a specific address in Google maps, by trying to find routes from "Lev Academic Center" to it.
         /// </summary>
         /// <param name="source"></param>
-        public void findAddress(string source)
+        public bool findAddress(string source)
         {
-            distanceBetweenAddresses(source, "Lev Academic Center");
-        }
-/*
-        public class InternetAvailability
-        {
-            [DllImport("wininet.dll")]
-            private extern static bool InternetGetConnectedState(out int description, int reservedValue);
+            int a = 0;
+             Thread MyThread = new Thread(() => {  a = distanceBetweenAddresses(source, "Lev Academic Center"); });
+             MyThread.Start();
+             MyThread.Join();
+            return a >= 0;
 
-            public static bool IsInternetAvailable()
-            {
-                int description;
-                return InternetGetConnectedState(out description, 0);
-            }
+            //return distanceBetweenAddresses(source, "Lev Academic Center") >= 0;
+           
+
         }
-        */
+        /*
+                public class InternetAvailability
+                {
+                    [DllImport("wininet.dll")]
+                    private extern static bool InternetGetConnectedState(out int description, int reservedValue);
+
+                    public static bool IsInternetAvailable()
+                    {
+                        int description;
+                        return InternetGetConnectedState(out description, 0);
+                    }
+                }
+                */
 
         /// <summary>
         /// use Google Api to get distance between two address stored in strings
@@ -511,31 +519,30 @@ namespace BL
         /// <returns></returns>
         public int distanceBetweenAddresses(string source, string dest)
         {
-            try
-            {
-               /* if (!InternetAvailability.IsInternetAvailable())
-                {
-                    throw new Exception("No INTERNET connection");
-                }*/
-                var drivingDirectionRequest = new DirectionsRequest
-                {
-                    TravelMode = TravelMode.Walking,
-                    Origin = source,
-                    Destination = dest,
-                };
 
-                DirectionsResponse drivingDirections = GoogleMaps.Directions.Query(drivingDirectionRequest);
-                if (drivingDirections.Routes == null)
-                    throw new Exception("cannot find address in Google Maps");
-
-                Route route = drivingDirections.Routes.First();
-                Leg leg = route.Legs.First();
-                return leg.Distance.Value;
-            }
-            catch(Exception e)
+            /* if (!InternetAvailability.IsInternetAvailable())
+             {
+                 throw new Exception("No INTERNET connection");
+             }*/
+            var drivingDirectionRequest = new DirectionsRequest
             {
-                throw e;
-            }
+                TravelMode = TravelMode.Walking,
+                Origin = source,
+                Destination = dest,
+            };
+
+            DirectionsResponse drivingDirections = GoogleMaps.Directions.Query(drivingDirectionRequest);
+
+
+            if (drivingDirections.Routes.ElementAtOrDefault(0) == null)
+                return -1;
+
+
+            Route route = drivingDirections.Routes.First();
+            Leg leg = route.Legs.First();
+            return leg.Distance.Value;
+
+
         }
 
         /// <summary>

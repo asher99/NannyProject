@@ -59,7 +59,7 @@ namespace BL
         IEnumerable<Child> getListOfChildByMother(Mother mother);
         IEnumerable<Nanny> potentialNannys(Mother mother);
         IEnumerable<Child> getListOfChildrenOfNanny(int id);
-        void findAddress(string source);
+        bool findAddress(string source);
         IEnumerable<Child> checkAgeOfKids(IEnumerable<Child> list, Nanny nanny);
 
         double calculateSalary(Contract contract, Nanny nanny);

@@ -208,9 +208,10 @@ namespace PLWPF
             if (!nanny_floor.Text.All(Char.IsDigit))
                 throw new Exception("Floor number input is illegal!");
 
-            // check th address in Google maps, if it can't recognize it, an exception will occur!
-            //myBL.findAddress(nanny_address.Text); -->this option is disabled because it take to much time to run.
-
+            // check the address in Google maps, if it can't recognize it, an exception will occur!
+            if (!myBL.findAddress(nanny_address.Text))
+                throw new Exception("Cannot find address in Google maps.\nPlease check your Internet connection,\n"
+                    + "or visit \"www.google.co.il/maps\" and check how Google recognize your address");
         }
 
         /// <summary>
