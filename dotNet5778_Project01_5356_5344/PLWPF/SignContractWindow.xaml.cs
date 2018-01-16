@@ -46,9 +46,16 @@ namespace PLWPF
             var datagridChildren = myBL.checkAgeOfKids(myBL.getListOfChildByMother(thisMother), thisNanny).ToList();
 
             // remove children that already got contract
-            foreach(Child kid in datagridChildren.ToList())
+            foreach (Child kid in datagridChildren.ToList())
             {
-                if (!myBL.ChildrenWithoutNanny().Contains(kid))
+                bool kidAlreadyHaveNanny = true;
+                foreach (Child otherKid in myBL.ChildrenWithoutNanny())
+                {
+                    if (kid.id == otherKid.id)
+                        kidAlreadyHaveNanny = false;
+                }
+
+                if (kidAlreadyHaveNanny)
                     datagridChildren.Remove(kid);
             }
 
@@ -70,7 +77,7 @@ namespace PLWPF
             try
             {
 
-                if (!childIDNUmber.Text.All(Char.IsDigit) || childIDNUmber.Text =="")
+                if (!childIDNUmber.Text.All(Char.IsDigit) || childIDNUmber.Text == "")
                     throw new Exception("Child Id input is illegal!");
 
                 thisContract.childId = int.Parse(childIDNUmber.Text);
@@ -86,17 +93,29 @@ namespace PLWPF
                     thisContract.moneyPerHour = myBL.calculateSalary(thisContract, thisNanny);
                 }
 
-                thisContract.ExpirationDate = datePicker.SelectedDate.Value;
+                try
+                {
+                    thisContract.ExpirationDate = datePicker.SelectedDate.Value;
+                }
+                catch
+                {
+                    MessageBox.Show("No Expiration Date!");
+                    Terms_accepted.IsChecked = false;
+                    return;
+                }
+
 
                 // add data to text block
                 Schedule.Text = Schedule_ToString();
+
+
 
                 Billing.Text = FinancialBilling_toString();
 
                 Additional.Text = AdditionalDetails_ToString();
 
             }
-            catch(Exception err)
+            catch (Exception err)
             {
                 MessageBox.Show(err.Message);
                 // if the process fell, make it possible to re-check.
@@ -124,7 +143,7 @@ namespace PLWPF
             }
 
             MessageBox.Show("Contract signed! you can see the contract details any time in your interface -> view contracts"
-                ,"SUCCESS!",MessageBoxButton.OK,MessageBoxImage.Information);
+                , "SUCCESS!", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();
         }
 
@@ -156,7 +175,7 @@ namespace PLWPF
         {
             string thisDay = day;
             if (thisMother.daysOfNanny[index])
-            { 
+            {
                 thisDay += thisMother.hoursByNanny[index].string_start;
                 thisDay += "  <-->  ";
                 thisDay += thisMother.hoursByNanny[index].string_finish;
@@ -201,7 +220,7 @@ namespace PLWPF
             int brothers = myBL.brothersByNanny(thisNanny, thisMother.id);
             if (brothers >= 1)
             {
-                additional += "Since this Child have " + brothers.ToString() + "brother(s) with this nanny, you got a discount of " + (brothers*2).ToString() + " percents \n";
+                additional += "Since this Child have " + brothers.ToString() + "brother(s) with this nanny, you got a discount of " + (brothers * 2).ToString() + " percents \n";
             }
 
             return additional;

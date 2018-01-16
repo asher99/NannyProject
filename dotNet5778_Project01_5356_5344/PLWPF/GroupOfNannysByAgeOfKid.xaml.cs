@@ -41,9 +41,9 @@ namespace PLWPF
             InitializeComponent();
         }
 
-        /*private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            try
+            /*try
             {           
                 int id;
                 id = ((Nanny)((ListView)(sender)).SelectedItem).id;
@@ -51,7 +51,7 @@ namespace PLWPF
                 UpdateWindow a = new UpdateWindow(1, nanny, false);
                 a.Show();
             }
-            catch {}
-        }*/
+            catch {}*/
+        }
     }
 }
