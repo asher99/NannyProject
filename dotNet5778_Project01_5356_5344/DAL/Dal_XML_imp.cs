@@ -216,7 +216,6 @@ namespace DAL
             if (contractElement != null)
             {
                 contractElement.Remove();
-                DataSourceXml.Contracts.Add(contract.toXML());
                 DataSourceXml.SaveContracts();
             }
             else

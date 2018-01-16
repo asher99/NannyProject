@@ -52,5 +52,12 @@ namespace BE
 
         public Child() { birthday = DateTime.Now; }
 
+        public bool compareChildren(Child otherChild)
+        {
+            if (otherChild.id == this.id)
+                return true;
+            else return false;
+        }
+
     }
 }
