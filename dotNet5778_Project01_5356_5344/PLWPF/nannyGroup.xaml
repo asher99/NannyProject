@@ -16,13 +16,11 @@
 
         <Label Grid.Column="0" Content="Name: " />
         <TextBlock Margin="5" Name="firstName" Grid.Column="1"
-                 Text="{Binding Path=first_name }"/>
+                 Text="{Binding Path=firstName }"/>
         <TextBlock Margin="5" Grid.Column="2"
-                 Text="{Binding Path=last_name }"/>
+                 Text="{Binding Path=familyName }"/>
 
         <TextBlock Margin="5" Grid.Column="1" Visibility="Collapsed"
-                 Text="{Binding Path=ID}"/>
-
-
+                 Text="{Binding Path=id}"/>
     </Grid>
 </UserControl>
