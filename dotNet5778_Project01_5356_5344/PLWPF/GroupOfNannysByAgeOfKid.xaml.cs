@@ -40,18 +40,6 @@ namespace PLWPF
         {
             InitializeComponent();
         }
-
-        private void ListView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            try
-            {           
-                int id;
-                id = ((Nanny)((ListView)(sender)).SelectedItem).id;
-                Nanny nanny = myBL.GetNannyByID(id);
-               // UpdateWindow a = new UpdateWindow(1, nanny, false);
-                a.Show();
-            }
-            catch {}
-        }
+  
     }
 }
