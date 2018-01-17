@@ -30,5 +30,10 @@
             <TabPanel Width="20"/>
             <Button x:Name="Interface" Content="go to interface" IsEnabled="False" Click="Interface_Click"/>
         </StackPanel>
- </Grid>
+        <Label x:Name="label1" Content="Grouping" FontWeight="Bold" HorizontalAlignment="Left" Height="26" Margin="6,210,0,0" VerticalAlignment="Top" Width="140"/>
+        <StackPanel HorizontalAlignment="Left" Height="48" Margin="11,238,0,0" VerticalAlignment="Top" Width="128">
+            <RadioButton x:Name="radioButton1" Content="Age Groups" FontWeight="Bold" HorizontalAlignment="Left" Height="15" Margin="4,0,0,0" Width="101" Checked="ageGroups_Checked"/>
+            <RadioButton x:Name="radioButton2" Content="Contract Groups" FontWeight="Bold" Height="14" Margin="4,0,8,0"/>
+        </StackPanel>
+    </Grid>
 </Window>

@@ -222,6 +222,11 @@ namespace PLWPF
             }
         }
 
+        private void ageGroups_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         /*
 private void Interface_Click(object sender, RoutedEventArgs e)
 {
