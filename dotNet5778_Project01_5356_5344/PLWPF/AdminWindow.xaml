@@ -5,35 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="Admin Window" Height="500" Width="700">
+        Title="Admin Window" Height="500" Width="900">
 
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="121*"/>
-            <RowDefinition Height="21*"/>
-            <RowDefinition Height="15*"/>
+            <RowDefinition Height="207*"/>
+            <RowDefinition Height="154*"/>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
-        <StackPanel x:Name="chooseList" HorizontalAlignment="Left" Height="100" Margin="8,50,0,212.7" Width="100"  >
+        <StackPanel x:Name="chooseList" HorizontalAlignment="Left" Height="100" Margin="8,50,0,57" Width="100"  >
             <RadioButton x:Name="Nannylist" Content="Nanny list" FontSize="14" FontWeight="Bold"   Checked="Nannylist_Checked" />
             <RadioButton x:Name="Motherlist" Content="Mother list" FontSize="14" FontWeight="Bold" Checked="Motherlist_Checked" />
             <RadioButton x:Name="Childlist" Content="Child list" FontSize="14" FontWeight="Bold" Checked="Childlist_Checked"/>
             <RadioButton x:Name="Contractlist" Content="Contract list" FontSize="14" FontWeight="Bold" Checked="Contractlist_Checked"/>
         </StackPanel>
         <Label x:Name="label" Content="Choose list for display:" FontWeight="Bold" HorizontalAlignment="Left" Height="26" Margin="0,24,0,0" VerticalAlignment="Top" Width="141"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="175" Margin="152,20,0,0" VerticalAlignment="Top" Width="507" SelectionMode="Single" SelectionUnit="FullRow"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="175" Margin="152,20,0,0" VerticalAlignment="Top" Width="675" SelectionMode="Single" SelectionUnit="FullRow"/>
 
-        <StackPanel Grid.Row="1" Name="Buttons" Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Grid.Row="2" Name="Buttons" Orientation="Horizontal" HorizontalAlignment="Center" Margin="215,0">
             <Button x:Name="Delete" Content="Delete Object" IsEnabled="true" Click="Delete_Click"/>
             <TabPanel Width="20"/>
             <Button x:Name="Add" Content="Add Object" IsEnabled="True" Click="Add_Click" />
             <TabPanel Width="20"/>
             <Button x:Name="Interface" Content="go to interface" IsEnabled="False" Click="Interface_Click"/>
         </StackPanel>
-        <Label x:Name="label1" Content="Grouping" FontWeight="Bold" HorizontalAlignment="Left" Height="26" Margin="6,210,0,0" VerticalAlignment="Top" Width="140"/>
-        <StackPanel HorizontalAlignment="Left" Height="48" Margin="11,238,0,0" VerticalAlignment="Top" Width="128">
+        <Label x:Name="label1" Content="Grouping" FontWeight="Bold" HorizontalAlignment="Left" Height="26" Margin="6,3,0,0" VerticalAlignment="Top" Width="140" Grid.Row="1"/>
+        <StackPanel HorizontalAlignment="Left" Height="48" Margin="11,31,0,0" VerticalAlignment="Top" Width="128" Grid.Row="1">
             <RadioButton x:Name="radioButton1" Content="Age Groups" FontWeight="Bold" HorizontalAlignment="Left" Height="15" Margin="4,0,0,0" Width="101" Checked="ageGroups_Checked"/>
-            <RadioButton x:Name="radioButton2" Content="Contract Groups" FontWeight="Bold" Height="14" Margin="4,0,8,0"/>
+            <RadioButton x:Name="radioButton2" Content="Contract Groups" FontWeight="Bold" Height="14" Margin="4,0,8,0" Checked="ContractGroups_Checked" />
         </StackPanel>
+        <ContentControl Name="GroupingPanel" Visibility="Visible" Height="150" VerticalAlignment="Center" Margin="139,3,68,1" Grid.Row="1"/>
     </Grid>
 </Window>

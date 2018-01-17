@@ -34,32 +34,41 @@ namespace PLWPF
         /// <param name="nanny"></param>
         public SignContractWindow(Mother mother, Nanny nanny)
         {
-            InitializeComponent();
-
-            thisMother = mother;
-            thisNanny = nanny;
-
-            if (nanny.doesWorkPerHour == false)
-                byHour.IsEnabled = false;
-
-            // find the children that suitable for nanny age-scale
-            var datagridChildren = myBL.checkAgeOfKids(myBL.getListOfChildByMother(thisMother), thisNanny).ToList();
-
-            // remove children that already got contract
-            foreach (Child kid in datagridChildren.ToList())
+            try
             {
-                bool kidAlreadyHaveNanny = true;
-                foreach (Child otherKid in myBL.ChildrenWithoutNanny())
+                InitializeComponent();
+
+                thisContract.Distance = myBL.distanceBetweenAddresses(mother.address, nanny.address);
+
+                thisMother = mother;
+                thisNanny = nanny;
+
+                if (nanny.doesWorkPerHour == false)
+                    byHour.IsEnabled = false;
+
+                // find the children that suitable for nanny age-scale
+                var datagridChildren = myBL.checkAgeOfKids(myBL.getListOfChildByMother(thisMother), thisNanny).ToList();
+
+                // remove children that already got contract
+                foreach (Child kid in datagridChildren.ToList())
                 {
-                    if (kid.id == otherKid.id)
-                        kidAlreadyHaveNanny = false;
+                    bool kidAlreadyHaveNanny = true;
+                    foreach (Child otherKid in myBL.ChildrenWithoutNanny())
+                    {
+                        if (kid.id == otherKid.id)
+                            kidAlreadyHaveNanny = false;
+                    }
+
+                    if (kidAlreadyHaveNanny)
+                        datagridChildren.Remove(kid);
                 }
 
-                if (kidAlreadyHaveNanny)
-                    datagridChildren.Remove(kid);
+                dataGrid.ItemsSource = datagridChildren;
             }
-
-            dataGrid.ItemsSource = datagridChildren;
+            catch(Exception e)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 

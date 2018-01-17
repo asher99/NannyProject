@@ -224,7 +224,29 @@ namespace PLWPF
 
         private void ageGroups_Checked(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                GroupingPanel.Visibility = Visibility.Visible;
 
+                GroupOfNannysByAgeOfKid showGrouping = new GroupOfNannysByAgeOfKid();
+                showGrouping.Source = myBL.GroupOfNannysByAgeOfKid(myBL.getListOfNanny(), true, false);
+                GroupingPanel.Content = showGrouping;
+          
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void ContractGroups_Checked(object sender, RoutedEventArgs e)
+        {
+            GroupingPanel.Visibility = Visibility.Visible;
+
+            ContractGroup showGrouping = new ContractGroup();
+            showGrouping.Source = myBL.GroupOfContractsByDistance(myBL.getListOfContract(), false);
+            GroupingPanel.Content = showGrouping;
         }
 
         /*

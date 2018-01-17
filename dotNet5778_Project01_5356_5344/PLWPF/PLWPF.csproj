@@ -59,6 +59,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ContractGroup.xaml.cs">
+      <DependentUpon>ContractGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GroupOfContracts.xaml.cs">
+      <DependentUpon>GroupOfContracts.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GroupOfNannysByAgeOfKid.xaml.cs">
       <DependentUpon>GroupOfNannysByAgeOfKid.xaml</DependentUpon>
     </Compile>
@@ -71,6 +77,14 @@
     <Compile Include="SignContractWindow.xaml.cs">
       <DependentUpon>SignContractWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="ContractGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GroupOfContracts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GroupOfNannysByAgeOfKid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

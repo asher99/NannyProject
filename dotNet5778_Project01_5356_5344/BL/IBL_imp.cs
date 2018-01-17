@@ -835,7 +835,9 @@ namespace BL
 
             // grouping
             temp = from contract in collection
-                   group contract by distanceBetweenAddresses(GetNannyByID(contract.NannysId).address, GetMotherByChildID(contract.childId).address) / 5;
+                   group contract by contract.Distance / 5;
+          /*         
+                   distanceBetweenAddresses(GetNannyByID(contract.NannysId).address, GetMotherByChildID(contract.childId).address) / 5;
 
             // sorting is by distance.
             if (sorted)
@@ -847,7 +849,7 @@ namespace BL
                 // sort the groups
                 temp.OrderBy(group => distanceBetweenAddresses(GetNannyByID(group.ElementAt(0).NannysId).address, GetMotherByChildID(group.ElementAt(0).childId).address));
             }
-
+            */
             return temp;
 
         }

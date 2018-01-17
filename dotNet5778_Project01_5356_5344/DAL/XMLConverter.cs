@@ -107,7 +107,9 @@ namespace DAL
                 new XElement("monthSalary", contract.monthSalary),
                 new XElement("isMonthContract", contract.isMonthContract),
                 new XElement("StartDate", contract.StartDate),
-                new XElement("ExpirationDate", contract.ExpirationDate)
+                new XElement("ExpirationDate", contract.ExpirationDate),
+                new XElement("Distance", contract.Distance)
+
           );
         }
 
@@ -254,6 +256,7 @@ namespace DAL
                     isMonthContract = Boolean.Parse(contractXml.Element("isMonthContract").Value),
                     StartDate = DateTime.Parse(contractXml.Element("StartDate").Value),
                     ExpirationDate = DateTime.Parse(contractXml.Element("ExpirationDate").Value),
+                    Distance= Int32.Parse(contractXml.Element("Distance").Value),
 
                 };
             }
