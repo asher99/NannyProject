@@ -55,9 +55,9 @@
         <Label x:Name="option_describe" Grid.Row="4" Grid.Column="1" Content="Example" HorizontalAlignment="Center"
                FontWeight="Bold" FontSize="14" Opacity="0"/>
 
-        <Button x:Name="exit" Content="Exit" Grid.Row="5" Width="200" Click="exit_Click"/>
+        <Button x:Name="exit" Content="Exit" Grid.Row="5" Width="200" Click="exit_Click" Style="{DynamicResource MyButtonStyle2}"/>
 
-        <Button x:Name="option" Height="40" Width="250" Grid.Row="5" Grid.Column="1" IsEnabled="False" Opacity="0" Click="option_Click"/>
+        <Button x:Name="option" Height="40" Width="250" Grid.Row="5" Grid.Column="1" IsEnabled="False" Opacity="0" Click="option_Click" Style="{DynamicResource MyButtonStyle}"/>
 
 
     </Grid>

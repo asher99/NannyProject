@@ -105,6 +105,8 @@ namespace PLWPF
                 }
 
 
+                
+
                 // add data to text block
                 Schedule.Text = Schedule_ToString();
 
@@ -123,6 +125,13 @@ namespace PLWPF
             }
 
         }
+
+
+       /* private bool isExpDataLegal()
+        {
+            datePicker
+        }*/
+
 
         /// <summary>
         /// Event: ITS TIME TO SIGN! add contract to DS.

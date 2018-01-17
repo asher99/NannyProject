@@ -144,7 +144,7 @@
     <address>Rehavia</address>
     <addressRadius>3000</addressRadius>
     <wantsATrialMeeting>false</wantsATrialMeeting>
-    <comments />
+    <comments></comments>
     <daysOfNanny>
       <Days>True</Days>
       <Days>True</Days>

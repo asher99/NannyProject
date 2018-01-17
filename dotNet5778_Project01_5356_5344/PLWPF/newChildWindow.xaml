@@ -19,8 +19,8 @@
 
             <StackPanel x:Name="labels" Orientation="Vertical" Width="250" >
                 <Label x:Name="firstName" Content="First name: (only one name)" FontSize="14"  HorizontalAlignment="Center" Height="30"/>
-                <Label Content="Enter your id number:" HorizontalAlignment="Center" Height="30" FontSize="14"/>
-                <Label Content="Enter your birthday:" HorizontalAlignment="Center" Height="30" FontSize="14"/>
+                <Label Content="Enter your child id number:" HorizontalAlignment="Center" Height="30" FontSize="14"/>
+                <Label Content="Enter your child birthday:" HorizontalAlignment="Center" Height="30" FontSize="14"/>
                 <CheckBox x:Name="specialNeeds" Content="Do the Child have special needs?" Height="30" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Bottom" IsChecked="{ Binding Path=hasSpecialNeeds, Mode=TwoWay}"/>
 
             </StackPanel>

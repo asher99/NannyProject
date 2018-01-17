@@ -210,8 +210,33 @@ namespace PLWPF
             switch (option.Content)
             {
                 case "Delete":
+                    Child option = dataGrid.SelectedItem as Child;
+                    if (option == null)
+                        MessageBox.Show("No Child was selected!");
+                    else
+                    {
+                        // giving last chance
+                        MessageBoxResult whatNow = MessageBox.Show("Are You Sure you want to delete child data?", "", MessageBoxButton.OKCancel);
+                        switch (whatNow)
+                        {
+                            case MessageBoxResult.Cancel: return;
+                        }
+
+                        myBL.deleteChild(option);
+                        MessageBox.Show("Child information was deleted", "Delete", MessageBoxButton.OK);
+                        dataGrid.ItemsSource = myBL.getListOfChildByMother(thisMother).ToList();
+
+                    }
                     break;
                 case "Sign Contract!":
+                    Nanny selectedNanny = dataGrid.SelectedItem as Nanny;
+                    if (selectedNanny == null || selectedNanny.firstName == null)
+                        MessageBox.Show("No Nanny was selected!");
+                    else
+                    {
+                        Window signContract = new SignContractWindow(thisMother, selectedNanny);
+                        signContract.ShowDialog();
+                    }
                     break;
             }
         }

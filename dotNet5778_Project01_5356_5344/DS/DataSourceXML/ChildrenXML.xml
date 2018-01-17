@@ -1,11 +1,2 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Children>
-  <Child>
-    <id>14</id>
-    <name>sruli</name>
-    <momsId>9</momsId>
-    <birthday>2016-10-03T00:00:00</birthday>
-    <hasSpecialNeeds>true</hasSpecialNeeds>
-    <specialNeeds>very annoying</specialNeeds>
-  </Child>
-</Children>
+<Children />
