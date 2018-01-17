@@ -56,22 +56,37 @@ namespace PLWPF
             switch (Options.SelectedIndex)
             {
                 case 0: //update details
+                    option.IsEnabled = false;
+                    option_describe.Opacity = 0;
                     updateDetails();
                     break;
                 case 1: //view contracts
-                    dataGrid.ItemsSource = myBL.getListOfContractByMother(thisMother).ToList(); //not implement yet
+                    dataGrid.ItemsSource = myBL.getListOfContractByMother(thisMother).ToList();
+                    option.IsEnabled = false;
+                    option_describe.Opacity = 0;
                     break;
                 case 2: // add child
+                    option.IsEnabled = false;
+                    option_describe.Opacity = 0;
                     addChildToMother();
                     break;
                 case 3: // view children (also update children data)
-                    Header.Opacity = 0;
                     dataGrid.ItemsSource = myBL.getListOfChildByMother(thisMother).ToList();
                     break;
                 case 4: // show potential nanny
+                    option.IsEnabled = true;
+                    option.Content = "Sign Contract!";
+                    option.Opacity = 1;
+                    option_describe.Content = "Select a Nanny to sign Contract";
+                    option_describe.Opacity = 1;
                     show_potentialNannys();
                     break;
                 case 5: // delete child
+                    option.IsEnabled = true;
+                    option.Content = "Delete";
+                    option.Opacity = 1;
+                    option_describe.Content = "Select a Child to delete his information";
+                    option_describe.Opacity = 1;
                     deleteChild();
                     break;
                 case 6: // delete mother
@@ -88,9 +103,6 @@ namespace PLWPF
         private void show_potentialNannys()
         {
             dataGrid.ItemsSource = myBL.potentialNannys(thisMother);
-
-            Header.Opacity = 1;
-            Header.Text = "To Sign Contract, Double Click the nanny row:";
         }
 
         /// <summary>
@@ -111,7 +123,7 @@ namespace PLWPF
                     signContract.ShowDialog();
                 }
             }
-            else if(Options.SelectedIndex == 5)
+            else if (Options.SelectedIndex == 5)
             {
                 Child option = dataGrid.CurrentItem as Child;
                 if (option == null)
@@ -138,7 +150,8 @@ namespace PLWPF
         /// </summary>
         private void updateDetails()
         {
-            Header.Opacity = 0;
+            option.IsEnabled = false;
+            option_describe.Opacity = 0;
             Window update = new mother_update_details(thisMother);
             update.ShowDialog();
         }
@@ -148,7 +161,6 @@ namespace PLWPF
         /// </summary>
         private void addChildToMother()
         {
-            Header.Opacity = 0;
             Window NewChildWindow = new newChildWindow(thisMother.id);
             NewChildWindow.ShowDialog();
         }
@@ -158,14 +170,13 @@ namespace PLWPF
         /// </summary>
         private void deleteUser()
         {
-            Header.Opacity = 0;
             // giving last chance
-            MessageBoxResult whatNow = MessageBox.Show("Are You Sure you want to delete your user?\n Deleting your User will also Delete your children!", "", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+            MessageBoxResult whatNow = MessageBox.Show("Are You Sure you want to delete your user?\n Deleting your User will also Delete your children data!", "", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
             switch (whatNow)
             {
                 case MessageBoxResult.Cancel: return;
             }
-           
+
             // delete children - all contracts are deleted in the "deleteChild(Child)" method.
             dataGrid.ItemsSource = null;
             foreach (Child son in myBL.getListOfChildByMother(thisMother).ToList())
@@ -181,12 +192,28 @@ namespace PLWPF
             Close();
         }
 
-
+        /// <summary>
+        /// set datagrid tp show all mother's children
+        /// </summary>
         private void deleteChild()
         {
-            Header.Opacity = 1;
-            Header.Text = "To Delete Child, Double Click the child row:";
             dataGrid.ItemsSource = myBL.getListOfChildByMother(thisMother).ToList();
+        }
+
+        /// <summary>
+        /// Event: click - determine if the click need to delete/sign and perform the needed action
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void option_Click(object sender, RoutedEventArgs e)
+        {
+            switch (option.Content)
+            {
+                case "Delete":
+                    break;
+                case "Sign Contract!":
+                    break;
+            }
         }
     }
 }

@@ -2,10 +2,10 @@
 <Children>
   <Child>
     <id>14</id>
-    <name>Asher</name>
+    <name>sruli</name>
     <momsId>9</momsId>
-    <birthday>2016-03-19T00:00:00</birthday>
-    <hasSpecialNeeds>false</hasSpecialNeeds>
-    <specialNeeds></specialNeeds>
+    <birthday>2016-10-03T00:00:00</birthday>
+    <hasSpecialNeeds>true</hasSpecialNeeds>
+    <specialNeeds>very annoying</specialNeeds>
   </Child>
 </Children>

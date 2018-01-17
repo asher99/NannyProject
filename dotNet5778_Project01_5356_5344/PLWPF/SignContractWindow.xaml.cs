@@ -183,7 +183,7 @@ namespace PLWPF
             }
             else
             {
-                thisDay += "children is not going to nanny";
+                thisDay += "children is not going to nanny\n";
             }
             return thisDay;
         }
