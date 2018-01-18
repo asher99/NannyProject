@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -202,6 +203,31 @@ namespace PLWPF
                     break;
             }
             
+        }
+
+
+        /// <summary>
+        /// Event: display distance from a nanny every time the user select one
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Options.SelectedIndex == 4)
+            {
+                Nanny selected_nanny = dataGrid.SelectedItem as Nanny;
+                string distance_string = "";
+
+                Thread myThread = new Thread(() => {distance_string = myBL.distanceBetweenAddresses(thisMother.address, selected_nanny.address).ToString(); });
+                myThread.Start();
+                myThread.Join();
+
+                option_describe.Content = "Your Distance from " + selected_nanny.familyName + ' ' + selected_nanny.firstName + " is: "
+                    + distance_string + " meters";
+
+                option_describe.Opacity = 1;
+            }
+            else return;
         }
     }
 }
