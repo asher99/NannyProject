@@ -10,6 +10,11 @@ using static DS.DataSource;
 
 namespace DAL
 {
+    /// <summary>
+    /// implantation for all DAL methods
+    /// this layer is in charge of taking care of all the data process in this program
+    /// each function helps the process either go to upper levels or writes into the Data Source XML
+    /// </summary>
     internal class Dal_XML_imp : Idal
     {
         /// <summary>

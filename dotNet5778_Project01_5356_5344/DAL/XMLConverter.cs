@@ -7,6 +7,9 @@ using BE;
 using System.Xml.Linq;
 namespace DAL
 {
+    /// <summary>
+    /// a class thats in charge of converting all objects to XML and back.
+    /// </summary>
     public static class XMLConverter
     {
         /// <summary>
@@ -78,7 +81,11 @@ namespace DAL
         }
 
 
-
+        /// <summary>
+        /// converts a child type to XML
+        /// </summary>
+        /// <param name="child"></param>
+        /// <returns></returns>
         public static XElement toXML(this Child child)
         {
             return new XElement("Child",
@@ -130,6 +137,11 @@ namespace DAL
             new XElement("string_finish", day.string_finish));
         }
 
+        /// <summary>
+        /// converts a Day fromXML to a Day object
+        /// </summary>
+        /// <param name="dayXml"></param>
+        /// <returns></returns>
         public static Day toDay(this XElement dayXml)
         {
             Day day = null;
@@ -151,6 +163,11 @@ namespace DAL
             return day;
         }
 
+        /// <summary>
+        /// converts from XML to a Nanny object
+        /// </summary>
+        /// <param name="NannyXml"></param>
+        /// <returns></returns>
         public static Nanny toNanny(this XElement NannyXml)
         {
             Nanny nanny = null;
@@ -191,6 +208,11 @@ namespace DAL
             return nanny;
         }
 
+        /// <summary>
+        /// converts from XML to a Mother object
+        /// </summary>
+        /// <param name="motherXml"></param>
+        /// <returns></returns>
         public static Mother toMother(this XElement motherXml)
         {
             Mother mother = null;
@@ -219,6 +241,11 @@ namespace DAL
             return mother;
         }
 
+        /// <summary>
+        /// converts from XML to a Child object
+        /// </summary>
+        /// <param name="childXml"></param>
+        /// <returns></returns>
         public static Child toChild(this XElement childXml)
         {
             Child child = null;
@@ -239,6 +266,11 @@ namespace DAL
             return child;
         }
 
+        /// <summary>
+        /// converts from XML to a Contract object
+        /// </summary>
+        /// <param name="contractXml"></param>
+        /// <returns></returns>
         public static Contract toContract(this XElement contractXml)
         {
             Contract contract = null;

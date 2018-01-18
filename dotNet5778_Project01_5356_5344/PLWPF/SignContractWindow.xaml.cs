@@ -38,7 +38,7 @@ namespace PLWPF
             {
                 InitializeComponent();
 
-                thisContract.Distance = myBL.distanceBetweenAddresses(mother.address, nanny.address);
+                thisContract.Distance = myBL.distanceBetweenAddresses(thisMother.address, thisNanny.address);
 
                 thisMother = mother;
                 thisNanny = nanny;

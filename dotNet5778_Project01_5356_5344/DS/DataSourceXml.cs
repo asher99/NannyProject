@@ -8,6 +8,9 @@ using System.IO;
 using DAL;
 namespace DS
 {
+    /// <summary>
+    /// in charge of saving and loading all of XML data using paths
+    /// </summary>
     public static class DataSourceXml
     {
         private static string solutionDirectory = Directory.GetParent(Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory()).FullName).FullName).FullName;
