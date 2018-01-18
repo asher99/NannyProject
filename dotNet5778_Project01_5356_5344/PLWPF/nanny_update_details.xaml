@@ -148,9 +148,9 @@
 
         <StackPanel x:Name="end" Orientation="Horizontal" Grid.Row="5" VerticalAlignment="Top"  >
             <Label Width="300"/>
-            <Button x:Name="close" Content="back" Height="40" Width="50" Click="close_Click"/>
+            <Button x:Name="close" Content="Back" Style="{DynamicResource MyButtonStyle2}" Height="40" Width="50" Click="close_Click"/>
             <Label Width="80"/>
-            <Button x:Name="continue" Content="Continue!" Height="40" Width="80" HorizontalAlignment="Right" Click="continue_Click"/>
+            <Button x:Name="continue" Content="Continue!" Style="{DynamicResource MyButtonStyle2}" Height="40" Width="80" HorizontalAlignment="Right" Click="continue_Click"/>
         </StackPanel>
 
 

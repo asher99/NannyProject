@@ -45,7 +45,7 @@
                 <Label Content="Enter your id number:" HorizontalAlignment="Center" Height="30" FontSize="14"/>
                 <Label Content="Enter your phone number" HorizontalAlignment="Center" Height="30" FontSize="14"/>
                 <Label Content="Enter your address:" HorizontalAlignment="Center" Height="30" FontSize="14"/>
-                <Label Content="Enter your search radius in meters:" HorizontalAlignment="Center" Height="30" FontSize="14"/>
+                <Label Content="Enter your search radius in Km.:" HorizontalAlignment="Center" Height="30" FontSize="14"/>
                 <CheckBox x:Name="TrialMetting" Content="Do you wish for a trial meeting?" Height="30" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Bottom" IsChecked="{ Binding Path=wantATrialMeeting, Mode=TwoWay}"/>
 
             </StackPanel>
@@ -119,9 +119,9 @@
 
         <StackPanel x:Name="end" Orientation="Horizontal" Grid.Row="5" VerticalAlignment="Top"  >
             <Label Width="300"/>
-            <Button x:Name="close" Content="back" Height="40" Width="50" Click="close_Click"/>
+            <Button x:Name="close" Content="Back" Style="{DynamicResource ResourceKey=MyButtonStyle2}" Height="40" Width="50" Click="close_Click"/>
             <Label Width="80"/>
-            <Button x:Name="continue" Content="Continue!" Height="40" Width="80" HorizontalAlignment="Right" Click="continue_Click"/>
+            <Button x:Name="continue" Content="Continue!" Style="{DynamicResource MyButtonStyle2}" Height="40" Width="80" HorizontalAlignment="Right" Click="continue_Click"/>
         </StackPanel>
 
 

@@ -204,4 +204,72 @@
       </Day>
     </hoursByNanny>
   </Mother>
+  <Mother>
+    <id>309</id>
+    <familyName>shwarch</familyName>
+    <firstName>dana</firstName>
+    <phoneNumber>050</phoneNumber>
+    <address>אברהם שטרן 33 ירושלים</address>
+    <addressRadius>0</addressRadius>
+    <wantsATrialMeeting>false</wantsATrialMeeting>
+    <comments />
+    <daysOfNanny>
+      <Days>True</Days>
+      <Days>True</Days>
+      <Days>True</Days>
+      <Days>False</Days>
+      <Days>False</Days>
+      <Days>True</Days>
+    </daysOfNanny>
+    <hoursByNanny>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>9</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>12</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>09:00</string_start>
+        <string_finish>12:00</string_finish>
+      </Day>
+    </hoursByNanny>
+  </Mother>
 </Mothers>

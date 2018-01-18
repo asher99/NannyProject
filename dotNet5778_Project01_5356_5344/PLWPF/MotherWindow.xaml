@@ -19,7 +19,7 @@
             <RowDefinition Height="150"/>
         </Grid.RowDefinitions>
 
-        <TextBlock x:Name="chooseAction" FontSize="14" HorizontalAlignment="Left" Height="22" Grid.Row="2" Grid.RowSpan="2" TextWrapping="Wrap" Text="please choose an action:" VerticalAlignment="Top" Width="297" Foreground="Black"/>
+        <TextBlock x:Name="chooseAction" FontSize="14" HorizontalAlignment="Left" Height="22" Grid.Row="2" Grid.RowSpan="2" TextWrapping="Wrap" Text="Please choose an action:" VerticalAlignment="Top" Width="297" Foreground="Black"/>
 
         <StackPanel HorizontalAlignment="Left" Height="184"  VerticalAlignment="Top" Width="292" Grid.Row="3">
             <Button x:Name="newMother" Content="New Mother" HorizontalAlignment="Center" Height="35" Width="200" Style= "{DynamicResource MyButtonStyle2}" Click="newMother_Click" />

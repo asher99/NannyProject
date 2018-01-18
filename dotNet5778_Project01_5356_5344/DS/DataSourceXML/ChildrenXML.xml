@@ -8,4 +8,12 @@
     <hasSpecialNeeds>false</hasSpecialNeeds>
     <specialNeeds />
   </Child>
+  <Child>
+    <id>308</id>
+    <name>hagay</name>
+    <momsId>309</momsId>
+    <birthday>2017-08-16T00:00:00</birthday>
+    <hasSpecialNeeds>false</hasSpecialNeeds>
+    <specialNeeds />
+  </Child>
 </Children>

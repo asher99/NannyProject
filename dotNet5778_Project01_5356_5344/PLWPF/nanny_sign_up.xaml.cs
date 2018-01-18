@@ -18,8 +18,6 @@ using BL;
 
 namespace PLWPF
 {
-
-
     /// <summary>
     /// Interaction logic for nanny_sign_up.xaml
     /// </summary>

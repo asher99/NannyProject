@@ -6,7 +6,7 @@
         xmlns:BE="clr-namespace:BE;assembly=BE"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="newChildWindow" Height="300" Width="450">
+        Title="newChildWindow" Height="300" Width="500">
     <Grid x:Name="ChildDetailsGrid" d:DataContext="{d:DesignInstance BE:Child }">
 
         <Grid.RowDefinitions>
@@ -35,9 +35,9 @@
         
         <StackPanel x:Name="end" Orientation="Horizontal" Height="50" Grid.Row="2" VerticalAlignment="Center">
             <Label Width="200"/>
-            <Button x:Name="close" Content="back" Height="40" Width="50" Click="close_Click"/>
+            <Button x:Name="close" Content="Back" Style="{DynamicResource MyButtonStyle2}" Height="40" Width="50" Click="close_Click"/>
             <Label Width="80"/>
-            <Button x:Name="save" Content="Save!" Height="40" Width="80" HorizontalAlignment="Right" Click="save_Click"/>
+            <Button x:Name="save" Content="Save!" Style="{DynamicResource MyButtonStyle2}" Height="40" Width="80" HorizontalAlignment="Right" Click="save_Click"/>
         </StackPanel>
 
 
