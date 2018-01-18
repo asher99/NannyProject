@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -38,7 +39,11 @@ namespace PLWPF
             {
                 InitializeComponent();
 
-                thisContract.Distance = myBL.distanceBetweenAddresses(thisMother.address, thisNanny.address);
+                //
+                /*Thread MyThread = new Thread(() => { thisContract.Distance = myBL.distanceBetweenAddresses(mother.address, nanny.address); });
+                MyThread.Start();
+                MyThread.Join();*/
+
 
                 thisMother = mother;
                 thisNanny = nanny;
@@ -64,8 +69,10 @@ namespace PLWPF
                 }
 
                 dataGrid.ItemsSource = datagridChildren;
+
+                contract_distance.Text = thisContract.Distance.ToString();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
@@ -114,7 +121,7 @@ namespace PLWPF
                 }
 
 
-                
+
 
                 // add data to text block
                 Schedule.Text = Schedule_ToString();
@@ -136,10 +143,10 @@ namespace PLWPF
         }
 
 
-       /* private bool isExpDataLegal()
-        {
-            datePicker
-        }*/
+        /* private bool isExpDataLegal()
+         {
+             datePicker
+         }*/
 
 
 

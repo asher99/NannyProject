@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -105,45 +106,7 @@ namespace PLWPF
             dataGrid.ItemsSource = myBL.potentialNannys(thisMother);
         }
 
-        /// <summary>
-        /// Event: when double click on a nanny row - open the sign contract window.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            if (Options.SelectedIndex == 4)
-            {
-                Nanny option = dataGrid.CurrentItem as Nanny;
-                if (option == null || option.firstName == null)
-                    MessageBox.Show("No Nanny was selected!");
-                else
-                {
-                    Window signContract = new SignContractWindow(thisMother, option);
-                    signContract.ShowDialog();
-                }
-            }
-            else if (Options.SelectedIndex == 5)
-            {
-                Child option = dataGrid.CurrentItem as Child;
-                if (option == null)
-                    MessageBox.Show("No Child was selected!");
-                else
-                {
-                    // giving last chance
-                    MessageBoxResult whatNow = MessageBox.Show("Are You Sure you want to delete child data?", "", MessageBoxButton.OKCancel);
-                    switch (whatNow)
-                    {
-                        case MessageBoxResult.Cancel: return;
-                    }
-
-                    myBL.deleteChild(option);
-                    MessageBox.Show("Child information was deleted", "Delete", MessageBoxButton.OK);
-                    dataGrid.ItemsSource = myBL.getListOfChildByMother(thisMother).ToList();
-
-                }
-            }
-        }
+       
 
         /// <summary>
         /// A window with mother details opened and make it possible to make change.
@@ -240,6 +203,31 @@ namespace PLWPF
                     break;
             }
             
+        }
+
+
+        /// <summary>
+        /// Event: display distance from a nanny every time the user select one
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Options.SelectedIndex == 4)
+            {
+                Nanny selected_nanny = dataGrid.SelectedItem as Nanny;
+                string distance_string = "";
+
+                Thread myThread = new Thread(() => {distance_string = myBL.distanceBetweenAddresses(thisMother.address, selected_nanny.address).ToString(); });
+                myThread.Start();
+                myThread.Join();
+
+                option_describe.Content = "Your Distance from " + selected_nanny.familyName + ' ' + selected_nanny.firstName + " is: "
+                    + distance_string + " meters";
+
+                option_describe.Opacity = 1;
+            }
+            else return;
         }
     }
 }

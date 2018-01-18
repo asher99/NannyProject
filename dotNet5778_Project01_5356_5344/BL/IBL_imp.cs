@@ -595,7 +595,7 @@ namespace BL
         public IEnumerable<Nanny> potentialNannys(Mother mother)
         {
             List<Nanny> list = new List<Nanny>();
-            List<Thread> listOfThreds = new List<Thread>();
+            //List<Thread> listOfThreds = new List<Thread>();
             int distance = 0;
             foreach (Nanny nanny in myDal.getListOfNanny())
             {
@@ -643,7 +643,8 @@ namespace BL
                 {
                     Thread myThred = new Thread(() => { distance = distanceBetweenAddresses(mother.address, nanny.address); });
                     myThred.Start();
-                    listOfThreds.Add(myThred);
+                    myThred.Join();
+              //      listOfThreds.Add(myThred);
 
 
                     if (distance > mother.addressRadius)
@@ -655,10 +656,10 @@ namespace BL
                 if (flag)
                     list.Add(nanny);
 
-                foreach (Thread t in listOfThreds)
+                /*foreach (Thread t in listOfThreds)
                 {
                     t.Join();
-                }
+                }*/
             }
 
 

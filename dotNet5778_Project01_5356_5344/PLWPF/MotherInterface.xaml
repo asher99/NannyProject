@@ -44,9 +44,7 @@
             <ComboBoxItem Content="Delete User" Foreground="Gray"/>
         </ComboBox>
 
-        <DataGrid x:Name="dataGrid" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Width="350" SelectionMode="Single" SelectionUnit="FullRow">
-
-        </DataGrid>
+        <DataGrid x:Name="dataGrid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Width="350" SelectionMode="Single" SelectionUnit="FullRow" SelectionChanged="dataGrid_SelectionChanged"/>
         <DockPanel Grid.Column="1" Grid.Row="0" Background="YellowGreen" Opacity="0.8">
         </DockPanel>
 
