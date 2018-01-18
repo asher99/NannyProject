@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mothers>
   <Mother>
-    <id>7</id>
-    <familyName>cohen</familyName>
-    <firstName>chava</firstName>
-    <phoneNumber>121122112</phoneNumber>
-    <address>Neve Sha'anan</address>
-    <addressRadius>2000</addressRadius>
+    <id>9</id>
+    <familyName>shemesh</familyName>
+    <firstName>dvora</firstName>
+    <phoneNumber>0525574272</phoneNumber>
+    <address>havaad haleumi</address>
+    <addressRadius>10000</addressRadius>
     <wantsATrialMeeting>false</wantsATrialMeeting>
-    <comments />
+    <comments></comments>
     <daysOfNanny>
       <Days>True</Days>
       <Days>True</Days>
-      <Days>False</Days>
-      <Days>False</Days>
+      <Days>True</Days>
+      <Days>True</Days>
       <Days>False</Days>
       <Days>False</Days>
     </daysOfNanny>
@@ -48,7 +48,7 @@
         <finish_hour>16</finish_hour>
         <finish_minute>0</finish_minute>
         <string_start>08:00</string_start>
-        <string_finish>12:00</string_finish>
+        <string_finish>16:00</string_finish>
       </Day>
       <Day>
         <start_hour>8</start_hour>
@@ -69,19 +69,19 @@
     </hoursByNanny>
   </Mother>
   <Mother>
-    <id>9</id>
-    <familyName>shemesh</familyName>
-    <firstName>dvora</firstName>
-    <phoneNumber>0525574272</phoneNumber>
-    <address>havaad haleumi</address>
-    <addressRadius>10000</addressRadius>
+    <id>7</id>
+    <familyName>cohen</familyName>
+    <firstName>chava</firstName>
+    <phoneNumber>121122112</phoneNumber>
+    <address>Neve Sha'anan,Jerusalem</address>
+    <addressRadius>4000</addressRadius>
     <wantsATrialMeeting>false</wantsATrialMeeting>
-    <comments />
+    <comments></comments>
     <daysOfNanny>
       <Days>True</Days>
       <Days>True</Days>
-      <Days>True</Days>
-      <Days>True</Days>
+      <Days>False</Days>
+      <Days>False</Days>
       <Days>False</Days>
       <Days>False</Days>
     </daysOfNanny>
@@ -113,10 +113,10 @@
       <Day>
         <start_hour>8</start_hour>
         <start_minute>0</start_minute>
-        <finish_hour>16</finish_hour>
+        <finish_hour>12</finish_hour>
         <finish_minute>0</finish_minute>
         <string_start>08:00</string_start>
-        <string_finish>16:00</string_finish>
+        <string_finish>12:00</string_finish>
       </Day>
       <Day>
         <start_hour>8</start_hour>
@@ -141,7 +141,7 @@
     <familyName>benyamin</familyName>
     <firstName>roth</firstName>
     <phoneNumber>0543332009</phoneNumber>
-    <address>Rehavia</address>
+    <address>Rehavia, Jerusalem</address>
     <addressRadius>3000</addressRadius>
     <wantsATrialMeeting>false</wantsATrialMeeting>
     <comments></comments>
@@ -151,7 +151,7 @@
       <Days>False</Days>
       <Days>True</Days>
       <Days>False</Days>
-      <Days>False</Days>
+      <Days>True</Days>
     </daysOfNanny>
     <hoursByNanny>
       <Day>
@@ -197,10 +197,10 @@
       <Day>
         <start_hour>8</start_hour>
         <start_minute>0</start_minute>
-        <finish_hour>12</finish_hour>
+        <finish_hour>10</finish_hour>
         <finish_minute>0</finish_minute>
         <string_start>08:00</string_start>
-        <string_finish>12:00</string_finish>
+        <string_finish>10:00</string_finish>
       </Day>
     </hoursByNanny>
   </Mother>

@@ -216,6 +216,9 @@ namespace PLWPF
             if (Options.SelectedIndex == 4)
             {
                 Nanny selected_nanny = dataGrid.SelectedItem as Nanny;
+                if (selected_nanny == null)
+                    return;
+
                 string distance_string = "";
 
                 Thread myThread = new Thread(() => {distance_string = myBL.distanceBetweenAddresses(thisMother.address, selected_nanny.address).ToString(); });
@@ -223,11 +226,12 @@ namespace PLWPF
                 myThread.Join();
 
                 option_describe.Content = "Your Distance from " + selected_nanny.familyName + ' ' + selected_nanny.firstName + " is: "
-                    + distance_string + " meters";
+                    + distance_string + " Km";
 
                 option_describe.Opacity = 1;
             }
             else return;
         }
+
     }
 }

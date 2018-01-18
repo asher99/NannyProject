@@ -70,7 +70,7 @@ namespace PLWPF
 
                 dataGrid.ItemsSource = datagridChildren;
 
-                contract_distance.Text = thisContract.Distance.ToString();
+                //contract_distance.Text = thisContract.Distance.ToString();
             }
             catch (Exception e)
             {
@@ -120,9 +120,13 @@ namespace PLWPF
                     return;
                 }
 
+                if (!isExpDataLegal())
+                {
+                    throw new Exception("Expiration Date nust be at least in next month.");
+                }
 
-
-
+                // enter expiration Date
+                thisContract.ExpirationDate = datePicker.SelectedDate.Value;
                 // add data to text block
                 Schedule.Text = Schedule_ToString();
 
@@ -142,11 +146,22 @@ namespace PLWPF
 
         }
 
+        /// <summary>
+        /// make sure the expiration date is at least in the next month
+        /// </summary>
+        /// <returns></returns>
+        private bool isExpDataLegal()
+        {
+            DateTime inserted_date = datePicker.SelectedDate.Value;
 
-        /* private bool isExpDataLegal()
-         {
-             datePicker
-         }*/
+            if (inserted_date.Year < DateTime.Now.Year) // check year
+                return false;
+            if (inserted_date.Year == DateTime.Now.Year && inserted_date.Month <= DateTime.Now.Month) // check month
+                return false;
+
+
+            else return true;
+        }
 
 
 

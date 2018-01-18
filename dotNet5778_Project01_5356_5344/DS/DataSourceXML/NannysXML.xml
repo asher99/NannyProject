@@ -1,84 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Nannys>
   <Nanny>
-    <id>3</id>
-    <familyName>wolf</familyName>
-    <firstName>rachel</firstName>
-    <birthday>1990-07-15T00:00:00</birthday>
-    <phoneNumber>0524438679</phoneNumber>
-    <address>Yefeh Nof, Jerusalem</address>
-    <hasElevator>false</hasElevator>
-    <floorNumber>0</floorNumber>
-    <seniority>10</seniority>
-    <maxOfKids>6</maxOfKids>
-    <minAgeOfKid>11</minAgeOfKid>
-    <maxAgeOfKid>36</maxAgeOfKid>
-    <doesWorkPerHour>true</doesWorkPerHour>
-    <hourWage>50</hourWage>
-    <monthlyWage>3000</monthlyWage>
-    <daysOfWork>
-      <Days>True</Days>
-      <Days>True</Days>
-      <Days>True</Days>
-      <Days>True</Days>
-      <Days>True</Days>
-      <Days>False</Days>
-    </daysOfWork>
-    <hoursOfWork>
-      <Day>
-        <start_hour>8</start_hour>
-        <start_minute>0</start_minute>
-        <finish_hour>16</finish_hour>
-        <finish_minute>0</finish_minute>
-        <string_start>08:00</string_start>
-        <string_finish>16:00</string_finish>
-      </Day>
-      <Day>
-        <start_hour>8</start_hour>
-        <start_minute>0</start_minute>
-        <finish_hour>16</finish_hour>
-        <finish_minute>0</finish_minute>
-        <string_start>08:00</string_start>
-        <string_finish>16:00</string_finish>
-      </Day>
-      <Day>
-        <start_hour>8</start_hour>
-        <start_minute>0</start_minute>
-        <finish_hour>13</finish_hour>
-        <finish_minute>0</finish_minute>
-        <string_start>08:00</string_start>
-        <string_finish>13:00</string_finish>
-      </Day>
-      <Day>
-        <start_hour>8</start_hour>
-        <start_minute>0</start_minute>
-        <finish_hour>16</finish_hour>
-        <finish_minute>0</finish_minute>
-        <string_start>08:00</string_start>
-        <string_finish>16:00</string_finish>
-      </Day>
-      <Day>
-        <start_hour>8</start_hour>
-        <start_minute>0</start_minute>
-        <finish_hour>16</finish_hour>
-        <finish_minute>0</finish_minute>
-        <string_start>08:00</string_start>
-        <string_finish>16:00</string_finish>
-      </Day>
-      <Day>
-        <start_hour>8</start_hour>
-        <start_minute>0</start_minute>
-        <finish_hour>12</finish_hour>
-        <finish_minute>0</finish_minute>
-        <string_start>08:00</string_start>
-        <string_finish>12:00</string_finish>
-      </Day>
-    </hoursOfWork>
-    <hasGovVacationDays>true</hasGovVacationDays>
-    <Recommendations />
-    <numberOfSignedContracts>0</numberOfSignedContracts>
-  </Nanny>
-  <Nanny>
     <id>111</id>
     <familyName>morad</familyName>
     <firstName>avigail</firstName>
@@ -153,6 +75,84 @@
       </Day>
     </hoursOfWork>
     <hasGovVacationDays>false</hasGovVacationDays>
+    <Recommendations></Recommendations>
+    <numberOfSignedContracts>0</numberOfSignedContracts>
+  </Nanny>
+  <Nanny>
+    <id>3</id>
+    <familyName>wolf</familyName>
+    <firstName>rachel</firstName>
+    <birthday>1990-07-15T00:00:00</birthday>
+    <phoneNumber>0524438679</phoneNumber>
+    <address>Yefeh Nof, Jerusalem</address>
+    <hasElevator>false</hasElevator>
+    <floorNumber>4</floorNumber>
+    <seniority>10</seniority>
+    <maxOfKids>6</maxOfKids>
+    <minAgeOfKid>11</minAgeOfKid>
+    <maxAgeOfKid>36</maxAgeOfKid>
+    <doesWorkPerHour>true</doesWorkPerHour>
+    <hourWage>36</hourWage>
+    <monthlyWage>3000</monthlyWage>
+    <daysOfWork>
+      <Days>True</Days>
+      <Days>True</Days>
+      <Days>True</Days>
+      <Days>True</Days>
+      <Days>True</Days>
+      <Days>False</Days>
+    </daysOfWork>
+    <hoursOfWork>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>13</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>13:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>16</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>16:00</string_finish>
+      </Day>
+      <Day>
+        <start_hour>8</start_hour>
+        <start_minute>0</start_minute>
+        <finish_hour>12</finish_hour>
+        <finish_minute>0</finish_minute>
+        <string_start>08:00</string_start>
+        <string_finish>12:00</string_finish>
+      </Day>
+    </hoursOfWork>
+    <hasGovVacationDays>true</hasGovVacationDays>
     <Recommendations></Recommendations>
     <numberOfSignedContracts>0</numberOfSignedContracts>
   </Nanny>

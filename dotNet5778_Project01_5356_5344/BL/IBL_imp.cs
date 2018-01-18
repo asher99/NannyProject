@@ -535,6 +535,9 @@ namespace BL
         /// <returns></returns>
         public int distanceBetweenAddresses(string source, string dest)
         {
+            // in case at least one address is empty - return immediatly
+            if (source == null || dest == null)
+                return -1;
 
             /* if (!InternetAvailability.IsInternetAvailable())
              {
