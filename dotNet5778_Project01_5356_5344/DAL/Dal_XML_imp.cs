@@ -304,7 +304,6 @@ namespace DAL
             if (IdExist(contract.NannysId) && IdExist(getMotherId(contract.childId)))
             {
                 //gets the serial number from XML file
-                //var element = DataSourceXml.ContractNumber.Element("serialNumber");
                 int contractsSerialNumber = Int32.Parse(DataSourceXml.ContractNumber.Element("serialNumber").Value);
                 contract.numberOfContract = ++contractsSerialNumber;
 

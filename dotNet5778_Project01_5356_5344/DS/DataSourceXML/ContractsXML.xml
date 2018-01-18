@@ -48,4 +48,28 @@
     <ExpirationDate>2018-07-10T00:00:00</ExpirationDate>
     <Distance>2</Distance>
   </Contract>
+  <Contract>
+    <numberOfContract>45687659</numberOfContract>
+    <NannysId>4</NannysId>
+    <childId>18</childId>
+    <isSingedContract>true</isSingedContract>
+    <moneyPerHour>0</moneyPerHour>
+    <monthSalary>2000</monthSalary>
+    <isMonthContract>true</isMonthContract>
+    <StartDate>2018-01-19T00:17:55.4190223+02:00</StartDate>
+    <ExpirationDate>2018-08-22T00:00:00</ExpirationDate>
+    <Distance>1</Distance>
+  </Contract>
+  <Contract>
+    <numberOfContract>45687660</numberOfContract>
+    <NannysId>4</NannysId>
+    <childId>19</childId>
+    <isSingedContract>true</isSingedContract>
+    <moneyPerHour>0</moneyPerHour>
+    <monthSalary>1960</monthSalary>
+    <isMonthContract>true</isMonthContract>
+    <StartDate>2018-01-19T00:18:18.8729725+02:00</StartDate>
+    <ExpirationDate>2018-06-20T00:00:00</ExpirationDate>
+    <Distance>1</Distance>
+  </Contract>
 </Contracts>

@@ -835,7 +835,7 @@ namespace BL
 
             // grouping
             temp = from contract in collection
-                   group contract by contract.Distance / 2;
+                   group contract by contract.Distance;
           /*         
                    distanceBetweenAddresses(GetNannyByID(contract.NannysId).address, GetMotherByChildID(contract.childId).address) / 5;
 

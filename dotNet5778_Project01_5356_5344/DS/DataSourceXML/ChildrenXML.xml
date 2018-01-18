@@ -48,4 +48,20 @@
     <hasSpecialNeeds>false</hasSpecialNeeds>
     <specialNeeds />
   </Child>
+  <Child>
+    <id>18</id>
+    <name>Yoram</name>
+    <momsId>8</momsId>
+    <birthday>2016-11-19T00:00:00</birthday>
+    <hasSpecialNeeds>false</hasSpecialNeeds>
+    <specialNeeds />
+  </Child>
+  <Child>
+    <id>19</id>
+    <name>Michal</name>
+    <momsId>8</momsId>
+    <birthday>2016-11-19T00:00:00</birthday>
+    <hasSpecialNeeds>true</hasSpecialNeeds>
+    <specialNeeds>she has a twin brother and they cant be appart</specialNeeds>
+  </Child>
 </Children>
