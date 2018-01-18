@@ -207,7 +207,7 @@ namespace PLWPF
         /// <param name="e"></param>
         private void option_Click(object sender, RoutedEventArgs e)
         {
-           /* switch (option.Content)
+            switch (option.Content as string)
             {
                 case "Delete":
                     Child option = dataGrid.SelectedItem as Child;
@@ -239,7 +239,7 @@ namespace PLWPF
                     }
                     break;
             }
-            */
+            
         }
     }
 }
