@@ -45,7 +45,13 @@ namespace PLWPF
             {
                 case 0: showDetails(); break; // update details
                 case 1: dataGrid.ItemsSource = myBL.getListOfChildrenOfNanny(thisNanny.id); break;                 // view group
-                case 2: dataGrid.ItemsSource = myBL.ListOfContractsById(thisNanny.id); break;                  // view contracts
+                case 2: dataGrid.ItemsSource = myBL.ListOfContractsById(thisNanny.id);
+                    double salarySum = 0;
+                    foreach (Contract c in myBL.ListOfContractsById(thisNanny.id))
+                    { salarySum += c.monthSalary;  };
+                    textBox.Text = Convert.ToString(salarySum); 
+                    salary.Visibility = Visibility.Visible;
+                    textBox.Visibility = Visibility.Visible; break;                  // view contracts
                 case 3: nannyLeave(); break;  // delete user
             }
         }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PLWPF"
         mc:Ignorable="d"
-        Title="NannyInterface" Height="250" Width="650">
+        Title="NannyInterface" Height="350" Width="650">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="images/background1.png"/>
@@ -33,6 +33,8 @@
         <DataGrid x:Name="dataGrid" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Width="350"/>
         <DockPanel Grid.Column="1" Grid.Row="0" Background="YellowGreen" Opacity="0.8"/>
         <Button x:Name="exit" Content="Exit" Grid.Row="4" Width="200" Click="exit_Click"/>
+        <Label x:Name="salary" FontSize="16" FontWeight="Bold" FontStyle="Italic" Visibility="Collapsed" Content="Your month salary:" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="37,13,0,-22" Grid.Row="5" VerticalAlignment="Top" Width="158"/>
+        <TextBox x:Name="textBox" Grid.Column="1" Visibility="Collapsed" FontSize="16" FontWeight="Bold" FontStyle="Italic" IsEnabled="False" HorizontalAlignment="Left" Height="25" Margin="191,18,0,-22" Grid.Row="5" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="83" />
     </Grid>
 </Window>
 
