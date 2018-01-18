@@ -49,10 +49,10 @@ namespace BL
         Nanny GetNannyByID(int nannyId);
         Child getChildByID(int childId);
         Mother getMotherByID(int motherId);
-        int distanceBetweenAddresses(string source, string dest);
+        float distanceBetweenAddresses(string source, string dest);
         List<string> GetPlaceAutoComplete(string str);
         IEnumerable<IGrouping<int, Nanny>> GroupOfNannysByAgeOfKid(IEnumerable<Nanny> collection, bool byMinAge, bool sorted);
-        IEnumerable<IGrouping<int, Contract>> GroupOfContractsByDistance(IEnumerable<Contract> collection, bool sorted);
+        IEnumerable<IGrouping<float, Contract>> GroupOfContractsByDistance(IEnumerable<Contract> collection, bool sorted);
 
 
         IEnumerable<Contract> ListOfContractsById(int id);

@@ -30,7 +30,7 @@ namespace BE
 
         public DateTime ExpirationDate { set; get; }
 
-        public int Distance { set; get; }
+        public float Distance { set; get; }
 
         // more options if needed
 

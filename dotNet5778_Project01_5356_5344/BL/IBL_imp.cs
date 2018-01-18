@@ -503,15 +503,11 @@ namespace BL
         /// <param name="source"></param>
         public bool findAddress(string source)
         {
-            int a = 0;
+            float a = 0;
              Thread MyThread = new Thread(() => {  a = distanceBetweenAddresses(source, "Lev Academic Center"); });
              MyThread.Start();
              MyThread.Join();
-            return a >= 0;
-
-            //return distanceBetweenAddresses(source, "Lev Academic Center") >= 0;
-           
-
+            return a >= 0;           
         }
         /*
                 public class InternetAvailability
@@ -533,7 +529,7 @@ namespace BL
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns></returns>
-        public int distanceBetweenAddresses(string source, string dest)
+        public float distanceBetweenAddresses(string source, string dest)
         {
             // in case at least one address is empty - return immediatly
             if (source == null || dest == null)
@@ -559,7 +555,7 @@ namespace BL
 
             Route route = drivingDirections.Routes.First();
             Leg leg = route.Legs.First();
-            return leg.Distance.Value;
+            return leg.Distance.Value / 1000;
 
 
         }
@@ -599,7 +595,7 @@ namespace BL
         {
             List<Nanny> list = new List<Nanny>();
             //List<Thread> listOfThreds = new List<Thread>();
-            int distance = 0;
+            float distance = 0;
             foreach (Nanny nanny in myDal.getListOfNanny())
             {
                 // check schedule
@@ -833,13 +829,13 @@ namespace BL
         /// <param name="collection">collection of Contracts</param>
         /// <param name="sorted">boolean variable, indicate if the returned groups are sorted</param>
         /// <returns></returns>
-        public IEnumerable<IGrouping<int, Contract>> GroupOfContractsByDistance(IEnumerable<Contract> collection, bool sorted)
+        public IEnumerable<IGrouping<float, Contract>> GroupOfContractsByDistance(IEnumerable<Contract> collection, bool sorted)
         {
-            IEnumerable<IGrouping<int, Contract>> temp;
+            IEnumerable<IGrouping<float, Contract>> temp;
 
             // grouping
             temp = from contract in collection
-                   group contract by contract.Distance / 5;
+                   group contract by contract.Distance / 2;
           /*         
                    distanceBetweenAddresses(GetNannyByID(contract.NannysId).address, GetMotherByChildID(contract.childId).address) / 5;
 
