@@ -22,7 +22,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
-        <Label Content="Welcome Back!" Grid.Row="0" Background="YellowGreen" Opacity="0.8" FontStyle="Italic" FontWeight="Bold" FontSize="30" Margin="0"/>
+        <Label x:Name="headLabel" Content="Welcome Back!" Grid.Row="0" Background="YellowGreen" Opacity="0.8" FontStyle="Italic" FontWeight="Bold" FontSize="30" Margin="0,0,300,0" Grid.ColumnSpan="2"/>
         <Label Content="What Would you like to do?" Grid.Row="1" VerticalAlignment="Bottom" FontWeight="Bold"/>
         <ComboBox x:Name="Options" Grid.Row="2" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="200" SelectionChanged="ComboBox_SelectionChanged">
             <ComboBoxItem Content="Update Your Details"/>
@@ -31,7 +31,7 @@
             <ComboBoxItem Content="Delete User" Foreground="Gray"/>
         </ComboBox>
         <DataGrid x:Name="dataGrid" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Width="350"/>
-        <DockPanel Grid.Column="1" Grid.Row="0" Background="YellowGreen" Opacity="0.8"/>
+        <DockPanel Grid.Column="1" Grid.Row="0" Background="YellowGreen" Opacity="0.8" Margin="100,0,0,0"/>
         <Button x:Name="exit" Content="Exit" Style="{DynamicResource MyButtonStyle2}" Grid.Row="5" Width="200" Click="exit_Click" Margin="25,24,25,-34"/>
         <Label x:Name="salary" FontSize="16" FontWeight="Bold" FontStyle="Italic" Visibility="Collapsed" Content="Your month salary:" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="37,13,0,-22" Grid.Row="5" VerticalAlignment="Top" Width="158"/>
         <TextBox x:Name="textBox" Grid.Column="1" Visibility="Collapsed" FontSize="16" FontWeight="Bold" FontStyle="Italic" IsEnabled="False" HorizontalAlignment="Left" Height="25" Margin="191,18,0,-22" Grid.Row="5" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="83" />

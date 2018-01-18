@@ -122,7 +122,7 @@ namespace DAL
 
             if (motherElement != null)
             {
-                motherElement.ReplaceWith(mother.toXML());              
+                motherElement.ReplaceWith(mother.toXML());
                 DataSourceXml.SaveMothers();
             }
             else
@@ -178,7 +178,7 @@ namespace DAL
 
             if (childElement != null)
             {
-               childElement.ReplaceWith(child.toXML());
+                childElement.ReplaceWith(child.toXML());
                 DataSourceXml.SaveChildren();
             }
             else
@@ -295,11 +295,6 @@ namespace DAL
         }
 
         /// <summary>
-        /// special static serial number for contracts
-        /// </summary>
-        static int contractsSerialNumber = 45687652;
-
-        /// <summary>
         /// gives a contract a serial number
         /// </summary>
         /// <param name="contract"></param>
@@ -308,9 +303,15 @@ namespace DAL
         {
             if (IdExist(contract.NannysId) && IdExist(getMotherId(contract.childId)))
             {
-                contract.numberOfContract = contractsSerialNumber + 3;
-                contractsSerialNumber++;
-                contract.isSingedContract = true;// now contract is signed
+                //gets the serial number from XML file
+                //var element = DataSourceXml.ContractNumber.Element("serialNumber");
+                int contractsSerialNumber = Int32.Parse(DataSourceXml.ContractNumber.Element("serialNumber").Value);
+                contract.numberOfContract = ++contractsSerialNumber;
+
+                DataSourceXml.ContractNumber.Element("serialNumber").SetValue(contractsSerialNumber);
+                DataSourceXml.SaveNumbers();
+
+                contract.isSingedContract = true;           // now contract is signed
 
                 return true;
             }

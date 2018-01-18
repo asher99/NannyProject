@@ -29,6 +29,9 @@ namespace DS
         private static XElement nannyRoot = null;
         static string nannyPath = Path.Combine(filePath, "NannysXML.xml");
 
+        private static XElement numberRoot = null;
+        static string numberPath = Path.Combine(filePath, "serialNumber.xml");
+
         static DataSourceXml()
         {
             bool exists = Directory.Exists(filePath);
@@ -76,6 +79,16 @@ namespace DS
             {
                 nannyRoot = LoadData(nannyPath);
             }
+
+            if (!File.Exists(numberPath))
+            {
+                CreateFile("ContractNumber", nannyPath);
+
+            }
+            else
+            {
+                numberRoot = LoadData(numberPath);
+            }
         }
 
         public static void Save(XElement root, string path)
@@ -101,6 +114,11 @@ namespace DS
         public static void SaveNannys()
         {
             nannyRoot.Save(nannyPath);
+        }
+
+        public static void SaveNumbers()
+        {
+            numberRoot.Save(numberPath);
         }
 
         public static XElement Nannys
@@ -136,6 +154,15 @@ namespace DS
             {
                 contractRoot = LoadData(contractPath);
                 return contractRoot;
+            }
+        }
+
+        public static XElement ContractNumber
+        {
+            get
+            {
+                numberRoot = LoadData(numberPath);
+                return numberRoot;
             }
         }
 

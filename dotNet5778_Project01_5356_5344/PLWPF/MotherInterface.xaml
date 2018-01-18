@@ -32,7 +32,7 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Welcome Back!" Grid.Row="0" Background="YellowGreen" Opacity="0.8" FontStyle="Italic" FontWeight="Bold" FontSize="30" Margin="0"/>
+        <Label x:Name="headLabel" Content="Welcome Back!"  Grid.Row="0" Background="YellowGreen" Opacity="0.8" FontStyle="Italic" FontWeight="Bold" FontSize="30" Margin="0,0,182,0" Grid.ColumnSpan="2"/>
         <Label Content="What Would you like to do?" Grid.Row="1" VerticalAlignment="Bottom" FontWeight="Bold"/>
         <ComboBox x:Name="Options" Grid.Row="2" HorizontalAlignment="Center" Height="30"  VerticalAlignment="Center" Width="200" SelectionChanged="Options_SelectionChanged">
             <ComboBoxItem Content="Update Your Details"/>
@@ -45,7 +45,7 @@
         </ComboBox>
 
         <DataGrid x:Name="dataGrid" Grid.Row="1" Grid.Column="1" Grid.RowSpan="3" Width="350" SelectionMode="Single" SelectionUnit="FullRow" SelectionChanged="dataGrid_SelectionChanged"/>
-        <DockPanel Grid.Column="1" Grid.Row="0" Background="YellowGreen" Opacity="0.8">
+        <DockPanel Grid.Column="1" Grid.Row="0" Background="YellowGreen" Opacity="0.8" Margin="218,0,0,0">
         </DockPanel>
 
 

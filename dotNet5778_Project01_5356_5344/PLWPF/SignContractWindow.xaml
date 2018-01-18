@@ -57,7 +57,7 @@
             <DockPanel Width="70"/>
             <Label Content="Distance Between you and the Nanny:" VerticalAlignment="Top" FontWeight="Bold"/>
             <DockPanel Width="10"/>
-            <TextBox x:Name="contract_distance" Width="60"/>
+            <TextBox x:Name="contract_distance" IsEnabled="False" Width="60"/>
             <Label Content="Kilometers" VerticalAlignment="Top" FontWeight="Bold"/>
 
         </StackPanel>

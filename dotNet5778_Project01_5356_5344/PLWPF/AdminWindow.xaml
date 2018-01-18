@@ -23,12 +23,12 @@
             <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
         <StackPanel x:Name="chooseList" HorizontalAlignment="Left" Height="100" Margin="8,50,0,57" Width="100"  >
-            <RadioButton x:Name="Nannylist" Content="Nanny list" FontSize="14" FontWeight="Bold"  Checked="Nannylist_Checked" />
-            <RadioButton x:Name="Motherlist" Content="Mother list" FontSize="14" FontWeight="Bold" Checked="Motherlist_Checked" />
-            <RadioButton x:Name="Childlist" Content="Child list" FontSize="14" FontWeight="Bold" Checked="Childlist_Checked"/>
-            <RadioButton x:Name="Contractlist" Content="Contract list" FontSize="14" FontWeight="Bold" Checked="Contractlist_Checked"/>
+            <RadioButton x:Name="Nannylist" Content="Nanny list" Foreground="SteelBlue" FontSize="14" FontWeight="Bold"  Checked="Nannylist_Checked" />
+            <RadioButton x:Name="Motherlist" Content="Mother list" Foreground="SteelBlue" FontSize="14" FontWeight="Bold" Checked="Motherlist_Checked" />
+            <RadioButton x:Name="Childlist" Content="Child list" Foreground="SteelBlue" FontSize="14" FontWeight="Bold" Checked="Childlist_Checked"/>
+            <RadioButton x:Name="Contractlist" Content="Contract list" Foreground="SteelBlue" FontSize="14" FontWeight="Bold" Checked="Contractlist_Checked"/>
         </StackPanel>
-        <Label x:Name="label" Content="Choose list for display:" FontWeight="Bold" HorizontalAlignment="Left" Height="26" Margin="0,24,0,0" VerticalAlignment="Top" Width="141" Grid.ColumnSpan="2"/>
+        <Label x:Name="label" Content="Choose list for display:" Foreground="SteelBlue" FontWeight="Bold" HorizontalAlignment="Left" Height="26" Margin="0,24,0,0" VerticalAlignment="Top" Width="141" Grid.ColumnSpan="2"/>
         <DataGrid x:Name="dataGrid" HorizontalAlignment="Stretch" Height="180"  VerticalAlignment="Top" Grid.Row="0" SelectionMode="Single" SelectionUnit="FullRow" Grid.Column="1" Margin="2,14,15,0"/>
 
         <StackPanel Grid.Row="2" Name="Buttons" Orientation="Horizontal" HorizontalAlignment="Center" Margin="94,0,231,0" Grid.Column="1">

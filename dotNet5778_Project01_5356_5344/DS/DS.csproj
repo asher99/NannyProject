@@ -58,6 +58,7 @@
     <Content Include="dataSourceXML\ContractsXML.xml" />
     <Content Include="dataSourceXML\MothersXML.xml" />
     <Content Include="dataSourceXML\NannysXML.xml" />
+    <Content Include="dataSourceXML\serialNumber.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">

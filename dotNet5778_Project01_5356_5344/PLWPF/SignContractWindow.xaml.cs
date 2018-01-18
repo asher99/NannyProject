@@ -128,7 +128,7 @@ namespace PLWPF
 
                 if (!isExpDataLegal())
                 {
-                    throw new Exception("Expiration Date nust be at least in next month.");
+                    throw new Exception("Expiration Date must be at least in next month.");
                 }
 
                 // enter expiration Date

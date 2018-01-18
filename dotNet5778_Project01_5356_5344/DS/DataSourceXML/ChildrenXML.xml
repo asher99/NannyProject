@@ -2,7 +2,7 @@
 <Children>
   <Child>
     <id>45</id>
-    <name>pupik</name>
+    <name>Sruli</name>
     <momsId>7</momsId>
     <birthday>2016-07-05T00:00:00</birthday>
     <hasSpecialNeeds>false</hasSpecialNeeds>
@@ -13,6 +13,38 @@
     <name>hagay</name>
     <momsId>309</momsId>
     <birthday>2017-08-16T00:00:00</birthday>
+    <hasSpecialNeeds>false</hasSpecialNeeds>
+    <specialNeeds />
+  </Child>
+  <Child>
+    <id>15</id>
+    <name>Shimi</name>
+    <momsId>9</momsId>
+    <birthday>2017-01-18T00:00:00</birthday>
+    <hasSpecialNeeds>true</hasSpecialNeeds>
+    <specialNeeds>he dosent like to be left alone</specialNeeds>
+  </Child>
+  <Child>
+    <id>16</id>
+    <name>Shira</name>
+    <momsId>9</momsId>
+    <birthday>2016-03-18T00:00:00</birthday>
+    <hasSpecialNeeds>false</hasSpecialNeeds>
+    <specialNeeds />
+  </Child>
+  <Child>
+    <id>307</id>
+    <name>Yosi</name>
+    <momsId>309</momsId>
+    <birthday>2016-12-13T00:00:00</birthday>
+    <hasSpecialNeeds>false</hasSpecialNeeds>
+    <specialNeeds />
+  </Child>
+  <Child>
+    <id>17</id>
+    <name>Robi</name>
+    <momsId>7</momsId>
+    <birthday>2017-01-18T00:00:00</birthday>
     <hasSpecialNeeds>false</hasSpecialNeeds>
     <specialNeeds />
   </Child>

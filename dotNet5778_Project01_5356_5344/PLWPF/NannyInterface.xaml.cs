@@ -29,6 +29,7 @@ namespace PLWPF
         public NannyInterface(Nanny nanny)
         {
             InitializeComponent();
+            headLabel.Content = "Welcome Back " + nanny.firstName + "!";
             thisNanny = nanny;
         }
 

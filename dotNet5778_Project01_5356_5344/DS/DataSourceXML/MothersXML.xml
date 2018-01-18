@@ -2,11 +2,11 @@
 <Mothers>
   <Mother>
     <id>9</id>
-    <familyName>shemesh</familyName>
-    <firstName>dvora</firstName>
+    <familyName>Shemesh</familyName>
+    <firstName>Dvora</firstName>
     <phoneNumber>0525574272</phoneNumber>
-    <address>havaad haleumi</address>
-    <addressRadius>10000</addressRadius>
+    <address>havaad haleumi, jerusalem</address>
+    <addressRadius>10</addressRadius>
     <wantsATrialMeeting>false</wantsATrialMeeting>
     <comments></comments>
     <daysOfNanny>
@@ -70,11 +70,11 @@
   </Mother>
   <Mother>
     <id>7</id>
-    <familyName>cohen</familyName>
-    <firstName>chava</firstName>
+    <familyName>Cohen</familyName>
+    <firstName>Chava</firstName>
     <phoneNumber>121122112</phoneNumber>
     <address>Neve Sha'anan,Jerusalem</address>
-    <addressRadius>4000</addressRadius>
+    <addressRadius>4</addressRadius>
     <wantsATrialMeeting>false</wantsATrialMeeting>
     <comments></comments>
     <daysOfNanny>
@@ -138,11 +138,11 @@
   </Mother>
   <Mother>
     <id>8</id>
-    <familyName>benyamin</familyName>
-    <firstName>roth</firstName>
+    <familyName>Benyamin</familyName>
+    <firstName>Roth</firstName>
     <phoneNumber>0543332009</phoneNumber>
     <address>Rehavia, Jerusalem</address>
-    <addressRadius>3000</addressRadius>
+    <addressRadius>3</addressRadius>
     <wantsATrialMeeting>false</wantsATrialMeeting>
     <comments></comments>
     <daysOfNanny>
@@ -206,11 +206,11 @@
   </Mother>
   <Mother>
     <id>309</id>
-    <familyName>shwarch</familyName>
-    <firstName>dana</firstName>
+    <familyName>Shwarch</familyName>
+    <firstName>Dana</firstName>
     <phoneNumber>050</phoneNumber>
     <address>אברהם שטרן 33 ירושלים</address>
-    <addressRadius>0</addressRadius>
+    <addressRadius>2</addressRadius>
     <wantsATrialMeeting>false</wantsATrialMeeting>
     <comments />
     <daysOfNanny>

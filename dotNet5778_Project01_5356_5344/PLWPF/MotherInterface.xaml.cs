@@ -33,6 +33,8 @@ namespace PLWPF
         public MoterInterface(Mother mother)
         {
             InitializeComponent();
+
+            headLabel.Content = "Welcome Back " + mother.firstName + "!";
             thisMother = mother;
             dataGrid.ItemsSource = null;
             dataGrid.IsEnabled = true;
