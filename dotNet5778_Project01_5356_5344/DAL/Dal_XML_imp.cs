@@ -67,8 +67,7 @@ namespace DAL
 
             if (nannyElement != null)
             {
-                nannyElement.Remove();
-                DataSourceXml.Nannys.Add(nanny.toXML());
+                nannyElement.ReplaceWith(nanny.toXML());
                 DataSourceXml.SaveNannys();
             }
             else
@@ -123,8 +122,7 @@ namespace DAL
 
             if (motherElement != null)
             {
-                motherElement.Remove();
-                DataSourceXml.Mothers.Add(mother.toXML());
+                motherElement.ReplaceWith(mother.toXML());              
                 DataSourceXml.SaveMothers();
             }
             else
@@ -180,8 +178,7 @@ namespace DAL
 
             if (childElement != null)
             {
-                childElement.Remove();
-                DataSourceXml.Children.Add(child.toXML());
+               childElement.ReplaceWith(child.toXML());
                 DataSourceXml.SaveChildren();
             }
             else
@@ -239,8 +236,7 @@ namespace DAL
 
             if (temp != null)
             {
-                temp.Remove();
-                DataSourceXml.Contracts.Add(contract.toXML());
+                temp.ReplaceWith(contract.toXML());
                 DataSourceXml.SaveContracts();
             }
             else
