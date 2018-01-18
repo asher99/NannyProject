@@ -14,6 +14,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="200"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
@@ -42,15 +43,24 @@
         </StackPanel>
 
         <Label Content="Sign Contract!" Grid.Row="0"  Grid.Column="0" Background="YellowGreen" Opacity="0.8" FontStyle="Italic" FontWeight="Bold" FontSize="30" Margin="0,0,-0.4,8.8" />
-        <CheckBox x:Name="Terms_accepted" Content="I agree to the terms" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top" Width="131" Checked="Terms_accepted_Checked" Grid.Row="3" Margin="23,0,0,0" />
-        <CheckBox x:Name="byHour" Content="By hour" HorizontalAlignment="Left" Height="20" Margin="154,1,0,0" VerticalAlignment="Top" Width="131" Grid.Row="3"/>
-
-        <StackPanel x:Name="Buttons" Orientation="Horizontal" Grid.Row="5"  HorizontalAlignment="Center">
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <CheckBox x:Name="Terms_accepted" Content="I agree to the terms" HorizontalAlignment="Left" Height="20" VerticalAlignment="Center" Width="131" Checked="Terms_accepted_Checked" Grid.Row="3" />
+            <CheckBox x:Name="byHour" Content="By hour" HorizontalAlignment="Left" Height="20"  VerticalAlignment="Center"  Grid.Row="3"/>
+        </StackPanel>
+        <StackPanel x:Name="Buttons" Orientation="Horizontal" Grid.Row="6"  HorizontalAlignment="Center">
             <Button x:Name="exit" Content="Cancel" Width="70" Click="exit_Click"/>
             <TabPanel Width="100"/>
             <Button x:Name="Sign" Content="SIGN CONTRACT!" Background="black" Foreground="White" FontWeight="ExtraBold" Width="120" IsEnabled="{Binding ElementName=Terms_accepted , Path=IsChecked}" Click="Sign_Click"/>
         </StackPanel>
 
+        <StackPanel Grid.Row="5" Orientation="Horizontal">
+            <DockPanel Width="70"/>
+            <Label Content="Distance Between you and the Nanny:" VerticalAlignment="Top" FontWeight="Bold"/>
+            <DockPanel Width="10"/>
+            <TextBox x:Name="contract_distance" Width="60"/>
+            <Label Content="meters" VerticalAlignment="Top" FontWeight="Bold"/>
+
+        </StackPanel>
 
         <Grid.Background>
             <ImageBrush ImageSource="images/background1.png"/>

@@ -105,45 +105,7 @@ namespace PLWPF
             dataGrid.ItemsSource = myBL.potentialNannys(thisMother);
         }
 
-        /// <summary>
-        /// Event: when double click on a nanny row - open the sign contract window.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            if (Options.SelectedIndex == 4)
-            {
-                Nanny option = dataGrid.CurrentItem as Nanny;
-                if (option == null || option.firstName == null)
-                    MessageBox.Show("No Nanny was selected!");
-                else
-                {
-                    Window signContract = new SignContractWindow(thisMother, option);
-                    signContract.ShowDialog();
-                }
-            }
-            else if (Options.SelectedIndex == 5)
-            {
-                Child option = dataGrid.CurrentItem as Child;
-                if (option == null)
-                    MessageBox.Show("No Child was selected!");
-                else
-                {
-                    // giving last chance
-                    MessageBoxResult whatNow = MessageBox.Show("Are You Sure you want to delete child data?", "", MessageBoxButton.OKCancel);
-                    switch (whatNow)
-                    {
-                        case MessageBoxResult.Cancel: return;
-                    }
-
-                    myBL.deleteChild(option);
-                    MessageBox.Show("Child information was deleted", "Delete", MessageBoxButton.OK);
-                    dataGrid.ItemsSource = myBL.getListOfChildByMother(thisMother).ToList();
-
-                }
-            }
-        }
+       
 
         /// <summary>
         /// A window with mother details opened and make it possible to make change.
@@ -207,7 +169,7 @@ namespace PLWPF
         /// <param name="e"></param>
         private void option_Click(object sender, RoutedEventArgs e)
         {
-           /* switch (option.Content)
+            switch (option.Content as string)
             {
                 case "Delete":
                     Child option = dataGrid.SelectedItem as Child;
@@ -239,7 +201,7 @@ namespace PLWPF
                     }
                     break;
             }
-            */
+            
         }
     }
 }
