@@ -24,6 +24,7 @@ namespace PLWPF
         static IBL myBL = BL_Factory.Get_BL;
 
         Mother thisMother;
+        float current_nanny_distance = 0;
 
         /// <summary>
         /// window constructor.
@@ -197,7 +198,7 @@ namespace PLWPF
                         MessageBox.Show("No Nanny was selected!");
                     else
                     {
-                        Window signContract = new SignContractWindow(thisMother, selectedNanny);
+                        Window signContract = new SignContractWindow(thisMother, selectedNanny, current_nanny_distance);
                         signContract.ShowDialog();
                     }
                     break;
@@ -219,14 +220,12 @@ namespace PLWPF
                 if (selected_nanny == null)
                     return;
 
-                string distance_string = "";
-
-                Thread myThread = new Thread(() => {distance_string = myBL.distanceBetweenAddresses(thisMother.address, selected_nanny.address).ToString(); });
+                Thread myThread = new Thread(() => { current_nanny_distance = myBL.distanceBetweenAddresses(thisMother.address, selected_nanny.address); });
                 myThread.Start();
                 myThread.Join();
 
                 option_describe.Content = "Your Distance from " + selected_nanny.familyName + ' ' + selected_nanny.firstName + " is: "
-                    + distance_string + " Km";
+                    + current_nanny_distance.ToString() + " Km";
 
                 option_describe.Opacity = 1;
             }

@@ -27,13 +27,14 @@ namespace PLWPF
         Contract thisContract;
         Mother thisMother;
         Nanny thisNanny;
+        float static_distance_field;
 
         /// <summary>
         /// build the sign contract window. initial objects.
         /// </summary>
         /// <param name="mother"></param>
         /// <param name="nanny"></param>
-        public SignContractWindow(Mother mother, Nanny nanny)
+        public SignContractWindow(Mother mother, Nanny nanny, float distance_input)
         {
             try
             {
@@ -47,6 +48,9 @@ namespace PLWPF
 
                 thisMother = mother;
                 thisNanny = nanny;
+                static_distance_field = distance_input;
+
+
 
                 if (nanny.doesWorkPerHour == false)
                     byHour.IsEnabled = false;
@@ -70,7 +74,7 @@ namespace PLWPF
 
                 dataGrid.ItemsSource = datagridChildren;
 
-                //contract_distance.Text = thisContract.Distance.ToString();
+                contract_distance.Text = distance_input.ToString();
             }
             catch (Exception e)
             {
@@ -88,6 +92,8 @@ namespace PLWPF
         {
             // initial dates, id of nanny and more
             thisContract = new Contract(thisNanny.id);
+            thisContract.Distance = static_distance_field;
+
 
             // calculate salary and salary type, also enter child ID
             try
