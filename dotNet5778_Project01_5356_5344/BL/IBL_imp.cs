@@ -28,6 +28,9 @@ namespace BL
     /// </summary>
     public class IBL_imp : IBL
     {
+        /// <summary>
+        /// the DAL from factory
+        /// </summary>
         public Idal myDal = DalFactory.Get_DAL;
 
         /// <summary>
@@ -64,7 +67,6 @@ namespace BL
             }
 
             myDal.deleteNanny(nanny);
-
         }
 
         /// <summary>
@@ -169,10 +171,6 @@ namespace BL
         /// <param name="contract"></param>
         public void addContract(Contract contract)
         {
-
-
-            // contract.isSingedContract = false;
-
             Child child = getChildByID(contract.childId);
 
             if (!myDal.isChildInList(child.id))
@@ -223,8 +221,6 @@ namespace BL
                     "***********************************************\n" + contract.ToString() + "***********************************************\n");
             }
 
-            // ---check if child has contract in conflict
-
             nanny.numberOfSignedContracts++; // adds to nanny count of contracts
 
             // calculates nanny salary
@@ -251,8 +247,6 @@ namespace BL
         /// <param name="contract"></param>
         public void deleteContract(Contract contract)
         {
-            //--- throw "notice to mother and nanny"
-
             // decrease number of signed contract of nanny
             Nanny temp = GetNannyByID(contract.NannysId);
             if (temp != null)
@@ -392,6 +386,12 @@ namespace BL
             return temp.ElementAt(0);
         }
 
+        /// <summary>
+        /// gets a Mother object by searching her id number
+        /// using DAL method
+        /// </summary>
+        /// <param name="motherId"></param>
+        /// <returns></returns>
         public Mother getMotherByID(int motherId)
         {
             var temp = from item in myDal.getListOfMother()
@@ -504,24 +504,11 @@ namespace BL
         public bool findAddress(string source)
         {
             float a = 0;
-             Thread MyThread = new Thread(() => {  a = distanceBetweenAddresses(source, "Lev Academic Center"); });
-             MyThread.Start();
-             MyThread.Join();
-            return a >= 0;           
+            Thread MyThread = new Thread(() => { a = distanceBetweenAddresses(source, "Lev Academic Center"); });
+            MyThread.Start();
+            MyThread.Join();
+            return a >= 0;
         }
-        /*
-                public class InternetAvailability
-                {
-                    [DllImport("wininet.dll")]
-                    private extern static bool InternetGetConnectedState(out int description, int reservedValue);
-
-                    public static bool IsInternetAvailable()
-                    {
-                        int description;
-                        return InternetGetConnectedState(out description, 0);
-                    }
-                }
-                */
 
         /// <summary>
         /// use Google Api to get distance between two address stored in strings
@@ -529,16 +516,12 @@ namespace BL
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns></returns>
-        public Single distanceBetweenAddresses(string source, string dest)
+        public float distanceBetweenAddresses(string source, string dest)
         {
-            // in case at least one address is empty - return immediatly
+            // in case at least one address is empty - return immediately
             if (source == null || dest == null)
                 return -1;
 
-            /* if (!InternetAvailability.IsInternetAvailable())
-             {
-                 throw new Exception("No INTERNET connection");
-             }*/
             var drivingDirectionRequest = new DirectionsRequest
             {
                 TravelMode = TravelMode.Walking,
@@ -548,15 +531,12 @@ namespace BL
 
             DirectionsResponse drivingDirections = GoogleMaps.Directions.Query(drivingDirectionRequest);
 
-
             if (drivingDirections.Routes.ElementAtOrDefault(0) == null)
                 return -1;
-
 
             Route route = drivingDirections.Routes.First();
             Leg leg = route.Legs.First();
             return Convert.ToSingle(leg.Distance.Value / 1000);
-
         }
 
         /// <summary>
@@ -579,6 +559,7 @@ namespace BL
                 }
                 return result;
             }
+
             catch (Exception e)
             {
                 throw e;
@@ -598,7 +579,6 @@ namespace BL
             foreach (Nanny nanny in myDal.getListOfNanny())
             {
                 // check schedule
-
                 bool flag = true;
                 for (int i = 0; i < 6 && flag && mother.daysOfNanny[i]; i++)
                 {
@@ -615,6 +595,7 @@ namespace BL
                         if (mother.hoursByNanny[i].start_minute < nanny.hoursOfWork[i].start_minute)
                             flag = false;
                     }
+
                     else
                     {
                         if (mother.hoursByNanny[i].start_hour < nanny.hoursOfWork[i].start_hour)
@@ -627,14 +608,13 @@ namespace BL
                         if (mother.hoursByNanny[i].finish_minute > nanny.hoursOfWork[i].finish_minute)
                             flag = false;
                     }
+
                     else
                     {
                         if (mother.hoursByNanny[i].finish_hour > nanny.hoursOfWork[i].finish_hour)
                             flag = false;
                     }
-
                 }
-
 
                 // if schedule is suitable -> check Distance
                 if (flag)
@@ -642,8 +622,6 @@ namespace BL
                     Thread myThred = new Thread(() => { distance = distanceBetweenAddresses(mother.address, nanny.address); });
                     myThred.Start();
                     myThred.Join();
-              //      listOfThreds.Add(myThred);
-
 
                     if (distance > mother.addressRadius)
                     {
@@ -653,13 +631,7 @@ namespace BL
 
                 if (flag)
                     list.Add(nanny);
-
-                /*foreach (Thread t in listOfThreds)
-                {
-                    t.Join();
-                }*/
             }
-
 
             if (list != null)
                 return list;
@@ -743,7 +715,6 @@ namespace BL
                 return listNoNanny;
             else
                 throw new Exception("no child with no nanny was found");
-
         }
 
         /// <summary>
@@ -786,7 +757,6 @@ namespace BL
 
             //return null;
         }
-
 
         /// <summary>
         /// return a collection of groups based on a Nanny collection. every group hold Nanny's and had a unique age of kid: minimum or maximum.
@@ -835,22 +805,7 @@ namespace BL
             // grouping
             temp = from contract in collection
                    group contract by contract.Distance;
-          /*         
-                   distanceBetweenAddresses(GetNannyByID(contract.NannysId).address, GetMotherByChildID(contract.childId).address) / 5;
-
-            // sorting is by distance.
-            if (sorted)
-            {
-                // sort all groups
-                foreach (var group in temp)
-                    group.OrderBy(contract => distanceBetweenAddresses(GetNannyByID(contract.NannysId).address, GetMotherByChildID(contract.childId).address));
-
-                // sort the groups
-                temp.OrderBy(group => distanceBetweenAddresses(GetNannyByID(group.ElementAt(0).NannysId).address, GetMotherByChildID(group.ElementAt(0).childId).address));
-            }
-            */
             return temp;
-
         }
 
         /// <summary>
@@ -883,11 +838,23 @@ namespace BL
             return myDal.getListOfChildrenOfNanny(id);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="nanny"></param>
+        /// <returns></returns>
         public IEnumerable<Child> checkAgeOfKids(IEnumerable<Child> list, Nanny nanny)
         {
             return myDal.checkAgeOfKids(list, nanny);
         }
 
+        /// <summary>
+        /// gets the list of all contracts of mother
+        /// using DAL method
+        /// </summary>
+        /// <param name="thisMother"></param>
+        /// <returns></returns>
         public IEnumerable<Contract> getListOfContractByMother(Mother thisMother)
         {
             return myDal.getListOfContractByMother(thisMother);

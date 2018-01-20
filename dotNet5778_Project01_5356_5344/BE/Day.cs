@@ -21,7 +21,10 @@ namespace BE
         public string string_start { set; get; }
         public string string_finish { set; get; }
 
-
+        /// <summary>
+        /// calculates the work time for a day
+        /// </summary>
+        /// <returns></returns>
         public float workTime()
         {
             float total = 0;
@@ -32,7 +35,14 @@ namespace BE
             return total;
         }
 
-        public Day(int stHour = 0, int stMinu =0, int finHour=0, int finMinu=0)
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="stHour"></param>
+        /// <param name="stMinu"></param>
+        /// <param name="finHour"></param>
+        /// <param name="finMinu"></param>
+        public Day(int stHour = 0, int stMinu = 0, int finHour = 0, int finMinu = 0)
         {
             start_hour = stHour;
             start_minute = stMinu;
@@ -63,8 +73,6 @@ namespace BE
             if (str_start.Length > 5 || str_finish.Length > 5)
                 throw new Exception("at least one of your working time is illegal");
 
-
-
             // fill fields
             start_hour = int.Parse(str_start.Substring(0, 2));
             start_minute = int.Parse(str_start.Substring(3));
@@ -79,8 +87,5 @@ namespace BE
             if (start_hour >= finish_hour)
                 throw new Exception("at least one of your working time is illegal");
         }
-
-       // public Day(){ }
-
     }
 }

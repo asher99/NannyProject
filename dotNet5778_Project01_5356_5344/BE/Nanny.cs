@@ -45,7 +45,7 @@ namespace BE
 
         public int monthlyWage { set; get; }
 
-        public bool[] daysOfWork { set; get; } 
+        public bool[] daysOfWork { set; get; }
 
         public Day[] hoursOfWork { set; get; } // each day hour of start and hour of finish
 
@@ -54,16 +54,33 @@ namespace BE
         public string Recommendations { set; get; }
 
         public int numberOfSignedContracts { set; get; }
-        // Extra space for more Properties if needed
 
+        /// <summary>
+        /// to string method
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return familyName + ' ' + firstName + "- NANNY\n" + address + "\n id number:\t" + id + "\n birth date:\t:" + birthday.ToShortDateString() + "\n wage per hour:\t" + hourWage + "\n wage per month:" + monthlyWage + "\n phone number:\t" + phoneNumber
                 + "\n nanny can take care " + maxOfKids + " kids that are " + minAgeOfKid + " to " + maxAgeOfKid + " months old\n";
         }
 
-
-        public Nanny(string my_lastName, string my_firstName, string my_address, int my_id,DateTime my_birthday, string my_phone, bool my_doesWorkPerHour, int perHour, int perMonth, int maxKids, int my_minAge, int my_maxAge)
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="my_lastName"></param>
+        /// <param name="my_firstName"></param>
+        /// <param name="my_address"></param>
+        /// <param name="my_id"></param>
+        /// <param name="my_birthday"></param>
+        /// <param name="my_phone"></param>
+        /// <param name="my_doesWorkPerHour"></param>
+        /// <param name="perHour"></param>
+        /// <param name="perMonth"></param>
+        /// <param name="maxKids"></param>
+        /// <param name="my_minAge"></param>
+        /// <param name="my_maxAge"></param>
+        public Nanny(string my_lastName, string my_firstName, string my_address, int my_id, DateTime my_birthday, string my_phone, bool my_doesWorkPerHour, int perHour, int perMonth, int maxKids, int my_minAge, int my_maxAge)
         {
             familyName = my_lastName;
             firstName = my_firstName;
@@ -77,7 +94,7 @@ namespace BE
             maxOfKids = maxKids;
             minAgeOfKid = my_minAge;
             maxAgeOfKid = my_maxAge;
-         
+
         }
 
         public Nanny() { numberOfSignedContracts = 0; daysOfWork = new bool[6]; hoursOfWork = new Day[6]; birthday = DateTime.Now; }
