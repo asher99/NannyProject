@@ -17,14 +17,6 @@
     <specialNeeds />
   </Child>
   <Child>
-    <id>15</id>
-    <name>Shimi</name>
-    <momsId>9</momsId>
-    <birthday>2017-01-18T00:00:00</birthday>
-    <hasSpecialNeeds>true</hasSpecialNeeds>
-    <specialNeeds>he dosent like to be left alone</specialNeeds>
-  </Child>
-  <Child>
     <id>16</id>
     <name>Shira</name>
     <momsId>9</momsId>

@@ -529,7 +529,7 @@ namespace BL
         /// <param name="a"></param>
         /// <param name="b"></param>
         /// <returns></returns>
-        public float distanceBetweenAddresses(string source, string dest)
+        public Single distanceBetweenAddresses(string source, string dest)
         {
             // in case at least one address is empty - return immediatly
             if (source == null || dest == null)
@@ -555,8 +555,7 @@ namespace BL
 
             Route route = drivingDirections.Routes.First();
             Leg leg = route.Legs.First();
-            return leg.Distance.Value / 1000;
-
+            return Convert.ToSingle(leg.Distance.Value / 1000);
 
         }
 

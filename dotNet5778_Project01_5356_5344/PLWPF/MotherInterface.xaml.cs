@@ -24,7 +24,7 @@ namespace PLWPF
         static IBL myBL = BL_Factory.Get_BL;
 
         Mother thisMother;
-        float current_nanny_distance = 0;
+        Single current_nanny_distance = 0;
 
         /// <summary>
         /// window constructor.

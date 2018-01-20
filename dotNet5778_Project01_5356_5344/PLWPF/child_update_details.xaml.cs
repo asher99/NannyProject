@@ -49,5 +49,6 @@ namespace PLWPF
             MessageBox.Show("Child details were updated!", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();
         }
+
     }
 }
