@@ -71,6 +71,7 @@ namespace PLWPF
                 case 1: //view contracts
                     dataGrid.ItemsSource = myBL.getListOfContractByMother(thisMother).ToList();
                     option.IsEnabled = false;
+                    option.Opacity = 0;
                     option_describe.Opacity = 0;
                     break;
                 case 2: // add child
@@ -115,7 +116,18 @@ namespace PLWPF
         /// </summary>
         private void show_potentialNannys()
         {
-            dataGrid.ItemsSource = myBL.potentialNannys(thisMother);
+            IEnumerable<Nanny> potentialNannys = myBL.potentialNannys(thisMother);
+
+            if (!potentialNannys.Any())
+            {
+                option_describe.Content = "No suitable nanny!";
+                option_describe.Opacity = 1;
+                option.IsEnabled = false;
+            }
+            else
+                dataGrid.ItemsSource = myBL.potentialNannys(thisMother);
+
+
         }
 
         /// <summary>
@@ -224,7 +236,7 @@ namespace PLWPF
                     }
                     break;
             }
-            
+
         }
 
 
