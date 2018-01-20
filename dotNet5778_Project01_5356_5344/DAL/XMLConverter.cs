@@ -155,7 +155,7 @@ namespace DAL
                 start_minute = Int32.Parse(dayXml.Element("start_minute").Value),
                 finish_hour = Int32.Parse(dayXml.Element("finish_hour").Value),
                 finish_minute = Int32.Parse(dayXml.Element("finish_minute").Value),
-                 string_start = dayXml.Element("string_start").Value,
+                string_start = dayXml.Element("string_start").Value,
                 string_finish = dayXml.Element("string_finish").Value
             };
 
@@ -283,12 +283,12 @@ namespace DAL
                     NannysId = Int32.Parse(contractXml.Element("NannysId").Value),
                     childId = Int32.Parse(contractXml.Element("childId").Value),
                     isSingedContract = Boolean.Parse(contractXml.Element("isSingedContract").Value),
-                    moneyPerHour =  Double.Parse(contractXml.Element("moneyPerHour").Value),
+                    moneyPerHour = Double.Parse(contractXml.Element("moneyPerHour").Value),
                     monthSalary = Double.Parse(contractXml.Element("monthSalary").Value),
                     isMonthContract = Boolean.Parse(contractXml.Element("isMonthContract").Value),
                     StartDate = DateTime.Parse(contractXml.Element("StartDate").Value),
                     ExpirationDate = DateTime.Parse(contractXml.Element("ExpirationDate").Value),
-                    Distance= Single.Parse(contractXml.Element("Distance").Value),              
+                    Distance = Single.Parse(contractXml.Element("Distance").Value),
                 };
             }
 

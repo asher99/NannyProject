@@ -25,6 +25,10 @@ namespace PLWPF
         static IBL myBL = BL_Factory.Get_BL;
         Child child;
 
+        /// <summary>
+        /// Construct the Window
+        /// </summary>
+        /// <param name="thisChild"></param>
         public child_update_details(Child thisChild)
         {
             InitializeComponent();
@@ -43,6 +47,11 @@ namespace PLWPF
             this.Close();
         }
 
+        /// <summary>
+        /// Event - update the child data calling the BL method. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void save_Click(object sender, RoutedEventArgs e)
         {
             myBL.updateChild(child);

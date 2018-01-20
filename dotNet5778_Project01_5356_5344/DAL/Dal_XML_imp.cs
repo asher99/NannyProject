@@ -243,7 +243,7 @@ namespace DAL
                 throw new Exception("the contract is not in the system.\n");
         }
 
-        // gets for all of the data in data source
+        // return list of all nannys stored in the Data Source
         public IEnumerable<Nanny> getListOfNanny()
         {
             XElement root = DataSourceXml.Nannys;
@@ -255,6 +255,7 @@ namespace DAL
             return result.AsEnumerable();
         }
 
+        // return list of all mothers stored in the Data Source
         public IEnumerable<Mother> getListOfMother()
         {
             XElement root = DataSourceXml.Mothers;
@@ -266,6 +267,7 @@ namespace DAL
             return result.AsEnumerable();
         }
 
+        // return list of all children stored in the Data Source
         public IEnumerable<Child> getListOfChild()
         {
             XElement root = DataSourceXml.Children;
@@ -277,6 +279,7 @@ namespace DAL
             return result.AsEnumerable();
         }
 
+        // return list of all contracts stored in the Data Source
         public IEnumerable<Contract> getListOfContract()
         {
             XElement root = DataSourceXml.Contracts;
@@ -288,7 +291,7 @@ namespace DAL
             return result.AsEnumerable();
         }
 
-        // scan all ids in all lists
+        // scan all ids in all lists and return if a received id is exist
         public bool IdExist(int id)
         {
             return (isChildInList(id) || isMotherInList(id) || isNannyInList(id));
