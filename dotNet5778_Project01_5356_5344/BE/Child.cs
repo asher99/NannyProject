@@ -24,8 +24,10 @@ namespace BE
 
         public string specialNeeds { set; get; }
 
-        // more options if needed
-
+        /// <summary>
+        /// to string method
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return name + " - CHILD\n child id: " + id + "\n birth date:\t" + birthday.ToShortDateString() + "\n mother id: " + momsId + '\n';
@@ -39,6 +41,7 @@ namespace BE
             return today - age;
         }
 
+        // constructors
         public Child(string my_name, int my_id, int my_motherId, DateTime my_birthday, bool my_specialNeeds, string my_specialNeedsString)
         {
             name = my_name;
@@ -52,6 +55,11 @@ namespace BE
 
         public Child() { birthday = DateTime.Now; }
 
+        /// <summary>
+        /// compares children
+        /// </summary>
+        /// <param name="otherChild"></param>
+        /// <returns></returns>
         public bool compareChildren(Child otherChild)
         {
             if (otherChild.id == this.id)

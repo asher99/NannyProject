@@ -32,11 +32,13 @@ namespace BE
 
         public float Distance { set; get; }
 
-        // more options if needed
-
+        /// <summary>
+        /// to string method
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
-            string temp = "CONTRACT NUMBER: " + numberOfContract + "\n nanny id: " + NannysId + "\n child id: " + childId + '\n'; 
+            string temp = "CONTRACT NUMBER: " + numberOfContract + "\n nanny id: " + NannysId + "\n child id: " + childId + '\n';
             if (isMonthContract)
             {
                 return temp + "salary per month:\t" + monthSalary + '\n' + "expiration date:\t" + ExpirationDate.ToString() + '\n';
@@ -94,8 +96,9 @@ namespace BE
             numberOfContract = -1;
             isSingedContract = false;
         }
+
         public Contract() { }
     }
 
-    
+
 }
