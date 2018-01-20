@@ -59,6 +59,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="child_update_details.xaml.cs">
+      <DependentUpon>child_update_details.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ContractGroup.xaml.cs">
       <DependentUpon>ContractGroup.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,10 @@
     <Compile Include="SignContractWindow.xaml.cs">
       <DependentUpon>SignContractWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="child_update_details.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ContractGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

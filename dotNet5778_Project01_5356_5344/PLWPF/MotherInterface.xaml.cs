@@ -75,6 +75,11 @@ namespace PLWPF
                     addChildToMother();
                     break;
                 case 3: // view children (also update children data)
+                    option.IsEnabled = true;
+                    option.Content = "Update Childern Data";
+                    option.Opacity = 1;
+                    option_describe.Opacity = 1;
+                    option_describe.Content = "Select a Child to update his information";
                     dataGrid.ItemsSource = myBL.getListOfChildByMother(thisMother).ToList();
                     break;
                 case 4: // show potential nanny
@@ -203,6 +208,11 @@ namespace PLWPF
                         Window signContract = new SignContractWindow(thisMother, selectedNanny, current_nanny_distance);
                         signContract.ShowDialog();
                     }
+                    break;
+                case "Update Childern Data":
+                    Child selectedChild = dataGrid.SelectedItem as Child;
+                    Window updateChild = new child_update_details(selectedChild);
+                    updateChild.ShowDialog();
                     break;
             }
             

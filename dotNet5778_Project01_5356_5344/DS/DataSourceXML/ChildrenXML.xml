@@ -5,8 +5,8 @@
     <name>Sruli</name>
     <momsId>7</momsId>
     <birthday>2016-07-05T00:00:00</birthday>
-    <hasSpecialNeeds>false</hasSpecialNeeds>
-    <specialNeeds />
+    <hasSpecialNeeds>true</hasSpecialNeeds>
+    <specialNeeds>loves banana</specialNeeds>
   </Child>
   <Child>
     <id>308</id>
