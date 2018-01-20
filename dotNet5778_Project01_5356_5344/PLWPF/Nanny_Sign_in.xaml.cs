@@ -40,7 +40,6 @@ namespace PLWPF
         {
             try
             {
-
                 // if Nanny in list
                 int id = Convert.ToInt32(idTextBox.Text);
                 string name = nameTextBox.Text;
@@ -55,6 +54,7 @@ namespace PLWPF
                 Close();
                 nannyInfo.ShowDialog();
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);

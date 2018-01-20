@@ -22,8 +22,8 @@ namespace PLWPF
     public partial class nanny_update_details : Window
     {
 
-        BE.Nanny nanny;
-        BL.IBL myBL;
+        Nanny nanny;
+        IBL myBL = BL_Factory.Get_BL;
 
         /// <summary>
         /// window constructor. read data from object to data context. disable priority fields.
@@ -38,7 +38,6 @@ namespace PLWPF
             this.MinHeight = 700;
             this.MinWidth = 555;
 
-            myBL = BL_Factory.Get_BL;
             nanny = thisNanny;
             this.NannyDetailsGrid.DataContext = thisNanny;
 
@@ -65,27 +64,24 @@ namespace PLWPF
                 // enter the working hours.
                 ReadHoursOfWork();
 
-
                 // adding nanny to DS
                 myBL.updateNanny((Nanny)this.NannyDetailsGrid.DataContext);
 
                 MessageBox.Show("Your information has been updated!", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();
-
             }
+
             catch (Exception error_str)
             {
                 MessageBox.Show(error_str.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-
         /// <summary>
         /// check if the details from the window are legal
         /// </summary>
         private void checkDetailsNanny()
         {
-
             // personal details:
             if (firstNameInput.Text == "")
                 throw new Exception("First Name Is Missing");
@@ -242,7 +238,11 @@ namespace PLWPF
             friday_start.Text = nanny.hoursOfWork[5].string_start; friday_finish.Text = nanny.hoursOfWork[5].string_finish;
         }
 
-
+        /// <summary>
+        /// close click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void close_Click(object sender, RoutedEventArgs e)
         {
             Close();

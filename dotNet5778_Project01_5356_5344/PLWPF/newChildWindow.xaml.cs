@@ -32,6 +32,12 @@ namespace PLWPF
         public newChildWindow(int motherId)
         {
             InitializeComponent();
+
+            MaxHeight = 300;
+            MaxWidth = 500;
+            MinHeight = 300;
+            MinWidth = 500;
+
             ChildDetailsGrid.DataContext = child;
             child.momsId = motherId;
         }
@@ -61,7 +67,7 @@ namespace PLWPF
                 // adding nanny to DS
                 myBL.addChild(child);
 
-                MessageBox.Show("Child details were added" , "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Child details were added", "Success!", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();
 
             }
@@ -85,18 +91,15 @@ namespace PLWPF
             if (Childsbirthday.Text == "")
                 throw new Exception("Birthday is Missing!");
 
-            if(specialNeeds.IsChecked.Value)
-                if(ChildsSpecialNeeds.Text =="")
-                    throw new Exception("No special needs were enterd");
+            if (specialNeeds.IsChecked.Value)
+                if (ChildsSpecialNeeds.Text == "")
+                    throw new Exception("No special needs were enters");
 
             if (!child_id.Text.All(Char.IsDigit))
                 throw new Exception("ID number input is illegal!");
 
             if (!firstNameInput.Text.All(Char.IsLetter))
                 throw new Exception("ID number input is illegal!");
-
-
-
         }
     }
 }

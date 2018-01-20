@@ -39,18 +39,9 @@ namespace PLWPF
             try
             {
                 InitializeComponent();
-
-                //
-                /*Thread MyThread = new Thread(() => { thisContract.Distance = myBL.distanceBetweenAddresses(mother.address, nanny.address); });
-                MyThread.Start();
-                MyThread.Join();*/
-
-
                 thisMother = mother;
                 thisNanny = nanny;
                 static_distance_field = distance_input;
-
-
 
                 if (nanny.doesWorkPerHour == false)
                     byHour.IsEnabled = false;
@@ -98,7 +89,6 @@ namespace PLWPF
             // calculate salary and salary type, also enter child ID
             try
             {
-
                 if (!childIDNUmber.Text.All(Char.IsDigit) || childIDNUmber.Text == "")
                     throw new Exception("Child Id input is illegal!");
 
@@ -109,6 +99,7 @@ namespace PLWPF
                     thisContract.monthSalary = myBL.calculateSalary(thisContract, thisNanny);
                     thisContract.moneyPerHour = 0;
                 }
+
                 else
                 {
                     thisContract.monthSalary = 0;
@@ -136,16 +127,16 @@ namespace PLWPF
                 // add data to text block
                 Schedule.Text = Schedule_ToString();
 
-
-
                 Billing.Text = FinancialBilling_toString();
 
                 Additional.Text = AdditionalDetails_ToString();
 
             }
+
             catch (Exception err)
             {
                 MessageBox.Show(err.Message);
+
                 // if the process fell, make it possible to re-check.
                 Terms_accepted.IsChecked = false;
             }
@@ -165,11 +156,8 @@ namespace PLWPF
             if (inserted_date.Year == DateTime.Now.Year && inserted_date.Month <= DateTime.Now.Month) // check month
                 return false;
 
-
             else return true;
         }
-
-
 
         /// <summary>
         /// Event: ITS TIME TO SIGN! add contract to DS.
@@ -178,7 +166,6 @@ namespace PLWPF
         /// <param name="e"></param>
         private void Sign_Click(object sender, RoutedEventArgs e)
         {
-
             try
             {
                 myBL.addContract(thisContract);
@@ -210,7 +197,6 @@ namespace PLWPF
 
             return schedule;
         }
-
 
         /// <summary>
         /// return a string that describe the schedule of one day in the week
@@ -273,6 +259,11 @@ namespace PLWPF
             return additional;
         }
 
+        /// <summary>
+        /// exit click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
