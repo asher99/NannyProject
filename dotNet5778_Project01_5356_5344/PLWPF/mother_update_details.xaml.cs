@@ -213,7 +213,7 @@ namespace PLWPF
             Close();
         }
 
-        // since converter does not work
+        /// read the DaysByNanny properyty
         private void ReadDaysCheckboxs()
         {
             mother.daysOfNanny[0] = sunday.IsChecked.Value;
@@ -224,6 +224,7 @@ namespace PLWPF
             mother.daysOfNanny[5] = friday.IsChecked.Value;
         }
 
+        /// write the DaysByNanny properyty
         private void WriteDaysCheckboxs()
         {
             sunday.IsChecked = mother.daysOfNanny[0];

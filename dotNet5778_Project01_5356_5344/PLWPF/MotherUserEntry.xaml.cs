@@ -33,6 +33,10 @@ namespace PLWPF
             try
             {
                 InitializeComponent();
+                MinHeight = 250;
+                MaxHeight = 250;
+                MinWidth = 300;
+                MaxWidth = 300;
             }
             catch (Exception ex)
             {

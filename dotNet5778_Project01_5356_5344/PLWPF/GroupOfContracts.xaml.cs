@@ -20,6 +20,9 @@ namespace PLWPF
     /// </summary>
     public partial class GroupOfContracts : UserControl
     {
+        /// <summary>
+        /// constructor
+        /// </summary>
         public GroupOfContracts()
         {
             InitializeComponent();

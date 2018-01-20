@@ -19,7 +19,14 @@ namespace PLWPF
     /// </summary>
     public partial class PasswordLogin : Window
     {
+        /// <summary>
+        /// counter for entering attempts.
+        /// </summary>
         static int counter = 0;
+
+        /// <summary>
+        /// construct window
+        /// </summary>
         public PasswordLogin()
         {
             InitializeComponent();
@@ -31,6 +38,11 @@ namespace PLWPF
 
         }
 
+        /// <summary>
+        /// Event - check if the input is the correct password, and if it is - entering admin interface.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_Click(object sender, RoutedEventArgs e)
         {
             try

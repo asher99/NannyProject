@@ -33,6 +33,10 @@ namespace PLWPF
         public MoterInterface(Mother mother)
         {
             InitializeComponent();
+            MinHeight = 350;
+            MaxHeight = 350;
+            MinWidth = 650;
+            MaxWidth = 650;
 
             headLabel.Content = "Welcome Back " + mother.firstName + "!";
             thisMother = mother;
@@ -113,8 +117,6 @@ namespace PLWPF
         {
             dataGrid.ItemsSource = myBL.potentialNannys(thisMother);
         }
-
-       
 
         /// <summary>
         /// A window with mother details opened and make it possible to make change.

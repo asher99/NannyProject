@@ -26,6 +26,10 @@ namespace PLWPF
         static IBL myBL = BL_Factory.Get_BL;
 
         private IEnumerable source;
+
+        /// <summary>
+        /// properties for the source
+        /// </summary>
         public IEnumerable Source
         {
             get { return source; }
@@ -36,6 +40,9 @@ namespace PLWPF
             }
         }
 
+        /// <summary>
+        ///  constructor
+        /// </summary>
         public GroupOfNannysByAgeOfKid()
         {
             InitializeComponent();
