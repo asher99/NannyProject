@@ -211,8 +211,15 @@ namespace PLWPF
                     break;
                 case "Update Childern Data":
                     Child selectedChild = dataGrid.SelectedItem as Child;
-                    Window updateChild = new child_update_details(selectedChild);
-                    updateChild.ShowDialog();
+                    if (selectedChild != null)
+                    {
+                        Window updateChild = new child_update_details(selectedChild);
+                        updateChild.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No Child was selected!");
+                    }
                     break;
             }
             
