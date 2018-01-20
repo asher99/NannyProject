@@ -34,6 +34,11 @@ namespace PLWPF
             InitializeComponent();
             child = thisChild;
             ChildDetailsGrid.DataContext = child;
+
+            MinHeight = 300;
+            MaxHeight = 300;
+            MinWidth = 500;
+            MaxWidth = 500;
         }
 
 
