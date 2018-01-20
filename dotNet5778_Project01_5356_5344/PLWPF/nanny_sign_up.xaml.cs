@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 using BE;
 using BL;
 
-
 namespace PLWPF
 {
     /// <summary>
@@ -23,9 +22,8 @@ namespace PLWPF
     /// </summary>
     public partial class nanny_sign_up : Window
     {
-
-        BE.Nanny nanny;
-        BL.IBL myBL;
+        Nanny nanny;
+        IBL myBL = BL_Factory.Get_BL;
 
         /// <summary>
         /// window constructor. set the Data context (Binding) to Nanny object
@@ -36,12 +34,10 @@ namespace PLWPF
 
             this.MaxHeight = 700;
             this.MaxWidth = 555;
-
             this.MinHeight = 700;
             this.MinWidth = 555;
 
-            myBL = BL_Factory.Get_BL;
-            nanny = new BE.Nanny();
+            nanny = new Nanny();
             this.NannyDetailsGrid.DataContext = nanny;
         }
 
@@ -78,71 +74,13 @@ namespace PLWPF
 
 
             }
+
             catch (Exception error_str)
             {
                 MessageBox.Show(error_str.Message, "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-
-        /*   private void newAdrressTextChanged(object sender, TextChangedEventArgs arg)
-            {
-                ListBox suggesteAddress = adressAutoComplete;
-                TextBox searchString = nanny_address;
-                List<String> list = new List<String>();
-                string str = searchString.Text;
-
-                //if (t != null && t.IsAlive)
-                //    t.Abort();
-                Thread process = new System.Threading.Thread(() =>
-                {
-                    try
-                    {
-                        list = myBL.GetPlaceAutoComplete(str);
-                    }
-                    catch (Exception e)
-                    {
-                        throw e;
-                    }
-                });
-                process.Start();
-                process.Join();
-
-                if (list.Count() > 0)
-                {
-                    adressAutoComplete.ItemsSource = list;
-                    adressAutoComplete.Visibility = Visibility.Visible;
-                }
-
-                else
-                {
-                    adressAutoComplete.Visibility = Visibility.Collapsed;
-                    adressAutoComplete.ItemsSource = null;
-                }
-            }
-
-            private void SelectionChanged(object sender, SelectionChangedEventArgs e)
-            {
-                SelectionChangedhelp(adressAutoComplete, nanny_address, new TextChangedEventHandler(newAdrressTextChanged));
-            }
-
-            private void SelectionChangedhelp(ListBox adressAutoComplete, TextBox    nanny_address, TextChangedEventHandler e)
-            {
-                if (adressAutoComplete.ItemsSource != null)
-                {
-                    adressAutoComplete.Visibility = Visibility.Collapsed;
-                    nanny_address.TextChanged -= e;
-
-                    if (adressAutoComplete.SelectedIndex != -1)
-                    {
-                        nanny_address.Text = adressAutoComplete.SelectedItem.ToString();
-                    }
-                    nanny_address.TextChanged += e;
-                    nanny_address.Focus();
-
-                }
-            }
-            */
         /// <summary>
         /// check if the details from the window are legal
         /// </summary>
@@ -174,7 +112,6 @@ namespace PLWPF
             // professional details
             if (nanny_seniority.Text == "")
                 throw new Exception("Experience is Missing!");
-
 
             if (nanny_maxAge.Text == "")
                 throw new Exception("Kid Maximum age is Missing!");
@@ -239,7 +176,6 @@ namespace PLWPF
             if (!lastNameInput.Text.All(char.IsLetter))
                 throw new Exception("First name input is illegal!");
 
-
             if (!nanny_id.Text.All(Char.IsDigit))
                 throw new Exception("ID number input is illegal!");
 
@@ -277,58 +213,6 @@ namespace PLWPF
                     + "or visit \"www.google.co.il/maps\" and check how Google recognize your address");
 
         }
-
-        /// <summary>
-        /// reading the data from the window and assign it to the Nanny object
-        /// </summary>
-        /// <param name="nanny"></param>
-        /*private void readDetailsNanny(Nanny nanny)
-        {
-            //personal details
-            nanny.firstName = firstNameInput.Text;
-            nanny.familyName = lastNameInput.Text;
-            nanny.id = int.Parse(nanny_id.Text);
-            nanny.address = nanny_address.Text;
-            nanny.phoneNumber = nanny_phone.Text;
-            nanny.birthday = nanny_birthday.SelectedDate.Value;
-            nanny.floorNumber = int.Parse(nanny_floor.Text);
-            nanny.hasElevator = elevator.IsChecked.Value;
-
-            // professional details:
-            nanny.seniority = int.Parse(nanny_seniority.Text);
-            nanny.maxOfKids = int.Parse(nanny_maxOfKids.Text);
-            nanny.maxAgeOfKid = int.Parse(nanny_maxAge.Text);
-            nanny.minAgeOfKid = int.Parse(nanny_minAge.Text);
-            nanny.hasGovVacationDays = govVacations.IsChecked.Value;
-            nanny.Recommendations = recommendations.Text;
-
-            // work details
-            nanny.daysOfWork = new bool[6];
-            nanny.daysOfWork[0] = sunday.IsChecked.Value;
-            nanny.daysOfWork[1] = monday.IsChecked.Value;
-            nanny.daysOfWork[2] = tuesday.IsChecked.Value;
-            nanny.daysOfWork[3] = wendsday.IsChecked.Value;
-            nanny.daysOfWork[4] = thrusday.IsChecked.Value;
-            nanny.daysOfWork[5] = friday.IsChecked.Value;
-
-            nanny.hoursOfWork = new Day[6];
-
-            nanny.hoursOfWork[0] = new Day(sunday_start.Text, sunday_finish.Text);
-            nanny.hoursOfWork[1] = new Day(monday_start.Text, monday_finish.Text);
-            nanny.hoursOfWork[2] = new Day(tuesday_start.Text, tuesday_finish.Text);
-            nanny.hoursOfWork[3] = new Day(wednesday_start.Text, wednesday_finish.Text);
-            nanny.hoursOfWork[4] = new Day(thrusday_start.Text, thrusday_finish.Text);
-            nanny.hoursOfWork[5] = new Day(friday_start.Text, friday_finish.Text);
-
-
-            nanny.doesWorkPerHour = workPerHour.IsChecked.Value;
-            nanny.monthlyWage = int.Parse(nanny_salary_month.Text);
-            if (workPerHour.IsChecked.Value)
-                nanny.hourWage = int.Parse(nanny_salary_hour.Text);
-            else nanny.hourWage = 0;
-        }*/
-
-
 
         /// <summary>
         /// reading the working hours from the window and assign it to the Nanny object

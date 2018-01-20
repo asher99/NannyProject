@@ -29,6 +29,12 @@ namespace PLWPF
         public NannyInterface(Nanny nanny)
         {
             InitializeComponent();
+
+            this.MaxHeight = 650;
+            this.MaxWidth = 555;
+            this.MinHeight = 350;
+            this.MinWidth = 650;
+
             headLabel.Content = "Welcome Back " + nanny.firstName + "!";
             thisNanny = nanny;
         }
@@ -45,7 +51,7 @@ namespace PLWPF
             switch (Options.SelectedIndex)
             {
                 case 0: showDetails(); break; // update details
-                case 1: dataGrid.ItemsSource = myBL.getListOfChildrenOfNanny(thisNanny.id); break;                 // view group
+                case 1: dataGrid.ItemsSource = myBL.getListOfChildrenOfNanny(thisNanny.id); break;  // view group
                 case 2: dataGrid.ItemsSource = myBL.ListOfContractsById(thisNanny.id);
                     double salarySum = 0;
                     foreach (Contract c in myBL.ListOfContractsById(thisNanny.id))
@@ -89,7 +95,6 @@ namespace PLWPF
         {
             Window nannyDetails = new nanny_update_details(thisNanny);
             nannyDetails.ShowDialog();
-
         }
     }
 }
