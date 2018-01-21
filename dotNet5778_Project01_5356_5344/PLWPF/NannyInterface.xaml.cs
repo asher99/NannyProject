@@ -51,7 +51,8 @@ namespace PLWPF
             switch (Options.SelectedIndex)
             {
                 case 0: showDetails(); break; // update details
-                case 1: dataGrid.ItemsSource = myBL.getListOfChildrenOfNanny(thisNanny.id); break;  // view group
+            // case 1: dataGrid.ItemsSource = myBL.getListOfChildrenOfNanny(thisNanny.id); break;  // view group
+                case 1: dataGrid.ItemsSource = myBL.ListOfContractsById(thisNanny.id);break ;
                 case 2: dataGrid.ItemsSource = myBL.ListOfContractsById(thisNanny.id);
                     double salarySum = 0;
                     foreach (Contract c in myBL.ListOfContractsById(thisNanny.id))
