@@ -98,8 +98,8 @@ namespace PLWPF
             if (!child_id.Text.All(Char.IsDigit))
                 throw new Exception("ID number input is illegal!");
 
-            if (!firstNameInput.Text.All(Char.IsLetter))
-                throw new Exception("ID number input is illegal!");
+            if (!firstNameInput.Text.Any(Char.IsNumber))
+                throw new Exception("Name input is illegal!");
         }
     }
 }

@@ -93,7 +93,7 @@
                     <TextBox x:Name="tuesday_finish" Width="47"  Text="16:00"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
-                    <CheckBox x:Name="wednesday" Content="wen" VerticalAlignment="Center" IsChecked="{Binding Path=daysOfNanny[3], Mode=TwoWay, Converter={StaticResource boolConverter}, UpdateSourceTrigger=PropertyChanged}"/>
+                    <CheckBox x:Name="wednesday" Content="Wed" VerticalAlignment="Center" IsChecked="{Binding Path=daysOfNanny[3], Mode=TwoWay, Converter={StaticResource boolConverter}, UpdateSourceTrigger=PropertyChanged}"/>
                     <Label Content="start:" VerticalAlignment="Top"/>
                     <TextBox x:Name="wednesday_start" Width="47"  Text="08:00"/>
                     <Label Content="finish:" VerticalAlignment="Top"/>

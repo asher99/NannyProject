@@ -29,7 +29,7 @@
             <RadioButton x:Name="Contractlist" Content="Contract list" Foreground="SteelBlue" FontSize="14" FontWeight="Bold" Checked="Contractlist_Checked"/>
         </StackPanel>
         <Label x:Name="label" Content="Choose list for display:" Foreground="SteelBlue" FontWeight="Bold" HorizontalAlignment="Left" Height="26" Margin="0,24,0,0" VerticalAlignment="Top" Width="141" Grid.ColumnSpan="2"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Stretch" Height="180"  VerticalAlignment="Top" Grid.Row="0" SelectionMode="Single" SelectionUnit="FullRow" Grid.Column="1" Margin="2,14,15,0"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Stretch" Height="180"  VerticalAlignment="Top" Grid.Row="0" SelectionMode="Single" SelectionUnit="FullRow" Grid.Column="1" Margin="2,14,15,0" AutoGeneratingColumn="dataGrid_AutoGeneratingColumn"/>
 
         <StackPanel Grid.Row="2" Name="Buttons" Orientation="Horizontal" HorizontalAlignment="Center" Margin="94,0,231,0" Grid.Column="1">
             <Button x:Name="Delete" Content="Delete Object" IsEnabled="true" Width="130" Style="{DynamicResource MyButtonStyle2}" Click="Delete_Click"/>

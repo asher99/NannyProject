@@ -51,13 +51,13 @@ namespace PLWPF
             switch (Options.SelectedIndex)
             {
                 case 0: showDetails(); break; // update details
-            // case 1: dataGrid.ItemsSource = myBL.getListOfChildrenOfNanny(thisNanny.id); break;  // view group
-                case 1: dataGrid.ItemsSource = myBL.ListOfContractsById(thisNanny.id);break ;
-                case 2: dataGrid.ItemsSource = myBL.ListOfContractsById(thisNanny.id);
+                case 1: dataGrid.ItemsSource = myBL.getListOfChildrenOfNanny(thisNanny.id); break;  // view group
+                case 2:
+                    dataGrid.ItemsSource = myBL.ListOfContractsById(thisNanny.id);
                     double salarySum = 0;
                     foreach (Contract c in myBL.ListOfContractsById(thisNanny.id))
-                    { salarySum += c.monthSalary;  };
-                    textBox.Text = Convert.ToString(salarySum); 
+                    { salarySum += c.monthSalary; };
+                    textBox.Text = Convert.ToString(salarySum);
                     salary.Visibility = Visibility.Visible;
                     textBox.Visibility = Visibility.Visible; break;                  // view contracts
                 case 3: nannyLeave(); break;  // delete user
@@ -76,8 +76,8 @@ namespace PLWPF
 
             if (thisNanny.numberOfSignedContracts != 0)
             {
-               MessageBoxResult whatNow2 = MessageBox.Show("You still have signed contracts! \nIf you leave, you will be charged 30% canceling fee ",
-                    "warning", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
+                MessageBoxResult whatNow2 = MessageBox.Show("You still have signed contracts! \nIf you leave, you will be charged 30% canceling fee ",
+                     "warning", MessageBoxButton.OKCancel, MessageBoxImage.Warning);
 
                 switch (whatNow2)
                 {

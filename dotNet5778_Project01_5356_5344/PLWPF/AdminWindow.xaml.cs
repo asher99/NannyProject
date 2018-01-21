@@ -72,6 +72,11 @@ namespace PLWPF
         }
 
 
+        /// <summary>
+        /// event - adding new object
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             if (Nannylist.IsChecked.Value)
@@ -141,6 +146,11 @@ namespace PLWPF
             }
         }
 
+        /// <summary>
+        /// event - delete an object.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -162,6 +172,9 @@ namespace PLWPF
 
         }
 
+        /// <summary>
+        /// uniqe method that handle nanny delete
+        /// </summary>
         private void nanny_delete()
         {
             if (dataGrid.SelectedItem != null)
@@ -177,6 +190,9 @@ namespace PLWPF
             }
         }
 
+        /// <summary>
+        /// uniqe method that handle mother delete
+        /// </summary>
         private void mother_delete()
         {
             if (dataGrid.SelectedItem != null)
@@ -192,6 +208,9 @@ namespace PLWPF
             }
         }
 
+        /// <summary>
+        /// uniqe method that handle child delete
+        /// </summary>
         private void child_delete()
         {
             if (dataGrid.SelectedItem != null)
@@ -207,6 +226,9 @@ namespace PLWPF
             }
         }
 
+        /// <summary>
+        /// uniqe method that handle contract delete
+        /// </summary>
         private void contract_delete()
         {
             if (dataGrid.SelectedItem != null)
@@ -222,6 +244,11 @@ namespace PLWPF
             }
         }
 
+        /// <summary>
+        /// show groups of nanny by age groups
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ageGroups_Checked(object sender, RoutedEventArgs e)
         {
             try
@@ -231,7 +258,7 @@ namespace PLWPF
                 GroupOfNannysByAgeOfKid showGrouping = new GroupOfNannysByAgeOfKid();
                 showGrouping.Source = myBL.GroupOfNannysByAgeOfKid(myBL.getListOfNanny(), true, false);
                 GroupingPanel.Content = showGrouping;
-          
+
 
             }
             catch (Exception ex)
@@ -240,6 +267,11 @@ namespace PLWPF
             }
         }
 
+        /// <summary>
+        /// show groups of contracts by distance from child to nanny-
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ContractGroups_Checked(object sender, RoutedEventArgs e)
         {
             GroupingPanel.Visibility = Visibility.Visible;
@@ -247,6 +279,19 @@ namespace PLWPF
             ContractGroup showGrouping = new ContractGroup();
             showGrouping.Source = myBL.GroupOfContractsByDistance(myBL.getListOfContract(), false);
             GroupingPanel.Content = showGrouping;
+        }
+
+        /// <summary>
+        /// Eliminate colmuns of arrays in the data grid 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+           if(e.PropertyName == "daysOfWork" || e.PropertyName == "daysOfNanny" || e.PropertyName == "hoursByNanny" || e.PropertyName == "hoursOfWork")
+            {
+                e.Column = null;
+            }
         }
 
         /*
