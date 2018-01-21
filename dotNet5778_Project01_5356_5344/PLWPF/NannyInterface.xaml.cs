@@ -97,5 +97,18 @@ namespace PLWPF
             Window nannyDetails = new nanny_update_details(thisNanny);
             nannyDetails.ShowDialog();
         }
+
+        /// <summary>
+        /// Eliminate colmuns of arrays in the data grid 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if (e.PropertyName == "daysOfWork"  || e.PropertyName == "hoursOfWork")
+            {
+                e.Column = null;
+            }
+        }
     }
 }

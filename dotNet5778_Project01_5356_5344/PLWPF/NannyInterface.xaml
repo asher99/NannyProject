@@ -30,7 +30,7 @@
             <ComboBoxItem Content="View Contracts"/>
             <ComboBoxItem Content="Delete User" Foreground="Gray"/>
         </ComboBox>
-        <DataGrid x:Name="dataGrid" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Width="350"/>
+        <DataGrid x:Name="dataGrid" Grid.Column="1" Grid.Row="1" Grid.RowSpan="4" Width="350" AutoGeneratingColumn="dataGrid_AutoGeneratingColumn"/>
         <DockPanel Grid.Column="1" Grid.Row="0" Background="YellowGreen" Opacity="0.8" Margin="100,0,0,0"/>
         <Button x:Name="exit" Content="Exit" Style="{DynamicResource MyButtonStyle2}" Grid.Row="5" Width="200" Click="exit_Click" Margin="25,24,25,-34"/>
         <Label x:Name="salary" FontSize="16" FontWeight="Bold" FontStyle="Italic" Visibility="Collapsed" Content="Your month salary:" Grid.Column="1" HorizontalAlignment="Left" Height="30" Margin="37,13,0,-22" Grid.Row="5" VerticalAlignment="Top" Width="158"/>

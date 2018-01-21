@@ -265,5 +265,18 @@ namespace PLWPF
             else return;
         }
 
+        /// <summary>
+        /// Eliminate colmuns of arrays in the data grid 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dataGrid_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if ( e.PropertyName == "daysOfWork" || e.PropertyName == "hoursOfWork")
+            {
+                e.Column = null;
+            }
+        }
+
     }
 }
