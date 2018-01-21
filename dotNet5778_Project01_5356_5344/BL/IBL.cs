@@ -50,7 +50,6 @@ namespace BL
         Child getChildByID(int childId);
         Mother getMotherByID(int motherId);
         float distanceBetweenAddresses(string source, string dest);
-        List<string> GetPlaceAutoComplete(string str);
         IEnumerable<IGrouping<int, Nanny>> GroupOfNannysByAgeOfKid(IEnumerable<Nanny> collection, bool byMinAge, bool sorted);
         IEnumerable<IGrouping<float, Contract>> GroupOfContractsByDistance(IEnumerable<Contract> collection, bool sorted);
 

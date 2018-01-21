@@ -536,34 +536,10 @@ namespace BL
 
             Route route = drivingDirections.Routes.First();
             Leg leg = route.Legs.First();
-            return Convert.ToSingle(leg.Distance.Value / 1000);
-        }
-
-        /// <summary>
-        /// completes a address name in a search box from Google
-        /// </summary>
-        /// <param name="str"></param>
-        /// <returns></returns>
-        public List<string> GetPlaceAutoComplete(string str)
-        {
-            try
-            {
-                List<string> result = new List<string>();
-                PlaceAutocompleteRequest request = new PlaceAutocompleteRequest();
-                request.ApiKey = "AIzaSyA9DLA9vL6ARd0UGd5sZnwI0-Jocz9MBXQ";
-                request.Input = str;
-                var response = GoogleMaps.PlaceAutocomplete.Query(request);
-                foreach (var item in response.Results)
-                {
-                    result.Add(item.Description);
-                }
-                return result;
-            }
-
-            catch (Exception e)
-            {
-                throw e;
-            };
+          
+            return Convert.ToSingle(leg.Distance.Value / 1000.0);
+            
+            
         }
 
         /// <summary>
